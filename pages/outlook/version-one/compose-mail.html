@@ -1,0 +1,42 @@
+﻿<div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">Compose New Message</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <div class="form" name="submitEmail" id="submitEmail">
+            <div class="form-group">
+                <input type="text" name="email" class="form-control" placeholder="To:" ng-model="mail.email" required ng-maxlength="255" />
+            </div>
+            <div class="form-group">
+                <input type="text" name="subject" class="form-control" placeholder="Subject:" ng-model="mail.subject" />
+
+            </div>
+            <div class="form-group">
+                <!--<div class="summernote"></div>-->
+                <summernote ng-model="mail.message" config="options"></summernote>
+            </div>
+            <div class="pull-right">
+                <button type="submit" class="btn btn-success" ng-click="sendEmail()"><i class="fa fa-envelope-o"></i> Send</button>
+            </div>
+            <button type="reset" class="btn btn-warning" ng-click="cancelEmail()"><i class="fa fa-times"></i> Cancel</button>
+            <button type="reset" class="btn btn-primary" ng-click="saveAsDraft(mail)"><i class="fa fa-save"></i> Save as draft</button>
+            <!--<div class="form-group">
+        <div class="btn btn-default btn-file">
+            <i class="fa fa-paperclip"></i> Attachment
+            <input type="file" name="attachment">
+        </div>
+        <p class="help-block">Max. 4MB</p>
+    </div>-->
+
+        </div>
+        <!-- / submitEmail form -->
+    </div>
+    <!-- /.box-body -->
+</div>
+<!-- /. box -->
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

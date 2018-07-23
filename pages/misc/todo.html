@@ -1,0 +1,66 @@
+<style>
+    .ui-sortable-placeholder {
+        border: 1px solid rgb(12, 194, 170);
+        visibility: visible !important;
+    }
+</style>
+<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-4">
+            <!-- TO DO List -->
+            <div class="box box-primary">
+                <div class="box-header">
+                    <i class="ion ion-clipboard"></i>
+                    <h3 class="box-title">To Do List</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <ul class="todo-list" data-widget="todo-list">
+                        <li id="todo-{{item.id}}" ng-repeat="item in todos track by $index" class="{{item.priority}}">
+                            <span class="handle" style="vertical-align: middle;">
+                                <i class="fa fa-lg fa-ellipsis-v"></i>
+                                <i class="fa fa-lg fa-ellipsis-v"></i>
+                            </span>
+                            <input type="checkbox" icheck theme="flat" color="blue" ng-model="item.status" ng-change="changeTodoStatus(item)" />
+                            <span class="text">{{item.content}}</span>
+                            <small class="label label-default">
+                                <i class="fa fa-clock-o"></i> 1 month</small>
+                            <div class="tools">
+                                <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Edit">
+                                    <i class="fa fa-edit" ng-click="editTodo(item)"></i>
+                                </a>
+                                <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Delete">
+                                    <i class="fa fa-trash-o" ng-click="deleteTodo(item)"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                    <a class="btn btn-default m-t-sm pull-right" data-toggle="tooltip" data-placement="left" title="Add Todo" ng-click="addTodo()">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->
+<script>
+    //jQuery UI sortable for the todo list
+    $(".todo-list").sortable({
+        placeholder: "sort-highlight",
+        handle: ".handle",
+        forcePlaceholderSize: true,
+        revert: 200,
+        zIndex: 999999
+    }).disableSelection();
+
+    // Bootstrap tooltip needs to be activated manually
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

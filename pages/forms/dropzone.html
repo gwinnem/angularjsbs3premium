@@ -1,0 +1,361 @@
+﻿<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Dropzone</h3>
+                </div>
+                <div class="box-body">
+                    <form action="#" class="dropzone" id="dropzoneForm">
+                        <div class="fallback">
+                            <input name="file" type="file" multiple />
+                        </div>
+                    </form>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Dropzone Faqs</h3>
+                </div>
+                <div class="box-body">
+                    <div class="wiki">
+                        <p>I try to keep this FAQ as complete as possible. If you think that there is something missing, please contact me.</p>
+
+                        <hr>
+
+                        <h3>I get the error "Dropzone already attached." when creating the Dropzone.</h3>
+
+                        <p>This is most likely due to the <strong>autoDiscover</strong> feature of Dropzone.</p>
+
+                        <p>When Dropzone starts, it scans the whole document, and looks for elements with the <code>dropzone</code> class. It then creates an instance of Dropzone for every element found. If you, later on, create a Dropzone instance yourself, you'll create a second Dropzone which causes this error.</p>
+
+                        <p>So you can either:</p>
+
+                        <ol>
+                            <li>Turn off autoDiscover globally like this: <code>Dropzone.autoDiscover = false;</code>, or</li>
+                            <li>
+                                Turn off autoDiscover of specific elements like this: <code>Dropzone.options.myAwesomeDropzone = false;</code>
+                            </li>
+                        </ol>
+
+                        <blockquote>
+                            <p>
+                                You don't have to create an instance of Dropzone programmatically in most situations! It's recommended
+                                to leave <strong>autoDiscover</strong> enabled, and configure your Dropzone in the <code>init</code> option of your configuration.
+                            </p>
+                        </blockquote>
+
+                        <h3>Why are large files not uploading?</h3>
+
+                        <p>There is a <code>maxFilesize</code> option in Dropzone which defaults to <code>256</code> (MB). Increase this to upload files bigger than that. If your files upload fine but aren't stored on the server, then it's due to your server configuration. Most servers limit the file upload size as well. Please check with the appropriate documentation.</p>
+
+                        <h3>Why are some image thumbnails not generated?</h3>
+
+                        <p>There is a <code>maxThumbnailFilesize</code> option in Dropzone which defaults to <code>10</code> (MB) to prevent the browser from downsizing images that are too big. Increase this to create thumbnails of bigger files.</p>
+
+                        <h3>How to get notified when all files finished uploading?</h3>
+
+                        <p>There is a <code>queuecomplete</code> event now that fires when all files in the queue have been uploaded.</p>
+
+                        <h3>How to show an error returned by the server?</h3>
+
+                        <p>Very often you have to do some verification on the server to check if the file is actually valid. If you want Dropzone to display any error encountered on the server, all you have to do, is send back a proper <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4" rel="nofollow noreferrer noopener" target="_blank">HTTP status code</a> in the range of 400 - 500.</p>
+
+                        <p>In most frameworks those error codes are generated automatically when you send back an error to the client. In PHP (for example) you can set it with the <code>header</code> command.</p>
+
+                        <p>Dropzone will then know that the file upload was invalid, and will display the returned text as error message.</p>
+
+                        <p>If the Content-Type of your response is <code>text/plain</code>, you can just return the text without any further markup. If the Content-Type is <code>application/json</code>, Dropzone will use the <code>error</code> property of the provided object. Eg.: <code>{ "error": "File could not be saved." }</code></p>
+
+                        <h3>How to add a button to remove each file preview?</h3>
+
+                        <p>Starting with Dropzone version 3.5.0, there is an option that will handle all this for you: <code>addRemoveLinks</code>. This will add an <code>&lt;a class="dz-remove"&gt;Remove file&lt;/a&gt;</code> element to the file preview that will remove the file, and it will change to <em>Cancel upload</em> if the file is currently being uploaded (this will trigger a confirmation dialog).</p>
+
+                        <p>You can change those sentences with the <code>dictRemoveFile</code>, <code>dictCancelUpload</code> and <code>dictCancelUploadConfirmation</code> options.</p>
+
+                        <p>If you still want to create the button yourself, you can do so like this:</p>
+
+<pre class="code highlight js-syntax-highlight html white" lang="html" v-pre="true"><code><span id="LC1" class="line" lang="html"><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/target-url"</span> <span class="na">id=</span><span class="s">"my-dropzone"</span> <span class="na">class=</span><span class="s">"dropzone"</span><span class="nt">&gt;&lt;/form&gt;</span></span>
+<span id="LC2" class="line" lang="html"></span>
+<span id="LC3" class="line" lang="html"><span class="nt">&lt;script&gt;</span></span>
+<span id="LC4" class="line" lang="html">  <span class="c1">// myDropzone is the configuration for the element that has an id attribute</span></span>
+<span id="LC5" class="line" lang="html">  <span class="c1">// with the value my-dropzone (or myDropzone)</span></span>
+<span id="LC6" class="line" lang="html">  <span class="nx">Dropzone</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">myDropzone</span> <span class="o">=</span> <span class="p">{</span></span>
+<span id="LC7" class="line" lang="html">    <span class="na">init</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span></span>
+<span id="LC8" class="line" lang="html">      <span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"addedfile"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="p">{</span></span>
+<span id="LC9" class="line" lang="html"></span>
+<span id="LC10" class="line" lang="html">        <span class="c1">// Create the remove button</span></span>
+<span id="LC11" class="line" lang="html">        <span class="kd">var</span> <span class="nx">removeButton</span> <span class="o">=</span> <span class="nx">Dropzone</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"&lt;button&gt;Remove file&lt;/button&gt;"</span><span class="p">);</span></span>
+<span id="LC12" class="line" lang="html"></span>
+<span id="LC13" class="line" lang="html"></span>
+<span id="LC14" class="line" lang="html">        <span class="c1">// Capture the Dropzone instance as closure.</span></span>
+<span id="LC15" class="line" lang="html">        <span class="kd">var</span> <span class="nx">_this</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span></span>
+<span id="LC16" class="line" lang="html"></span>
+<span id="LC17" class="line" lang="html">        <span class="c1">// Listen to the click event</span></span>
+<span id="LC18" class="line" lang="html">        <span class="nx">removeButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span></span>
+<span id="LC19" class="line" lang="html">          <span class="c1">// Make sure the button click doesn't submit the form:</span></span>
+<span id="LC20" class="line" lang="html">          <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span></span>
+<span id="LC21" class="line" lang="html">          <span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span></span>
+<span id="LC22" class="line" lang="html"></span>
+<span id="LC23" class="line" lang="html">          <span class="c1">// Remove the file preview.</span></span>
+<span id="LC24" class="line" lang="html">          <span class="nx">_this</span><span class="p">.</span><span class="nx">removeFile</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span></span>
+<span id="LC25" class="line" lang="html">          <span class="c1">// If you want to the delete the file on the server as well,</span></span>
+<span id="LC26" class="line" lang="html">          <span class="c1">// you can do the AJAX request here.</span></span>
+<span id="LC27" class="line" lang="html">        <span class="p">});</span></span>
+<span id="LC28" class="line" lang="html"></span>
+<span id="LC29" class="line" lang="html">        <span class="c1">// Add the button to the file preview element.</span></span>
+<span id="LC30" class="line" lang="html">        <span class="nx">file</span><span class="p">.</span><span class="nx">previewElement</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">removeButton</span><span class="p">);</span></span>
+<span id="LC31" class="line" lang="html">      <span class="p">});</span></span>
+<span id="LC32" class="line" lang="html">    <span class="p">}</span></span>
+<span id="LC33" class="line" lang="html">  <span class="p">};</span></span>
+<span id="LC34" class="line" lang="html"><span class="nt">&lt;/script&gt;</span></span></code></pre>
+                        <h3>
+                            <a id="user-content-how-to-submit-additional-data-along-the-file-upload" class="anchor" href="#how-to-submit-additional-data-along-the-file-upload" aria-hidden="true"></a>How to submit additional data along the file upload?
+                        </h3>
+
+                        <p>If your Dropzone element is a <code>&lt;form&gt;</code> element, all hidden input fields will automatically be submitted as POST data along with the file upload.</p>
+
+                        <p>Example:</p>
+
+<pre class="code highlight js-syntax-highlight html white" lang="html" v-pre="true"><code><span id="LC1" class="line" lang="html"><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/"</span> <span class="na">class=</span><span class="s">"dropzone"</span><span class="nt">&gt;</span></span>
+<span id="LC2" class="line" lang="html">  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"additionaldata"</span> <span class="na">value=</span><span class="s">"1"</span> <span class="nt">/&gt;</span></span>
+<span id="LC3" class="line" lang="html"></span>
+<span id="LC4" class="line" lang="html">  <span class="c">&lt;!-- If you want control over the fallback form, just add it here: --&gt;</span></span>
+<span id="LC5" class="line" lang="html">  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"fallback"</span><span class="nt">&gt;</span> <span class="c">&lt;!-- This div will be removed if the fallback is not necessary --&gt;</span></span>
+<span id="LC6" class="line" lang="html">    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">name=</span><span class="s">"youfilename"</span> <span class="nt">/&gt;</span></span>
+<span id="LC7" class="line" lang="html">    etc...</span>
+<span id="LC8" class="line" lang="html">  <span class="nt">&lt;/div&gt;</span></span>
+<span id="LC9" class="line" lang="html"><span class="nt">&lt;/form&gt;</span></span></code></pre>
+                        <h3>
+                            <a id="user-content-i-want-to-display-additional-information-after-a-file-uploaded" class="anchor" href="#i-want-to-display-additional-information-after-a-file-uploaded" aria-hidden="true"></a>I want to display additional information after a file uploaded.
+                        </h3>
+
+                        <p>To use the information sent back from the server, use the <code>success</code> event, like this:</p>
+
+<pre class="code highlight js-syntax-highlight javascript white" lang="javascript" v-pre="true"><code><span id="LC1" class="line" lang="javascript"><span class="nx">Dropzone</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">myDropzone</span> <span class="o">=</span> <span class="p">{</span></span>
+<span id="LC2" class="line" lang="javascript">  <span class="na">init</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span></span>
+<span id="LC3" class="line" lang="javascript">    <span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"success"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">responseText</span><span class="p">)</span> <span class="p">{</span></span>
+<span id="LC4" class="line" lang="javascript">      <span class="c1">// Handle the responseText here. For example, add the text to the preview element:</span></span>
+<span id="LC5" class="line" lang="javascript">      <span class="nx">file</span><span class="p">.</span><span class="nx">previewTemplate</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="nx">responseText</span><span class="p">));</span></span>
+<span id="LC6" class="line" lang="javascript">    <span class="p">});</span></span>
+<span id="LC7" class="line" lang="javascript">  <span class="p">}</span></span>
+<span id="LC8" class="line" lang="javascript"><span class="p">};</span></span></code></pre>
+                        <h3>
+                            <a id="user-content-how-to-show-an-image-created-by-the-server-after-upload" class="anchor" href="#how-to-show-an-image-created-by-the-server-after-upload" aria-hidden="true"></a>How to show an image created by the server after upload
+                        </h3>
+
+                        <p>If your server generates an image (for example, you render a PDF on the server after upload), you can display that image easily once it uploads like this:</p>
+
+                        <p>Let's say your server responds with JSON like this:</p>
+
+<pre class="code highlight js-syntax-highlight json white" lang="json" v-pre="true"><code><span id="LC1" class="line" lang="json"><span class="p">{</span><span class="w"> </span><span class="s2">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://my.image/file.jpg"</span><span class="w"> </span><span class="p">}</span></span></code></pre>
+<pre class="code highlight js-syntax-highlight plaintext white" lang="plaintext" v-pre="true"><code><span id="LC1" class="line" lang="plaintext">Dropzone.options.myDropzone = {</span>
+<span id="LC2" class="line" lang="plaintext">  init: function() {</span>
+<span id="LC3" class="line" lang="plaintext">    this.on("success", function(file, serverResponse) {</span>
+<span id="LC4" class="line" lang="plaintext">      // Called after the file successfully uploaded.</span>
+<span id="LC5" class="line" lang="plaintext"></span>
+<span id="LC6" class="line" lang="plaintext">      // If the image is already a thumbnail:</span>
+<span id="LC7" class="line" lang="plaintext">      this.emit('thumbnail', file, serverResponse.imageUrl);</span>
+<span id="LC8" class="line" lang="plaintext"></span>
+<span id="LC9" class="line" lang="plaintext">      // If it needs resizing:</span>
+<span id="LC10" class="line" lang="plaintext">      this.createThumbnailFromUrl(file, serverResponse.imageUrl);</span>
+<span id="LC11" class="line" lang="plaintext">    });</span>
+<span id="LC12" class="line" lang="plaintext">  }</span>
+<span id="LC13" class="line" lang="plaintext">};</span></code></pre>
+                        <h3>
+                            <a id="user-content-how-to-show-files-already-stored-on-server" class="anchor" href="#how-to-show-files-already-stored-on-server" aria-hidden="true"></a>How to show files already stored on server
+                        </h3>
+
+                        <p>Although there's no builtin functionality to do that, you can use Dropzone's default event handlers to your advantage.</p>
+
+                        <p>The concept is, to create a <em>mock</em> file, and call the event handlers <code>addedfile</code> and <code>thumbnail</code> to draw the preview.</p>
+
+<pre class="code highlight js-syntax-highlight javascript white" lang="javascript" v-pre="true"><code><span id="LC1" class="line" lang="javascript"><span class="c1">// Create the mock file:</span></span>
+<span id="LC2" class="line" lang="javascript"><span class="kd">var</span> <span class="nx">mockFile</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="s2">"Filename"</span><span class="p">,</span> <span class="na">size</span><span class="p">:</span> <span class="mi">12345</span> <span class="p">};</span></span>
+<span id="LC3" class="line" lang="javascript"></span>
+<span id="LC4" class="line" lang="javascript"><span class="c1">// Call the default addedfile event handler</span></span>
+<span id="LC5" class="line" lang="javascript"><span class="nx">myDropzone</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">"addedfile"</span><span class="p">,</span> <span class="nx">mockFile</span><span class="p">);</span></span>
+<span id="LC6" class="line" lang="javascript"></span>
+<span id="LC7" class="line" lang="javascript"><span class="c1">// And optionally show the thumbnail of the file:</span></span>
+<span id="LC8" class="line" lang="javascript"><span class="nx">myDropzone</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">"thumbnail"</span><span class="p">,</span> <span class="nx">mockFile</span><span class="p">,</span> <span class="s2">"/image/url"</span><span class="p">);</span></span>
+<span id="LC9" class="line" lang="javascript"><span class="c1">// Or if the file on your server is not yet in the right</span></span>
+<span id="LC10" class="line" lang="javascript"><span class="c1">// size, you can let Dropzone download and resize it</span></span>
+<span id="LC11" class="line" lang="javascript"><span class="c1">// callback and crossOrigin are optional.</span></span>
+<span id="LC12" class="line" lang="javascript"><span class="nx">myDropzone</span><span class="p">.</span><span class="nx">createThumbnailFromUrl</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">imageUrl</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">crossOrigin</span><span class="p">);</span></span>
+<span id="LC13" class="line" lang="javascript"></span>
+<span id="LC14" class="line" lang="javascript"><span class="c1">// Make sure that there is no progress bar, etc...</span></span>
+<span id="LC15" class="line" lang="javascript"><span class="nx">myDropzone</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">"complete"</span><span class="p">,</span> <span class="nx">mockFile</span><span class="p">);</span></span>
+<span id="LC16" class="line" lang="javascript"></span>
+<span id="LC17" class="line" lang="javascript"><span class="c1">// If you use the maxFiles option, make sure you adjust it to the</span></span>
+<span id="LC18" class="line" lang="javascript"><span class="c1">// correct amount:</span></span>
+<span id="LC19" class="line" lang="javascript"><span class="kd">var</span> <span class="nx">existingFileCount</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// The number of files already uploaded</span></span>
+<span id="LC20" class="line" lang="javascript"><span class="nx">myDropzone</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">maxFiles</span> <span class="o">=</span> <span class="nx">myDropzone</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">maxFiles</span> <span class="o">-</span> <span class="nx">existingFileCount</span><span class="p">;</span></span></code></pre>
+                        <h3>
+                            <a id="user-content-use-own-confirm-implementation" class="anchor" href="#use-own-confirm-implementation" aria-hidden="true"></a>Use own <code>confirm</code> implementation
+                        </h3>
+
+                        <p>If you are unhappy with the way Dropzone asks a user if she wants to cancel or remove a file, and want to use some other way (e.g.: bootstrap's modal), you can simply overwrite the <code>Dropzone.confirm</code> function.</p>
+
+<pre class="code highlight js-syntax-highlight javascript white" lang="javascript" v-pre="true"><code><span id="LC1" class="line" lang="javascript"><span class="c1">// accepted and rejected are functions to be called whenever the user response</span></span>
+<span id="LC2" class="line" lang="javascript"><span class="c1">// has been received.</span></span>
+<span id="LC3" class="line" lang="javascript"><span class="c1">// rejected is not mandatory! So make sure to check if it exists before</span></span>
+<span id="LC4" class="line" lang="javascript"><span class="c1">// calling it. Do nothing if it doesn't.</span></span>
+<span id="LC5" class="line" lang="javascript"><span class="nx">Dropzone</span><span class="p">.</span><span class="nx">confirm</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">question</span><span class="p">,</span> <span class="nx">accepted</span><span class="p">,</span> <span class="nx">rejected</span><span class="p">)</span> <span class="p">{</span></span>
+<span id="LC6" class="line" lang="javascript">  <span class="c1">// Do your thing, ask the user for confirmation or rejection, and call</span></span>
+<span id="LC7" class="line" lang="javascript">  <span class="c1">// accepted() if the user accepts, or rejected() otherwise. Make</span></span>
+<span id="LC8" class="line" lang="javascript">  <span class="c1">// sure that rejected is actually defined!</span></span>
+<span id="LC9" class="line" lang="javascript"><span class="p">};</span></span></code></pre>
+                        <h3>
+                            <a id="user-content-how-can-i-limit-the-number-of-files" class="anchor" href="#how-can-i-limit-the-number-of-files" aria-hidden="true"></a>How can I limit the number of files
+                        </h3>
+
+                        <p>You're in luck! Starting with <code>3.7.0</code> Dropzone supports the <code>maxFiles</code> option. Simply set it to the desired quantity and you're good to go. If you don't want the rejected files to be viewed, simply register for the <code>maxfilesexceeded</code> event, and remove the file immediately:</p>
+
+<pre class="code highlight js-syntax-highlight javascript white" lang="javascript" v-pre="true"><code><span id="LC1" class="line" lang="javascript"><span class="nx">myDropzone</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"maxfilesexceeded"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">removeFile</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span> <span class="p">});</span></span></code></pre>
+                        <h3>
+                            <a id="user-content-provide-a-thumbnail-for-files" class="anchor" href="#provide-a-thumbnail-for-files" aria-hidden="true"></a>Provide a thumbnail for files
+                        </h3>
+
+                        <p>If you want to provide a thumbnail for files other than images, you can, by emitting the <code>thumbnail</code> event yourself.</p>
+
+<pre class="code highlight js-syntax-highlight javascript white" lang="javascript" v-pre="true"><code><span id="LC1" class="line" lang="javascript"><span class="nx">myDropzone</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"addedfile"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="p">{</span></span>
+<span id="LC2" class="line" lang="javascript">  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">file</span><span class="p">.</span><span class="nx">type</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/image.*/</span><span class="p">))</span> <span class="p">{</span></span>
+<span id="LC3" class="line" lang="javascript">    <span class="c1">// This is not an image, so Dropzone doesn't create a thumbnail.</span></span>
+<span id="LC4" class="line" lang="javascript">    <span class="c1">// Set a default thumbnail:</span></span>
+<span id="LC5" class="line" lang="javascript">    <span class="nx">myDropzone</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">"thumbnail"</span><span class="p">,</span> <span class="nx">file</span><span class="p">,</span> <span class="s2">"http://path/to/image"</span><span class="p">);</span></span>
+<span id="LC6" class="line" lang="javascript"></span>
+<span id="LC7" class="line" lang="javascript">    <span class="c1">// You could of course generate another image yourself here,</span></span>
+<span id="LC8" class="line" lang="javascript">    <span class="c1">// and set it as a data url.</span></span>
+<span id="LC9" class="line" lang="javascript">  <span class="p">}</span></span>
+<span id="LC10" class="line" lang="javascript"><span class="p">});</span></span></code></pre>
+                        <h3>
+                            <a id="user-content-reject-images-based-on-image-dimensions" class="anchor" href="#reject-images-based-on-image-dimensions" aria-hidden="true"></a>Reject images based on image dimensions
+                        </h3>
+
+                        <p>
+                            This is a bit tricky. The "problem" is, that the image dimensions are only known after the <code>thumbnail</code> event fired, which could potentially happen after the file already uploaded since thumbnail creation is queued.<br>
+                            That's why the <code>accept</code> function (which determines if the file should be rejected) is called before the dimensions are actually known.
+                            Fortunately the accept function is asynchronous, and can "wait" for the thumbnail event. This is why you need to put the accept callback in the <code>file</code> object so you can reference it after the thumbnail has been generated:
+                        </p>
+
+<pre class="code highlight js-syntax-highlight javascript white" lang="javascript" v-pre="true"><code><span id="LC1" class="line" lang="javascript"><span class="kd">var</span> <span class="nx">maxImageWidth</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span></span>
+<span id="LC2" class="line" lang="javascript">    <span class="nx">maxImageHeight</span> <span class="o">=</span> <span class="mi">800</span><span class="p">;</span></span>
+<span id="LC3" class="line" lang="javascript"></span>
+<span id="LC4" class="line" lang="javascript"><span class="nx">Dropzone</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">myDropzone</span> <span class="o">=</span> <span class="p">{</span></span>
+<span id="LC5" class="line" lang="javascript"></span>
+<span id="LC6" class="line" lang="javascript">  <span class="c1">// Make sure only images are accepted</span></span>
+<span id="LC7" class="line" lang="javascript">  <span class="na">acceptedFiles</span><span class="p">:</span> <span class="s2">"image/*"</span><span class="p">,</span></span>
+<span id="LC8" class="line" lang="javascript"></span>
+<span id="LC9" class="line" lang="javascript">  <span class="na">init</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span></span>
+<span id="LC10" class="line" lang="javascript">    <span class="c1">// Register for the thumbnail callback.</span></span>
+<span id="LC11" class="line" lang="javascript">    <span class="c1">// When the thumbnail is created the image dimensions are set.</span></span>
+<span id="LC12" class="line" lang="javascript">    <span class="k">this</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"thumbnail"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="p">{</span></span>
+<span id="LC13" class="line" lang="javascript">      <span class="c1">// Do the dimension checks you want to do</span></span>
+<span id="LC14" class="line" lang="javascript">      <span class="k">if</span> <span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">width</span> <span class="o">&gt;</span> <span class="nx">maxImageWidth</span> <span class="o">||</span> <span class="nx">file</span><span class="p">.</span><span class="nx">height</span> <span class="o">&gt;</span> <span class="nx">maxImageHeight</span><span class="p">)</span> <span class="p">{</span></span>
+<span id="LC15" class="line" lang="javascript">        <span class="nx">file</span><span class="p">.</span><span class="nx">rejectDimensions</span><span class="p">()</span></span>
+<span id="LC16" class="line" lang="javascript">      <span class="p">}</span></span>
+<span id="LC17" class="line" lang="javascript">      <span class="k">else</span> <span class="p">{</span></span>
+<span id="LC18" class="line" lang="javascript">        <span class="nx">file</span><span class="p">.</span><span class="nx">acceptDimensions</span><span class="p">();</span></span>
+<span id="LC19" class="line" lang="javascript">      <span class="p">}</span></span>
+<span id="LC20" class="line" lang="javascript">    <span class="p">});</span></span>
+<span id="LC21" class="line" lang="javascript">  <span class="p">},</span></span>
+<span id="LC22" class="line" lang="javascript"></span>
+<span id="LC23" class="line" lang="javascript">  <span class="c1">// Instead of directly accepting / rejecting the file, setup two</span></span>
+<span id="LC24" class="line" lang="javascript">  <span class="c1">// functions on the file that can be called later to accept / reject</span></span>
+<span id="LC25" class="line" lang="javascript">  <span class="c1">// the file.</span></span>
+<span id="LC26" class="line" lang="javascript">  <span class="na">accept</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">done</span><span class="p">)</span> <span class="p">{</span></span>
+<span id="LC27" class="line" lang="javascript">    <span class="nx">file</span><span class="p">.</span><span class="nx">acceptDimensions</span> <span class="o">=</span> <span class="nx">done</span><span class="p">;</span></span>
+<span id="LC28" class="line" lang="javascript">    <span class="nx">file</span><span class="p">.</span><span class="nx">rejectDimensions</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">done</span><span class="p">(</span><span class="s2">"Invalid dimension."</span><span class="p">);</span> <span class="p">};</span></span>
+<span id="LC29" class="line" lang="javascript">    <span class="c1">// Of course you could also just put the `done` function in the file</span></span>
+<span id="LC30" class="line" lang="javascript">    <span class="c1">// and call it either with or without error in the `thumbnail` event</span></span>
+<span id="LC31" class="line" lang="javascript">    <span class="c1">// callback, but I think that this is cleaner.</span></span>
+<span id="LC32" class="line" lang="javascript">  <span class="p">}</span></span>
+<span id="LC33" class="line" lang="javascript"><span class="p">};</span></span></code></pre>
+                        <h3>
+                            <a id="user-content-chunked-uploads" class="anchor" href="#chunked-uploads" aria-hidden="true"></a>Chunked uploads
+                        </h3>
+
+                        <p>Dropzone offers the possibility to upload files in chunks. The relevant configuration options for this feature are:</p>
+
+                        <ul>
+                            <li>
+                                <code>chunking</code> which should be set to <code>true</code>
+                            </li>
+                            <li>
+                                <code>forceChunking</code>, if true, will always send a file in chunks, even if it is only <strong>one</strong> chunk
+                            </li>
+                            <li>
+                                <code>chunkSize</code> in bytes
+                            </li>
+                            <li>
+                                <code>parallelChunkUploads</code>, if true, the chunks will be uploaded simultaneously
+                            </li>
+                            <li>
+                                <code>retryChunks</code>, if true, the library will retry to upload a chunk if it fails
+                            </li>
+                            <li>
+                                <code>retryChunksLimit</code> defaults to <code>3</code>
+                            </li>
+                        </ul>
+
+                        <p>Then there are two important callbacks. The first one is: <code>params</code> which can be a function, that receives <code>files</code>, <code>xhr</code> and <code>chunk</code> as the first argument. If chunking is enabled, you know that <code>files</code> only contains that one file, and <code>chunk</code> is the object holding all the information about the current chunk. Example:</p>
+
+<pre class="code highlight js-syntax-highlight javascript white" lang="javascript" v-pre="true"><code><span id="LC1" class="line" lang="javascript"><span class="kd">var</span> <span class="nx">chunk</span> <span class="o">=</span> <span class="p">{</span></span>
+<span id="LC2" class="line" lang="javascript">  <span class="na">file</span><span class="p">:</span> <span class="nx">file</span><span class="p">,</span></span>
+<span id="LC3" class="line" lang="javascript">  <span class="na">index</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span></span>
+<span id="LC4" class="line" lang="javascript">  <span class="na">status</span><span class="p">:</span> <span class="nx">Dropzone</span><span class="p">.</span><span class="nx">UPLOADING</span><span class="p">,</span></span>
+<span id="LC5" class="line" lang="javascript">  <span class="na">progress</span><span class="p">:</span> <span class="mf">0.4</span></span>
+<span id="LC6" class="line" lang="javascript"><span class="p">}</span></span></code></pre>
+                        <p>See the documentation for that parameter for more information or look at the source code for the default implementation.</p>
+
+                        <p>The second important callback is <code>chunksUploaded</code>, which gets the <code>file</code> that finished uploading and the <code>done</code> function as second argument. Do whatever you need to do in that function, to tell the server that the file finished uploading and invoke the <code>done()</code> function when ready.</p>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->
+<!-- Script only used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
+
+<script type="text/javascript">
+    // Starting dropzone
+    $(document).ready(function () {
+
+        Dropzone.autoDiscover = false;
+        $("#dropzoneForm").dropzone({
+            autoProcessQueue: false,
+            parallelUploads: 100,
+            maxFiles: 100,
+            paramName: "files",
+            addRemoveLinks: true,
+            maxFilesize: 0.5,
+
+            dictDefaultMessage: '<span class="text-center"><span class="font-size-35"><i class="fa fa-caret-right text-red"></i> Drop files&nbsp;&nbsp;<span class="font-size-20">to upload</span></span><span>&nbsp;&nbsp;</span><h4 class="display-inline"> (Or Click)</h4></span>',
+            dictResponseError: 'Error uploading file!',
+            init: function () {
+                var myDropzone = this;
+                this.on("sendingmultiple", function () {
+                });
+                this.on("successmultiple", function (files, response) {
+                });
+                this.on("errormultiple", function (files, response) {
+                });
+            }
+        });
+    })
+
+</script>

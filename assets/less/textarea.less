@@ -1,0 +1,40 @@
+﻿//
+// Textarea
+// --------------------------------------------------
+// Import variables and mixins as a reference.
+@import (reference) "../bootstrap-less/mixins";
+@import (reference) "../bootstrap-less/variables";
+@import (reference) "mixins.less";
+@import (reference) "variables.less";
+
+
+textarea.textarea-autoresize, textarea.textarea-no-resize {
+    resize: none;
+}
+
+.textarea-autosize {
+    transition: height .3s;
+    -webkit-transition: height .3s;
+    -moz-transition: height .3s;
+}
+
+textarea.form-control {
+    line-height: 1.6em;
+    padding: 8px 12px;
+}
+
+textarea.textarea-xs {
+    height: 50px;
+}
+
+textarea.textarea-sm {
+    height: 125px;
+}
+
+textarea.textarea-md {
+    height: 200px;
+}
+
+textarea.textarea-lg {
+    height: 275px;
+}

@@ -1,0 +1,591 @@
+﻿<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-warning" id="box1">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Date Range Picker</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body" style="height: 372px;">
+                    <!-- Date -->
+                    <div class="form-group">
+                        <label>Date:</label>
+                        <div class="input-group date">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="simpledatepicker">
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+                    <!-- /.form group -->
+                    <!-- Date range -->
+                    <div class="form-group">
+                        <label>Date range:</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="reservation">
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+                    <!-- /.form group -->
+                    <!-- Date and time range -->
+                    <div class="form-group">
+                        <label>Date and time range:</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-clock-o"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="reservationtime">
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+                    <!-- /.form group -->
+                    <!-- Date and time range -->
+                    <div class="form-group">
+                        <label>Date range button:</label>
+                        <div class="input-group">
+                            <button type="button" class="btn btn-default pull-right" id="daterange-btn">
+                                <span>
+                                    <i class="fa fa-calendar"></i> Date range picker
+                                </span>
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.form group -->
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-info" id="box2">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Picker options</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body" style="height: 372px; overflow: auto;">
+                    <ul>
+                        <li>
+                            <code>startDate</code> (Date object, moment object or string) The start of the initially selected date range
+                        </li>
+                        <li>
+                            <code>endDate</code>: (Date object, moment object or string) The end of the initially selected date range
+                        </li>
+                        <li>
+                            <code>minDate</code>: (Date object, moment object or string) The earliest date a user may select
+                        </li>
+                        <li>
+                            <code>maxDate</code>: (Date object, moment object or string) The latest date a user may select
+                        </li>
+                        <li>
+                            <code>dateLimit</code>: (object) The maximum span between the selected start and end dates. Can have any property you can add to a moment object (i.e. days, months)
+                        </li>
+                        <li>
+                            <code>showDropdowns</code>: (boolean) Show year and month select boxes above calendars to jump to a specific month and year
+                        </li>
+                        <li>
+                            <code>showWeekNumbers</code>: (boolean) Show localized week numbers at the start of each week on the calendars
+                        </li>
+                        <li>
+                            <code>showISOWeekNumbers</code>: (boolean) Show ISO week numbers at the start of each week on the calendars
+                        </li>
+                        <li>
+                            <code>timePicker</code>: (boolean) Allow selection of dates with times, not just dates
+                        </li>
+                        <li>
+                            <code>timePickerIncrement</code>: (number) Increment of the minutes selection list for times (i.e. 30 to allow only selection of times ending in 0 or 30)
+                        </li>
+                        <li>
+                            <code>timePicker24Hour</code>: (boolean) Use 24-hour instead of 12-hour times, removing the AM/PM selection
+                        </li>
+                        <li>
+                            <code>timePickerSeconds</code>: (boolean) Show seconds in the timePicker
+                        </li>
+                        <li>
+                            <code>ranges</code>: (object) Set predefined date ranges the user can select from. Each key is the label for the range, and its value an array with two dates representing the bounds of the range
+                        </li>
+                        <li>
+                            <code>showCustomRangeLabel</code>: (boolean) Displays an item labeled "Custom Range" at
+                            the end of the list of predefined ranges, when the <code>ranges</code> option is used.
+                            This option will be highlighted whenever the current date range selection does not match
+                            one of the predefined ranges. Clicking it will display the calendars to select a new range.
+                        </li>
+                        <li>
+                            <code>alwaysShowCalendars</code>: (boolean) Normally, if you use the <code>ranges</code>
+                            option to specify pre-defined date ranges, calendars for choosing a custom date range are not shown until the user clicks "Custom Range". When this option is set to true, the calendars for choosing a custom date range are always shown instead.
+                        </li>
+                        <li>
+                            <code>opens: (string)</code>: 'left'/'right'/'center') Whether the picker appears aligned to the left, to the right, or centered under the HTML element it's attached to
+                        </li>
+                        <li>
+                            <code>drops: (string)</code>: 'down' or 'up') Whether the picker appears below (default) or above the HTML element it's attached to
+                        </li>
+                        <li>
+                            <code>buttonClasses</code>: (array) CSS class names that will be added to all buttons in the picker
+                        </li>
+                        <li>
+                            <code>applyClass</code>: (string) CSS class string that will be added to the apply button
+                        </li>
+                        <li>
+                            <code>cancelClass</code>: (string) CSS class string that will be added to the cancel button
+                        </li>
+                        <li>
+                            <code>locale</code>: (object) Allows you to provide localized strings for buttons and labels, customize the date format, and change the first day of week for the calendars.
+                            Check off "locale (with example settings)" in the configuration generator to see how
+                            to customize these options.
+                        </li>
+                        <li>
+                            <code>singleDatePicker</code>: (boolean) Show only a single calendar to choose one date, instead of a range picker with two calendars; the start and end dates provided to your callback will be the same single date chosen
+                        </li>
+                        <li>
+                            <code>autoApply</code>: (boolean) Hide the apply and cancel buttons, and automatically apply a new date range as soon as two dates or a predefined range is selected
+                        </li>
+                        <li>
+                            <code>linkedCalendars</code>: (boolean) When enabled, the two calendars displayed will always be for two sequential months (i.e. January and February), and both will be advanced when clicking the left or right arrows above the calendars. When disabled, the two calendars can be individually advanced and display any month/year.
+                        </li>
+                        <li>
+                            <code>isInvalidDate</code>: (function) A function that is passed each date in the two
+                            calendars before they are displayed, and may return true or false to indicate whether
+                            that date should be available for selection or not.
+                        </li>
+                        <li>
+                            <code>isCustomDate</code>: (function) A function that is passed each date in the two
+                            calendars before they are displayed, and may return a string or array of CSS class names
+                            to apply to that date's calendar cell.
+                        </li>
+                        <li>
+                            <code>autoUpdateInput</code>: (boolean) Indicates whether the date range picker should
+                            automatically update the value of an <code>&lt;input&gt;</code> element it's attached to
+                            at initialization and when the selected dates change.
+                        </li>
+                        <li>
+                            <code>parentEl</code>: (string) jQuery selector of the parent element that the date range picker will be added to, if not provided this will be 'body'
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-warning" id="box3">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Bootstrap Date Picker</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body" style="height: 400px;">
+                    <div class="form-group" id="data_1">
+                        <label>Date week number</label>
+                        <div class="input-group date">
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="03/04/2017">
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="data_2">
+                        <label>One Year view</label>
+                        <div class="input-group date">
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="08/25/2017">
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="data_3">
+                        <label>Decade view</label>
+                        <div class="input-group date">
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="10/11/2017">
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="data_4">
+                        <label>Month select</label>
+                        <div class="input-group date">
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="07/01/2017">
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="data_5">
+                        <label>Range select</label>
+                        <div class="input-daterange input-group" id="datepicker">
+                            <input type="text" class="input-sm form-control" name="start" value="05/14/2017" />
+                            <span class="input-group-addon">to</span>
+                            <input type="text" class="input-sm form-control" name="end" value="05/22/2017" />
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-info" id="box4">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Quick reference</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body" style="height: 400px; overflow: auto;">
+                    <a href="https://uxsolutions.github.io/bootstrap-datepicker/?#sandbox" target="_blank">Try the demo Sandbox for custom samples</a>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="width: 200px;">Option</th>
+                                <th>Default value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>autoclose</td>
+                                <td>false</td>
+                            </tr>
+                            <tr>
+                                <td>assumeNearbyYear</td>
+                                <td>false</td>
+                            </tr>
+                            <tr>
+                                <td>beforeShowDay</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>beforeShowMonth</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>beforeShowYear</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>beforeShowDecade</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>beforeShowCentury</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>calendarWeeks</td>
+                                <td>false</td>
+                            </tr>
+                            <tr>
+                                <td>clearBtn</td>
+                                <td>false</td>
+                            </tr>
+                            <tr>
+                                <td>container</td>
+                                <td>‘body’</td>
+                            </tr>
+                            <tr>
+                                <td>datesDisabled</td>
+                                <td>[]</td>
+                            </tr>
+                            <tr>
+                                <td>daysOfWeekDisabled</td>
+                                <td>[]</td>
+                            </tr>
+                            <tr>
+                                <td>daysOfWeekHighlighted</td>
+                                <td>[]</td>
+                            </tr>
+                            <tr>
+                                <td>defaultViewDate</td>
+                                <td>today</td>
+                            </tr>
+                            <tr>
+                                <td>disableTouchKeyboard</td>
+                                <td>false</td>
+                            </tr>
+                            <tr>
+                                <td>enableOnReadonly</td>
+                                <td>true</td>
+                            </tr>
+                            <tr>
+                                <td>endDate</td>
+                                <td>Infinity</td>
+                            </tr>
+                            <tr>
+                                <td>forceParse</td>
+                                <td>true</td>
+                            </tr>
+                            <tr>
+                                <td>format</td>
+                                <td>‘mm/dd/yyyy’</td>
+                            </tr>
+                            <tr>
+                                <td>immediateUpdates</td>
+                                <td>false</td>
+                            </tr>
+                            <tr>
+                                <td>inputs</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>keepEmptyValues</td>
+                                <td>false</td>
+                            </tr>
+                            <tr>
+                                <td>keyboardNavigation</td>
+                                <td>true</td>
+                            </tr>
+                            <tr>
+                                <td>language</td>
+                                <td>‘en’</td>
+                            </tr>
+                            <tr>
+                                <td>maxViewMode</td>
+                                <td>4 ‘centuries’</td>
+                            </tr>
+                            <tr>
+                                <td>minViewMode</td>
+                                <td>0 ‘days’</td>
+                            </tr>
+                            <tr>
+                                <td>multidate</td>
+                                <td>false</td>
+                            </tr>
+                            <tr>
+                                <td>multidateSeparator</td>
+                                <td>‘,’</td>
+                            </tr>
+                            <tr>
+                                <td>orientation</td>
+                                <td>‘auto’</td>
+                            </tr>
+                            <tr>
+                                <td>showOnFocus</td>
+                                <td>true</td>
+                            </tr>
+                            <tr>
+                                <td>startDate</td>
+                                <td>-Infinity</td>
+                            </tr>
+                            <tr>
+                                <td>startView</td>
+                                <td>0 ‘days’ (current month)</td>
+                            </tr>
+                            <tr>
+                                <td>templates</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>title</td>
+                                <td>‘’</td>
+                            </tr>
+                            <tr>
+                                <td>todayBtn</td>
+                                <td>false</td>
+                            </tr>
+                            <tr>
+                                <td>todayHighlight</td>
+                                <td>true</td>
+                            </tr>
+                            <tr>
+                                <td>toggleActive</td>
+                                <td>false</td>
+                            </tr>
+                            <tr>
+                                <td>weekStart</td>
+                                <td>0 (Sunday)</td>
+                            </tr>
+                            <tr>
+                                <td>zIndexOffset</td>
+                                <td>10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-warning" id="box5">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Bootstrap TimePicker</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body" style="height: 400px;">
+                    <h5>Default timepicker.</h5>
+                    <div class="input-group bootstrap-timepicker timepicker">
+                        <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                        <input id="timepicker1" type="text" class="form-control input-small">
+                    </div>
+                    <h5>Timepicker with seconds.</h5>
+                    <div class="input-group bootstrap-timepicker timepicker">
+                        <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                        <input id="timepicker2" type="text" class="form-control input-small">
+                    </div>
+                    <h5>24h Time picker.</h5>
+                    <div class="input-group bootstrap-timepicker timepicker">
+                        <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                        <input id="timepicker3" type="text" class="form-control input-small">
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-info" id="box6">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Configuration</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body" style="height: 400px; overflow: auto;">
+                    <div class="callout callout-danger">
+                        <p>
+                            The modal option is currently not working but a complete rewrite of this plugin will be released in the next verion of the template.
+                        </p>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">Name</th>
+                                <th style="width: 25%;">Options / Defaults</th>
+                                <th style="width: 50%;">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>template</td>
+                                <td>
+                                    'dropdown' (default)<hr>
+                                    'modal' <hr>
+                                    false
+                                </td>
+                                <td>
+                                    Show picker in a dropdown <hr>
+                                    Show picker in a modal <hr>
+                                    Don't show a widget
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>maxHours</td>
+                                <td>24</td>
+                                <td>Specify a maximum number of hours the TimePicker can handle. showMeridian must be set to false</td>
+                            </tr>
+                            <tr>
+                                <td>snapToStep</td>
+                                <td>false</td>
+                                <td>If true, setting the time will snap it to the closest "step", either minute or second, depending on which unit is currently highlighted. If the number would otherwise snap to 60 higher, the unit "overflows" to 0.</td>
+                            </tr>
+                            <tr>
+                                <td>minuteStep</td>
+                                <td>15</td>
+                                <td>Specify a step for the minute field.</td>
+                            </tr>
+                            <tr>
+                                <td>showSeconds</td>
+                                <td>false</td>
+                                <td>Show the seconds field.</td>
+                            </tr>
+                            <tr>
+                                <td>secondStep</td>
+                                <td>15</td>
+                                <td>Specify a step for the second field.</td>
+                            </tr>
+                            <tr>
+                                <td>defaultTime</td>
+                                <td>
+                                    'current' (default) <hr>
+                                    '11:45 AM' <hr>
+                                    false
+                                </td>
+                                <td>
+                                    Set to the current time. <hr>
+                                    Set to a specific time. <hr>
+                                    Do not set a default time
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>showMeridian</td>
+                                <td>
+                                    true (default) <hr>
+                                    false
+                                </td>
+                                <td>
+                                    12hr mode<hr>
+                                    24hr mode
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>showInputs</td>
+                                <td>
+                                    true (default) <hr>
+                                    false
+                                </td>
+                                <td>
+                                    Shows the text inputs in the widget. <hr>
+                                    Hide the text inputs in the widget
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>disableFocus</td>
+                                <td>false</td>
+                                <td>Disables the input from focusing. This is useful for touch screen devices that display a keyboard on input focus.</td>
+                            </tr>
+                            <tr>
+                                <td>disableMousewheel</td>
+                                <td>false</td>
+                                <td>Disables the input from changing on mousewheel events</td>
+                            </tr>
+                            <tr>
+                                <td>modalBackdrop</td>
+                                <td>false</td>
+                                <td>Show modal backdrop.</td>
+                            </tr>
+                            <tr>
+                                <td>appendWidgetTo</td>
+                                <td>body</td>
+                                <td>Allow for custom placing of the widget</td>
+                            </tr>
+                            <tr>
+                                <td>explicitMode</td>
+                                <td>false</td>
+                                <td>When true, user can type "123" to set time to "1:23" or "12345" to set time to "1:23:45".</td>
+                            </tr>
+                            <tr>
+                                <td>icons</td>
+                                <td></td>
+                                <td>
+                                    An object with keys 'up' and 'down' representing CSS class names to be used for the widget's icon classes.
+                                    <pre class="prettyprint">
+<code>
+{
+    up: 'glyphicon glyphicon-chevron-up',
+    down: 'glyphicon glyphicon-chevron-down'
+}
+</code>
+</pre>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->

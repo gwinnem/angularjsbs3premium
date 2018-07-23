@@ -1,0 +1,1392 @@
+﻿<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-info" id="box1">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Demo's</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body">
+                    <!-- ------------------------------------------------------------ -->
+                    <div class="title">
+                        <h2>Simple start and customising basic params</h2>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_01").ionRangeSlider();
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Start without params</div>
+
+                            <input id="range_01" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_01").ionRangeSlider();
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_02").ionRangeSlider({
+    min: 100,
+    max: 1000,
+    from: 550
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Set min value, max value and start point</div>
+
+                            <input id="range_02" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_02").ionRangeSlider({
+                                        min: 100,
+                                        max: 1000,
+                                        from: 550
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_03").ionRangeSlider({
+    type: "double",
+    grid: true,
+    min: 0,
+    max: 1000,
+    from: 200,
+    to: 800,
+    prefix: "$"
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Set type to double and specify range, also showing grid and adding prefix "$"</div>
+
+                            <input id="range_03" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_03").ionRangeSlider({
+                                        type: "double",
+                                        grid: true,
+                                        min: 0,
+                                        max: 1000,
+                                        from: 200,
+                                        to: 800,
+                                        prefix: "$"
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+
+
+                    <!-- ------------------------------------------------------------ -->
+                    <div class="title type_group">
+                        <h2>Set up range and step</h2>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_04").ionRangeSlider({
+    type: "double",
+    grid: true,
+    min: -1000,
+    max: 1000,
+    from: -500,
+    to: 500
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Set up range with negative values</div>
+
+                            <input id="range_04" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_04").ionRangeSlider({
+                                        type: "double",
+                                        grid: true,
+                                        min: -1000,
+                                        max: 1000,
+                                        from: -500,
+                                        to: 500
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_05").ionRangeSlider({
+    type: "double",
+    grid: true,
+    min: -1000,
+    max: 1000,
+    from: -500,
+    to: 500,
+    step: 250
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Using step 250</div>
+
+                            <input id="range_05" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_05").ionRangeSlider({
+                                        type: "double",
+                                        grid: true,
+                                        min: -1000,
+                                        max: 1000,
+                                        from: -500,
+                                        to: 500,
+                                        step: 250
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_05").ionRangeSlider({
+    type: "double",
+    grid: true,
+    min: -12.8,
+    max: 12.8,
+    from: -3.2,
+    to: 3.2,
+    step: 0.1
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Set up range with fractional values, using fractional step</div>
+
+                            <input id="range_06" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_06").ionRangeSlider({
+                                        type: "double",
+                                        grid: true,
+                                        min: -12.8,
+                                        max: 12.8,
+                                        from: -3.2,
+                                        to: 3.2,
+                                        step: 0.1
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+
+
+                    <!-- ------------------------------------------------------------ -->
+                    <div class="title type_group">
+                        <h2>Using custom values array</h2>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_07").ionRangeSlider({
+    type: "double",
+    grid: true,
+    from: 1,
+    to: 5,
+    values: [0, 10, 100, 1000, 10000, 100000, 1000000]
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Set up you own numbers</div>
+
+                            <input id="range_07" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_07").ionRangeSlider({
+                                        type: "double",
+                                        grid: true,
+                                        from: 1,
+                                        to: 5,
+                                        values: [0, 10, 100, 1000, 10000, 100000, 1000000]
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_08").ionRangeSlider({
+    grid: true,
+    from: 5,
+    values: [
+        "zero", "one",
+        "two", "three",
+        "four", "five",
+        "six", "seven",
+        "eight", "nine",
+        "ten"
+    ]
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Using any strings as your values</div>
+
+                            <input id="range_08" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_08").ionRangeSlider({
+                                        grid: true,
+                                        from: 5,
+                                        values: ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_09").ionRangeSlider({
+    grid: true,
+    from: 3,
+    values: [
+        "January", "February", "March",
+        "April", "May", "June",
+        "July", "August", "September",
+        "October", "November", "December"
+    ]
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">One more example with strings</div>
+
+                            <input id="range_09" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_09").ionRangeSlider({
+                                        grid: true,
+                                        from: 3,
+                                        values: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+
+
+                    <!-- ------------------------------------------------------------ -->
+                    <div class="title type_group">
+                        <h2>Prettify visual look of numbers</h2>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_10").ionRangeSlider({
+    grid: true,
+    min: 1000,
+    max: 1000000,
+    from: 100000,
+    step: 1000,
+    prettify_enabled: false
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">No prettify. Big numbers are ugly and unreadable</div>
+
+                            <input id="range_10" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_10").ionRangeSlider({
+                                        grid: true,
+                                        min: 1000,
+                                        max: 1000000,
+                                        from: 100000,
+                                        step: 1000,
+                                        prettify_enabled: false
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_11").ionRangeSlider({
+    grid: true,
+    min: 1000,
+    max: 1000000,
+    from: 200000,
+    step: 1000,
+    prettify_enabled: true
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Prettify enabled. Much better!</div>
+
+                            <input id="range_11" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_11").ionRangeSlider({
+                                        grid: true,
+                                        min: 1000,
+                                        max: 1000000,
+                                        from: 200000,
+                                        step: 1000,
+                                        prettify_enabled: true
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_12").ionRangeSlider({
+    grid: true,
+    min: 1000,
+    max: 1000000,
+    from: 300000,
+    step: 1000,
+    prettify_enabled: true,
+    prettify_separator: "."
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Don't like space as separator? Use anything you like!</div>
+
+                            <input id="range_12" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_12").ionRangeSlider({
+                                        grid: true,
+                                        min: 1000,
+                                        max: 1000000,
+                                        from: 300000,
+                                        step: 1000,
+                                        prettify_enabled: true,
+                                        prettify_separator: "."
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_13").ionRangeSlider({
+    grid: true,
+    min: 1000,
+    max: 1000000,
+    from: 400000,
+    step: 1000,
+    prettify_enabled: true,
+    prettify: function (num) {
+        return (Math.random() * num).toFixed(0);
+    }
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">You don't like default prettify function? Use your own!</div>
+
+                            <input id="range_13" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_13").ionRangeSlider({
+                                        grid: true,
+                                        min: 1000,
+                                        max: 1000000,
+                                        from: 400000,
+                                        step: 1000,
+                                        prettify_enabled: true,
+                                        prettify: function (num) {
+                                            return (Math.random() * num).toFixed(0);
+                                        }
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+
+
+                    <!-- ------------------------------------------------------------ -->
+                    <div class="title type_group">
+                        <h2>Decorating numbers</h2>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_14").ionRangeSlider({
+    type: "double",
+    grid: true,
+    min: 0,
+    max: 10000,
+    from: 1000,
+    step: 9000,
+    prefix: "$"
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Using prefixes</div>
+
+                            <input id="range_14" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_14").ionRangeSlider({
+                                        type: "double",
+                                        grid: true,
+                                        min: 0,
+                                        max: 10000,
+                                        from: 1000,
+                                        to: 9000,
+                                        prefix: "$"
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_15").ionRangeSlider({
+    type: "single",
+    grid: true,
+    min: -90,
+    max: 90,
+    from: 0,
+    postfix: "°"
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Using postfixes</div>
+
+                            <input id="range_15" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_15").ionRangeSlider({
+                                        type: "single",
+                                        grid: true,
+                                        min: -90,
+                                        max: 90,
+                                        from: 0,
+                                        postfix: "°"
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_16").ionRangeSlider({
+    grid: true,
+    min: 18,
+    max: 70,
+    from: 30,
+    prefix: "Age ",
+    max_postfix: "+"
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Whant to show that max number is not the biggest one?</div>
+
+                            <input id="range_16" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_16").ionRangeSlider({
+                                        grid: true,
+                                        min: 18,
+                                        max: 70,
+                                        from: 30,
+                                        prefix: "Age ",
+                                        max_postfix: "+"
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_17").ionRangeSlider({
+    type: "double",
+    min: 100,
+    max: 200,
+    from: 145,
+    to: 155,
+    prefix: "Weight: ",
+    postfix: " million pounds",
+    decorate_both: true
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Taking care about how from and to values connect? Use <b>decorate_both</b> option:</div>
+
+                            <input id="range_17" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_17").ionRangeSlider({
+                                        type: "double",
+                                        min: 100,
+                                        max: 200,
+                                        from: 145,
+                                        to: 155,
+                                        prefix: "Weight: ",
+                                        postfix: " million pounds",
+                                        decorate_both: true
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_18").ionRangeSlider({
+    type: "double",
+    min: 100,
+    max: 200,
+    from: 145,
+    to: 155,
+    prefix: "Weight: ",
+    postfix: " million pounds",
+    decorate_both: false
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Remove double decoration</div>
+
+                            <input id="range_18" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_18").ionRangeSlider({
+                                        type: "double",
+                                        min: 100,
+                                        max: 200,
+                                        from: 145,
+                                        to: 155,
+                                        prefix: "Weight: ",
+                                        postfix: " million pounds",
+                                        decorate_both: false
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_19").ionRangeSlider({
+    type: "double",
+    min: 100,
+    max: 200,
+    from: 148,
+    to: 152,
+    prefix: "Weight: ",
+    postfix: " million pounds",
+    values_separator: " &rarr; "
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Use your own separator symbol with <b>values_separator</b> option. Like &rarr;</div>
+
+                            <input id="range_19" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_19").ionRangeSlider({
+                                        type: "double",
+                                        min: 100,
+                                        max: 200,
+                                        from: 148,
+                                        to: 152,
+                                        prefix: "Weight: ",
+                                        postfix: " million pounds",
+                                        values_separator: " &rarr; "
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_20").ionRangeSlider({
+    type: "double",
+    min: 100,
+    max: 200,
+    from: 148,
+    to: 152,
+    prefix: "Range: ",
+    postfix: " light years",
+    decorate_both: false,
+    values_separator: " to "
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Or " to ":</div>
+
+                            <input id="range_20" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_20").ionRangeSlider({
+                                        type: "double",
+                                        min: 100,
+                                        max: 200,
+                                        from: 148,
+                                        to: 152,
+                                        prefix: "Range: ",
+                                        postfix: " light years",
+                                        decorate_both: false,
+                                        values_separator: " to "
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+
+
+                    <!-- ------------------------------------------------------------ -->
+                    <div class="title type_group">
+                        <h2>Visual details</h2>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_21").ionRangeSlider({
+    type: "double",
+    min: 1000,
+    max: 2000,
+    from: 1200,
+    to: 1800,
+    hide_min_max: true,
+    hide_from_to: true,
+    grid: false
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">You can disable all the sliders visual details, if you wish. Like this:</div>
+
+                            <input id="range_21" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_21").ionRangeSlider({
+                                        type: "double",
+                                        min: 1000,
+                                        max: 2000,
+                                        from: 1200,
+                                        to: 1800,
+                                        hide_min_max: true,
+                                        hide_from_to: true,
+                                        grid: false
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_22").ionRangeSlider({
+    type: "double",
+    min: 1000,
+    max: 2000,
+    from: 1200,
+    to: 1800,
+    hide_min_max: true,
+    hide_from_to: true,
+    grid: true
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">Or hide any part you wish</div>
+
+                            <input id="range_22" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_22").ionRangeSlider({
+                                        type: "double",
+                                        min: 1000,
+                                        max: 2000,
+                                        from: 1200,
+                                        to: 1800,
+                                        hide_min_max: true,
+                                        hide_from_to: true,
+                                        grid: true
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_23").ionRangeSlider({
+    type: "double",
+    min: 1000,
+    max: 2000,
+    from: 1200,
+    to: 1800,
+    hide_min_max: false,
+    hide_from_to: true,
+    grid: false
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">And some more</div>
+
+                            <input id="range_23" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_23").ionRangeSlider({
+                                        type: "double",
+                                        min: 1000,
+                                        max: 2000,
+                                        from: 1200,
+                                        to: 1800,
+                                        hide_min_max: false,
+                                        hide_from_to: true,
+                                        grid: false
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="demo-big">
+                        <div class="demo-big__code">
+<pre class="prettyprint">
+$("#range_24").ionRangeSlider({
+    type: "double",
+    min: 1000,
+    max: 2000,
+    from: 1200,
+    to: 1800,
+    hide_min_max: true,
+    hide_from_to: false,
+    grid: false
+});
+</pre>
+                        </div>
+                        <div class="demo-big__example">
+                            <div class="demo-big__note">And some more</div>
+
+                            <input id="range_24" />
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#range_24").ionRangeSlider({
+                                        type: "double",
+                                        min: 1000,
+                                        max: 2000,
+                                        from: 1200,
+                                        to: 1800,
+                                        hide_min_max: true,
+                                        hide_from_to: false,
+                                        grid: false
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-info" id="box2">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Settings</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Option</th>
+                                <th>Defaults</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="options__step">
+                                <td>
+                                    type
+                                    <div>data-type</div>
+                                </td>
+                                <td>"single"</td>
+                                <td>string</td>
+                                <td>Choose slider type, could be <code>single</code> - for one handle, or <code>double</code> for two handles</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    min
+                                    <div>data-min</div>
+                                </td>
+                                <td>10</td>
+                                <td>number</td>
+                                <td>Set slider minimum value</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    max
+                                    <div>data-max</div>
+                                </td>
+                                <td>100</td>
+                                <td>number</td>
+                                <td>Set slider maximum value</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    from
+                                    <div>data-from</div>
+                                </td>
+                                <td>min</td>
+                                <td>number</td>
+                                <td>Set start position for left handle (or for single handle)</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    to
+                                    <div>data-to</div>
+                                </td>
+                                <td>max</td>
+                                <td>number</td>
+                                <td>Set start position for right handle</td>
+                            </tr>
+                            <tr class="options__step">
+                                <td>
+                                    step
+                                    <div>data-step</div>
+                                </td>
+                                <td>1</td>
+                                <td>number</td>
+                                <td>Set sliders step. Always &gt; 0. Could be fractional.</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    min_interval
+                                    <div>data-min-interval</div>
+                                </td>
+                                <td>—</td>
+                                <td>number</td>
+                                <td>Set minimum diapason between sliders. Only in "double" type</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    max_interval
+                                    <div>data-max-interval</div>
+                                </td>
+                                <td>—</td>
+                                <td>number</td>
+                                <td>Set maximum diapason between sliders. Only in "double" type</td>
+                            </tr>
+                            <tr class="options__step">
+                                <td>
+                                    drag_interval
+                                    <div>data-drag-interval</div>
+                                </td>
+                                <td>false</td>
+                                <td>boolean</td>
+                                <td>Allow user to drag whole range. Only in "double" type (beta)</td>
+                            </tr>
+
+                            <tr class="options__step">
+                                <td>
+                                    values
+                                    <div>data-values</div>
+                                </td>
+                                <td>[]</td>
+                                <td>array</td>
+                                <td>Set up your own array of possible slider values. They could be numbers or strings. If the values array is set up, min, max and step param, are no longer can be changed.</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    from_fixed
+                                    <div>data-from-fixed</div>
+                                </td>
+                                <td>false</td>
+                                <td>boolean</td>
+                                <td>Fix position of left (or single) handle.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    from_min
+                                    <div>data-from-min</div>
+                                </td>
+                                <td>min</td>
+                                <td>number</td>
+                                <td>Set minimum limit for left handle.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    from_max
+                                    <div>data-from-max</div>
+                                </td>
+                                <td>max</td>
+                                <td>number</td>
+                                <td>Set the maximum limit for left handle</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    from_shadow
+                                    <div>data-from-shadow</div>
+                                </td>
+                                <td>false</td>
+                                <td>boolean</td>
+                                <td>Highlight the limits for left handle</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    to_fixed
+                                    <div>data-to-fixed</div>
+                                </td>
+                                <td>false</td>
+                                <td>boolean</td>
+                                <td>Fix position of right handle.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    to_min
+                                    <div>data-to-min</div>
+                                </td>
+                                <td>min</td>
+                                <td>number</td>
+                                <td>Set the minimum limit for right handle</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    to_max
+                                    <div>data-to-max</div>
+                                </td>
+                                <td>max</td>
+                                <td>number</td>
+                                <td>Set the maximum limit for right handle</td>
+                            </tr>
+                            <tr class="options__step">
+                                <td>
+                                    to_shadow
+                                    <div>data-to-shadow</div>
+                                </td>
+                                <td>false</td>
+                                <td>boolean</td>
+                                <td>Highlight the limits for right handle</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    prettify_enabled
+                                    <div>data-prettify-enabled</div>
+                                </td>
+                                <td>true</td>
+                                <td>boolean</td>
+                                <td>Improve readability of long numbers. 10000000 → 10 000 000</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    prettify_separator
+                                    <div>data-prettify-separator</div>
+                                </td>
+                                <td>" "</td>
+                                <td>string</td>
+                                <td>Set up your own separator for long numbers. 10 000, 10.000, 10-000 и т.п.</td>
+                            </tr>
+                            <tr class="options__step">
+                                <td>
+                                    prettify
+                                    <div>—</div>
+                                </td>
+                                <td>null</td>
+                                <td>function</td>
+                                <td>Set up your own prettify function. Can be anything. For example, you can set up unix time as slider values and than transform them to cool looking dates.</td>
+                            </tr>
+
+                            <tr class="options__step">
+                                <td>
+                                    force_edges
+                                    <div>data-force-edges</div>
+                                </td>
+                                <td>false</td>
+                                <td>boolean</td>
+                                <td>Slider will be always inside it's container.</td>
+                            </tr>
+
+                            <tr class="options__new">
+                                <td>
+                                    keyboard
+                                    <div>data-keyboard</div>
+                                </td>
+                                <td>true</td>
+                                <td>boolean</td>
+                                <td>Activates keyboard controls. Move left: ←, ↓, A, S. Move right: →, ↑, W, D.</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    grid
+                                    <div>data-grid</div>
+                                </td>
+                                <td>false</td>
+                                <td>boolean</td>
+                                <td>Enables grid of values.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    grid_margin
+                                    <div>data-grid-margin</div>
+                                </td>
+                                <td>true</td>
+                                <td>boolean</td>
+                                <td>Set left and right grid borders.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    grid_num
+                                    <div>data-grid-num</div>
+                                </td>
+                                <td>4</td>
+                                <td>number</td>
+                                <td>Number of grid units.</td>
+                            </tr>
+                            <tr class="options__step">
+                                <td>
+                                    grid_snap
+                                    <div>data-grid-snap</div>
+                                </td>
+                                <td>false</td>
+                                <td>boolean</td>
+                                <td>Snap grid to sliders step (step param). If activated, grid_num will not be used.</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    hide_min_max
+                                    <div>data-hide-min-max</div>
+                                </td>
+                                <td>false</td>
+                                <td>boolean</td>
+                                <td>Hides min and max labels</td>
+                            </tr>
+                            <tr class="options__step">
+                                <td>
+                                    hide_from_to
+                                    <div>data-hide-from-to</div>
+                                </td>
+                                <td>false</td>
+                                <td>boolean</td>
+                                <td>Hide from and to lables</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    prefix
+                                    <div>data-prefix</div>
+                                </td>
+                                <td>—</td>
+                                <td>string</td>
+                                <td>Set prefix for values. Will be set up right before the number: $100</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    postfix
+                                    <div>data-postfix</div>
+                                </td>
+                                <td>—</td>
+                                <td>string</td>
+                                <td>Set postfix for values. Will be set up right after the number: 100k</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    max_postfix
+                                    <div>data-max-postfix</div>
+                                </td>
+                                <td>—</td>
+                                <td>string</td>
+                                <td>Special postfix, used only for maximum value. Will be showed after handle will reach maximum right position. For example 0 — 100+</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    decorate_both
+                                    <div>data-decorate-both</div>
+                                </td>
+                                <td>true</td>
+                                <td>boolean</td>
+                                <td>Used for "double" type and only if prefix or postfix was set up. Determine how to decorate close values. For example: $10k — $100k or $10 — 100k</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    values_separator
+                                    <div>data-values-separator</div>
+                                </td>
+                                <td>" — "</td>
+                                <td>string</td>
+                                <td>Set your own separator for close values. Used for "double" type. Default: 10 — 100. Or you may set: 10 to 100, 10 + 100, 10 → 100 etc.</td>
+                            </tr>
+
+                            <tr class="options__step">
+                                <td>
+                                    input_values_separator
+                                    <div>
+                                        <sup>data-input-values-separator</sup>
+                                    </div>
+                                </td>
+                                <td>" ; "</td>
+                                <td>string</td>
+                                <td>Separator for double values in input value property.</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    disable
+                                    <div>data-disable</div>
+                                </td>
+                                <td>false</td>
+                                <td>boolean</td>
+                                <td>Locks slider and makes it inactive. Input is disabled too. Invisible to forms.</td>
+                            </tr>
+                            <tr class="options__new options__step">
+                                <td>
+                                    block
+                                    <div>data-block</div>
+                                </td>
+                                <td>false</td>
+                                <td>boolean</td>
+                                <td>Locks slider and makes it inactive. Input is NOT disabled. Can be send with forms.</td>
+                            </tr>
+
+                            <tr class="options__new options__step">
+                                <td>
+                                    extra_classes
+                                    <div>data-extra-classes</div>
+                                </td>
+                                <td>—</td>
+                                <td>string</td>
+                                <td>Traverse extra CSS-classes to slider container</td>
+                            </tr>
+
+                            <tr class="options__new">
+                                <td>
+                                    scope
+                                    <div>—</div>
+                                </td>
+                                <td>null</td>
+                                <td>object</td>
+                                <td>Scope for callbacks. Pass any object</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    onStart
+                                    <div>—</div>
+                                </td>
+                                <td>null</td>
+                                <td>function</td>
+                                <td>Callback. Is called on slider start.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    onChange
+                                    <div>—</div>
+                                </td>
+                                <td>null</td>
+                                <td>function</td>
+                                <td>Callback. IS called on each values change.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    onFinish
+                                    <div>—</div>
+                                </td>
+                                <td>null</td>
+                                <td>function</td>
+                                <td>Callback. Is called than user releases handle.</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    onUpdate
+                                    <div>—</div>
+                                </td>
+                                <td>null</td>
+                                <td>function</td>
+                                <td>Callback. Is called than slider is modified by external methods <code>update</code> or <code>reset</code>.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Description of data passed to callbacks (onChange and etc.)</h3>
+                    <p>Result is object type and passed to callback as first argument:</p>
+                    <pre class="prettyprint">Obj: {
+    "input": object,            // jQuery-link to input
+    "slider": object,           // jQuery-link to sliders container
+    "min": 1000,                // MIN value
+    "max": 100000,              // MAX values
+    "from": 10000,              // FROM value
+    "from_percent": 10,         // FROM value in percents
+    "from_value": 0,            // FROM index in values array (if used)
+    "to": 90000,                // TO value
+    "to_percent": 90,           // TO value in percents
+    "to_value": 0,              // TO index in values array (if used)
+    "min_pretty": "1 000",      // MIN prettified (if used)
+    "max_pretty": "100 000",    // MAX prettified (if used)
+    "from_pretty": "10 000",    // FROM prettified (if used)
+    "to_pretty": "90 000"       // TO prettified (if used)
+}
+</pre>
+                    <br />
+                    <h3>Creating slider with parameters</h3>
+                    <pre class="prettyprint">
+$("#example").ionRangeSlider({
+    min: 0,
+    max: 10000,
+    from: 1000,
+    to: 9000,
+    type: 'double',
+    prefix: "$",
+    grid: true,
+    grid_num: 10
+});
+</pre>
+
+                    <p>You can also initialise slider with <code>data-*</code> attributes of input tag:</p>
+                    <pre class="prettyprint">
+data-min="0"
+data-max="10000"
+data-from="1000"
+data-to="9000"
+data-type="double"
+data-prefix="$"
+data-grid="true"
+data-grid-num="10"
+</pre>
+                    <h3>Public methods</h3>
+                    <p>To use public methods, at first you must save slider instance to variable:</p>
+                    <pre class="prettyprint">
+// Launch plugin
+$("#range").ionRangeSlider({
+    type: "double",
+    min: 0,
+    max: 1000,
+    from: 200,
+    to: 500,
+    grid: true
+});
+// Saving it's instance to var
+var slider = $("#range").data("ionRangeSlider");
+// Fire public method
+slider.reset();
+</pre>
+
+                    <p>There are 3 public methods:</p>
+                    <pre class="prettyprint">
+// UPDATE - updates slider to any new values
+slider.update({
+    from: 300,
+    to: 400
+});
+// RESET - reset slider to it's first values
+slider.reset();
+// DESTROY - destroys slider and restores original input field
+slider.destroy();
+</pre>
+
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->
+<!-- Script omly used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>

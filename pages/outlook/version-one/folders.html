@@ -1,0 +1,46 @@
+﻿<div class="box box-solid">
+    <div class="box-header">
+        <h3 class="box-title"><i class="fa fa-folder-open-o"></i>&nbsp;Folders</h3>
+    </div>
+    <div class="box-body no-padding">
+        <ul class="mailbox-folders">
+            <li id="inbox" class="active">
+                <a herf="#" ui-sref="outlookone" ng-click="updateFolder('inbox')">
+                    <i class="fa fa-inbox"></i>&nbsp;&nbsp;Inbox&nbsp;
+                    <span class="email-folder-label label label-primary">{{counters.inbox}}</span>
+                </a>
+            </li>
+            <li id="sent">
+                <a herf="#" ui-sref="outlookone.sentview" ng-click="updateFolder('sent')">
+                    <i class="fa fa-envelope-o"></i>&nbsp;&nbsp;Sent
+                </a>
+            </li>
+            <li id="drafts">
+                <a herf="#" ui-sref="outlookone.draftsview" ng-click="updateFolder('drafts')">
+                    <i class="fa fa-file-text-o"></i>&nbsp;&nbsp;Drafts&nbsp;
+                    <span class="email-folder-label label label-primary">{{counters.drafts}}</span>
+                </a>
+            </li>
+            <li id="spam">
+                <a herf="#" ui-sref="outlookone.spamview" ng-click="updateFolder('spam')">
+                    <i class="fa fa-filter"></i>&nbsp;&nbsp;Spam&nbsp;
+                    <span ng-if="counters.spam>0" class="email-folder-label label label-warning">{{counters.spam}}</span>
+                </a>
+            </li>
+            <li id="trash">
+                <a herf="#" ui-sref="outlookone.trashview" ng-click="updateFolder('trash')">
+                    <i class="fa fa-trash-o"></i>&nbsp;&nbsp;Trash&nbsp;
+                    <span ng-if="counters.trash>0" class="email-folder-label label label-warning">{{counters.trash}}</span>
+                </a>
+            </li>
+            <li id="archive">
+                <a herf="#" ui-sref="outlookone.archiveview" ng-click="updateFolder('archive')">
+                    <i class="fa fa-archive"></i>&nbsp;&nbsp;Archive&nbsp;
+                    <span ng-if="counters.archive>0" class="email-folder-label label label-primary">{{counters.archive}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.box-body -->
+</div>
+<!-- /. box -->

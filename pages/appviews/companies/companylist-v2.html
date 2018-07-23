@@ -1,0 +1,64 @@
+﻿<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-info" id="box1">
+                <div class="box-header with-border">
+                    <div class="col-md-5 col-sm-5 col-xs-12 form-group top-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for..." ng-model="companyFilter">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">Go!</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-7 col-xs-12">
+                        <a ui-sref="companydetails({id: 0, action: '{{action.create}}'})" href="javascript:void(0)" class="btn btn-info btn-xs pull-right" title="New Contact"><i class="fa fa-plus-square-o"></i> New Company</a>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <table ng-if="companies.length > 0" class="table table-hover table-responsive">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Status</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Country</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="company in companies | filter : companyFilter track by $index">
+                                <td></td>
+                                <td><status-label status="{{company.status}}"></status-label></td>
+                                <td><span ng-bind="company.name"></span></td>
+                                <td><span ng-bind="company.address"></span></td>
+                                <td><span ng-bind="company.country"></span></td>
+                                <td><span ng-bind="company.Phone"></span></td>
+                                <td><span ng-bind="company.email"></span></td>
+                                <td>
+                                    <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right m-l-xxs m-r-xxs" title="Edit Company" ng-click="editCompany(company.id)"><i class="fa fa-edit"></i> Edit</a>
+                                    <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right" title="Display Company" ng-click="displayCompany(company.id)"><i class="fa fa-eye"></i> View</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div ng-if="companies.length===0" class="alert alert-warning">
+                        <i class="fa fa-warning"></i><span class="font-size-18"> Warning</span>
+                        <h3>Could not find any companies.</h3>
+                        <span class="font-bold">Please create a new company and try again.</span>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->

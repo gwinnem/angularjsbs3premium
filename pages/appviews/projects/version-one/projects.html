@@ -1,0 +1,103 @@
+﻿<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- Default box -->
+            <div class="box" id="box1">
+                <div class="box-header with-border">
+                    <div class="col-md-5 col-sm-5 col-xs-12 form-group top-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for..." ng-model="projectFilter">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">Go!</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-7 col-xs-12">
+                        <a ui-sref="projectdetails({id: 0, action: '{{action.create}}'})" href="javascript:void(0)" class="btn btn-info btn-xs pull-right" title="New Project">
+                            <i class="fa fa-plus-square-o"></i> New Project
+                        </a>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="project-list" ng-if="totalProjects > 0">
+                        <table class="table table-condensed table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="project-status">
+                                        <a href="javascript:void(0)" ng-click="sortType = 'status'; sortReverse = !sortReverse">
+                                            Status
+                                            <span ng-show="sortType == 'status' && !sortReverse" class="fa fa-chevron-down"></span>
+                                            <span ng-show="sortType == 'status' && sortReverse" class="fa fa-chevron-up"></span>
+                                        </a>
+                                    </th>
+                                    <th class="project-status">
+                                        <a href="javascript:void(0)" ng-click="sortType = 'priority'; sortReverse = !sortReverse">
+                                            Status
+                                            <span ng-show="sortType == 'priority' && !sortReverse" class="fa fa-chevron-down"></span>
+                                            <span ng-show="sortType == 'priority' && sortReverse" class="fa fa-chevron-up"></span>
+                                        </a>
+                                    </th>
+                                    <th>Title</th>
+                                    <th>Progress</th>
+                                    <th>
+                                        <a href="javascript:void(0)" ng-click="sortType = 'startDate'; sortReverse = !sortReverse">
+                                            <i class="fa fa-calendar"></i> Starts
+                                            <span ng-show="sortType == 'startDate' && !sortReverse" class="fa fa-chevron-down"></span>
+                                            <span ng-show="sortType == 'startDate' && sortReverse" class="fa fa-chevron-up"></span>
+                                        </a>
+                                    </th>
+                                    <th>
+                                        <a href="javascript:void(0)" ng-click="sortType = 'endDate'; sortReverse = !sortReverse">
+                                            <i class="fa fa-calendar-o"></i> Ends
+                                            <span ng-show="sortType == 'endDate' && !sortReverse" class="fa fa-chevron-down"></span>
+                                            <span ng-show="sortType == 'endDate' && sortReverse" class="fa fa-chevron-up"></span>
+                                        </a>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="project in projects | orderBy:sortType:sortReverse | filter:projectFilter">
+                                    <td>
+                                        <status-label status="{{project.status}}"></status-label>
+                                    </td>
+                                    <td>
+                                        <priority-label status="{{project.priority}}"></priority-label>
+                                    </td>
+                                    <td class="project-title" ng-bind="::project.name"></td>
+                                    <td>
+                                        <uib-progressbar value="project.progress" type="success">
+                                            <b class="text-bold text-black">{{::project.progress}}%</b>
+                                        </uib-progressbar>
+                                    </td>
+                                    <td ng-bind="::project.startDate | date"></td>
+                                    <td ng-bind="::project.endDate | date"></td>
+                                    <td class="project-actions">
+                                        <a href="javascript:void(0)" class="btn btn-default btn-xs" title="View Project" ng-click="displayProject(project.id)">
+                                            <i class="fa fa-eye"></i> View
+                                        </a>
+                                        <a href="javascript:void(0)" class="btn btn-default btn-xs" title="Edit Project" ng-click="editProject(project.id)">
+                                            <i class="fa fa-pencil"></i> Edit
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div ng-if="totalProjects == 0" class="alert alert-warning">
+                        <i class="fa fa-warning"></i>
+                        <span class="font-size-18"> Warning</span>
+                        <h3>Could not find any projects.</h3>
+                        <span class="font-bold">Please create a new project and try again.</span>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->

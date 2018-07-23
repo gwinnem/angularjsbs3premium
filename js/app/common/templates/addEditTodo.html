@@ -1,0 +1,27 @@
+﻿<form id="addEditTodo" role="form">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="col-sm-2 control-label" style="padding-top: 0 !important;">Priority:</label>
+                <div class="col-sm-10">
+                    <input type="radio" icheck class="form-control" ng-model="modalOptions.todo.priority" name="priority" value="primary" theme="square" color="blue">&nbsp;&nbsp;Primary
+                    <input type="radio" icheck class="form-control" ng-model="modalOptions.todo.priority" name="priority" value="info" theme="square" color="blue">&nbsp;&nbsp;Info
+                    <input type="radio" icheck class="form-control" ng-model="modalOptions.todo.priority" name="priority" value="success" theme="square" color="blue">&nbsp;&nbsp;Success
+                    <input type="radio" icheck class="form-control" ng-model="modalOptions.todo.priority" name="priority" value="warning" theme="square" color="blue">&nbsp;&nbsp;Warning
+                    <input type="radio" icheck class="form-control" ng-model="modalOptions.todo.priority" name="priority" value="danger" theme="square" color="blue">&nbsp;&nbsp;Danger
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 50px !important;"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="title" class="col-sm-4 control-label">Description:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="title" ng-model="modalOptions.todo.content" placeholder="Description" required maxlength="20">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

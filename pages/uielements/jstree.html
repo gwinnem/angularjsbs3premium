@@ -1,0 +1,155 @@
+<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="callout callout-info">
+        <p>
+            jsTree is
+            <strong>jquery plugin</strong>, that provides
+            <strong>interactive trees</strong>. It is absolutely
+            <strong>free</strong>,
+            <a href="https://github.com/vakata/jstree/">open source</a> and distributed under the
+            <a href="https://raw.githubusercontent.com/vakata/jstree/master/LICENSE-MIT">MIT license</a>. jsTree is easily extendable, themable and configurable, it supports
+            <strong>HTML &amp; JSON data sources and AJAX loading</strong>.
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Default box -->
+            <div id="box1" class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Example using Html and expanding root node on load</h3>
+                </div>
+                <div class="box-body">
+                    <div class="well" id="treeview_html">
+                        <ul>
+                            <li data-jstree='{ "selected" : true, "opened" : true }'>
+                                Electronics
+                                <ul>
+                                    <li>
+                                        Mobile
+                                        <ul>
+                                            <li>Samsung</li>
+                                            <li>Apple</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Laptop
+                                        <ul>
+                                            <li>Dell</li>
+                                            <li>
+                                                Computer Peripherals
+                                                <ul>
+                                                    <li>Printers</li>
+                                                    <li>Monitor</li>
+                                                </ul>
+                                            </li>
+                                            <li>Keyboard</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-4">
+            <!-- Default box -->
+            <div id="box2" class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Example using Json data and multiselect on</h3>
+                </div>
+                <div class="box-body">
+                    <div class="well" id="treeview_json"></div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-4">
+            <!-- Default box -->
+            <div id="box3" class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Example using Json data and multiselect off</h3>
+                </div>
+                <div class="box-body">
+                    <div class="well" id="treeview_json_multiselect_off"></div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Default box -->
+            <div id="box4" class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Adding context menu</h3>
+                </div>
+                <div class="box-body">
+                    <div class="well" id="treeview_json_multiselect_off_contextmenu"></div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-4">
+            <!-- Default box -->
+            <div id="box5" class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Adding drag & drop</h3>
+                </div>
+                <div class="box-body">
+                    <div class="well" id="treeview_json_multiselect_off_contextmenu_dnd"></div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-4">
+            <!-- Default box -->
+            <div id="box6" class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Adding Checkboxes</h3>
+                </div>
+                <div class="box-body">
+                    <div class="well" id="treeview_json_check"></div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Default box -->
+            <div id="box7" class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Adding search</h3>
+                </div>
+                <div class="box-body">
+                    <form id="search">
+                        <input type="search" id="search_text" />
+                        <input class="btn btn-success" type="submit" value="Search" />
+                        <div class="well" id="treeview_json_search"></div>
+                    </form>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->

@@ -1,0 +1,76 @@
+﻿<style>
+    .block .cell {
+        -webkit-box-shadow: 0 10px 6px -6px #ccc;
+        -moz-box-shadow: 0 10px 6px -6px #ccc;
+        box-shadow: 0 10px 6px -6px #ccc;
+    }
+
+    .cell {
+        overflow: hidden;
+        border: 1px solid #bbb;
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+</style>
+<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">jQuery roundslider</h3>
+                </div>
+                <div class="box-body">
+                    <h3>Type's</h3>
+                    <p>
+                        There are three types of sliders available such as <b>default</b>, <b>min-range</b> and <b>range</b> slider.
+                        The default and min-range sliders are the similar which is used to select a single value
+                        inbetween the min and max values. In case of range slider, it is used to selece a range of values.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h4>Default</h4>
+                            <div class="block">
+                                <div id="defaultslider" data-type="default"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Min range</h4>
+                            <div id="minrangeslider" data-type="min-range"></div>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Range</h4>
+                            <div id="rangelider" data-type="range"></div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->
+<script>
+    $("#defaultslider").roundSlider({
+        radius: 85,
+        sliderType: "default",
+        value: 40
+    });
+
+    $("#minrangeslider").roundSlider({
+        radius: 85,
+        sliderType: "min-range",
+        value: 40
+    });
+
+    $("#rangelider").roundSlider({
+        radius: 85,
+        sliderType: "range",
+        value: "10,40"
+    });
+</script>

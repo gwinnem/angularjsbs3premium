@@ -1,0 +1,52 @@
+.contact-box {
+  cursor: pointer;
+  position: relative;
+  background: white;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.contact-header {
+  margin: 0;
+  img {
+    margin-right: 10px;
+    max-width: 60px;
+    height: auto;
+  }
+  .contact-name {
+    font-weight: 700;
+    font-size: 16px;
+  }
+}
+
+.contact-info {
+  padding-left: 80px;
+  margin-top: 10px;
+  i {
+    margin-right: 5px;
+  }
+  p {
+    margin: 0;
+    &:first-child {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.contact-footer {
+  text-align: center;
+  border-top: 1px solid #e7eaec;
+  padding-top: 10px;
+}
+
+.contact-box:hover {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-name: pulse;
+  -webkit-animation-name: pulse;
+  z-index: 1
+}

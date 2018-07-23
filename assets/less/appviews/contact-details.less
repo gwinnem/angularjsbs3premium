@@ -1,0 +1,35 @@
+﻿/*
+ * COMPONENT Contact details
+ * ----------------------
+ */
+// Import variables and mixins as a reference.
+@import (reference) "../../bootstrap-less/mixins";
+@import (reference) "../../bootstrap-less/variables";
+@import (reference) "../mixins.less";
+@import (reference) "../variables.less";
+
+// Avatar in contact details
+.avatar-wrapper {
+    .contact-avatar {
+        height: 110px;
+        width: 110px;
+    }
+
+    .avatar-btn {
+        position: absolute;
+        color: @gray;
+    }
+
+    .avatar-btn-new {
+        top: 110px !important;
+    }
+
+    .avatar-btn:hover {
+        background-color: @gray-lte;
+        cursor: pointer;
+        -webkit-transition: background-color 0.5s ease-out;
+        -moz-transition: background-color 0.5s ease-out;
+        -o-transition: background-color 0.5s ease-out;
+        transition: background-color 0.5s ease-out;
+    }
+}

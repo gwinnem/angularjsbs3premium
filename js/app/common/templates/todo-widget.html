@@ -1,0 +1,38 @@
+﻿<div>
+    <h4>
+        <i class="ion ion-clipboard"></i> Todo's {{todoList.length}}</h4>
+    <div ng-if="todoList.length>0">
+        <ul class="todo-list">
+            <li id="todo-{{item.id}}" ng-repeat="item in todoList track by $index" class="{{item.priority}}">
+                <span class="handle" style="vertical-align: middle;">
+                    <i class="fa fa-lg fa-ellipsis-v"></i>
+                    <i class="fa fa-lg fa-ellipsis-v"></i>
+                </span>
+                <input type="checkbox" icheck theme="flat" color="blue" ng-model="item.status" ng-change="changeTodoStatus(item)" />
+                <small class="label label-info">
+                    <i class="fa fa-clock-o"></i> 1 month </small>
+                <span class="text" style="vertical-align: middle;">{{item.content}}</span>
+                <div class="tools">
+                    <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Edit">
+                        <i class="fa fa-edit" ng-click="editTodo(item)"></i>
+                    </a>
+                    <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Delete">
+                        <i class="fa fa-trash-o" ng-click="deleteTodo(item)"></i>
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <a class="btn btn-default m-t-sm pull-right" data-toggle="tooltip" data-placement="left" title="Add Todo" ng-click="addTodo()">
+            <i class="fa fa-plus"></i>
+        </a>
+    </div>
+    <div ng-if="todoList.length==0">
+        <div class="alert alert-warning">
+            <h4>
+                <i class="icon fa fa-warning"></i> Warning!</h4>
+            <a class="btn btn-info m-t-n-sm pull-right" data-toggle="tooltip" data-placement="left" title="Add Todo" ng-click="addTodo()">
+                <i class="fa fa-plus"></i>New Todo</a>
+            <span>Todo list is empty !</span>
+        </div>
+    </div>
+</div>

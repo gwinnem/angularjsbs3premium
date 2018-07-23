@@ -1,0 +1,25 @@
+﻿/*
+ * Full screen styles
+ * ----------------------
+ */
+
+// Import variables and mixins as a reference.
+@import (reference) "../bootstrap-less/mixins";
+@import (reference) "../bootstrap-less/variables";
+@import (reference) "mixins.less";
+@import (reference) "variables.less";
+.fullscreen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    margin: 0;
+    -moz-border-radius: 0;
+    -khtml-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    color: @white;
+    border-color: #494949;
+}

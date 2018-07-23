@@ -1,0 +1,44 @@
+﻿<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group top-search">
+            <div class="input-group" style="padding-left:20px;">
+                <input type="text" class="form-control" placeholder="Search for..." ng-model="contactsFilter">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                </span>
+            </div> 
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <a ui-sref="contactdetailsv1({type:1,return:2,id:0})" href="javascript:void(0)" class="btn btn-info btn-xs pull-right" title="New Contact">
+                <i class="fa fa-plus-square-o"></i> New contact
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" ng-repeat="item in contacts | filter : contactsFilter track by $index">
+            <div class="contact-box">
+                <div class="contact-header">
+                    <img src="{{item.avatar}}" alt="avatar" class="img-circle pull-left">
+                    <span class="contact-name">{{item.firstName}} {{item.lastName}}</span>
+                    <p class="text-muted">{{item.title}}</p>
+                </div>
+                <div class="contact-info">
+                    <address>
+                        <i class="fa fa-map-marker green"></i>{{item.address.streetAddress}}
+                        </br>
+                        {{item.address.city}}
+                        </br>
+                        {{item.address.country}}
+                        </br>
+                        <div ng-show="item.phone.lenght>1"></div>P:{{item.phone}}
+                    </br>
+                    <div ng-show="item.email.lenght>1"></div>E:{{item.email}}
+                    </address>
+                </div>
+                <div class="contact-footer"><button ng-click="displayContact(item.id,2)" class="btn btn-default btn-xs">Edit</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /.content -->

@@ -1,0 +1,67 @@
+<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box">
+                <div class="box-header m-b-n-lg">
+                    <h3 class="box-title">Issue List</h3>
+                        <div class="form-group top-search pull-right" style="width: 400px;">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search for..." ng-model="issueFilter">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Go!</button>
+                                </span>
+                            </div>
+                        </div>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-hover issue-tracker">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:100px;">Priority</th>
+                                            <th style="width:100px;">Status:</th>
+                                            <th style="width:70%;"></th>
+                                            <th></th>
+                                            <th>Tags</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="issue in issueList | orderBy: '-id' | filter: issueFilter track by $index" ng-click="editIssue(issue)">
+                                            <td>
+                                                <priority-label status="2"></priority-label>
+                                            </td>
+                                            <td>
+                                                <status-label status="1"></status-label>
+                                            </td>
+                                            <td class="issue-info">
+                                                <a href="javascript: void(0)">ISSUE: {{issue.id | issueFormat}}</a>
+                                                <small>{{issue.message}}</small>
+                                            </td>
+                                            <td class="issue-info">
+                                                <span ng-bind="issue.created.at | date"></span>
+                                                <small>{{issue.created.by}}</small>
+                                            </td>
+                                            <td>
+                                                <div ng-repeat="tag in issue.tags">
+                                                    <span class="label label-default issue-tag">{{tag.text}}</span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->

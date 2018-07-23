@@ -1,0 +1,211 @@
+﻿<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Slider Range and Handles</h3>
+                </div>
+                <div class="box-body">
+                    <div class="callout callout-info">
+                        <span>You can find all the <a href="https://refreshless.com/nouislider/examples/" target="_blank">Slider Options</a> and more information on nouislider website.</span>
+                    </div>
+
+                    <h3>Handles</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                The number of handles can be set using the <code>start</code> option. This option accepts an array of initial handle positions. Set one value for one handle, two values for two handles.
+                            </p>
+
+                            <div id="slider-handles"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <pre class="prettyprint">
+<code>var handlesSlider = document.getElementById('slider-handles');
+noUiSlider.create(handlesSlider, {
+    start: [ 4000, 8000 ],
+    range: {
+        'min': [  2000 ],
+        'max': [ 10000 ]
+    }
+});
+</code>
+</pre>
+                        </div>
+                    </div>
+
+                    <h3>More that two handles</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                The number of handles in the <code>start</code> option is not limited to two. You can use the <code>connect</code> option between every handle.
+                            </p>
+                            <div id="slider-handles4"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <pre class="prettyprint">
+<code>var handlesSlider4 = document.getElementById('slider-handles4');
+noUiSlider.create(handlesSlider4, {
+    start: [ 4000, 8000, 12000, 16000 ],
+    connect: [false, true, true, false, true],
+    range: {
+        'min': [  2000 ],
+        'max': [ 20000 ]
+    }
+});
+</code>
+</pre>
+                        </div>
+                    </div>
+
+                    <h3>Range</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <p>
+                                All values on the slider are part of a range. The range has a minimum and maximum value. The minimum value <a href="https://github.com/leongersen/noUiSlider/issues/676">cannot be equal to the maximum value</a>.
+                            </p>
+                            <div id="slider-range"></div>
+                            <span class="pad-l-20 text-red text-bold" id="slider-range-value"></span>
+
+                        </div>
+                        <div class="col-md-6">
+                            <pre class="prettyprint">
+<code>var rangeSlider = document.getElementById('slider-range');
+noUiSlider.create(rangeSlider, {
+    start: [ 4000 ],
+    range: {
+        'min': [  2000 ],
+        'max': [ 10000 ]
+    }
+});
+</code>
+</pre>
+                        </div>
+                    </div>
+
+                    <h3>Stepping and snapping to values</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                The amount the slider changes on movement can be set using the <code>step</code> option.
+                            </p>
+                            <div id="slider-step"></div>
+                            <span class="pad-l-20 text-red text-bold" id="slider-step-value"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <pre class="prettyprint">
+<code>var stepSlider = document.getElementById('slider-step');
+noUiSlider.create(stepSlider, {
+    start: [ 4000 ],
+    step: 1000,
+    range: {
+        'min': [  2000 ],
+        'max': [ 10000 ]
+    }
+});
+</code>
+</pre>
+                        </div>
+                    </div>
+
+
+                    <h3>Non-linear sliders</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                noUiSlider offers some powerful mechanisms that allow a slider to behave in a non-linear fashion. You can create sliders with ever-increasing increments by specifying the value for the slider at certain intervals. Note how the handle in the example below starts at 30% of the slider width, even though <code>4000</code> is not 30% of the span between <code>2000</code> and <code>10000</code>.
+                            </p>
+                            <div id="slider-non-linear"></div>
+                            <span class="pad-l-20 text-red text-bold" id="slider-non-linear-value"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <pre class="prettyprint">
+<code>var nonLinearSlider = document.getElementById('slider-non-linear');
+noUiSlider.create(nonLinearSlider, {
+    start: [ 4000 ],
+    range: {
+        'min': [  2000 ],
+        '30%': [  4000 ],
+        '70%': [  8000 ],
+        'max': [ 10000 ]
+    }
+});
+</code>
+</pre>
+                        </div>
+                    </div>
+
+                    <h3>Stepping in non-linear sliders</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                For every subrange in a non-linear slider, stepping can be set. Note how in the example below the slider doesn't step until it reaches <code>500</code>. From there on, it changes in increments of <code>500</code>, until it reaches <code>4000</code>, where increments now span <code>1000</code>.
+                            </p>
+
+                            <div id="slider-non-linear-step"></div>
+                            <span class="pad-l-20 text-red text-bold" id="slider-non-linear-step-value"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <pre class="prettyprint">
+<code>var nonLinearStepSlider = document.getElementById('slider-non-linear-step');
+noUiSlider.create(nonLinearStepSlider, {
+    start: [ 500, 4000 ],
+    range: {
+        'min': [     0 ],
+        '10%': [   500,  500 ],
+        '50%': [  4000, 1000 ],
+        'max': [ 10000 ]
+    }
+});
+</code>
+</pre>
+                        </div>
+                    </div>
+
+                    <h3>Snapping between steps</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                When a non-linear slider has been configured, the <code>snap</code> option can be set to <code>true</code> to force the slider to jump between the specified values.
+                            </p>
+                            <div id="slider-snap"></div>
+                            <span class="text-red pad-l-20" id="slider-snap-value-lower"></span>
+                            <span class="text-blue pad-l-20" id="slider-snap-value-upper"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <pre class="prettyprint">
+<code>var snapSlider = document.getElementById('slider-snap');
+noUiSlider.create(snapSlider, {
+    start: [ 0, 500 ],
+    snap: true,
+    connect: true,
+    range: {
+        'min': 0,
+        '10%': 50,
+        '20%': 100,
+        '30%': 150,
+        '40%': 500,
+        '50%': 800,
+        'max': 1000
+    }
+});
+</code>
+</pre>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->
+<!-- Script omly used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>

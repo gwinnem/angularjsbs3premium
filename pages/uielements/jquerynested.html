@@ -1,0 +1,392 @@
+<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-5">
+            <!-- Default box -->
+            <div id="box1" class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Nested list</h3>
+                </div>
+                <div class="box-body" style="height: 500px; overflow: auto">
+                    <ol class="sortable">
+                        <li>
+                            <div>Some content</div>
+                        </li>
+                        <li>
+                            <div>Some content</div>
+                            <ol>
+                                <li>
+                                    <div>Some sub-item content</div>
+                                </li>
+                                <li>
+                                    <div>Some sub-item content</div>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <div>Some content</div>
+                            <ol>
+                                <li>
+                                    <div>Some sub-item content</div>
+                                    <ol>
+                                        <li>
+                                            <div>Some sub-item content</div>
+                                        </li>
+                                        <li>
+                                            <div>Some sub-item content</div>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    <div>Some sub-item content</div>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <div>Some content</div>
+                        </li>
+                        <li>
+                            <div>Some content</div>
+                        </li>
+                    </ol>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-7">
+            <!-- Default box -->
+            <div id="box2" class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Readme</h3>
+                </div>
+                <div class="box-body" style="height: 500px; overflow: auto" slim-scroll>
+                    <h1>nestedSortable jQuery plugin</h1>
+                    <p>
+                        <strong>nestedSortable</strong> is a jQuery plugin that extends jQuery Sortable UI functionalities to nested
+                        lists.
+                    </p>
+                    <h2>What's new in version 2.0</h2>
+                    <p>
+                        The biggest change is that your nested list can now behave as a tree with expand/collapse funcionality. Simply set
+                        <code>isTree</code> to
+                        <strong>true</strong> in the options and you are good to go! Check the
+                        <a href="http://ilikenwf.github.io/example.html">demo</a> out to see what can be done with nestedSortable and a little CSS. (Note that all
+                        <strong>nestedSortable</strong> does is to assign/remove classes on the fly)
+                        <br> Also:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>isAllowed</strong> function finally works as expected, see the docs below
+                        </li>
+                        <li>
+                            Fixed: a small bug in the
+                            <strong>protectRoot</strong> function
+                        </li>
+                        <li>
+                            Changed: no drop zone will appear at all if you try to nest an item under another one that has the
+                            <em>no-nesting</em> class.
+                        </li>
+                        <li>
+                            Added:
+                            <strong>doNotClear</strong> option to prevent the plugin from deleting empty lists
+                        </li>
+                    </ul>
+                    <h2>Features</h2>
+                    <ul>
+                        <li>
+                            Designed to work seamlessly with the
+                            <a href="http://articles.sitepoint.com/article/hierarchical-data-database"
+                               title="A Sitepoint tutorial on PHP, MYSQL and nested sets">nested</a>
+                            <a href="http://en.wikipedia.org/wiki/Nested_set_model" title="Wikipedia article on nested sets">set</a> model (have a look at the
+                            <code>toArray</code> method)
+                        </li>
+                        <li>Items can be sorted in their own list, moved across the tree, or nested under other items.</li>
+                        <li>Sublists are created and deleted on the fly</li>
+                        <li>All jQuery Sortable options, events and methods are available</li>
+                        <li>
+                            It is possible to define elements that will not accept a new nested item/list and a maximum depth
+                            for nested items
+                        </li>
+                        <li>The root level can be protected</li>
+                        <li>The parentship of items can be locked, just as if it was a family tree.</li>
+                    </ul>
+                    <h2>Usage</h2>
+                    <pre><code>&lt;ol class="sortable"&gt;
+    &lt;li&gt;&lt;div&gt;Some content&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;
+        &lt;div&gt;Some content&lt;/div&gt;
+        &lt;ol&gt;
+            &lt;li&gt;&lt;div&gt;Some sub-item content&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;Some sub-item content&lt;/div&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;div&gt;Some content&lt;/div&gt;
+        &lt;ol&gt;
+            &lt;li&gt;
+                &lt;div&gt;Some sub-item content&lt;/div&gt;
+                &lt;ol&gt;
+                    &lt;li&gt;&lt;div&gt;Some sub-item content&lt;/div&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;div&gt;Some sub-item content&lt;/div&gt;&lt;/li&gt;
+                &lt;/ol&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;Some sub-item content&lt;/div&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;div&gt;Some content&lt;/div&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;div&gt;Some content&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                    <pre><code>$(document).ready(function () {
+    var ns = $('.sortable').nestedSortable({
+        forcePlaceholderSize: true,
+        handle: 'div',
+        helper: 'clone',
+        items: 'li',
+        opacity: .6,
+        placeholder: 'placeholder',
+        revert: 250,
+        tabSize: 25,
+        tolerance: 'pointer',
+        toleranceElement: '> div',
+        maxLevels: 4,
+        isTree: true,
+        expandOnHover: 700,
+        startCollapsed: false
+    });
+});
+</code></pre>
+                    <p>
+                        Please note: every
+                        <code>&lt;li&gt;</code> must have either one or two direct children, the first one being a container element
+                        (such as
+                        <code>&lt;div&gt;</code> in the above example), and the (optional) second one being the nested list. The
+                        container element has to be set as the 'toleranceElement' in the options, and this, or one of its
+                        children, as the 'handle'.
+                    </p>
+                    <p>
+                        Also, the default list type is
+                        <code>&lt;ol&gt;</code>.
+                    </p>
+                    <p>
+                        <em>
+                            This is the bare minimum to have a working nestedSortable. Check the
+                            <a href="http://ilikenwf.github.io/example.html">demo</a> out to see what can be accomplished with a little more.
+                        </em>
+                    </p>
+                    <h2>nestedSortable Options</h2>
+                    <dl>
+                        <dt>disableParentChange (2.0)</dt>
+                        <dd>
+                            Set this to true to lock the parentship of items. They can only be re-ordered within theire current
+                            parent container.
+                        </dd>
+                        <dt>doNotClear (2.0)</dt>
+                        <dd>
+                            Set this to true if you don't want empty lists to be removed. Default:
+                            <b>false</b>
+                        </dd>
+                        <dt>expandOnHover (2.0)</dt>
+                        <dd>
+                            How long (in ms) to wait before expanding a collapsed node (useful only if
+                            <code>isTree: true</code>). Default:
+                            <b>700</b>
+                        </dd>
+                        <dt>isAllowed (function)</dt>
+                        <dd>
+                            You can specify a custom function to verify if a drop location is allowed. Default:
+                            <b>function (placeholder, placeholderParent, currentItem) { return true; }</b>
+                        </dd>
+                        <dt>isTree (2.0)</dt>
+                        <dd>
+                            Set this to true if you want to use the new tree functionality. Default:
+                            <b>false</b>
+                        </dd>
+                        <dt>listType</dt>
+                        <dd>
+                            The list type used (ordered or unordered). Default:
+                            <b>ol</b>
+                        </dd>
+                        <dt>maxLevels</dt>
+                        <dd>
+                            The maximum depth of nested items the list can accept. If set to '0' the levels are unlimited. Default:
+                            <b>0</b>
+                        </dd>
+                        <dt>protectRoot</dt>
+                        <dd>
+                            Whether to protect the root level (i.e. root items can be sorted but not nested, sub-items cannot
+                            become root items). Default:
+                            <b>false</b>
+                        </dd>
+                        <dt>rootID</dt>
+                        <dd>
+                            The id given to the root element (set this to whatever suits your data structure). Default:
+                            <b>null</b>
+                        </dd>
+                        <dt>rtl</dt>
+                        <dd>
+                            Set this to true if you have a right-to-left page. Default:
+                            <b>false</b>
+                        </dd>
+                        <dt>startCollapsed (2.0)</dt>
+                        <dd>
+                            Set this to true if you want the plugin to collapse the tree on page load. Default:
+                            <b>false</b>
+                        </dd>
+                        <dt>tabSize</dt>
+                        <dd>
+                            How far right or left (in pixels) the item has to travel in order to be nested or to be sent outside
+                            its current list. Default:
+                            <b>20</b>
+                        </dd>
+                        <dt>excludeRoot</dt>
+                        <dd>
+                            Exlude the root item from the
+                            <code>toArray</code> output
+                        </dd>
+                    </dl>
+                    <h2>nestedSortable Classes (you will set them in the options as well)</h2>
+                    <dl>
+                        <dt>branchClass (2.0)</dt>
+                        <dd>
+                            Given to all items that have children. Default:
+                            <b>mjs-nestedSortable-branch</b>
+                        </dd>
+                        <dt>collapsedClass (2.0)</dt>
+                        <dd>
+                            Given to branches that are collapsed. It will be switched to
+                            <b>expandedClass</b> when hovering for more then
+                            <b>expandOnHover</b> ms. Default:
+                            <b>mjs-nestedSortable-collapsed</b>
+                        </dd>
+                        <dt>disableNestingClass</dt>
+                        <dd>
+                            Given to items that will not accept children. Default:
+                            <b>mjs-nestedSortable-no-nesting</b>
+                        </dd>
+                        <dt>errorClass</dt>
+                        <dd>
+                            Given to the placeholder in case of error. Default:
+                            <b>mjs-nestedSortable-error</b>
+                        </dd>
+                        <dt>expandedClass (2.0)</dt>
+                        <dd>
+                            Given to branches that are expanded. Default:
+                            <b>mjs-nestedSortable-expanded</b>
+                        </dd>
+                        <dt>hoveringClass (2.0)</dt>
+                        <dd>
+                            Given to collapsed branches when dragging an item over them. Default:
+                            <b>mjs-nestedSortable-hovering</b>
+                        </dd>
+                        <dt>leafClass (2.0)</dt>
+                        <dt>
+                        </dt>
+                        <dd>
+                            Given to items that do not have children. Default:
+                            <b>mjs-nestedSortable-leaf</b>
+                        </dd>
+                        <dt>disabledClass (2.0)</dt>
+                        <dt>
+                        </dt>
+                        <dd>
+                            Given to items that should be skipped when sorting over them. For example, non-visible items that
+                            are still part of the list. Default:
+                            <b>mjs-nestedSortable-disabled</b>
+                        </dd>
+                    </dl>
+                    <h2>nestedSortable Methods</h2>
+                    <dl>
+                        <dt>serialize</dt>
+                        <dd>
+                            Serializes the nested list into a string like
+                            <b>setName[item1Id]=parentId&amp;setName[item2Id]=parentId</b>, reading from each item's id formatted
+                            as 'setName_itemId' (where itemId is a number). It accepts the same options as the original Sortable
+                            method (
+                            <b>key</b>,
+                            <b>attribute</b> and
+                            <b>expression</b>).
+                        </dd>
+                        <dt>toArray</dt>
+                        <dd>
+                            Builds an array where each element is in the form:
+                            <pre>setName[n] =&gt;
+{
+    'item_id': itemId,
+    'parent_id': parentId,
+    'depth': depth,
+    'left': left,
+    'right': right,
+}
+</pre> It accepts the same options as the original Sortable method (
+                            <b>attribute</b> and
+                            <b>expression</b>) plus the custom
+                            <b>startDepthCount</b>, that sets the starting depth number (default is
+                            <b>0</b>).
+                        </dd>
+                        <dt>toHierarchy</dt>
+                        <dd>
+                            Builds a hierarchical object in the form:
+                            <pre>'0' ...
+    'id' =&gt; itemId
+'1' ...
+    'id' =&gt; itemId
+    'children' ...
+        '0' ...
+            'id' =&gt; itemId
+        '1' ...
+            'id' =&gt; itemId
+'2' ...
+    'id' =&gt; itemId
+</pre> Similarly to
+                            <code>toArray</code>, it accepts
+                            <b>attribute</b> and
+                            <b>expression</b> options. Optionally adding `data-` attributes will cause them to show up in the
+                            hierarchy. See demo for example.
+                        </dd>
+                    </dl>
+                    <h2>Events</h2>
+                    <dl>
+                        <dt>change</dt>
+                        <dd>
+                            Fires when the item is dragged to a new location. This triggers for each location it is dragged into not just the ending
+                            location.
+                        </dd>
+                        <dt>sort</dt>
+                        <dd>Fires when the item is dragged.</dd>
+                        <dt>revert</dt>
+                        <dd>Fires once the object has moved if the new location is invalid.</dd>
+                        <dt>relocate</dt>
+                        <dd>Only fires once when the item is done bing moved at its final location.</dd>
+                    </dl>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->
+<script>
+    $(document).ready(function () {
+        $('.sortable').nestedSortable({
+            forcePlaceholderSize: true,
+            handle: 'div',
+            helper: 'clone',
+            items: 'li',
+            opacity: .6,
+            placeholder: 'placeholder',
+            revert: 250,
+            tabSize: 25,
+            tolerance: 'pointer',
+            toleranceElement: '> div',
+            maxLevels: 4,
+            isTree: true,
+            expandOnHover: 700,
+            startCollapsed: false
+        });
+    });
+</script>

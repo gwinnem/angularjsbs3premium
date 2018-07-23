@@ -1,0 +1,163 @@
+﻿<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="callout callout-info">
+                <h4>Avatar update!</h4>
+                <p>You can chage the avatar image but it only uploads on the server versions.</p>
+            </div>
+            <!-- Default box -->
+            <div class="box box-white" id="box1">
+                <div class="box-header with-border">
+                    <h3 ng-if="guid==''">New contact</h3>
+                </div>
+                <div class="box-body">
+                    <div class="col-md-2">
+                        <div class="avatar-wrapper hidden-sm hidden-xs" aria-hidden="true">
+                            <input class="hidden" type="file" id="avatarInput" accept="image/*" />
+                            <contact-avatar avatar="{{contact.avatar}}"></contact-avatar>
+                            <img alt="avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAvVJREFUWIXV102IllUUB/Df69g4o2l+hIygTCAuTMI+bFGpQytTSklsYZK0qDHFRbQIQotaGPQhuApRs5hIdGFFFgVhJZqKGkng95SoGZn0YZqpZePi3NdeppnnfZ7H2fiHZ3HuPef+z7333HPOU1EMozELbZiQ5EG4iNM4hB34GLvzLFjJSXwvluABnMMW7MUx/IlGtCSn2tCKA3gNHbick+d/GI530YWtmJ3IslDBJKzF38nRSWXI78BxnMDMMgtgHDaLK3qqiOF9OIPPMKIkeRX98II4xefzGIzHb3hP/eMuggXJiYVZSs3Yh+1o6kPyKl7EJRkxsUwc/ZiSBDNE9H+DW3uYb8CXIjAbuk+24C88XZK8koi70vdjL3rj8Q8e7z6xDD8pd/SN4rm24aPkwB8Z+h3YXztQEU/u5RLk8AbOit3djKVYlKF/T3LyaizclgbuLEH+WLKdg5EibzxZx6aCk+J5gnYRfP0Kkk/EebwugupzfI9hOWzX4dOqsBy7CpIPRSe+SOSvJmduz2m/BEerQgc+LEBewSb8II59triG+QXWeALn+iehUSSIvFiKaSLqh+FtrBQbyYsLGFAV3lRzH3UwTZTXxbhRZM6diqfthSLlg5dEBquHW/AL3knyBvwsGpOieAXfVoVHRHYanGHQhD0ijTbjmWRzfwlyotKuqwoj8S8eyjCYLgJtLKaKZuPZkuQDxYtprx3chvUZRrNEem0XKXtjSXKYJ06vpXZwvthVay9Gc/xXZN6SfV1ZqOBrvN99oj++E0WlJ7SKlH2tmCuu+66eJh8UuyzbA9bDKJzCmiyl1eJ9Tuhj8mYRZ50YkqXYJPr+k33oxCB8gl/zrnlTcuJ3PHyN5ONEp3QadxcxbMIqERMbxPsvgsGiZpwXUV/U/ipm4IjI/xtF5Rvai+4NmIwVImWfxXP6oL1vwKOi4bgsnlGn+Ov5QBSyvaKp7cJhsfvh9RbO+3NaixGYIoJpjKiIF8QdH8RXybnrA1cAv6OpZo4bKe4AAAAASUVORK5CYII="
+                                class="img-circle avatar-btn " ng-click="updateAvatar()">
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <!-- Form -->
+                        <form id="contactDetails" name="contactDetailsForm" role="form">
+                            <fieldset>
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label" for="prefix">Salutation</label>
+                                            <div class="input-group">
+                                                <input id="prefix" placeholder="Salutation" class="form-control" type="text" maxlength="50" ng-model="contact.prefix">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="form-group">
+                                            <label class="control-label" for="title">Position</label>
+                                            <div class="input-group">
+                                                <input id="title" placeholder="Position" class="form-control" type="text" maxlength="50" ng-model="contact.jobTitle">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label class="control-label" for="firstName">First Name</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span>
+                                            <input id="firstName" placeholder="First Name" class="form-control" type="text" maxlength="50" required ng-model="contact.firstName">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <div class="form-group">
+                                                <label class="control-label" for="lastName">Last Name</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="glyphicon glyphicon-user"></i>
+                                                    </span>
+                                                    <input id="lastName" placeholder="Last Name" class="form-control" type="text" maxlength="50" required ng-model="contact.lastName">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label" for="phone">Phone</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-phone-alt"></i>
+                                            </span>
+                                            <input id="phone" placeholder="(845)555-1212" class="form-control" type="text" maxlength="50" ng-model="contact.phone">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label" for="mobile">Mobile</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-phone"></i>
+                                            </span>
+                                            <input id="mobile" placeholder="(845)555-1212" class="form-control" type="text" maxlength="50" ng-model="contact.mobile">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label" for="email">E-Mail</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-envelope"></i>
+                                            </span>
+                                            <input id="email" placeholder="E-Mail Address" class="form-control" type="text" maxlength="255" ng-model="contact.email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="control-label" for="address">Address</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-home"></i>
+                                            </span>
+                                            <input id="address" placeholder="Address" class="form-control" type="text" maxlength="255" ng-model="contact.address.streetAddress">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label">Country</label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-globe"></i>
+                                            </span>
+                                            <select id="country" name="country" class="form-control selectpicker" ng-model="contact.address.country">
+                                                <option value="">Please select your country</option>
+                                                <option ng-repeat="item in countries" ng-bind="item.niceName">{{item.niceName}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label class="control-label">Company</label>
+                                        <div class="input-group" for="company">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-institution"></i>
+                                            </span>
+                                            <input id="company" placeholder="Company" class="form-control" type="text" maxlength="255" ng-model="contact.company">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <a ng-if="guid.length>0" href="javascript:void(0)" class="btn btn-danger btn-sm pull-right m-l-xs m-r-md" title="Delete"
+                                        ng-click="deleteContact(contact.id)">
+                                        <i class="fa fa-remove"></i> Delete</a>
+                                    <a href="javascript:void(0)" title="Cancel" ng-click="cancelEdit();" class="btn btn-warning btn-sm pull-right m-l-xs">
+                                        <i class="fa fa-trash-o"></i> Cancel</a>
+                                    <a href="javascript:void(0)" type="submit" title="Save" ng-click="saveContact(contactDetailsForm);" class="btn btn-success btn-sm pull-right m-l-xs">
+                                        <i class="fa fa-save"></i> Save</a>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <!-- / Form -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<script>
+    // Bootstrap tooltip needs to be activated manually
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>

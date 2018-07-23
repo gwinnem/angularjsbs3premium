@@ -1,0 +1,122 @@
+﻿//
+// Badges
+// --------------------------------------------------
+// Import variables and mixins as a reference.
+@import (reference) "../bootstrap-less/mixins";
+@import (reference) "../bootstrap-less/variables";
+@import (reference) "mixins.less";
+@import (reference) "variables.less";
+// Base class
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: @font-size-small;
+    font-weight: @badge-font-weight;
+    color: @badge-color;
+    line-height: @badge-line-height;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+    background-color: @badge-bg;
+    border-radius: @badge-border-radius;
+    // Empty badges collapse automatically (not available in IE8)
+    &:empty {
+        display: none;
+    }
+    // Quick fix for badges in buttons
+    .btn & {
+        position: relative;
+        top: -1px;
+    }
+
+    .btn-xs &,
+    .btn-group-xs > .btn & {
+        top: 0;
+        padding: 1px 5px;
+    }
+    // Hover state, but only for links
+    a& {
+        &:hover,
+        &:focus {
+            color: @badge-link-hover-color;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+    // Account for badges in navs
+    .list-group-item.active > &,
+    .nav-pills > .active > a > & {
+        color: @badge-active-color;
+        background-color: @badge-active-bg;
+    }
+
+    .list-group-item > & {
+        float: right;
+    }
+
+    .list-group-item > & + & {
+        margin-right: 5px;
+    }
+
+    .nav-pills > li > a > & {
+        margin-left: 3px;
+    }
+}
+// Color variations
+.badge-default {
+    background-color: #f4f4f4;
+    color: #444;
+    border-color: #ddd;
+
+    &:hover,
+    &:active,
+    &.hover {
+        background-color: darken(#f4f4f4, 5%);
+    }
+}
+
+.badge-primary {
+    background-color: @light-blue;
+    border-color: darken(@light-blue, 5%);
+
+    &:hover, &:active, &.hover {
+        background-color: darken(@light-blue, 5%);
+    }
+}
+
+.badge-success {
+    background-color: @green;
+    border-color: darken(@green, 5%);
+
+    &:hover, &:active, &.hover {
+        background-color: darken(@green, 5%);
+    }
+}
+
+.badge-info {
+    background-color: @aqua;
+    border-color: darken(@aqua, 5%);
+
+    &:hover, &:active, &.hover {
+        background-color: darken(@aqua, 5%);
+    }
+}
+
+.badge-danger {
+    background-color: @red;
+    border-color: darken(@red, 5%);
+
+    &:hover, &:active, &.hover {
+        background-color: darken(@red, 5%);
+    }
+}
+
+.badge-warning {
+    background-color: @yellow;
+    border-color: darken(@yellow, 5%);
+
+    &:hover, &:active, &.hover {
+        background-color: darken(@yellow, 5%);
+    }
+}

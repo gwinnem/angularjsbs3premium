@@ -1,0 +1,498 @@
+﻿<!-- Main content -->
+<section class="content animated fadeInUp">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-default" id="box1">
+                <div class="box-header with-border">
+                    <h3 class="box-title">
+                        <i class="fa fa-exclamation text-green"></i>
+                        <span class="pad-l-10" ng-bind="headerText"></span>
+                    </h3>
+                </div>
+                <div class="box-body">
+                    <div ng-show="editMode">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt>Status:</dt>
+                                    <dd>
+                                        <input type="radio" icheck class="form-control" id="status-created" ng-model="project.status" name="status" value="0" theme="square"
+                                            color="blue">&nbsp;&nbsp;InActive
+                                        <input type="radio" icheck class="form-control" id="status-inprogress" ng-model="project.status" name="status" value="1"
+                                            theme="square" color="blue">&nbsp;&nbsp;Active
+                                        <input type="radio" icheck class="form-control" id="status-completed" ng-model="project.status" name="status" value="2" theme="square"
+                                            color="blue">&nbsp;&nbsp;Completed
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt>Priority:</dt>
+                                    <dd>
+                                        <input type="radio" icheck class="form-control" id="priority-low" ng-model="project.priority" name="priority" value="0" theme="square"
+                                            color="blue">&nbsp;&nbsp;Low
+                                        <input type="radio" icheck class="form-control" id="priority-normal" ng-model="project.priority" name="priority" value="1"
+                                            theme="square" color="blue">&nbsp;&nbsp;Normal
+                                        <input type="radio" icheck class="form-control" id="priority-high" ng-model="project.priority" name="priority" value="2"
+                                            theme="square" color="blue">&nbsp;&nbsp;High
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt>Name:</dt>
+                                    <dd>
+                                        <input type="text" ng-model="project.name" maxlength="50" style="width: 100%;" placeholder="Project name" />
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-5">
+                                <dl class="dl-horizontal">
+                                    <dt>Company:</dt>
+                                    <dd>
+                                        <ui-select ng-model="selectedClient" theme="bootstrap" on-select="updateCompany($item)">
+                                            <ui-select-match placeholder="Select or search from the list">{{$select.selected.name}}</ui-select-match>
+                                            <ui-select-choices repeat="item in companies | filter: $select.search">
+                                                <div ng-bind-html="item.name | highlight: $select.search"></div>
+                                            </ui-select-choices>
+                                            <ui-select-no-choice>
+                                                Your search give no matches
+                                            </ui-select-no-choice>
+                                        </ui-select>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt>Description:</dt>
+                                    <dd>
+                                        <textarea ng-model="project.description" ab-elastic style="overflow: hidden; width: 100%; resize: none;" rows=3 placeholder="Description"></textarea>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-5">
+                                <dl class="dl-horizontal">
+                                    <dt>Project Manager:</dt>
+                                    <dd>
+                                        <input type="text" ng-model="project.projectManagerFullName" maxlength="50" style="width: 100%;" placeholder="Project Manager" />
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <dl class="dl-horizontal">
+                                    <dt>Estimated Budget:</dt>
+                                    <dd>
+                                        <input type="text" numbers_only ng-model="project.budget" style="text-align: right; padding-right: 5px; width: 100%;" maxlength="9"
+                                        />
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-3">
+                                <dl class="dl-horizontal">
+                                    <dt>Budget spent:</dt>
+                                    <dd>
+                                        <input type="text" numbers_only ng-model="project.budgetSpent" style="text-align: right; padding-right: 5px; width: 100%;"
+                                            maxlength="9" />
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-3">
+                                <dl class="dl-horizontal">
+                                    <dt>Estimated hours:</dt>
+                                    <dd>
+                                        <input type="text" numbers_only ng-model="project.hours" style="text-align: right; padding-right: 5px; width: 100%;" maxlength="9"
+                                        />
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <dl class="dl-horizontal">
+                                    <dt>Progress: {{project.progress}} %</dt>
+                                    <dd>
+                                        <div ng-model="project.progress" end="100" ab-slider></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- dates -->
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <dl class="dl-horizontal">
+                                        <dt class="m-t-sm">Start Date:</dt>
+                                        <dd>
+                                            <p class="input-group">
+                                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="project.startDate" is-open="popup1.opened"
+                                                    datepicker-options="dateOptions" show-button-bar="false" close-text="Close"
+                                                />
+
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="open1()">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </button>
+                                                </span>
+                                            </p>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="col-md-5">
+                                    <dl class="dl-horizontal">
+                                        <dt class="m-t-sm">End Date:</dt>
+                                        <dd>
+                                            <p class="input-group">
+                                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="project.endDate" is-open="popup2.opened"
+                                                    datepicker-options="dateOptions" show-button-bar="false" close-text="Close"
+                                                />
+
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="open2()">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </button>
+                                                </span>
+                                            </p>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-show="editMode && !createProject" class="row">
+                        <!-- project tasks -->
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <h4>Tasks:</h4>
+                            <table id="tasks" class="table table-hover table-responsive table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>Priority</th>
+                                        <th>Title</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>
+                                            <a href="javascript:void(0)" class="btn btn-info btn-xs pull-right" title="Add task" ng-click="createTask()" data-toggle="tooltip"
+                                                data-placement="top">
+                                                <i class="fa fa-plus"></i>
+                                            </a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="task in project.tasks track by $index">
+                                        <td>
+                                            <status-label status="{{::task.status}}"></status-label>
+                                        </td>
+                                        <td>
+                                            <priority-label status="{{::task.priority}}"></priority-label>
+                                        </td>
+                                        <td>
+                                            <span ng-bind="::task.title | limitTo:20"></span>
+                                        </td>
+                                        <td>
+                                            <span ng-bind="::task.startDate | date"></span>
+                                        </td>
+                                        <td>
+                                            <span ng-bind="::task.endDate | date"></span>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0)" class="btn btn-xs btn-danger pull-right m-l-xs" title="Delete Task" ng-click="deleteTask(task.id)"
+                                                data-toggle="tooltip" data-placement="top">
+                                                <i class="fa fa-remove"></i>
+                                            </a>
+                                            <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right m-l-xs" title="Edit Task" ng-click="editTask(task)"
+                                                data-toggle="tooltip" data-placement="top">
+                                                <i class="fa fa-pencil"></i>
+                                            </a>
+                                            <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right" title="View Task" ng-click="displayTask(task)" data-toggle="tooltip"
+                                                data-placement="top">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- project participants -->
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <h4>Participants:</h4>
+                            <table id="contacts" class="table table-hover table-responsive table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Position</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>
+                                            <a href="javascript:void(0)" class="btn btn-info btn-xs pull-right" title="Add participant" ng-click="addContact()" data-toggle="tooltip"
+                                                data-placement="top">
+                                                <i class="fa fa-plus"></i>
+                                            </a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="contact in project.contacts track by $index">
+                                        <td ng-bind="::contact.title"></td>
+                                        <td ng-bind="contact.fullName"></td>
+                                        <td ng-bind="contact.email"></td>
+                                        <td>
+                                            <a href="javascript:void(0)" class="btn btn-xs btn-danger pull-right m-l-xs" title="Remove Contact" ng-click="removeContact(contact.id)"
+                                                data-toggle="tooltip" data-placement="top">
+                                                <i class="fa fa-remove"></i>
+                                            </a>
+                                            <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right" title="View Contact" ng-click="displayContact(contact)"
+                                                data-toggle="tooltip" data-placement="top">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div ng-show="!editMode">
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <!-- project estimations-->
+                            <ul class="stats-overview">
+                                <li>
+                                    <span class="name"> Estimated budget: </span>
+                                    <span class="value text-success" ng-bind="project.budget"></span>
+                                </li>
+                                <li>
+                                    <span class="name"> Budget spent: </span>
+                                    <span class="value text-success" ng-bind="project.budgetSpent"></span>
+                                </li>
+                                <li>
+                                    <span class="name"> Estimated Hours: </span>
+                                    <span class="value text-success" ng-bind="project.hours"></span>
+                                </li>
+                            </ul>
+
+                            <!-- project progress-->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <dl class="dl-horizontal">
+                                        <dt>Progress:</dt>
+                                        <dd>
+                                            <uib-progressbar value="project.progress" type="success">
+                                                <b class="text-bold text-black">{{project.progress}}%</b>
+                                            </uib-progressbar>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+
+                            <!-- project status priority-->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <dl class="dl-horizontal">
+                                        <dt>Status:</dt>
+                                        <dd>
+                                            <status-label status="{{project.status}}"></status-label>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="col-md-4">
+                                    <dl class="dl-horizontal">
+                                        <dt>Priority:</dt>
+                                        <dd>
+                                            <priority-label status="{{project.priority}}"></priority-label>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+
+                            <!-- project dates -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <dl class="dl-horizontal">
+                                        <dt>Start Date:</dt>
+                                        <dd>{{project.startDate | date}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col-md-4">
+                                    <dl class="dl-horizontal">
+                                        <dt>End Date:</dt>
+                                        <dd>{{project.endDate | date}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col-md-4">
+                                    <dl class="dl-horizontal" ng-if="!createProject">
+                                        <dt>Updated At:</dt>
+                                        <dd>{{::project.updatedAt | date}}</dd>
+                                        <dt>Updated By:</dt>
+                                        <dd>{{::project.updatedByFullName}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+
+                            <!-- project tasks -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div ng-show="!createProject">
+                                        <h4>Tasks:</h4>
+                                        <table id="tasks" class="table table-hover table-responsive table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th>Status</th>
+                                                    <th>Priority</th>
+                                                    <th>Title</th>
+                                                    <th>Start Date</th>
+                                                    <th>End Date</th>
+                                                    <th>
+                                                        <a href="javascript:void(0)" class="btn btn-info btn-xs pull-right" title="Add Task" ng-click="createTask()" data-toggle="tooltip"
+                                                            data-placement="top">
+                                                            <i class="fa fa-plus"></i>
+                                                        </a>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="task in project.tasks track by $index">
+                                                    <td>
+                                                        <status-label status="{{::task.status}}"></status-label>
+                                                    </td>
+                                                    <td>
+                                                        <priority-label status="{{::task.priority}}"></priority-label>
+                                                    </td>
+                                                    <td>
+                                                        <span ng-bind="::task.title | limitTo:20"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span ng-bind="::task.startDate | date"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span ng-bind="::task.endDate | date"></span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="javascript:void(0)" class="btn btn-xs btn-danger pull-right m-l-xs" title="Delete" ng-click="deleteTask(task.id)"
+                                                            data-toggle="tooltip" data-placement="top">
+                                                            <i class="fa fa-remove"></i>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right m-l-xs" title="Edit" ng-click="editTask(task)" data-toggle="tooltip"
+                                                            data-placement="top">
+                                                            <i class="fa fa-pencil"></i>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right" title="View" ng-click="displayTask(task)" data-toggle="tooltip"
+                                                            data-placement="top">
+                                                            <i class="fa fa-eye"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                                <!-- project contacts -->
+                                <div class="col-md-6">
+                                    <div ng-show="!createProject">
+                                        <h4>Contacts:</h4>
+                                        <table id="contacts" class="table table-hover table-responsive table-condensed">
+                                            <thead>
+                                                <tr>
+                                                    <th>Position</th>
+                                                    <th>Name</th>
+                                                    <th>Email</th>
+                                                    <th>
+                                                        <a href="javascript:void(0)" class="btn btn-info btn-xs pull-right" title="Add Contact" ng-click="addContact()" data-toggle="tooltip"
+                                                            data-placement="top">
+                                                            <i class="fa fa-plus"></i>
+                                                        </a>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="contact in project.contacts track by $index">
+                                                    <td ng-bind="::contact.title"></td>
+                                                    <td ng-bind="contact.fullName"></td>
+                                                    <td ng-bind="contact.email"></td>
+                                                    <td>
+                                                        <a href="javascript:void(0)" class="btn btn-xs btn-danger pull-right m-l-xs" title="Delete" ng-click="deleteContact(contact.id)"
+                                                            data-toggle="tooltip" data-placement="top">
+                                                            <i class="fa fa-remove"></i>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right" title="Display" ng-click="displayContact(contact)"
+                                                            data-toggle="tooltip" data-placement="top">
+                                                            <i class="fa fa-eye"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- project display mode actions  -->
+                            <div class="pull-right">
+                                <a href="javascript:void(0)" class="btn btn-success btn-sm" ng-if="editMode" title="Save Details" type="submit" ng-click="save()"
+                                    data-toggle="tooltip" data-placement="top">
+                                    <i class="fa fa-save"></i> Save</a>
+                                <a href="javascript:void(0)" class="btn btn-default btn-sm" ng-if="!editMode" title="Edit Details" ng-click="edit()" data-toggle="tooltip"
+                                    data-placement="top">
+                                    <i class="fa fa-pencil"></i> Edit</a>
+                                <a href="javascript:void(0)" class="btn btn-warning btn-sm" title="Cancel" ng-click="cancel()" data-toggle="tooltip" data-placement="top">
+                                    <i class="fa fa-trash-o"></i> Cancel</a>
+                                <a href="javascript:void(0)" class="btn btn-danger btn-sm" title="Delete Details" ng-click="delete()" data-toggle="tooltip"
+                                    data-placement="top">
+                                    <i class="fa fa-remove"></i> Delete</a>
+                            </div>
+                        </div>
+
+                        <!-- project-detail sidebar -->
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <section class="panel">
+                                <div class="project-title">
+                                    <h2>Project Description</h2>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="panel-body">
+                                    <p ng-bind="project.description"></p>
+                                    <div class="project_detail">
+                                        <p class="title">
+                                            <i class="fa fa-eye"></i> Company</p>
+                                        <p ng-bind="::project.clientName"></p>
+                                        <p class="title">
+                                            <i class="fa fa-eye"></i> Project Leader</p>
+                                        <p ng-bind="::project.projectManagerFullName"></p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+
+
+                    <div ng-show="editMode">
+                        <div class="m-l-lg">
+                            <a href="javascript:void(0)" class="btn btn-success btn-sm" title="Save Details" type="submit" ng-click="save()" data-toggle="tooltip"
+                                data-placement="top">
+                                <i class="fa fa-save"></i> Save</a>
+                            <a href="javascript:void(0)" class="btn btn-warning btn-sm" title="Cancel" ng-click="cancel()" data-toggle="tooltip" data-placement="top">
+                                <i class="fa fa-trash-o"></i> Cancel</a>
+                            <a href="javascript:void(0)" ng-if="!createProject" class="btn btn-danger btn-sm" title="Delete Details" ng-click="delete()"
+                                data-toggle="tooltip" data-placement="top">
+                                <i class="fa fa-remove"></i> Delete</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->

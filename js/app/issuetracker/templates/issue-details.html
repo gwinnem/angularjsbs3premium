@@ -1,0 +1,100 @@
+﻿<!-- Main content -->
+<section class="content animated fadeInUp">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-default" id="box1">
+                <div class="box-header with-border">
+                    <h3 class="box-title">
+                        <i class="fa fa-exclamation text-green"></i>
+                        <span class="pad-l-10">ISSUE: {{issue.id | issueFormat}}</span>
+                    </h3>
+                    <box-tools hide-refresh="true" hide-remove="true" hide-max-min="true"></box-tools>
+                </div>
+                <div class="box-body">
+                    <!-- left side -->
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <!-- project status priority-->
+                        <div class="row">
+                            <div class="col-md-4">
+                                <dl class="dl-horizontal">
+                                    <dt>Status:</dt>
+                                    <dd>
+                                        <status-label status="1"></status-label>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-4">
+                                <dl class="dl-horizontal">
+                                    <dt>Priority:</dt>
+                                    <dd>
+                                        <priority-label status="2"></priority-label>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <!-- creator -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt>Created:</dt>
+                                    <dd>{{issue.created.at | date}}</dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt>Creator:</dt>
+                                    <dd>{{issue.created.by}}</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <!-- / creator -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <dl class="dl-horizontal">
+                                    <dt>Message:</dt>
+                                    <dd>{{issue.message}}</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / left side -->
+                    <!-- right side -->
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="text-bold">Assigned:</div>
+                        <div ng-repeat="item in issue.assigned | orderBy: '-id' track by $index">
+                            <span ng-bind="item.at | date"></span>&nbsp;&nbsp;
+                            <span ng-bind="item.by"></span>
+                            <br />
+                        </div>
+                        <br />
+                        <div class="text-bold">Actions:</div>
+                        <div ng-repeat="item in issue.actions | orderBy: '-id' track by $index">
+                            <span ng-bind="item.at | date"></span>&nbsp;&nbsp;
+                            <span ng-bind="item.by"></span>
+                            <br />
+                            <div ng-bind="item.comment"></div>
+                        </div>
+                    </div>
+                    <!-- / right side -->
+
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <a ui-sref="issuetracker" class="btn btn-info m-l-md"><i class="fa fa-hand-o-left"></i> Back</a>
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->
+<script>
+    // Bootstrap tooltip needs to be activated manually
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+</script>

@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='IE=9,IE=edge,chrome=1'>
+    <meta name='copyright' content='Geirr Winnem' />
+    <meta name='author' content='Geirr Winnem' />
+    <meta name='robots' content='index,nofollow' />
+    <meta name='revisit-after' content='1 days'>
+    <meta name='language' content='en' />
+    <meta name='content-language' content='en' />
+    <meta name='Description' CONTENT='Aurora Borealis angularjs admin template.'>
+    <meta name='keywords' content='abadmin,admin template,dashboard,template,angular,angularjs,bootstrap,directive,html,css,javascript'>
+    <title>ABAdmin | Lockscreen 1</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../css/aurora.css">
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <style>
+        .lock-word {
+            z-index: 10;
+            position: absolute;
+            top: 110px;
+            left: 50%;
+            margin-left: -470px;
+        }
+
+            .lock-word span {
+                font-size: 100px;
+                font-weight: 600;
+                color: #e9e9e9;
+                display: inline-block;
+            }
+
+            .lock-word .first-word {
+                margin-right: 200px;
+            }
+    </style>
+</head>
+<body class="hold-transition lockscreen">
+
+    <div class="lockscreen-wrapper">
+        <div class="lock-word">
+            <span class="first-word">LOCKED</span>
+            <span>SCREEN</span>
+        </div>
+        <div class="lockscreen-logo">
+            <a href="../../index.html"><b>AB</b>Admin</a>
+        </div>
+        <!-- User name -->
+        <div class="lockscreen-name">John Doe</div>
+
+        <!-- START LOCK SCREEN ITEM -->
+        <div class="lockscreen-item">
+            <!-- lockscreen image -->
+            <div class="lockscreen-image">
+                <img src="/assets/img/user1-128x128.jpg" alt="User Image">
+            </div>
+            <!-- /.lockscreen-image -->
+            <!-- lockscreen credentials (contains the form) -->
+            <form class="lockscreen-credentials">
+                <div class="input-group">
+                    <input type="password" class="form-control" placeholder="password">
+
+                    <div class="input-group-btn">
+                        <button type="button" class="btn"><i class="fa fa-arrow-right text-muted"></i></button>
+                    </div>
+                </div>
+            </form>
+            <!-- /.lockscreen credentials -->
+
+        </div>
+        <!-- /.lockscreen-item -->
+        <div class="help-block text-center">
+            Enter your password to retrieve your session
+        </div>
+        <div class="text-center">
+            <a href="login-1.html">Or sign in as a different user</a>
+        </div>
+        <div class="lockscreen-footer text-center">
+            Copyright &copy; 2018- <b><a href="https://www.abadmin.com" class="text-black">Geirr Winnem</a></b><br>
+            All rights reserved
+        </div>
+    </div>
+    <!-- /.center -->
+
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

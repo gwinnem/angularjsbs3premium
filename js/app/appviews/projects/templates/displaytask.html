@@ -1,0 +1,64 @@
+﻿<form id="displayTask" class="form-horizontal" role="form">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-4 control-label" style="padding-top: 0 !important;">Status:</label>
+                <div class="col-sm-8">
+                    <status-label status="{{modalOptions.task.status}}"></status-label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-4 control-label" style="padding-top: 0 !important;">Priority:</label>
+                <div class="col-sm-8">
+                    <priority-label status="{{modalOptions.task.priority}}"></priority-label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="startDate" class="col-sm-4 control-label">Start Date:</label>
+                <div class="col-sm-8">
+                    <label id="startDate" class="control-label">{{modalOptions.task.startDate | date}}</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="endDate" class="col-sm-4 control-label">End Date:</label>
+                <div class="col-sm-8">
+                    <label id="endDate" class="control-label">{{modalOptions.task.endDate | date}}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="title" class="col-sm-4 control-label">Title:</label>
+                <div class="col-sm-8">
+                    <label id="title" class="control-label">{{modalOptions.task.title}}</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="hours" class="col-sm-4 control-label">Hours:</label>
+            <div class="col-sm-8">
+                <label id="hours" class="control-label">{{modalOptions.task.hours}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col.md-12">
+            <div class="form-group">
+                <label for="description" class="col-sm-2 control-label">Description:</label>
+                <div class="col-sm-10">
+                    <label class="control-label" id="description">{{modalOptions.task.description}}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

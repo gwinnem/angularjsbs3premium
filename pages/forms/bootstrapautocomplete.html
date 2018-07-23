@@ -1,0 +1,81 @@
+﻿<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="callout callout-info">
+                <p class="font-size-14">
+                    For simple autocomplete use cases there seems to be nothing wrong with the dropped typeahead plugin.<br />
+                    <a href="https://github.com/bassjobsen/Bootstrap-3-Typeahead" target="blank">Here you will find the typeahead autocomplete plugin for Twitter's Bootstrap 3.</a><br />
+                    The original code is written by <a href="http://twitter.com/mdo" rel="nofollow">&#64;mdo</a> and <a href="http://twitter.com/fat" rel="nofollow">&#64;fat</a>.
+                </p>
+            </div>
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Basic example inline data</h3>
+                </div>
+                <div class="box-body">
+                    <p>Basic example via data attributes: <span class="text-muted">(type 'item...')</span></p>
+
+                    <input type="text"
+                           placeholder="item..."
+                           data-provide="typeahead"
+                           data-source="[&quot;item 1&quot;,&quot;item 2&quot;,&quot;item 3&quot;]"
+                           class="form-control">
+                    <br />
+                    <pre>&lt;input type="text"
+    data-provide="typeahead"
+    data-source='["item 1","item 2","item 3"]'
+    placeholder="item..."
+    class="form-control" /&gt;</pre>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Basic example javascript</h3>
+                </div>
+                <div class="box-body">
+                    <p>Basic example via data attributes: <span class="text-muted">(type 'item...')</span></p>
+                    <input class="typeahead_1 form-control"
+                           type="text"
+                           placeholder="display..." /><br />
+                    <pre><code>$('.typeahead_1').typeahead({
+    source: [
+        { id: "someId1", name: "Display name 1" },
+        { id: "someId2", name: "Display name 2" }
+    ]
+});</code></pre>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->
+<script>
+
+    $(document).ready(function () {
+        $('.typeahead_1').typeahead({
+            source: [
+                { id: "someId1", name: "Display name 1" },
+                { id: "someId2", name: "Display name 2" }
+            ]
+        });
+    });
+
+</script>

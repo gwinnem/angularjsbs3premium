@@ -1,0 +1,102 @@
+﻿/*
+ * Component: todo list
+ * ----------------
+ */
+// Import variables and mixins as a reference.
+@import (reference) "../../bootstrap-less/mixins";
+@import (reference) "../../bootstrap-less/variables";
+@import (reference) "../mixins.less";
+@import (reference) "../variables.less";
+
+.todo-list {
+    margin: 0;
+    padding: 0px 0px;
+    list-style: none;
+    // Todo list element
+    > li {
+        .border-radius(2px);
+        padding: 10px;
+        background: @table-striped-color;
+        margin-bottom: 2px;
+        border-left: 3px solid #e6e7e8;
+        color: #444;
+        border-width: 5px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        // Color varaity
+        &.danger {
+            border-left-color: @red;
+        }
+
+        &.warning {
+            border-left-color: @yellow;
+        }
+
+        &.info {
+            border-left-color: @blue;
+        }
+
+        &.success {
+            border-left-color: @green;
+        }
+
+        &.primary {
+            border-left-color: @gray;
+        }
+
+        > input[type='checkbox'] {
+            margin: 0 10px 0 5px;
+        }
+
+        .text {
+            display: inline-block;
+            margin-left: 5px;
+            font-weight: 600;
+        }
+        // Time labels
+        .label {
+            margin-left: 10px;
+            font-size: 9px;
+        }
+        // Tools and options box
+        .tools {
+            display: none;
+            float: right;
+            // icons
+            > .fa, > .glyphicon, > .ion {
+                margin-right: 5px;
+                cursor: pointer;
+            }
+
+            > a {
+                color: @red;
+            }
+        }
+
+        &:hover .tools {
+            display: inline-block;
+        }
+
+        &.done {
+            color: #999;
+
+            .text {
+                text-decoration: line-through;
+                font-weight: 500;
+            }
+
+            .label {
+                background: @gray !important;
+            }
+        }
+    }
+
+    .handle {
+        display: inline-block;
+        cursor: move;
+        margin: 0 5px;
+        vertical-align: middle;
+    }
+}

@@ -1,0 +1,107 @@
+﻿/*
+ * Component: Ios On Off Switch
+ * ----------------------
+ */
+// Import variables and mixins as a reference.
+@import (reference) "../../bootstrap-less/mixins";
+@import (reference) "../../bootstrap-less/variables";
+@import (reference) "../variables.less";
+@import (reference) "../mixins.less";
+@WideOption: 80px;
+@uncheked-backgound: #fff;
+@checked-background: @aqua;
+@checked-border: @checked-background;
+
+
+.ios-switch {
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    position: relative;
+    display: inline-block;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    overflow: visible;
+    width: 60px;
+    height: 18px;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset;
+    -moz-transition: 0.3s ease-out all;
+    -o-transition: 0.3s ease-out all;
+    transition: 0.3s ease-out all;
+    -webkit-transition: 0.3s ease-out all;
+}
+
+.ios-switch.wide {
+    width: @WideOption;
+}
+
+.ios-switch small {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    width: 30px;
+    height: 28px;
+    position: absolute;
+    top: -5px;
+    left: 0px;
+    -moz-transition: 0.3s ease-out all;
+    -o-transition: 0.3s ease-out all;
+    transition: 0.3s ease-out all;
+    -webkit-transition: 0.3s ease-out all;
+}
+
+.ios-switch.checked {
+    background: @checked-background;
+    border-color: @checked-border;
+}
+
+.ios-switch.checked small {
+    left: 30px;
+}
+/*wider switch text moves small further to the right*/
+.ios-switch.wide.checked small {
+    left: 52px;
+}
+
+/*styles for switch-text*/
+.ios-switch .ios-switch-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+/*style right side*/
+.ios-switch .off {
+    display: block;
+    position: absolute;
+    right: 2px;
+    top: -1px;
+    z-index: 0;
+    color: #A9A9A9;
+}
+
+/*style left side*/
+.ios-switch .on {
+    display: none;
+    z-index: 0;
+    color: #fff;
+    position: absolute;
+    top: -1px;
+    left: 4px;
+}
+
+.ios-switch.checked .off {
+    display: none;
+}
+
+.ios-switch.checked .on {
+    display: block;
+}
+
+.ios-switch.disabled {
+    opacity: .50;
+    cursor: not-allowed;
+}

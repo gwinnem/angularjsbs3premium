@@ -1,0 +1,64 @@
+﻿/*
+ * Component: 3D Bartabs
+ * -----------------
+ */
+// Import variables and mixins as a reference.
+@import (reference) "../bootstrap-less/mixins";
+@import (reference) "../bootstrap-less/variables";
+@import (reference) "mixins.less";
+@import (reference) "variables.less";
+
+a {
+}
+
+/*3D tabs*/
+ul.bar_tabs {
+    overflow: visible;
+    height: 25px;
+    margin: 21px 0 14px;
+    padding-left: 14px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    border-bottom: 1px solid #E6E9ED;
+}
+
+
+
+ul.bar_tabs > li {
+    border: 1px solid #E6E9ED;
+    color: #333 !important;
+    margin-top: -17px;
+    margin-left: 8px;
+    background: #fff;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+}
+
+ul.bar_tabs_right > li {
+    float: right;
+}
+
+ul.bar_tabs > li.active {
+    border-right: 6px solid #D3D6DA;
+    border-top: 0;
+    margin-top: -15px;
+    font-weight: bold;
+}
+
+ul.bar_tabs > li a {
+    color: #333 !important;
+    padding: 10px 17px;
+    background: #F5F7FA;
+    margin: 0;
+    border-top-right-radius: 0;
+}
+
+ul.bar_tabs > li a:hover {
+    border: 1px solid transparent;
+    font-weight: 600;
+}
+
+.bar_tabs_content {
+    margin-left: 10px;
+}

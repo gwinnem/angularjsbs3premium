@@ -1,0 +1,84 @@
+﻿<div id="inboxView" class="box box-default">
+    <div class="box-header with-border">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group top-search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." ng-model="archiveFilter">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                </span>
+            </div>
+        </div>
+        <div class="box-tools pull-right">
+            <h3 class="m-r-md">Archive</h3>
+        </div>
+        <!-- /.box-tools -->
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body no-padding">
+        <div class="mailbox-controls m-l-n-xs">
+            <div class="btn-group m-l-sm">
+                <button ng-show="archive.length>0" type="button" class="btn btn-default btn-sm m-r-xs" data-toggle="tooltip" data-placement="top" title="Select all" ng-click="toggleCheckArchiveAll()">
+                    <i class="fa" ng-class="{'fa-check-square-o':archiveIsChecked, 'fa-square-o':!archiveIsChecked}"></i>
+                </button>
+                <button ng-show="archiveHasChecked > 0" type="button" class="btn btn-default btn-sm m-r-xs" data-toggle="tooltip" data-placement="top" title="Mark as read" ng-click="markArchiveCheckedAsRead()"><i class="fa fa-eye"></i></button>
+                <button ng-show="archiveHasChecked > 0" type="button" class="btn btn-default btn-sm m-r-xs" data-toggle="tooltip" data-placement="top" title="TBD" ng-click="archiveInboxChecked()"><i class="fa fa-archive"></i></button>
+                <button ng-show="archiveHasChecked > 0" type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="top" title="Move to Trash" ng-click="deleteArchiveChecked()"><i class="fa fa-trash-o"></i></button>
+            </div>
+
+        </div>
+        <div ng-show="archive.length>0" class="table-responsive">
+            <table class="table table-hover mailbox-messages">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="hidden-xs"></th>
+                        <th class="hidden-xs"></th>
+                        <th></th>
+                        <th></th>
+                        <th class="hidden-xs"></th>
+                        <th></th>
+                        <th class="hidden-xs" style="width: 60px !important;"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="mail in archive | filter : archiveFilter | orderBy : '-received' track by $index" ng-class="{'mail-selected':mail.isChecked}">
+                        <td class="mailbox-check hidden-xs p-t-xs p-b-xs">
+                            <input type="checkbox" icheck theme="flat" id="{{mail.id}}" ng-change="updateArchiveChecked(mail)" ng-model="mail.isChecked" />
+                        </td>
+                        <td class="mailbox-star hidden-xs p-t-xs p-b-xs">
+                            <i ng-class="{'fa fa-star-o text-yellow': !mail.isStarred, 'fa fa-star text-yellow': mail.isStarred}" ng-click="updateArchiveStarred(mail)"></i>
+                        </td>
+                        <td class="mailbox-star hidden-xs p-t-xs p-b-xs">
+                            <i ng-class="{'': !mail.isFlagged, 'fa fa-flag text-red': mail.isFlagged}" ng-click="flagArchiveEmail(mail)"></i>
+                        </td>
+                        <td class="mailbox-name p-t-xs p-b-xs"><a href="javascript:void(0);" ng-bind="mail.from" ng-class="{'mail-unread' : !mail.isRead}" ng-click="readArchiveMail(mail)"></a></td>
+                        <td class="p-t-xs p-b-xs" ng-class="{'mail-unread' : !mail.isRead}" ng-click="readArchiveMail(mail)">{{::mail.subject}}</td>
+                        <td class="mailbox-attachment hidden-xs p-t-xs"><i class="fa fa-paperclip" ng-show="mail.hasAttachment"></i></td>
+                        <td class="mailbox-date p-t-xs p-b-xs">{{mail.received | date : 'MMM d HH:MM'}}</td>
+                        <td class="hidden-xs p-t-xs p-b-xs">
+                            <div class="mailbox-tools">
+                                <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Toggle Flag on this item"><i class="fa fa-flag-o" ng-click="flagArchiveEmail(mail)"></i></a>
+                                <a href="javascript:void(0)" data-toggle="tooltip" data-placement="top" title="Delete this item" ng-click="deleteArchiveMail(mail)"><i class="fa fa-trash-o"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <!-- /.table -->
+        </div>
+        <div ng-show="archive.length==0" class="m-md">
+            <div class="callout callout-warning">
+                <h4>Folder is empty !</h4>
+            </div>
+        </div>
+    </div>
+    <!-- /.box-body -->
+</div>
+<!-- /. box -->
+<script>
+    $(function () {
+        // Have to manually activate bootstrap tooltip.
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

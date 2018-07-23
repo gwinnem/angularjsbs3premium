@@ -1,0 +1,152 @@
+﻿<!-- Main content -->
+<section class="content animated fadeInUp">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-info" id="box1">
+                <div class="box-header with-border">
+                    <h3 class="box-title" ng-bind="boxTitle"></h3>
+                    <div class="box-tools">
+                        <button type="button" class="btn btn-box-tool" data-widget="fullscreen" data-toggle="tooltip" title="Full screen">
+                            <i class="fa fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div ng-hide="editMode">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <dl class="dl-horizontal">
+                                            <dt>Status: </dt>
+                                            <dd>
+                                                <status-label status="{{company.status}}"></status-label>
+                                            </dd>
+                                            <dt>Name: </dt>
+                                            <dd>{{::company.name}}</dd>
+                                            <dt>Address: </dt>
+                                            <dd>{{::company.address}}</dd>
+                                            <dt>Country:</dt>
+                                            <dd>{{::company.country}}</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <dl class="dl-horizontal">
+                                            <dt class="m-t-md">Url: </dt>
+                                            <dd class="m-t-md">
+                                                <a href="{{::company.website}}" target="_blank">{{::company.website}}</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <a href="javascript:void(0)" class="btn btn-warning btn-sm pull-right m-l-xs" ng-click="cancel()">
+                                            <i class="fa fa-trash-o"></i> Cancel</a>
+                                        <a href="javascript:void(0)" class="btn btn-info btn-sm pull-right" ng-click="edit()">
+                                            <i class="fa fa-edit"></i> Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="editMode">
+                                <form id="companyEdit" name="companyEdit" role="form" class="form-horizontal">
+                                    <div class="form-group">
+
+                                        <label class="control-label col-sm-2" for="status">Status:</label>
+                                        <div class="col-sm-10">
+                                            <toggle-switch id="status" class="switch-small switch-success" ng-model="company.status" switch-id="1" on-label="On" off-label="Off"
+                                                ng-change="onStatusChange()"></toggle-switch>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="companyName">Name:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="companyName" ng-model="company.name" required maxlength="50" autofocus placeholder="Company name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="address">Address:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="address" ng-model="company.address" maxlength="255" placeholder="Address">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="postal">Country:</label>
+                                        <div class="col-sm-10">
+                                            <select id="country" name="country" class="form-control selectpicker" ng-model="company.country">
+                                                <option value="">Please select your country</option>
+                                                <option ng-repeat="item in countries" ng-bind="item.niceName">{{item.niceName}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="website">Website:</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="website" ng-model="company.website" maxlength="255" placeholder="Website">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <a href="javascript:void(0)" ng-if="guid.length==0" class="btn btn-danger btn-sm pull-right m-l-xs m-r-md" title="Delete"
+                                            ng-click="delete()">
+                                            <i class="fa fa-remove"></i> Delete</a>
+                                        <a href="javascript:void(0)" class="btn btn-warning btn-sm pull-right m-l-xs" ng-click="cancel()">
+                                            <i class="fa fa-trash-o"></i> Cancel</a>
+                                        <a href="javascript:void(0)" class="btn btn-success btn-sm pull-right" type="submit" ng-click="save(companyEdit)">
+                                            <i class="fa fa-save"></i> Save</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-6">
+                                <h4>Company contacts:</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="javascript:void(0)" class="btn btn-xs btn-info pull-right" ng-click="addContacts()">
+                                    <i class="fa fa-plus"></i> Add contact</a>
+                            </div>
+                            <table class="table table-responsive table-condensed table-hover" ng-show="company.contacts.length>0">
+                                <thead>
+                                    <tr>
+                                        <th>Position</th>
+                                        <th>Name</th>
+                                        <th>Mobile</th>
+                                        <th>Email</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="contact in company.contacts track by $index">
+                                        <td ng-bind="contact.title"></td>
+                                        <td ng-bind="contact.fullName"></td>
+                                        <td ng-bind="contact.mobile"></td>
+                                        <td ng-bind="contact.email"></td>
+                                        <td>
+                                            <a href="javascript:void(0)" class="btn btn-xs btn-danger pull-right m-l-xs" title="Remove from Company" ng-click="removeContact(contact.id)">
+                                                <i class="fa fa-remove"></i>
+                                            </a>
+                                            <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right" title="View Contact" ng-click="displayContact(contact.id)">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div ng-show="company.contacts.length==0" class="alert alert-warning m-t-xl">
+                                <h4>
+                                    <i class="icon fa fa-warning"></i> Warning!</h4>
+                                <span>There are no contacts for this company !</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->

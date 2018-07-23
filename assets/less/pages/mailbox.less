@@ -1,0 +1,207 @@
+/*
+ * Page: Mailbox version one
+ * -------------
+ */
+// Import variables and mixins as a reference.
+@import (reference) "../../bootstrap-less/mixins";
+@import (reference) "../../bootstrap-less/variables";
+@import (reference) "../mixins.less";
+@import (reference) "../variables.less";
+
+// Compose email
+// Read email
+.mailbox-read-info {
+    border-bottom: 1px solid #f4f4f4;
+    padding: 10px;
+}
+
+.mailbox-read-info h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.mailbox-read-info h5 {
+    margin: 0;
+    padding: 5px 0 0 0;
+}
+
+.mailbox-read-time {
+    color: #444;
+    font-size: 18px;
+}
+
+.mailbox-read-message {
+    padding: 10px;
+
+    > textarea {
+        resize: none;
+        width: 100%;
+        overflow: hidden;
+        border: none;
+        border-style: none;
+        border-color: Transparent;
+    }
+}
+
+.mailbox-attachments li {
+    float: left;
+    width: 200px;
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.mailbox-attachment-name {
+    font-weight: bold;
+    color: #666;
+}
+
+.mailbox-attachment-icon, .mailbox-attachment-info, .mailbox-attachment-size {
+    display: block;
+}
+
+.mailbox-attachment-info {
+    padding: 10px;
+    background: #f4f4f4;
+}
+
+.mailbox-attachment-size {
+    color: #999;
+    font-size: 12px;
+}
+
+.mailbox-attachment-icon {
+    text-align: center;
+    font-size: 65px;
+    color: #666;
+    padding: 20px 10px;
+}
+
+.mailbox-attachment-icon.has-img {
+    padding: 0;
+}
+
+.mailbox-attachment-icon.has-img > img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+// Folder list
+.mailbox-folders {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+    list-style: none;
+    font-size: 16px;
+    line-height: 2;
+
+    > li {
+        border-left: 3px solid transparent;
+    }
+
+    > li.active {
+        border-left-color: #74b9ff;
+        font-weight: 600;
+        background-color: rgba(0,0,0,.1);
+    }
+
+    > li:hover {
+        border-left-color: lightgray;
+    }
+
+    > li a {
+        display: block;
+        color: #666;
+        padding-left: 8px;
+    }
+
+    > li a:hover {
+        background-color: rgba(0,0,0,.1);
+    }
+}
+
+.email-folder-label {
+    margin-top: 8px;
+    margin-right: 5px;
+    float: right !important;
+}
+
+
+// mailbox views
+.mailbox-messages {
+    cursor: pointer;
+
+    > .table {
+        margin: 0;
+    }
+}
+
+.mailbox-check {
+    width: 30px;
+}
+
+.mailbox-star {
+    width: 25px;
+    text-align: center;
+
+    > i {
+        padding-top: 4px;
+    }
+}
+
+.mailbox-name > a {
+    color: #676a6c;
+    font-weight: 600;
+
+    &:hover {
+        color: @black;
+    }
+}
+
+.mail-selected {
+    background-color: #ffc;
+}
+
+.mail-unread {
+    font-weight: 700 !important;
+    color: @black !important;
+}
+
+.mailbox-date {
+    text-align: right;
+    font-weight: 800;
+}
+
+.mailbox-attachment {
+    width: 25px;
+}
+
+// Tools and options box
+.mailbox-tools {
+    width: 50px !important;
+    text-align: right;
+    > .fa{
+        margin-right: 5px;
+    }
+
+    > a {
+        color: @red;
+    }
+}
+
+
+// Table last column tools
+table.mailbox-messages tr th:last-child {
+    // Width needed for displaying the icons on the last row
+    width: 80px;
+}
+
+table.mailbox-messages tr td:last-child .mailbox-tools {
+    display: none;
+}
+
+table.mailbox-messages tr:hover td:last-child .mailbox-tools {
+    display: inline-block;
+}

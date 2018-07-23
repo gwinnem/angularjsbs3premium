@@ -1,0 +1,45 @@
+﻿/*
+ * Component: Agile Board
+ * ----------------
+ */
+// Import variables and mixins as a reference.
+@import (reference) "../../bootstrap-less/mixins";
+@import (reference) "../../bootstrap-less/variables";
+@import (reference) "../mixins.less";
+@import (reference) "../variables.less";
+
+.sortable-list {
+  padding: 10px 0;
+}
+.agile-list {
+  list-style: none;
+  margin: 0;
+}
+.agile-list li {
+
+  background: #FAFAFB;
+  border: 1px solid #e7eaec;
+  margin: 0px 0 10px 0;
+  padding: 10px;
+  border-radius: 2px;
+}
+.agile-list li:hover {
+  cursor: pointer;
+  background: #b9b9b9;
+}
+.agile-list li.warning-element {
+  border-left: 3px solid @yellow;
+}
+.agile-list li.danger-element {
+  border-left: 3px solid @red;
+}
+.agile-list li.info-element {
+  border-left: 3px solid @blue;
+}
+.agile-list li.success-element {
+  border-left: 3px solid @navy;
+}
+.agile-detail {
+  margin-top: 5px;
+  font-size: 12px;
+}

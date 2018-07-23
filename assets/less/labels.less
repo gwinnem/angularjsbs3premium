@@ -1,0 +1,35 @@
+/*
+ * Component: Label
+ * ----------------
+ */
+// Import variables and mixins as a reference.
+@import (reference) "../bootstrap-less/mixins";
+@import (reference) "../bootstrap-less/variables";
+@import (reference) "mixins.less";
+@import (reference) "variables.less";
+
+.label-default {
+    background-color: @gray-lte;
+    color: #444;
+}
+
+.label-danger {
+    &:extend(.bg-red);
+}
+
+.label-info {
+    &:extend(.bg-blue);
+}
+
+.label-warning {
+    &:extend(.bg-yellow);
+}
+
+.label-primary {
+    &:extend(.bg-light-blue);
+}
+
+.label-success {
+    &:extend(.bg-green);
+}
+

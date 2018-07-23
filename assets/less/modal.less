@@ -1,0 +1,123 @@
+/*
+ * Component: modal
+ * ----------------
+ */
+// Import variables and mixins as a reference.
+@import (reference) "../bootstrap-less/mixins";
+@import (reference) "../bootstrap-less/variables";
+@import (reference) "mixins.less";
+@import (reference) "variables.less";
+
+.modal-content {
+    background-clip: padding-box;
+    background-color: @white;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    outline: 0 none;
+    position: relative;
+}
+
+.modal-dialog {
+    z-index: 2200;
+}
+
+.modal-body {
+    padding: 20px 30px 10px 30px;
+}
+
+.modal-header {
+    border-bottom-color: @box-border-color;
+}
+
+.modal-footer {
+    margin-top: 0px;
+    border-top-color: @box-border-color;
+}
+
+//Modal color variants
+.modal-primary {
+    .modal-body {
+        &:extend(.bg-light-blue);
+    }
+
+    .modal-header,
+    .modal-footer {
+        &:extend(.bg-light-blue-active);
+        border-color: darken(@light-blue, 10%);
+    }
+}
+
+.modal-warning {
+    .modal-body {
+        &:extend(.bg-yellow);
+    }
+
+    .modal-header,
+    .modal-footer {
+        &:extend(.bg-yellow-active);
+        border-color: darken(@yellow, 10%);
+    }
+}
+
+.modal-info {
+    .modal-body {
+        &:extend(.bg-aqua);
+    }
+
+    .modal-header,
+    .modal-footer {
+        &:extend(.bg-aqua-active);
+        border-color: darken(@aqua, 10%);
+    }
+}
+
+.modal-success {
+    .modal-body {
+        &:extend(.bg-green);
+    }
+
+    .modal-header,
+    .modal-footer {
+        &:extend(.bg-green-active);
+        border-color: darken(@green, 10%);
+    }
+}
+
+.modal-danger {
+    .modal-body {
+        &:extend(.bg-red);
+    }
+
+    .modal-header,
+    .modal-footer {
+        &:extend(.bg-red-active);
+        border-color: darken(@red, 10%);
+    }
+}
+
+// AB Modals
+.abmodal .modal-body {
+    background: #f8fafb;
+}
+
+.abmodal .modal-header {
+    padding: 30px 15px;
+    text-align: center;
+}
+
+.animated.modal.fade .modal-dialog {
+    -webkit-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+
+.abmodal .modal-title {
+    font-size: 26px;
+}
+
+.abmodal .modal-icon {
+    font-size: 84px;
+    color: #e2e3e3;
+}

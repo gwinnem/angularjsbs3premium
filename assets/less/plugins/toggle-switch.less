@@ -1,0 +1,278 @@
+/*
+ * Component: Toggle Switch
+ * -------------------
+ */
+// Import variables and mixins as a reference
+@import (reference) "../../bootstrap-less/mixins";
+@import (reference) "../../bootstrap-less/variables";
+@import (reference) "../variables.less";
+@import (reference) "../mixins.less";
+
+
+// Opacity
+.opacity-bs3(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
+.ats-switch {
+    border: 1px solid;
+    cursor: pointer;
+    display: inline-block;
+    text-align: left;
+    overflow: hidden;
+    line-height: 8px;
+    min-width: 100px;
+
+    &.disabled {
+        .opacity-bs3(.5);
+        cursor: default !important;
+
+        .switch-left,
+        .switch-right,
+        .knob {
+            cursor: default !important;
+        }
+    }
+
+    span {
+        cursor: pointer;
+        display: inline-block;
+        float: left;
+        height: 100%;
+        line-height: 20px;
+        padding: 4px;
+        text-align: center;
+        width: 33%;
+        white-space: nowrap;
+
+        box-sizing: border-box;
+        -o-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
+    > div {
+        position: relative;
+        width: 150%;
+    }
+
+    .knob {
+        background: red;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        background-color: #f5f5f5;
+        width: 34%;
+        z-index: 100;
+    }
+
+    .switch-on {
+        left: 0%;
+    }
+
+    .switch-off {
+        left: -50%
+    }
+
+    .swtich-left,
+    .switch-right {
+        z-index: 1;
+    }
+
+    .switch-left {
+        color: #fff;
+        background: #005fcc;
+    }
+
+    .switch-right {
+        color: #333;
+        background: #f0f0f0;
+    }
+
+    .switch-animate {
+        transition: left 0.5s;
+        -o-transition: left 0.5s;
+        -moz-transition: left 0.5s;
+        -webkit-transition: left 0.5s;
+    }
+}
+
+
+// Secondary less
+.form-control-hover(@color: @input-border-focus) {
+  @color-rgba: rgba(red(@color), green(@color), blue(@color), .6);
+  &:hover {
+    border-color: @color;
+    outline: 0;
+    .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @{color-rgba}");
+  }
+}
+
+
+.ats-switch {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: @border-radius-base;
+  border: 1px solid;
+  border-color: @btn-default-border;
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+  line-height: 8px;
+  .user-select(none);
+  vertical-align: middle;
+  min-width: 100px;
+  .form-control-hover();
+  .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
+
+  &.disabled {
+    &:hover {
+      border-color: @btn-default-border;
+      .box-shadow(~"inset 0 0 0 rgba(0,0,0,0), 0 0 0 rgba(0,0,0,0)");
+    }
+  }
+
+  .knob {
+    border-right: none;
+    border-left: none;
+    text-align: center;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    z-index: 100;
+    background: @btn-default-bg;
+
+    i {
+      color: #000;
+      text-shadow: 0 1px 0 #fff;
+      line-height: 18px;
+      pointer-events: none;
+    }
+  }
+
+  .switch-left,
+  .switch-right,
+  .knob {
+    min-height: 28px;
+  }
+
+  &.switch-mini {
+    min-width: 72px;
+
+    .switch-left,
+    .switch-right,
+    .knob {
+      padding-bottom: 4px;
+      padding-top: 4px;
+      font-size: 10px;
+      line-height: 9px;
+      min-height: 18px;
+    }
+
+    i.switch-mini-icons {
+      height: 1.20em;
+      line-height: 9px;
+      vertical-align: text-top;
+      text-align: center;
+      transform: scale(0.6);
+      margin-top: -1px;
+      margin-bottom: -1px;
+    }
+  }
+
+  &.switch-small {
+    min-width: 80px;
+
+    .switch-left,
+    .switch-right,
+    .knob {
+      padding-bottom: 3px;
+      padding-top: 3px;
+      font-size: 12px;
+      line-height: 18px;
+      min-height: 24px;
+    }
+  }
+
+  &.switch-large {
+    min-width: 120px;
+
+    .switch-left,
+    .switch-right,
+    .knob {
+      padding-bottom: 9px;
+      padding-top: 9px;
+      font-size: 16px;
+      line-height: normal;
+      min-height: 34px;
+    }
+  }
+
+  span {
+    &.switch-left {
+      color: #fff;
+      background: @btn-primary-bg;
+    }
+
+    &.switch-right {
+      color: #000;
+      background: @gray-lighter;
+    }
+  }
+
+  &.switch-primary {
+    span {
+      &.switch-left {
+        color: #fff;
+        background: @btn-primary-bg;
+      }
+    }
+
+  }
+
+  &.switch-info {
+    span {
+      &.switch-left {
+        color: #fff;
+        background: @btn-info-bg;
+      }
+    }
+  }
+
+  &.switch-success {
+    span {
+      &.switch-left {
+        color: #fff;
+        background: @btn-success-bg;
+      }
+    }
+  }
+
+  &.switch-warning {
+    span {
+      &.switch-left {
+        background: @btn-warning-bg;
+        color: #fff;
+      }
+    }
+  }
+
+  &.switch-danger {
+    span {
+      &.switch-left {
+        color: #fff;
+        background: @btn-danger-bg;
+      }
+    }
+  }
+
+  &.switch-default {
+    span {
+      &.switch-left {
+        color: #000;
+        background: @gray-lighter;
+      }
+    }
+  }
+}

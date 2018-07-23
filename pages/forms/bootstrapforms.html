@@ -1,0 +1,288 @@
+﻿<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="callout callout-danger">
+                <h4>Always add labels</h4>
+                <p>
+                    Screen readers will have trouble with your forms if you don't include a label for every input. For these inline forms, you can hide the labels using the <code>.sr-only</code> class. There are further alternative methods of providing a label for assistive technologies, such as the <code>aria-label</code>, <code>aria-labelledby</code> or <code>title</code> attribute. If none of these is present, screen readers may resort to using the <code>placeholder</code> attribute, if present, but note that use of <code>placeholder</code> as a replacement for other labelling methods is not advised.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- / row -->
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-default" id="box1">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Registration form with default validation</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body">
+                    <form id="frmRegistration">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email" title="Email" required="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Password</label>
+                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password" title="Password" required="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputFirstName">First Name</label>
+                            <input type="text" class="form-control" id="inputFirstName" placeholder="First name" title="First name" required="" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputLastName">First Name</label>
+                            <input type="text" class="form-control" id="inputLastName" placeholder="Last name" title="Last name" required="" />
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="inputAddress">Address</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" title="Address" required="">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="inputAddress2">Address 2</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" title="Address 2">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity" title="City" required="">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">State</label>
+                            <select id="inputState" class="form-control" title="State">
+                                <option selected>Choose...</option>
+                                <option>Alabama</option>
+                                <option>Alaska</option>
+                                <option>Arizona</option>
+                                <option>Arkansas</option>
+                                <option>California</option>
+                                <option>Colorado</option>
+                                <option>Connecticut</option>
+                                <option>Delaware</option>
+                                <option>District of Columbia</option>
+                                <option> Florida</option>
+                                <option>Georgia</option>
+                                <option>Hawaii</option>
+                                <option>daho</option>
+                                <option>Illinois</option>
+                                <option>Indiana</option>
+                                <option>Iowa</option>
+                                <option> Kansas</option>
+                                <option>Kentucky</option>
+                                <option>Louisiana</option>
+                                <option>Maine</option>
+                                <option>Maryland</option>
+                                <option> Mass</option>
+                                <option>Michigan</option>
+                                <option>Minnesota</option>
+                                <option>Mississippi</option>
+                                <option>Missouri</option>
+                                <option>Montana</option>
+                                <option>Nebraska</option>
+                                <option>Nevada</option>
+                                <option>New Hampshire</option>
+                                <option>New Jersey</option>
+                                <option>New Mexico</option>
+                                <option>New York</option>
+                                <option>North Carolina</option>
+                                <option>North Dakota</option>
+                                <option>Ohio</option>
+                                <option>Oklahoma</option>
+                                <option>Oregon</option>
+                                <option>Pennsylvania</option>
+                                <option>Rhode Island</option>
+                                <option>South Carolina</option>
+                                <option>South Dakota</option>
+                                <option>Tennessee</option>
+                                <option>Texas</option>
+                                <option> Uttah</option>
+                                <option>Vermont</option>
+                                <option>Virginia</option>
+                                <option>Washington</option>
+                                <option>West Virginia</option>
+                                <option>Wisconsin</option>
+                                <option>Wyoming</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip" title="Zip" required="">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="inputCountry">Country</label>
+                            <input type="text" class="form-control" id="inputCountry" title="Country" required="">
+                        </div>
+                        <button type="submit" class="btn btn-primary pull-right">Save</button>
+                    </form>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-default" id="box2">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Contact form with default validation</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body">
+                    <form id="frmContact">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" title="Name" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" title="Email" required="">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile number</label>
+                            <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" title="Mobile number" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject1">Subject</label>
+                            <input type="text" class="form-control" id="subject1" name="subject" placeholder="Subject" title="Subject" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7" title="Message"></textarea>
+                            <span id="characterLeft" class="help-block ">140 characters left</span>
+                        </div>
+
+                        <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right">Save</button>
+                    </form>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-default" id="box3">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Simple website registration </h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body">
+                    <form>
+                        <div class="col-md-6">
+
+                            <div class="form-group col-lg-12">
+                                <label for="registerUsername">Username</label>
+                                <input type="text" id="registerUsername" class="form-control" title="Username" required="">
+                            </div>
+
+                            <div class="form-group col-lg-6">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" class="form-control" title="Password" required="">
+                            </div>
+
+                            <div class="form-group col-lg-6">
+                                <label for="repeatpassword">Repeat Password</label>
+                                <input type="password" class="form-control" id="repeatpassword" title="Repeat password" required="">
+                            </div>
+
+                            <div class="form-group col-lg-6">
+                                <label for="registerEmail">Email Address</label>
+                                <input type="email" class="form-control" id="registerEmail" title="Email" required="">
+                            </div>
+
+                            <div class="form-group col-lg-6">
+                                <label for="repeatEmail">Repeat Email Address</label>
+                                <input type="email" class="form-control" id="repeatEmail" title="Repeat email" required="">
+                            </div>
+
+                            <div class="col-sm-6">
+                                <input type="checkbox" class="checkbox" />Sigh up for our newsletter
+                            </div>
+
+                            <div class="col-sm-6">
+                                <input type="checkbox" class="checkbox" />Send notifications to this email
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <h3>Terms and Conditions</h3>
+                            <p>
+                                By clicking on "Register" you agree to The Company's' Terms and Conditions
+                            </p>
+                            <p>
+                                While rare, prices are subject to change based on exchange rate fluctuations -
+                                should such a fluctuation happen, we may request an additional payment. You have the option to request a full refund or to pay the new price. (Paragraph 13.5.8)
+                            </p>
+                            <p>
+                                Should there be an error in the description or pricing of a product, we will provide you with a full refund (Paragraph 13.5.6)
+                            </p>
+                            <p>
+                                Acceptance of an order by us is dependent on our suppliers ability to provide the product. (Paragraph 13.5.6)
+                            </p>
+
+                            <button type="submit" class="btn btn-primary pull-right">Register</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-default" id="box4">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Simple Signin</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body">
+                    <form class="form-horizontal">
+                        <p>Sign in today for more expirience.</p>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Email</label>
+
+                            <div class="col-lg-10">
+                                <input type="email" placeholder="Email" class="form-control" required="">
+                                <span class="help-block m-b-none">Example block-level help text here.</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Password</label>
+                            <div class="col-lg-10">
+                                <input type="password" placeholder="Password" class="form-control" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <label>
+                                    <input type="checkbox">
+                                    Remember me
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button class="btn btn-primary pull-right" type="submit">Sign in</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->

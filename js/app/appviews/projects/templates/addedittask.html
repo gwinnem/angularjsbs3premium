@@ -1,0 +1,94 @@
+﻿<form id="addTask" class="form-horizontal" role="form">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-4 control-label" style="padding-top: 0 !important;">Status:</label>
+                <div class="col-sm-8">
+                    <input type="radio" icheck class="form-control" id="status-created" ng-model="task.status" name="status" value="0" theme="square" color="blue">&nbsp;&nbsp;InActive
+                    <input type="radio" icheck class="form-control" id="status-inprogress" ng-model="task.status" name="status" value="1" theme="square" color="blue">&nbsp;&nbsp;Active
+                    <input type="radio" icheck class="form-control" id="status-completed" ng-model="task.status" name="status" value="2" theme="square" color="blue">&nbsp;&nbsp;Completed
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-4 control-label" style="padding-top: 0 !important;">Priority:</label>
+                <div class="col-sm-8">
+                    <input type="radio" icheck class="form-control" id="priority-low" ng-model="task.priority" name="priority" value="0" theme="square" color="blue">&nbsp;&nbsp;Low
+                    <input type="radio" icheck class="form-control" id="priority-normal" ng-model="task.priority" name="priority" value="1" theme="square" color="blue">&nbsp;&nbsp;Normal
+                    <input type="radio" icheck class="form-control" id="priority-high" ng-model="task.priority" name="priority" value="2" theme="square" color="blue">&nbsp;&nbsp;High
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Start Date:</label>
+                <div class="col-sm-8">
+                    <p class="input-group">
+                        <input type="text" class="form-control"
+                               uib-datepicker-popup="{{format}}"
+                               ng-model="task.startDate"
+                               is-open="popup1.opened"
+                               datepicker-options="dateOptions"
+                               show-button-bar="false"
+                               close-text="Close"
+                               ng-required="true" />
+
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open1()"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">End Date:</label>
+                <div class="col-sm-8">
+                    <p class="input-group">
+                        <input type="text" class="form-control"
+                               uib-datepicker-popup="{{format}}"
+                               ng-model="task.endDate"
+                               is-open="popup2.opened"
+                               datepicker-options="dateOptions"
+                               show-button-bar="false"
+                               close-text="Close"
+                               ng-required="true" />
+
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open2()"><i class="fa fa-calendar"></i></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="title" class="col-sm-4 control-label">Title:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="title" ng-model="task.title" placeholder="Title" required maxlength="50">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="hours" class="col-sm-4 control-label">Hours:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="hours" ng-model="task.hours" placeholder="Task hours" maxlength="4" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col.md-12">
+            <div class="form-group">
+                <label for="description" class="col-sm-2 control-label">Description:</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" id="description" ng-model="task.description" placeholder="Description" rows="3" style="resize: none;" ab-elastic></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

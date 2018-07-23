@@ -1,0 +1,44 @@
+﻿<!-- Main content -->
+<section class="content animated fadeInRightBig">
+    <div class="row">
+        <div class="col-md-6 col-sm-5 col-xs-12 form-group top-search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." ng-model="companyFilter">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div ng-repeat="company in companies | filter : companyFilter track by $index">
+                <div class="list-panel col-md-3 col-sm-2">
+                    <div class="panel-body text-center">
+                        <address>
+                            <strong>{{company.name}}</strong><br />
+                            {{company.address}}<br />
+                            {{company.country}}<br />
+                            <i class="fa fa-phone"></i> {{company.phone}}
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->
+
+<style>
+    .list-panel {
+        cursor: pointer;
+        height: 140px;
+        width: 250px;
+        background-color: white;
+        border: 0;
+        box-shadow: none;
+        margin-bottom: 15px;
+        margin-right: 10px;
+    }
+</style>

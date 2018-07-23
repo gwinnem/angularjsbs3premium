@@ -1,0 +1,326 @@
+﻿<!-- Select2 -->
+<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Select2</h3>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Minimal</label>
+                                <select class="form-control select2"
+                                        style="width: 100%;">
+                                    <option selected="selected">Alabama</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Disabled</label>
+                                <select class="form-control select2"
+                                        disabled="disabled"
+                                        style="width: 100%;">
+                                    <option selected="selected">Alabama</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Multiple</label>
+                                <select class="form-control select2"
+                                        multiple="multiple"
+                                        data-placeholder="Select a State"
+                                        style="width: 100%;">
+                                    <option>Alabama</option>
+                                    <option>Alaska</option>
+                                    <option>California</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Disabled Result</label>
+                                <select class="form-control select2" style="width: 100%;">
+                                    <option selected="selected">Alabama</option>
+                                    <option>Alaska</option>
+                                    <option disabled="disabled">California (disabled)</option>
+                                    <option>Delaware</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Washington</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Options:</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Option</th>
+                                        <th>Type</th>
+                                        <th>Default</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>adaptContainerCssClass</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>adaptDropdownCssClass</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ajax</code></td>
+                                        <td>object</td>
+                                        <td><code>null</code></td>
+                                        <td>Provides support for <a href="https://select2.org/data-sources/ajax">ajax data sources</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>allowClear</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>boolean</td>
+                                        <td><code>false</code></td>
+                                        <td>Provides support for <a href="https://select2.org/selections#clearable-selections">clearable selections</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>closeOnSelect</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>boolean</td>
+                                        <td><code>true</code></td>
+                                        <td>Controls whether the dropdown is <a href="https://select2.org/dropdown#forcing-the-dropdown-to-remain-open-after-selection">closed after a selection is made</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>containerCss</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>containerCssClass</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>string</td>
+                                        <td><code>''</code></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>data</code></td>
+                                        <td>array of objects</td>
+                                        <td><code>null</code></td>
+                                        <td>Allows rendering dropdown options from an <a href="https://select2.org/data-sources/arrays">array</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dataAdapter</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td></td>
+                                        <td><code>SelectAdapter</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>Used to override the built-in <a href="https://select2.org/advanced/default-adapters/data">DataAdapter</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>debug</code></td>
+                                        <td>boolean</td>
+                                        <td><code>false</code></td>
+                                        <td>Enable debugging messages in the browser console.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dir</code></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>disabled</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>boolean</td>
+                                        <td><code>false</code></td>
+                                        <td>When set to <code>true</code>, the select control will be disabled.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dropdownAdapter</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td></td>
+                                        <td><code>DropdownAdapter</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>Used to override the built-in <a href="https://select2.org/advanced/default-adapters/dropdown">DropdownAdapter</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dropdownAutoWidth</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>boolean</td>
+                                        <td><code>false</code></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dropdownCss</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dropdownCssClass</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>string</td>
+                                        <td><code>''</code></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>dropdownParent</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>jQuery selector or DOM node</td>
+                                        <td><code>$(document.body)</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>Allows you to <a href="https://select2.org/dropdown#dropdown-placement">customize placement</a> of the dropdown.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>escapeMarkup</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>callback</td>
+                                        <td><code>Utils.escapeMarkup</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>Handles <a href="https://select2.org/dropdown#built-in-escaping">automatic escaping of content rendered by custom templates</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>language</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>string or object</td>
+                                        <td><code>EnglishTranslation</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>Specify the <a href="https://select2.org/i18n#message-translations">language used for Select2 messages</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>matcher</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>A callback taking search <code>params</code><span class="copy-to-clipboard" title="Copy to clipboard"></span> and the <code>data</code> object.</td>
+                                        <td></td>
+                                        <td>Handles custom <a href="https://select2.org/searching#customizing-how-results-are-matched">search matching</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>maximumInputLength</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>integer</td>
+                                        <td><code>0</code></td>
+                                        <td><a href="https://select2.org/searching#maximum-search-term-length">Maximum number of characters</a> that may be provided for a search term.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>maximumSelectionLength</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>integer</td>
+                                        <td><code>0</code></td>
+                                        <td>The maximum number of items that may be selected in a multi-select control. If the value of this option is less than 1, the number of selected items will not be limited.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>minimumInputLength</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>integer</td>
+                                        <td><code>0</code></td>
+                                        <td><a href="https://select2.org/searching#minimum-search-term-length">Minimum number of characters required to start a search.</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>minimumResultsForSearch</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>integer</td>
+                                        <td><code>0</code></td>
+                                        <td>The minimum number of results required to <a href="https://select2.org/searching#limiting-display-of-the-search-box-to-large-result-sets">display the search box</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>multiple</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>boolean</td>
+                                        <td><code>false</code></td>
+                                        <td>This option enables multi-select (pillbox) mode. Select2 will automatically map the value of the <code>multiple</code><span class="copy-to-clipboard" title="Copy to clipboard"></span> HTML attribute to this option during initialization.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>placeholder</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>string or object</td>
+                                        <td><code>null</code></td>
+                                        <td>Specifies the <a href="https://select2.org/placeholders">placeholder</a> for the control.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>resultsAdapter</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td></td>
+                                        <td><code>ResultsAdapter</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>Used to override the built-in <a href="https://select2.org/advanced/default-adapters/results">ResultsAdapter</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>selectionAdapter</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td></td>
+                                        <td><code>SingleSelection</code><span class="copy-to-clipboard" title="Copy to clipboard"></span> or <code>MultipleSelection</code><span class="copy-to-clipboard" title="Copy to clipboard"></span>, depending on the value of <code>multiple</code><span class="copy-to-clipboard" title="Copy to clipboard"></span>.</td>
+                                        <td>Used to override the built-in <a href="https://select2.org/advanced/default-adapters/selection">SelectionAdapter</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>selectOnClose</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>boolean</td>
+                                        <td><code>false</code></td>
+                                        <td>Implements <a href="https://select2.org/dropdown#automatic-selection">automatic selection</a> when the dropdown is closed.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>sorter</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>callback</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tags</code></td>
+                                        <td>boolean / array of objects</td>
+                                        <td><code>false</code></td>
+                                        <td>Used to enable <a href="https://select2.org/tagging">free text responses</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>templateResult</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>callback</td>
+                                        <td></td>
+                                        <td>Customizes the way that <a href="https://select2.org/dropdown#templating">search results are rendered</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>templateSelection</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>callback</td>
+                                        <td></td>
+                                        <td>Customizes the way that <a href="https://select2.org/selections#templating">selections are rendered</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>theme</code></td>
+                                        <td>string</td>
+                                        <td><code>default</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>Allows you to set the <a href="https://select2.org/appearance#themes">theme</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tokenizer</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>callback</td>
+                                        <td></td>
+                                        <td>A callback that handles <a href="https://select2.org/tagging#automatic-tokenization-into-tags">automatic tokenization of free-text entry</a>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tokenSeparators</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>array</td>
+                                        <td><code>[]</code></td>
+                                        <td>The list of characters that should be used as token separators.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>width</code></td>
+                                        <td>string</td>
+                                        <td><code>resolve</code><span class="copy-to-clipboard" title="Copy to clipboard"></span></td>
+                                        <td>Supports <a href="https://select2.org/appearance#container-width">customization of the container width</a>.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    Visit <a href="https://select2.github.io/" target="_blank">Select2 documentation</a> for more examples and information about the plugin.
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->

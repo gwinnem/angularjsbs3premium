@@ -1,0 +1,209 @@
+<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="callout callout-warning">
+        Some examples requires an internet connection in order to work !
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-default" id="box1">
+                <div class="box-header with-border">
+                    <h3 class="box-title">ngRepeat Loading static json data</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body" style="height: 400px; overflow: auto;">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Gender</th>
+                                <th>Title</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in baseData track by $index">
+                                <td>
+                                    <img src="{{item.picture.thumbnail}}" alt="Picture" class="img-bordered" />
+                                </td>
+                                <td>{{item.gender}}</td>
+                                <td>{{item.name.title}}</td>
+                                <td>{{item.name.last}}, {{item.name.first}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.cell}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    Loading 20 records !
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-default" id="box2">
+                <div class="box-header with-border">
+                    <h3 class="box-title">ngRepeat Loading dynamic json data from randomuser.me</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body" style="height: 400px; overflow: auto;">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Gender</th>
+                                <th>Title</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in apiData track by $index">
+                                <td>
+                                    <img src="{{item.picture.thumbnail}}" alt="Picture" class="img-bordered" />
+                                </td>
+                                <td>{{item.gender}}</td>
+                                <td>{{item.name.title}}</td>
+                                <td>{{item.name.last}}, {{item.name.first}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.cell}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    Loading 20 records from randomuser.me
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-default" id="box3">
+                <div class="box-header with-border">
+                    <h3 class="box-title">ngRepeat Loading dynamic json data with paging</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Gender</th>
+                                <th>Title</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in pageData track by $index">
+                                <td>
+                                    <img src="{{item.picture.thumbnail}}" alt="Picture" class="img-bordered" />
+                                </td>
+                                <td>{{item.gender}}</td>
+                                <td>{{item.name.title}}</td>
+                                <td>{{item.name.last}}, {{item.name.first}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.cell}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <nav class="pull-right" aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li ng-show="page > 1">
+                                <a href="javascript:void(0)" aria-label="First" ng-click="getPage(1)">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" ng-click="getPage(1)">1</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" ng-click="getPage(2)">2</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" ng-click="getPage(3)">3</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" ng-click="getPage(4)">4</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" ng-click="getPage(5)">5</a>
+                            </li>
+                            <li ng-show="page < 5">
+                                <a href="javascript:void(0)" aria-label="Last" ng-click="getPage(5)">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    Page {{page}} of 5
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Adding records when scroll ends.</h3>
+                </div>
+                <div class="box-body" style="height: 500px; overflow: auto;" when-scroll-ends="getMoreData()" slim-scroll>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Gender</th>
+                                <th>Title</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Mobile</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in scrollData track by $index">
+                                <td>
+                                    <img src="{{item.picture.thumbnail}}" alt="Picture" class="img-bordered" />
+                                </td>
+                                <td>{{item.gender}}</td>
+                                <td>{{item.name.title}}</td>
+                                <td>{{item.name.last}}, {{item.name.first}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.cell}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    {{scrollData.length}} Records loaded !
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row-->
+</section>
+<!-- /.content -->

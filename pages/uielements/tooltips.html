@@ -1,0 +1,80 @@
+<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div id=box1 class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Tooltip</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body">
+                    <div class="callout callout-danger">
+                        <h4>Opt-in functionality</h4>
+                        <p>
+                            For performance reasons, the Tooltip and Popover data-apis are opt-in, meaning <strong>you must initialize them yourself</strong>.
+                        </p>
+                        <p>
+                            One way to initialize all tooltips on a page would be to select them by their <code>data-toggle</code> attribute:
+                        </p>
+                        <figure class="highlight">
+                            <pre><code data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="text-blue">function</span> <span class="p">()</span> <span class="p">{</span><span class="nx">$</span><span class="p">(</span><span class="text-red">'[data-toggle="tooltip"]'</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">()</span><span class="p">})</span></code></pre>
+                        </figure>
+                    </div>
+                    <br />
+                    <h4>Static tooltip</h4>
+                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
+                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+                    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
+                    <h4>Normal tooltip</h4>
+                    <p>Tight pants next level keffiyeh <a href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="Default tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="javascript:void(0)" data-toggle="tooltip" title="Another tooltip">have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A really ironic artisan <a href="javascript:void(0)" data-toggle="tooltip" title="Another one here too">whatever keytar</a>, scenester farm-to-table banksy Austin <a href="javascript:void(0)" data-toggle="tooltip" title="The last tip!">twitter handle</a> freegan cred raw denim single-origin coffee viral.</p>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div id="box2" class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Clickable Popover</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body">
+                    <div class="callout callout-danger">
+                        <h4>Opt-in functionality</h4>
+                        <p>
+                            For performance reasons, the Tooltip and Popover data-apis are opt-in, meaning <strong>you must initialize them yourself</strong>.
+                        </p>
+                        <p>
+                            One way to initialize all tooltips on a page would be to select them by their <code>data-toggle</code> attribute:
+                        </p>
+                        <figure class="highlight">
+                            <pre><code data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="text-blue">function</span> <span class="p">()</span> <span class="p">{</span><span class="nx">$</span><span class="p">(</span><span class="text-red">'[data-toggle="popover"]'</span><span class="p">).</span><span class="nx">popover</span><span class="p">()</span><span class="p">})</span></code></pre>
+                        </figure>
+                    </div>
+                    <br />
+                    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on left</button>
+                    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top</button>
+                    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on bottom</button>
+                    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on right</button>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->
+<script>
+    $(function () {
+        // Activating tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+        // Activating popover
+        $('[data-toggle="popover"]').popover();
+    })
+</script>

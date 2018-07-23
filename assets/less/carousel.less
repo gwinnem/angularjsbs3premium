@@ -1,0 +1,23 @@
+/*
+ * Component: Carousel
+ * -------------------
+ */
+// Import variables and mixins as a reference.
+@import (reference) "../bootstrap-less/mixins";
+@import (reference) "../bootstrap-less/variables";
+@import (reference) "mixins.less";
+@import (reference) "variables.less";
+.carousel-control {
+  &.left,
+  &.right {
+    background-image: none;
+  }
+  > .fa {
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -20px;
+  }
+}

@@ -1,0 +1,71 @@
+﻿<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Basic Usage</h3>
+                    <div class="box-tools pull-right">
+                        <a href="https://jsfiddle.net/gwinnem/ssrxy296/" target="_blank"><i class="fa fa-jsfiddle"></i> Open in jsFiddle</a>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div id="basicusage" style="width: 100%; height: 300px;"></div>
+                    <p>You don't have to do much to get an attractive plot.  Create a placeholder, make sure it has dimensions (so Flot knows at what size to draw the plot), then call the plot function with your data.</p>
+                    <p>The axes are automatically scaled.</p>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    {{footerText}}
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Basic options</h3>
+                    <div class="box-tools pull-right">
+                        <a href="https://jsfiddle.net/gwinnem/gnqr62zt/7/" target="_blank"><i class="fa fa-jsfiddle"></i> Open in jsFiddle</a>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div id="basicoptions" style="width: 100%; height: 300px;"></div>
+                    <p>There are plenty of options you can set to control the precise looks of your plot. You can control the ticks on the axes, the legend, the graph type, etc.</p>
+                    <p>Flot goes to great lengths to provide sensible defaults so that you don't have to customize much for a good-looking result.</p>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    {{footerText}}
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->
+<script>
+    $(function () {
+        // Basic usage chart
+        var d1 = [];
+        for (var i = 0; i < 14; i += 0.5) {
+            d1.push([i, Math.sin(i)]);
+        }
+
+        var d2 = [[0, 3], [4, 8], [8, 5], [9, 13]];
+
+        // A null signifies separate line segments
+
+        var d3 = [[0, 12], [7, 12], null, [7, 2.5], [12, 2.5]];
+
+        $.plot("#basicusage", [d1, d2, d3]);
+    });
+
+</script>

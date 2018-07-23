@@ -1,0 +1,297 @@
+<!-- Main content -->
+<style>
+    /* .fc-button {
+    background: #f4f4f4;
+    background-image: none;
+    color: #444;
+    border-color: #ddd;
+    border-bottom-color: #ddd
+}
+
+.fc-button:hover,.fc-button:active,.fc-button.hover {
+    background-color: #e9e9e9
+}
+
+.fc-header-title h2 {
+    font-size: 15px;
+    line-height: 1.6em;
+    color: #666;
+    margin-left: 10px
+}
+
+.fc-header-right {
+    padding-right: 10px
+}
+
+.fc-header-left {
+    padding-left: 10px
+}
+
+.fc-widget-header {
+    background: #fafafa
+}
+
+.fc-grid {
+    width: 100%;
+    border: 0
+}
+
+.fc-widget-header:first-of-type,.fc-widget-content:first-of-type {
+    border-left: 0;
+    border-right: 0
+}
+
+.fc-widget-header:last-of-type,.fc-widget-content:last-of-type {
+    border-right: 0
+}
+
+.fc-toolbar {
+    padding: 10px;
+    margin: 0
+}
+
+.fc-day-number {
+    font-size: 20px;
+    font-weight: 300;
+    padding-right: 10px
+}
+
+.fc-color-picker {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.fc-color-picker>li {
+    float: left;
+    font-size: 30px;
+    margin-right: 5px;
+    line-height: 30px
+}
+
+.fc-color-picker>li .fa {
+    -webkit-transition: -webkit-transform linear .3s;
+    -moz-transition: -moz-transform linear .3s;
+    -o-transition: -o-transform linear .3s;
+    transition: transform linear .3s
+}
+
+.fc-color-picker>li .fa:hover {
+    -webkit-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    transform: rotate(30deg)
+}
+
+#add-new-event {
+    -webkit-transition: all linear .3s;
+    -o-transition: all linear .3s;
+    transition: all linear .3s
+}
+
+.external-event {
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    border-radius: 3px;
+    cursor: move
+}
+
+.external-event:hover {
+    box-shadow: inset 0 0 90px rgba(0,0,0,0.2)
+} */
+</style>
+<section class="content">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h4 class="box-title">Draggable Events</h4>
+                </div>
+                <div class="box-body">
+                    <!-- the events -->
+                    <div id="external-events">
+                        <div class="external-event bg-green">Lunch</div>
+                        <div class="external-event bg-yellow">Go home</div>
+                        <div class="external-event bg-aqua">Do homework</div>
+                        <div class="external-event bg-light-blue">Work on UI design</div>
+                        <div class="external-event bg-red">Sleep tight</div>
+                        <div class="checkbox">
+                            <label for="drop-remove">
+                                <input type="checkbox" id="drop-remove"> remove after drop
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /. box -->
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Create Event</h3>
+                </div>
+                <div class="box-body">
+                    <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                        <ul class="fc-color-picker" id="color-chooser">
+                            <li>
+                                <a class="text-aqua" href="javascript:void(0)">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-blue" href="javascript:void(0)">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-light-blue" href="javascript:void(0)">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-teal" href="javascript:void(0)">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-yellow" href="javascript:void(0)">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-orange" href="javascript:void(0)">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-green" href="javascript:void(0)">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-lime" href="javascript:void(0)">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-red" href="javascript:void(0)">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-purple" href="javascript:void(0)">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-fuchsia" href="javascript:void(0)">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-muted" href="javascript:void(0)">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-navy" href="javascript:void(0)">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /btn-group -->
+                    <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                        <ul class="fc-color-picker" id="color-chooser2">
+                            <li>
+                                <a class="text-aqua" href="#">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-blue" href="#">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-light-blue" href="#">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-teal" href="#">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-yellow" href="#">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-orange" href="#">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-green" href="#">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-lime" href="#">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-red" href="#">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-purple" href="#">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-fuchsia" href="#">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-muted" href="#">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="text-navy" href="#">
+                                    <i class="fa fa-square"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /btn-group -->
+                    <div class="input-group">
+                        <input class="form-control" id="new-event" type="text" placeholder="Event Title">
+
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary btn-flat" id="add-new-event" type="button">Add</button>
+                        </div>
+                        <!-- /btn-group -->
+                    </div>
+                    <!-- /input-group -->
+                </div>
+            </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-md-9">
+            <!-- THE CALENDAR -->
+            <div id="calendar"></div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->

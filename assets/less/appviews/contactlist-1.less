@@ -1,0 +1,82 @@
+﻿/*
+ * App view: Contacts
+ * -------------
+ */
+// Import variables and mixins as a reference.
+@import (reference) "../../bootstrap-less/mixins";
+@import (reference) "../../bootstrap-less/variables";
+@import (reference) "../variables.less";
+@import (reference) "../mixins.less";
+@contact-box-bg: #fff;
+@contact-box-border-col: #e7eaec;
+
+.top-search {
+    padding: 0;
+}
+
+.top-search .form-control {
+    box-shadow: inset 0 1px 0 #000000;
+    box-shadow: inset 0 1px 0 rgba(0,0,0,.075);
+    border-radius: 25px 0 0 25px;
+    padding-left: 20px;
+    border: 1px solid #dde2e8;
+    border: 1px solid rgba(221,226,232,.49);
+}
+
+.top-search .form-control:focus {
+    border: 1px solid #dde2e8;
+    border: 1px solid rgba(221,226,232,.49);
+    border-right: 0;
+}
+
+.top-search .input-group-btn button {
+    border-radius: 0 25px 25px 0;
+    border: 1px solid #dde2e8;
+    border: 1px solid rgba(221,226,232,.49);
+    border-left: 0;
+    box-shadow: inset 0 1px 1px #000000;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    color: #93A2B2;
+    margin-bottom: 0 !important;
+}
+
+.contact-box {
+    background-color: @contact-box-bg;
+    border: 1px solid @contact-box-border-col;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-box > a {
+    color: inherit;
+}
+
+.contact-box.center-version {
+    border: 1px solid @contact-box-border-col;
+    padding: 0;
+}
+
+.contact-box.center-version > a {
+    display: block;
+    background-color: @contact-box-bg;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-box.center-version > a img {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contact-box.center-version address {
+    margin-bottom: 0;
+}
+
+.contact-box .contact-box-footer {
+    text-align: center;
+    background-color: @contact-box-bg;
+    border-top: 1px solid @contact-box-border-col;
+    padding: 15px 20px;
+}
