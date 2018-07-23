@@ -71,19 +71,11 @@
         // Adding active class to the selected top level menu item
         $(element.context.parentElement).addClass(ClassName.active);
 
-        // TODO Find all open tree menu items and change class before sliding them up.
         if (this.options.accordion) {
-            // Find all treeview siblings with open menu
             var openMenuLi = $("li.treeview").siblings(Selector.open);
-            debugger;
             var openTree = openMenuLi.children(Selector.treeviewMenu);
             this.collapse(openTree, openMenuLi);
         }
-
-        // Removing all open classes
-        // $("li.treeview.menu-open").each(function () {
-        //     $(this).removeClass(ClassName.open);
-        // });
     };
 
     Tree.prototype.toggle = function (link, event) {
