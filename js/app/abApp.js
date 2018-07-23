@@ -2299,6 +2299,20 @@ abApp.config([
 
             // Miscellaneous
 
+            // Static filemanager
+            .state("staticfilemanager", {
+                url: "/miscellaneous/filemanager",
+                templateUrl: "pages/misc/staticfilemanager.html",
+                pageTitle: "Static Filemanager",
+                pageBreadCrumbs: [{
+                    name: "Home"
+                }, {
+                    name: "Miscellaneous"
+                }, {
+                    name: "Static Filemanager"
+                }]
+            })
+
             //Social buttons
             .state("socialbuttons", {
                 url: "/miscellaneous/socialbuttons",
