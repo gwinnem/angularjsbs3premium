@@ -1,0 +1,32 @@
+/*
+ * COMPONENT Company list v1
+ * ----------------------
+ */
+
+// Import variables and mixins as a reference.
+@import (reference) "../bootstrap-less/mixins";
+@import (reference) "../bootstrap-less/variables";
+@import (reference) "mixins.less";
+@import (reference) "variables.less";
+.company-list-panel {
+    cursor: pointer;
+    height: 140px;
+    width: 250px;
+    background-color: #fff;
+    border: 0;
+    box-shadow: none;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    &:hover {
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}

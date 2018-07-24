@@ -3303,6 +3303,32 @@ ul.project_files li a i {
 .profile_details .profile_left {
   background: white;
 }
+/*
+ * COMPONENT Company list v1
+ * ----------------------
+ */
+.company-list-panel {
+  cursor: pointer;
+  height: 140px;
+  width: 250px;
+  background-color: #fff;
+  border: 0;
+  box-shadow: none;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.company-list-panel:hover {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
 /* Styles used specifically for the demo page */
 button {
   outline: 0;
@@ -3972,6 +3998,10 @@ table.mailbox-messages tr:hover td:last-child .mailbox-tools {
   margin-top: 5px;
   font-size: 12px;
 }
+/*
+ * Component: Dashboards
+ * -----------------
+ */
 .green {
   color: #1ABB9C;
 }
@@ -4427,13 +4457,19 @@ table.tile_info span.right {
 .usage .css {
   width: 80px;
 }
-.bootstraptree,
-.bootstraptree ul {
+/*
+ * Component: Bootstrap tree
+ * -----------------
+ */
+.bootstraptree {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .bootstraptree ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   margin-left: 1em;
   position: relative;
 }
@@ -4449,15 +4485,6 @@ table.tile_info span.right {
   bottom: 0;
   left: 0;
   border-left: 1px solid;
-}
-.bootstraptree li {
-  cursor: pointer;
-  margin: 0;
-  padding: 0 1em;
-  line-height: 2em;
-  color: #000;
-  font-weight: 700;
-  position: relative;
 }
 .bootstraptree ul li:before {
   content: "";
@@ -4476,14 +4503,23 @@ table.tile_info span.right {
   top: 1em;
   bottom: 0;
 }
-.indicator {
+.bootstraptree li {
   cursor: pointer;
-  margin-right: 5px;
+  margin: 0;
+  padding: 0 1em;
+  line-height: 2em;
+  color: #000;
+  font-weight: 700;
+  position: relative;
 }
 .bootstraptree li a {
   cursor: pointer;
   text-decoration: none;
   color: #000;
+}
+.indicator {
+  cursor: pointer;
+  margin-right: 5px;
 }
 /*
  * Component: issue tracker

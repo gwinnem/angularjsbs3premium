@@ -13,12 +13,13 @@
     <div class="row">
         <div class="col-md-12">
             <div ng-repeat="company in companies | filter : companyFilter track by $index">
-                <div class="list-panel col-md-3 col-sm-2">
+                <div class="company-list-panel col-md-3 col-sm-2">
                     <div class="panel-body text-center">
                         <address>
-                            <strong>{{company.name}}</strong><br />
-                            {{company.address}}<br />
-                            {{company.country}}<br />
+                            <strong>{{company.name}}</strong>
+                            <br /> {{company.address}}
+                            <br /> {{company.country}}
+                            <br />
                             <i class="fa fa-phone"></i> {{company.phone}}
                         </address>
                     </div>
@@ -29,16 +30,3 @@
     <!-- / row -->
 </section>
 <!-- /.content -->
-
-<style>
-    .list-panel {
-        cursor: pointer;
-        height: 140px;
-        width: 250px;
-        background-color: white;
-        border: 0;
-        box-shadow: none;
-        margin-bottom: 15px;
-        margin-right: 10px;
-    }
-</style>

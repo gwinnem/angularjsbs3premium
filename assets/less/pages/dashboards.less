@@ -1,4 +1,14 @@
-﻿.green {
+﻿/*
+ * Component: Dashboards
+ * -----------------
+ */
+
+// Import variables and mixins as a reference.
+@import (reference) "../bootstrap-less/mixins";
+@import (reference) "../bootstrap-less/variables";
+@import (reference) "mixins.less";
+@import (reference) "variables.less";
+.green {
     color: #1ABB9C;
 }
 
@@ -31,7 +41,6 @@
         border-bottom: 0;
         padding-bottom: 10px;
     }
-
     .tile_count .tile_stats_count:first-child:before {
         border-left: 0;
     }
@@ -65,7 +74,6 @@
     }
 }
 
-
 .tile_count .tile_stats_count .count_bottom i {
     width: 12px;
 }
@@ -90,7 +98,7 @@
     animation-name: transformAnimation;
     animation-duration: .5s;
     animation-iteration-count: 1;
-    color: rgba(58,58,58,.41);
+    color: rgba(58, 58, 58, .41);
     animation-timing-function: ease;
     animation-fill-mode: forwards;
     -webkit-animation-name: transformAnimation;
@@ -129,7 +137,9 @@
     line-height: 1.65857
 }
 
-.tile-stats .count,.tile-stats h3,.tile-stats p {
+.tile-stats .count,
+.tile-stats h3,
+.tile-stats p {
     position: relative;
     margin: 0 0 0 10px;
     z-index: 5;
@@ -151,15 +161,15 @@
     margin-top: 5px;
     padding: 3px 0;
     color: #fff;
-    color: rgba(255,255,255,.8);
+    color: rgba(255, 255, 255, .8);
     display: block;
     z-index: 10;
-    background: rgba(0,0,0,.1)
+    background: rgba(0, 0, 0, .1)
 }
 
 .tile-stats>.dash-box-footer:hover {
     color: #fff;
-    background: rgba(0,0,0,.15)
+    background: rgba(0, 0, 0, .15)
 }
 
 table.tile_info {
@@ -188,7 +198,7 @@ table.tile_info span.right {
 .tiles-bottom {
     padding: 5px 10px;
     margin-top: 10px;
-    background: rgba(194,194,194,.3);
+    background: rgba(194, 194, 194, .3);
     text-align: left
 }
 
@@ -197,7 +207,8 @@ table.tile_info span.right {
     padding: 1px 5px 6px;
 }
 
-.progress.progress_sm, .progress.progress_sm .progress-bar {
+.progress.progress_sm,
+.progress.progress_sm .progress-bar {
     height: 10px !important;
 }
 
@@ -207,7 +218,8 @@ table.tile_info span.right {
     width: 100%;
 }
 
-.chart svg, .chart canvas {
+.chart svg,
+.chart canvas {
     width: 100% !important;
     height: 300px !important;
 }
