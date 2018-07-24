@@ -5,7 +5,7 @@
  */
 (function () {
     "use strict";
-    angular.module("abNoUiSlider", [])
+    angular.module("ab.common.ui.nouislider", [])
         .directive("abSlider", function ($timeout) {
             return {
                 restrict: "A",

@@ -1,17 +1,12 @@
 ﻿/**
- * Simple breadcrumb directive
  * @author Geirr Winnem
- * @copywright 2018- Geirr Winnem. All Rights Reserved
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
- * @summary 
+ * @summary Creating simple bread crumbs using state data from the ui router
  */
 (function () {
     "use strict";
-
-    angular.module("abSimpleBreadCrumbs", ["ui.router"])
-        .directive("simleBreadCrumbs", function ($rootScope, $timeout) {
+    angular.module("ab.common.ui.simplebreadcrumbs", ["ui.router"])
+        .directive("abSimpleBreadcrumbs", function ($rootScope, $timeout) {
             return {
                 restrict: "A",
                 link: function ($scope) {

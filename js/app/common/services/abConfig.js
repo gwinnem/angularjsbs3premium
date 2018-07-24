@@ -1,15 +1,12 @@
 ﻿/**
- * Aurora Borealis Admin Template app
  * @author Geirr Winnem
  * @version 0.2.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Configuration factory for ABAdmin.
  */
 (function() {
   "use strict";
 
-  angular.module("abConfig", []).factory("config", function() {
+  angular.module("ab.common.config", []).factory("config", function() {
     // If true, debug data will be sent to console log
     var debug = false;
     // If true all route state changes will be sent to console log

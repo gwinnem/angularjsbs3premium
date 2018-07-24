@@ -1,9 +1,6 @@
 ﻿/**
- * abConsoleLog
  * @author Geirr Winnem
  * @version 0.1.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Module for writing colored messages to console.log
  * Based on: https://developers.google.com/web/tools/chrome-devtools/console/
  */
@@ -11,7 +8,7 @@
 (function () {
     "use strict";
 
-    angular.module("abConsoleLog", []).factory("log", function () {
+    angular.module("ab.common.consolelog", []).factory("log", function () {
         var error = [
             'background: red',
             'color: white',
@@ -65,19 +62,3 @@
         };
     });
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

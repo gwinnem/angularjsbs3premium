@@ -1,13 +1,10 @@
 ﻿/**
- * abDataService.js
  * @author Geirr Winnem
  * @version 0.1.0
- * @link http://www.abadmin.com
- * @license MIT
- * @summary Wrapper for all http calls
+ * @summary Wrapper helper service for all http calls
  */
 (function () {
-    angular.module("abDataService", [])
+    angular.module("ab.common.dataservice", [])
         .factory("abDataSvc", ["$http", "$q", "config", function ($http, $q, config) {
             var httpStatus = {
                 OK: 200,
@@ -53,7 +50,10 @@
                             deferred.reject(data.message, status);
                         }
                     }).catch(function (data, status) {
-                        deferred.reject({ message: data, status: status });
+                        deferred.reject({
+                            message: data,
+                            status: status
+                        });
                     });
                 return deferred.promise;
             };
@@ -96,8 +96,10 @@
                 url = config.baseUrl + url;
                 var deferred = $q.defer();
                 $http.post(url, fd, {
-                    headers: { 'Content-Type': undefined }
-                })
+                        headers: {
+                            'Content-Type': undefined
+                        }
+                    })
                     .then(function (data, status) {
                         if (status === httpStatus.OK || data.status === httpStatus.OK) {
                             deferred.resolve(data, status);
@@ -117,6 +119,5 @@
                 httpStatus: httpStatus,
                 fileUpload: fileUpload
             };
-        }
-        ]);
+        }]);
 })();

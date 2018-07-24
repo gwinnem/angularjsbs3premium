@@ -1,5 +1,5 @@
 ﻿/**
- * Aurora Borealis Admin Template app
+ * Aurora Borealis Admin Template.
  * @author Geirr Winnem
  * @summary Angular 1.x admin dashboard template.
  */
@@ -10,27 +10,28 @@ var abApp = angular.module("aurora", [
     "ui.router",
     "ui.bootstrap",
     "ui-notification",
+    "ngTagsInput",
+    "ui.select",
+    // ABAdmin modules
+    "ab.common.config",
+    "ab.common.consolelog",
+    "ab.common.dataservice",
+    "ab.common.ui.simplebreadcrumbs",
+    "ab.common.ui.pageTitle",
+    "ab.common.ui.nouislider",
     "abSlimScroll",
-    "abConfig",
-    "abConsoleLog",
-    "abSimpleBreadCrumbs",
-    "abPageTitle",
     "abWhenScrollEnds",
     "abInfobox",
     "abSmallBox",
     "abIconBox",
-    "ngTagsInput",
-    "abDataService",
     "abHelpers",
     "abToggleSwitch",
     "abIosToggleSwitch",
     "abStatusLabel",
     "abPriorityLabel",
-    "ui.select",
     "abModalDialogs",
     "abIcheck",
     "abNumbersOnly",
-    "abNoUiSlider",
     "abTextAreaAutoresize",
     "abFitHeight",
     "abTodoList",
@@ -2759,14 +2760,15 @@ abApp.run(["$rootScope", "$state", "$stateParams", "config", "log",
 ]);
 
 abApp.controller("mainController", ["$scope", "$notification", "config",
-    function ($scope, $notification, config) {
+    function ($notification, config) {
         var ele = $('.loading');
         if ($('.loading') !== undefined) {
             $(ele).empty();
         }
         $('.wrapper').removeClass('hidden');
+
         if (config.debug) {
-            $notification.success("Controller loaded", "Main controller", config.notificationDelay);
+            $notification.success("Main Controller loaded", "ABAdmin", config.notificationDelay);
         }
     }
 ]);

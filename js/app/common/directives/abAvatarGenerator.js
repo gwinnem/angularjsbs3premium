@@ -6,9 +6,8 @@
 
 (function () {
     "use strict";
-
-    angular.module("ab.common.avatar", [])
-        .directive("avatarGenerator", function ($compile) {
+    angular.module("ab.common.ui.avatar", [])
+        .directive("abAvatarGenerator", function ($compile) {
             return {
                 restrict: "E",
                 scope: {

@@ -1,0 +1,61 @@
+<style>
+    #demo-settings {
+        position: fixed;
+        top: 20px;
+        right: 0;
+        z-index: 99999;
+        max-width: 1120px;
+        max-height: 700px;
+        background-color: blue;
+    }
+
+    #demo-set-btn {
+        display: inline-block;
+        background-color: #3a444e;
+        border-radius: 7px 0 0 7px !important;
+        color: #fff;
+        border: 0;
+        position: absolute;
+        top: 250px;
+        left: -45px;
+        margin-left: -1%;
+        border-radius: 2px 0 0 2px;
+        box-shadow: none;
+        z-index: 1;
+        transition: all .3s
+    }
+
+    #demo-set-btn i {
+        font-size: 25px;
+        display: block;
+        margin: 5px 0;
+        height: 1em;
+        animation-iteration-count: infinite !important;
+        animation-duration: 1.5s !important;
+        animation-play-state: running
+    }
+
+    #demo-set-btn i:before {
+        display: block;
+        line-height: 1em
+    }
+</style>
+
+
+<div id="demo-settings" class="demo-settings">
+    <button id="demo-set-btn" class="btn" onClick="toggleSettingsBar();">
+        <i class="fa fa-gear fa-spin"></i>
+    </button>
+    <div id="demo-set-content" class="demo-set-content">
+        <!-- SETTINGS - DEMO PURPOSE ONLY -->
+        <!--===================================================-->
+
+        <!--===================================================-->
+        <!-- END SETTINGS -->
+    </div>
+</div>
+<script>
+    toggleSettingsBar = function () {
+
+    };
+</script>
