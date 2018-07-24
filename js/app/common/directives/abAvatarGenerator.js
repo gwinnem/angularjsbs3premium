@@ -1,15 +1,13 @@
 /**
  * @author Geirr Winnem
- * @copywright 2017- Geirr Winnem. All Rights Reserved
  * @version 1.0.0
- * @link http://www.abadmin.com
  * @summary Directive for generating avatars.
  */
 
 (function () {
     "use strict";
 
-    angular.module("abAvatar", [])
+    angular.module("ab.common.avatar", [])
         .directive("avatarGenerator", function ($compile) {
             return {
                 restrict: "E",

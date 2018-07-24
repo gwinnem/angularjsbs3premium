@@ -1,11 +1,7 @@
 ﻿/**
  * @author Geirr Winnem
- * @copywright 2018- Geirr Winnem. All Rights Reserved
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Wrapper directive for jquery nouiSlider.  https://refreshless.com/nouislider/examples/
- * @TODO Test with latest nouiSlider version
  */
 (function () {
     "use strict";

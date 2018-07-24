@@ -5,9 +5,7 @@
  */
 (function () {
     "use strict";
-    angular.module("ab.companies.list", [
-            []
-        ])
+    angular.module("ab.companies.list", [])
         .controller("CompaniesController", ["$scope", "$notification", "config", "abCompaniesSvc", "$state",
             function ($scope, $notification, config, abCompaniesSvc, $state) {
                 var service = abCompaniesSvc;

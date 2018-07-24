@@ -1,7 +1,6 @@
 ﻿/**
  * Aurora Borealis Admin Template app
  * @author Geirr Winnem
- * @version 0.2.0
  * @summary Angular 1.x admin dashboard template.
  */
 
@@ -35,8 +34,7 @@ var abApp = angular.module("aurora", [
     "abTextAreaAutoresize",
     "abFitHeight",
     "abTodoList",
-    "abBoxTools",
-    "abTextAreaAutoresize"
+    "abBoxTools"
 ]);
 
 
