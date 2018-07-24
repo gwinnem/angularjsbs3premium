@@ -1240,7 +1240,7 @@ abApp.config([
                     ]
                 }
             })
-           
+
             // Dropzone
             .state("dropzone", {
                 url: "/forms/upload/dropzone",
@@ -1584,7 +1584,7 @@ abApp.config([
                 }
             })
 
-            // Company List
+            // Company List v1
             .state("companylist", {
                 url: "/app/company/list/version-one",
                 templateUrl: "/pages/appviews/companies/companylist.html",
@@ -1606,9 +1606,7 @@ abApp.config([
                             return $ocLazyLoad.load({
                                 series: true,
                                 files: ["/js/app/appViews/companies/services/abCompaniesSvc.js",
-                                    "/js/app/appViews/companies/controllers/abCompaniesCtrl.js",
-                                    "/js/plugins/bootstrap-sweetalert/dist/sweetalert.css",
-                                    "/js/plugins/bootstrap-sweetalert/dist/sweetalert.js"
+                                    "/js/app/appViews/companies/controllers/abCompaniesCtrl.js"
                                 ]
                             });
                         }
@@ -1616,7 +1614,7 @@ abApp.config([
                 }
             })
 
-            // Company List
+            // Company List v2
             .state("companylistv2", {
                 url: "/app/company/list/version-two",
                 templateUrl: "/pages/appviews/companies/companylist-v2.html",
