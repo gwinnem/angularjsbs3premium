@@ -1,8 +1,6 @@
 ﻿/**
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Displaying, editing and deleting contact details.
  */
 (function () {
@@ -16,6 +14,7 @@
                     console.info("$stateParams");
                     console.log($stateParams);
                 }
+
                 var returnToView = function () {
                     switch ($stateParams.return) {
                         case "1":
@@ -36,15 +35,14 @@
                     }
                 }
 
-                if ($stateParams.id !== undefined || $stateParams.id !== "") {
+                if ($stateParams.id !== 0) {
                     abContactsSvc.getContactById($stateParams.id).then(function (data) {
                         if (config.debug) {
+                            console.log("Getting contact details");
                             console.log(data);
                         }
                         if (data === undefined) {
-                            $notification.warning("Not able to find contact",
-                                "AppView Contact Details",
-                                config.notificationDelay);
+                            $notification.warning("Not able to find contact", "AppView Contact Details", config.notificationDelay);
                             $scope.guid = "";
                         } else {
                             $scope.contact = data;

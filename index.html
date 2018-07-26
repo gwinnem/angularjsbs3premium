@@ -32,6 +32,8 @@
 
     <link href="/css/animate.css" rel="stylesheet" />
     <link href="/js/plugins/ui-notification/angular-ui-notification.css" rel="stylesheet" />
+
+
     <link href="/css/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
     <link href="/js/plugins/ui-select/dist/select.min.css" rel="stylesheet" />
     <link href="/js/plugins/iCheck/skins/all.css" rel="stylesheet" />
@@ -43,88 +45,6 @@
     <link href="/js/plugins/noUiSlider.11.0.0/nouislider.min.css" rel="stylesheet" />
 
     <link href="/css/aurora.css" rel="stylesheet" />
-
-    <!-- Core js files -->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- Angular files -->
-    <script src="/js/plugins/angular-1.6.9/angular.min.js"></script>
-    <script src="/js/plugins/angular-1.6.9/angular-cookies.min.js"></script>
-    <script src="/js/plugins/angular-1.6.9/angular-resource.min.js"></script>
-    <script src="/js/plugins/angular-1.6.9/angular-sanitize.min.js"></script>
-    <script src="/js/plugins/ui-router/angular-ui-router.min.js"></script>
-    <script src="/js/plugins/angular-ui/ui-bootstrap.min.js"></script>
-    <script src="/js/plugins/angular-ui/ui-bootstrap-tpls.min.js"></script>
-
-
-    <!-- Plugins -->
-    <script src="/js/plugins/moment/min/moment-with-locales.min.js"></script>
-    <script src="/js/plugins/ocLazyLoad/dist/ocLazyLoad.min.js"></script>
-    <script src="/js/plugins/ui-notification/angular-ui-notification.js"></script>
-    <script src="/js/plugins/iCheck/icheck.min.js"></script>
-    <script src="/js/plugins/ng-tags-input/ng-tags-input.min.js"></script>
-    <script src="/js/plugins/ui-select/dist/select.min.js"></script>
-    <script src="/js/plugins/jstree/dist/jstree.min.js"></script>
-    <script src="/js/plugins/ngJsTree/dist/ngJsTree.min.js"></script>
-    <script src="/js/plugins/noUiSlider.11.0.0/nouislider.min.js"></script>
-    <script src="/js/plugins/summernote/summernote.min.js"></script>
-    <script src="/bower_components/angular-summernote/dist/angular-summernote.min.js"></script>
-
-    <!-- needed for fixed layout -->
-    <script src="/js/plugins/jQuery-slimScroll/jquery.slimscroll.min.js"></script>
-
-    <!-- Pace page loader animation -->
-    <script src="/js/plugins/pace-1.0.2/pace.min.js"></script>
-    <link href="/js/plugins/pace-1.0.2/themes/red/pace-theme-minimal.css" rel="stylesheet"></link>
-
-    <!-- ABAdmin jQuery plugins -->
-    <script src="/js/app/abTree.js"></script>
-    <script src="js/app/abFullScreen.js"></script>
-    <script src="/js/app/abPushMenu.js"></script>
-    <script src="/js/app/abLayout.js"></script>
-    <script src="/js/app/abControlSidebar.js"></script>
-    <script src="/js/app/abScripts.js"></script>
-
-    <!-- Needed for demo functionality only. This file should be removed for a production website ! -->
-    <script src="/js/app/demo.js"></script>
-
-
-    <!-- Directives -->
-    <script src="js/app/common/directives/abBoxTools.js"></script>
-    <script src="js/app/common/directives/abElastic.js"></script>
-    <script src="js/app/common/directives/abFitHeight.js"></script>
-    <script src="js/app/common/directives/abFullScreen.js"></script>
-    <script src="js/app/common/directives/abIcheck.js"></script>
-    <script src="js/app/common/directives/abIconBox.js"></script>
-    <script src="js/app/common/directives/abInfobox.js"></script>
-    <script src="js/app/common/directives/abNoUISlider.js"></script>
-    <script src="js/app/common/directives/abNumbersOnly.js"></script>
-    <script src="js/app/common/directives/abOIosToggleSwitch.js"></script>
-    <script src="js/app/common/directives/abPageTitle.js"></script>
-    <script src="js/app/common/directives/abPriorityLabel.js"></script>
-    <script src="js/app/common/directives/abSimpleBreadCrumb.js"></script>
-    <script src="js/app/common/directives/abSlimScroll.js"></script>
-    <script src="js/app/common/directives/abSmallbox.js"></script>
-    <script src="js/app/common/directives/abStaticInclude.js"></script>
-    <script src="js/app/common/directives/abStatusLabel.js"></script>
-    <script src="js/app/common/directives/abTodoList.js"></script>
-    <script src="js/app/common/directives/abToggleSwitch.js"></script>
-    <script src="js/app/common/directives/abWhenScrollEnds.js"></script>
-    <!-- <script src="js/app/common/directives/abNotificationDropdown.js"></script> -->
-
-
-    <!-- Services -->
-    <script src="/js/app/common/services/abConfig.js"></script>
-    <script src="/js/app/common/services/abDataService.js"></script>
-    <script src="/js/app/common/services/abModalSvc.js"></script>
-    <script src="js/app/common/services/abConsoleLog.js"></script>
-    <script src="js/app/common/services/abHelperSvc.js"></script>
-
-    <!-- Main application file -->
-    <script src="/js/app/abApp.js"></script>
-
     <script>
         // Must be first. IE10 mobile viewport fix
         if ('-ms-user-select' in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
@@ -134,7 +54,6 @@
             document.getElementsByTagName('head')[0].appendChild(msViewportStyle);
         }
     </script>
-
     <style>
         /* Do not move, needed on page load for loading anim */
 
@@ -289,12 +208,100 @@
         <div ng-include src="'pages/shared/demo-settings.html'"></div>
     </div>
     <!-- / wrapper -->
+
+    <!-- Core js files -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Angular files -->
+    <script src="/js/plugins/angular-1.6.9/angular.min.js"></script>
+    <script src="/js/plugins/angular-1.6.9/angular-cookies.min.js"></script>
+    <script src="/js/plugins/angular-1.6.9/angular-resource.min.js"></script>
+    <script src="/js/plugins/angular-1.6.9/angular-sanitize.min.js"></script>
+    <script src="/js/plugins/ui-router/angular-ui-router.min.js"></script>
+    <script src="/js/plugins/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="/js/plugins/angular-ui/ui-bootstrap-tpls.min.js"></script>
+
+
+    <!-- Plugins -->
+    <script src="/js/plugins/moment/min/moment-with-locales.min.js"></script>
+    <script src="/js/plugins/ocLazyLoad/dist/ocLazyLoad.min.js"></script>
+    <script src="/js/plugins/ui-notification/angular-ui-notification.js"></script>
+    <script src="/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="/js/plugins/ng-tags-input/ng-tags-input.min.js"></script>
+    <script src="/js/plugins/ui-select/dist/select.min.js"></script>
+    <script src="/js/plugins/jstree/dist/jstree.min.js"></script>
+    <script src="/js/plugins/ngJsTree/dist/ngJsTree.min.js"></script>
+    <script src="/js/plugins/noUiSlider.11.0.0/nouislider.min.js"></script>
+    <script src="/js/plugins/summernote/summernote.min.js"></script>
+    <script src="/bower_components/angular-summernote/dist/angular-summernote.min.js"></script>
+
+    <!-- needed for fixed layout -->
+    <script src="/js/plugins/jQuery-slimScroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Pace page loader animation -->
+    <script src="/js/plugins/pace-1.0.2/pace.min.js"></script>
+    <link href="/js/plugins/pace-1.0.2/themes/red/pace-theme-minimal.css" rel="stylesheet"></link>
+
+    <!-- ABAdmin jQuery plugins -->
+    <script src="/js/app/abTree.js"></script>
+    <script src="js/app/abFullScreen.js"></script>
+    <script src="/js/app/abPushMenu.js"></script>
+    <script src="/js/app/abLayout.js"></script>
+    <script src="/js/app/abControlSidebar.js"></script>
+    <script src="/js/app/abScripts.js"></script>
+
+    <!-- Needed for demo functionality only. This file should be removed for a production website ! -->
+    <script src="/js/app/demo.js"></script>
+
+
+    <!-- Directives -->
+    <script src="js/app/common/directives/abBoxTools.js"></script>
+    <script src="js/app/common/directives/abElastic.js"></script>
+    <script src="js/app/common/directives/abFitHeight.js"></script>
+    <script src="js/app/common/directives/abFullScreen.js"></script>
+    <script src="js/app/common/directives/abIcheck.js"></script>
+    <script src="js/app/common/directives/abIconBox.js"></script>
+    <script src="js/app/common/directives/abInfobox.js"></script>
+    <script src="js/app/common/directives/abNoUISlider.js"></script>
+    <script src="js/app/common/directives/abNumbersOnly.js"></script>
+    <script src="js/app/common/directives/abOIosToggleSwitch.js"></script>
+    <script src="js/app/common/directives/abPageTitle.js"></script>
+    <script src="js/app/common/directives/abPriorityLabel.js"></script>
+    <script src="js/app/common/directives/abSimpleBreadCrumb.js"></script>
+    <script src="js/app/common/directives/abSlimScroll.js"></script>
+    <script src="js/app/common/directives/abSmallbox.js"></script>
+    <script src="js/app/common/directives/abStaticInclude.js"></script>
+    <script src="js/app/common/directives/abStatusLabel.js"></script>
+    <script src="js/app/common/directives/abTodoList.js"></script>
+    <script src="js/app/common/directives/abToggleSwitch.js"></script>
+    <script src="js/app/common/directives/abWhenScrollEnds.js"></script>
+    <!-- <script src="js/app/common/directives/abNotificationDropdown.js"></script> -->
+
+
+    <!-- Services -->
+    <script src="/js/app/common/services/abConfig.js"></script>
+    <script src="/js/app/common/services/abDataService.js"></script>
+    <script src="/js/app/common/services/abModalSvc.js"></script>
+    <script src="js/app/common/services/abConsoleLog.js"></script>
+    <script src="js/app/common/services/abHelperSvc.js"></script>
+
+    <!-- Main application file -->
+    <script src="/js/app/abApp.js"></script>
+
+    <!-- Needed for rickshar charts -->
+    <script src="/js/plugins/d3/d3.min.js"></script>
+
+
     <script>
         // Bootstrap tooltip needs to be activated manually
         // $(function () {
         //     $('[data-toggle="tooltip"]').tooltip();
         // });
     </script>
+
+
 </body>
 
 </html>

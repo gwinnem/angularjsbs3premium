@@ -14,7 +14,7 @@ function autoHeight() {
 };
 
 $().ready(function () {
-    autoHeight();
+   // autoHeight();
 }).resize(function () {
     // Minimalize menu when screen is less than 768px
     if ($(this).width() < 768) {

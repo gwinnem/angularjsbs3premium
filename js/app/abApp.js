@@ -876,17 +876,16 @@ abApp.config([
                 }, {
                     name: "Richshaw Charts"
                 }],
-                controller: "RickshawChartsController",
+                //controller: "RickshawChartsController",
                 resolve: {
                     ctrl: [
                         "$ocLazyLoad",
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 series: true,
-                                files: ["/js/plugins/d3/d3.min.js",
-                                    "/js/plugins/rickshaw/rickshaw.min.css",
-                                    "/js/plugins/rickshaw/rickshaw.min.js",
-                                    "/js/app/charts/rickshaw/controllers/abRickshawCtrl.js"
+                                files: ["/js/plugins/rickshaw/rickshaw.min.css",
+                                    "/js/plugins/rickshaw/rickshaw.js",
+                                    //"/js/app/charts/rickshaw/controllers/abRickshawCtrl.js"
                                 ]
                             });
                         }
@@ -2701,8 +2700,8 @@ abApp.config([
 ]);
 
 // Starting angular app
-abApp.run(["$rootScope", "$state", "$stateParams", "config", "log",
-    function ($rootScope, $state, $stateParams, config, log) {
+abApp.run(["$rootScope", "$stateParams", "config", "log",
+    function ($rootScope, $stateParams, config, log) {
         $rootScope.$stateParams = $stateParams;
         $rootScope.$on("$stateNotFound", function (event, toState) {
             log.error("State not found-->");

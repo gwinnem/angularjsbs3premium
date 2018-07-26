@@ -22,6 +22,14 @@
                 versiontwo: 2,
                 versionthree: 3
             };
+            // Helper enum for returning a http status code after a async call.
+            var httpStatus = {
+                OK: 200,
+                NoContent: 204,
+                BadRequest: 400,
+                Forbidden: 403,
+                InternalServerError: 500
+            };
             //dummy datavar 
             var contacts = [];
             if (contacts.length === 0) {
