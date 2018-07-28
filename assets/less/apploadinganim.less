@@ -1,0 +1,76 @@
+/*
+ * App loading animation component
+ * ----------------------
+ */
+// Import variables and mixins as a reference.
+@import (reference) "../bootstrap-less/mixins";
+@import (reference) "../bootstrap-less/variables";
+@import (reference) "mixins.less";
+@import (reference) "variables.less";
+
+@background_color_1: #3498db;
+@background_color_2: #c0392b;
+@background_color_3: #f1c40f;
+@background_color_4: #27ae60;
+
+@keyframes loading {
+	0% {
+		transform: scale(1);
+	}
+	20% {
+		transform: scale(1, 2.2);
+	}
+	40% {
+		transform: scale(1);
+	}
+}
+.loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+.loading-bar {
+	display: inline-block;
+	width: 4px;
+	height: 18px;
+	border-radius: 4px;
+	animation: loading 1s ease-in-out infinite;
+	&:nth-child(1) {
+		background-color: @background_color_1;
+		animation-delay: 0;
+	}
+	&:nth-child(2) {
+		background-color: @background_color_2;
+		animation-delay: 0.09s;
+	}
+	&:nth-child(3) {
+		background-color: @background_color_3;
+		animation-delay: .18s;
+	}
+	&:nth-child(4) {
+		background-color: @background_color_4;
+		animation-delay: .27s;
+	}
+	&:nth-child(5) {
+		background-color: @background_color_2;
+		animation-delay: 0.36s;
+		background-color: @background_color_3;
+		animation-delay: .45s;
+	}
+	&:nth-child(6) {
+		background-color: @background_color_4;
+		animation-delay: .53s;
+	}
+	&:nth-child(7) {
+		background-color: @background_color_2;
+		animation-delay: 0.62s;
+	}
+	&:nth-child(8) {
+		background-color: @background_color_3;
+		animation-delay: .71s;
+	}
+	&:nth-child(9) {
+		background-color: @background_color_4;
+		animation-delay: .80s;
+	}
+}

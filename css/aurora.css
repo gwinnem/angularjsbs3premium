@@ -2685,6 +2685,10 @@ ul.bar_tabs > li a:hover {
   color: #fff;
   border-color: #494949;
 }
+/*
+ * Avatars component
+ * ----------------------
+ */
 .img-avatar {
   border-radius: 50em;
 }
@@ -2931,6 +2935,71 @@ textarea.textarea-lg {
 #return-to-top:hover i {
   color: #fff;
   top: 5px;
+}
+/*
+ * App loading animation component
+ * ----------------------
+ */
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1, 2.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.loading-bar {
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  border-radius: 4px;
+  animation: loading 1s ease-in-out infinite;
+}
+.loading-bar:nth-child(1) {
+  background-color: #3498db;
+  animation-delay: 0;
+}
+.loading-bar:nth-child(2) {
+  background-color: #c0392b;
+  animation-delay: 0.09s;
+}
+.loading-bar:nth-child(3) {
+  background-color: #f1c40f;
+  animation-delay: .18s;
+}
+.loading-bar:nth-child(4) {
+  background-color: #27ae60;
+  animation-delay: .27s;
+}
+.loading-bar:nth-child(5) {
+  background-color: #c0392b;
+  animation-delay: 0.36s;
+  background-color: #f1c40f;
+  animation-delay: .45s;
+}
+.loading-bar:nth-child(6) {
+  background-color: #27ae60;
+  animation-delay: .53s;
+}
+.loading-bar:nth-child(7) {
+  background-color: #c0392b;
+  animation-delay: 0.62s;
+}
+.loading-bar:nth-child(8) {
+  background-color: #f1c40f;
+  animation-delay: .71s;
+}
+.loading-bar:nth-child(9) {
+  background-color: #27ae60;
+  animation-delay: .80s;
 }
 /*
  * App view: Contacts
@@ -8022,6 +8091,7 @@ tags-input .autocomplete .suggestion-item em {
   border: 1px dashed #ddd;
   margin-bottom: 10px;
 }
+/*Used form thead demo settings controlbar*/
 .full-opacity-hover {
   opacity: 0.65;
   filter: alpha(opacity=65);

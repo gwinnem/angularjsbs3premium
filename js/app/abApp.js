@@ -2758,13 +2758,15 @@ abApp.run(["$rootScope", "$stateParams", "config", "log",
     }
 ]);
 
-abApp.controller("mainController", ["$scope", "$notification", "config",
-    function ($notification, config) {
-        var ele = $('.loading');
-        if ($('.loading') !== undefined) {
-            $(ele).empty();
-        }
-        $('.wrapper').removeClass('hidden');
+abApp.controller("mainController", ["$timeout", "$notification", "config",
+    function ($timeout, $notification, config) {
+        $timeout(function () {
+            var ele = $('.loading');
+            if ($('.loading') !== undefined) {
+                $(ele).empty();
+            }
+            $('.wrapper').removeClass('hidden');
+        }, 2000);
 
         if (config.debug) {
             $notification.success("Main Controller loaded", "ABAdmin", config.notificationDelay);

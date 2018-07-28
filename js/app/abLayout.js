@@ -20,12 +20,14 @@
     var htmlSelectors = {
         wrapper: ".wrapper",
         contentWrapper: ".content-wrapper",
+        layoutNormal: ".layout-normal",
+        layoutFixed: ".layout-fixed",
         layoutBoxed: ".layout-boxed",
         mainFooter: ".main-footer",
         mainHeader: ".main-header",
         sidebar: ".sidebar",
         controlSidebar: ".control-sidebar",
-        fixed: ".fixed",
+
         sidebarMenu: ".sidebar-menu",
         logo: ".main-header .logo"
     };
@@ -129,11 +131,25 @@
         if (this.options.slimscroll) {
             if (typeof $.fn.slimScroll !== "undefined") {
                 // Destroy if it exists
-                // $(Selector.sidebar).slimScroll({ destroy: true }).height('auto')
-
+                $(Selector.sidebar).slimScroll({
+                    destroy: true
+                }).height('auto')
+                debugger;
                 // Add slimscroll
                 $(htmlSelectors.sidebar).slimScroll({
-                    height: ($(window).height() - $(htmlSelectors.mainHeader).height()) + "px"
+                    height: ($(window).height() - $(htmlSelectors.mainHeader).height()) + "px",
+                    //position: 'left',
+                    size: '10px',
+                    position: 'left',
+                    color: '#ffcc00',
+                    alwaysVisible: true,
+                    distance: '20px',
+                    railVisible: true,
+                    railColor: '#222',
+                    railOpacity: 0.3,
+                    wheelStep: 10,
+                    allowPageScroll: false,
+                    disableFadeOut: false
                 });
             }
         }

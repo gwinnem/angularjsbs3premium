@@ -1,6 +1,4 @@
-    <link href="/pages/shared/settings.css" rel="stylesheet" />
-<script src="/pages/shared/settings.js"></script>
-
+<link href="/pages/shared/settings.css" rel="stylesheet" />
 
 <div id="demo-settings" class="demo-settings">
     <button id="demo-set-btn" class="btn">
@@ -28,17 +26,17 @@
                 <p class="text-main text-bold text-uppercase">Layout</p>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        <input type="checkbox" icheck data-layout="layout-normal" ng-model="layoutNormal" vale="normal" checked/> Normal
+                        <input id="layout-normal" type="checkbox" value="layout-normal" /> Normal
                     </label>
                 </div>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        <input type="checkbox" icheck data-layout="layout-fixed" ng-model="layoutFixed" value="fixed" /> Fixed Sidebar
+                        <input id="layout-fixed" type="checkbox" value="layout-fixed" /> Fixed Sidebar
                     </label>
                 </div>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        <input type="checkbox" icheck data-layout="layout-boxed" ng-model="layoutBoxed" value="boxed" /> Boxed
+                        <input id="layout-boxed" type="checkbox" value="layout-boxed" /> Boxed
                     </label>
                 </div>
                 <div class="form-group">
@@ -268,5 +266,6 @@
         </div>
     </div>
 </div>
+<script src="/pages/shared/settings.js"></script>
 <!--===================================================-->
 <!-- END SETTINGS -->
