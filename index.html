@@ -71,63 +71,65 @@
             animation: loading 1s ease-in-out infinite;
         }
 
-        .loading-bar:nth-child(1) {
-            background-color: #3498db;
-            animation-delay: 0;
-        }
+            .loading-bar:nth-child(1) {
+                background-color: #3498db;
+                animation-delay: 0;
+            }
 
-        .loading-bar:nth-child(2) {
-            background-color: #c0392b;
-            animation-delay: 0.09s;
-        }
+            .loading-bar:nth-child(2) {
+                background-color: #c0392b;
+                animation-delay: 0.09s;
+            }
 
-        .loading-bar:nth-child(3) {
-            background-color: #f1c40f;
-            animation-delay: .18s;
-        }
+            .loading-bar:nth-child(3) {
+                background-color: #f1c40f;
+                animation-delay: .18s;
+            }
 
-        .loading-bar:nth-child(4) {
-            background-color: #27ae60;
-            animation-delay: .27s;
-        }
+            .loading-bar:nth-child(4) {
+                background-color: #27ae60;
+                animation-delay: .27s;
+            }
 
-        .loading-bar:nth-child(5) {
-            background-color: #c0392b;
-            animation-delay: 0.36s;
-        }
+            .loading-bar:nth-child(5) {
+                background-color: #c0392b;
+                animation-delay: 0.36s;
+            }
 
-        .loading-bar:nth-child(5) {
-            background-color: #f1c40f;
-            animation-delay: .45s;
-        }
+            .loading-bar:nth-child(5) {
+                background-color: #f1c40f;
+                animation-delay: .45s;
+            }
 
-        .loading-bar:nth-child(6) {
-            background-color: #27ae60;
-            animation-delay: .53s;
-        }
+            .loading-bar:nth-child(6) {
+                background-color: #27ae60;
+                animation-delay: .53s;
+            }
 
-        .loading-bar:nth-child(7) {
-            background-color: #c0392b;
-            animation-delay: 0.62s;
-        }
+            .loading-bar:nth-child(7) {
+                background-color: #c0392b;
+                animation-delay: 0.62s;
+            }
 
-        .loading-bar:nth-child(8) {
-            background-color: #f1c40f;
-            animation-delay: .71s;
-        }
+            .loading-bar:nth-child(8) {
+                background-color: #f1c40f;
+                animation-delay: .71s;
+            }
 
-        .loading-bar:nth-child(9) {
-            background-color: #27ae60;
-            animation-delay: .80s;
-        }
+            .loading-bar:nth-child(9) {
+                background-color: #27ae60;
+                animation-delay: .80s;
+            }
 
         @keyframes loading {
             0% {
                 transform: scale(1);
             }
+
             20% {
                 transform: scale(1, 2.2);
             }
+
             40% {
                 transform: scale(1);
             }
@@ -194,7 +196,6 @@
             <!-- / Statebased content is being loaded -->
         </div>
         <!-- / content Wrapper. -->
-
         <!-- Footer component -->
         <div ng-include src="'pages/shared/footer.html'"></div>
 
@@ -203,12 +204,8 @@
 
         <!-- Scroll To Top Component -->
         <div ng-include src="'pages/shared/scrolltotop.html'"></div>
-
-        <!-- Settings for demonstration only -->
-        <div ng-include src="'pages/shared/demo-settings.html'"></div>
     </div>
     <!-- / wrapper -->
-
     <!-- Core js files -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
@@ -242,7 +239,7 @@
 
     <!-- Pace page loader animation -->
     <script src="/js/plugins/pace-1.0.2/pace.min.js"></script>
-    <link href="/js/plugins/pace-1.0.2/themes/red/pace-theme-minimal.css" rel="stylesheet"></link>
+    <link href="/js/plugins/pace-1.0.2/themes/red/pace-theme-minimal.css" rel="stylesheet" />
 
     <!-- ABAdmin jQuery plugins -->
     <script src="/js/app/abTree.js"></script>
@@ -251,9 +248,6 @@
     <script src="/js/app/abLayout.js"></script>
     <script src="/js/app/abControlSidebar.js"></script>
     <script src="/js/app/abScripts.js"></script>
-
-    <!-- Needed for demo functionality only. This file should be removed for a production website ! -->
-    <script src="/js/app/demo.js"></script>
 
 
     <!-- Directives -->
@@ -278,8 +272,6 @@
     <script src="js/app/common/directives/abToggleSwitch.js"></script>
     <script src="js/app/common/directives/abWhenScrollEnds.js"></script>
     <!-- <script src="js/app/common/directives/abNotificationDropdown.js"></script> -->
-
-
     <!-- Services -->
     <script src="/js/app/common/services/abConfig.js"></script>
     <script src="/js/app/common/services/abDataService.js"></script>
@@ -291,17 +283,17 @@
     <script src="/js/app/abApp.js"></script>
 
     <!-- Needed for rickshar charts -->
-    <script src="/js/plugins/d3/d3.min.js"></script>
+    <!-- <script src="/js/plugins/d3/d3.min.js"></script> -->
 
 
     <script>
-        // Bootstrap tooltip needs to be activated manually
-        // $(function () {
-        //     $('[data-toggle="tooltip"]').tooltip();
-        // });
+                // Bootstrap tooltip needs to be activated manually
+                // $(function () {
+                //     $('[data-toggle="tooltip"]').tooltip();
+                // });
     </script>
-
-
+        <!-- Settings for demonstration only -->
+        <div ng-include src="'pages/shared/demo-settings.html'"></div>
 </body>
 
 </html>

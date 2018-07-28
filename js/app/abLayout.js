@@ -8,31 +8,31 @@
  *        to the body tag.
  */
 + function ($) {
-    'use strict';
+    "use strict";
 
-    var DataKey = 'ab.layout';
+    var dataKey = "ab.layout";
 
-    var Default = {
+    var defaultSettings = {
         slimscroll: true,
         resetHeight: true
     };
 
-    var Selector = {
-        wrapper: '.wrapper',
-        contentWrapper: '.content-wrapper',
-        layoutBoxed: '.layout-boxed',
-        mainFooter: '.main-footer',
-        mainHeader: '.main-header',
-        sidebar: '.sidebar',
-        controlSidebar: '.control-sidebar',
-        fixed: '.fixed',
-        sidebarMenu: '.sidebar-menu',
-        logo: '.main-header .logo'
+    var htmlSelectors = {
+        wrapper: ".wrapper",
+        contentWrapper: ".content-wrapper",
+        layoutBoxed: ".layout-boxed",
+        mainFooter: ".main-footer",
+        mainHeader: ".main-header",
+        sidebar: ".sidebar",
+        controlSidebar: ".control-sidebar",
+        fixed: ".fixed",
+        sidebarMenu: ".sidebar-menu",
+        logo: ".main-header .logo"
     };
 
-    var ClassName = {
-        fixed: 'fixed',
-        holdTransition: 'hold-transition'
+    var className = {
+        fixed: "fixed",
+        holdTransition: "hold-transition"
     };
 
     var Layout = function (options) {
@@ -45,12 +45,12 @@
         this.fix();
         this.fixSidebar();
 
-        $('body').removeClass(ClassName.holdTransition);
+        $("body").removeClass(className.holdTransition);
 
         if (this.options.resetHeight) {
-            $('body, html, ' + Selector.wrapper).css({
-                'height': 'auto',
-                'min-height': '100%'
+            $("body, html, " + htmlSelectors.wrapper).css({
+                'height': "auto",
+                'min-height': "100%"
             });
         }
 
@@ -59,7 +59,7 @@
                 this.fix();
                 this.fixSidebar();
 
-                $(Selector.logo + ', ' + Selector.sidebar).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+                $(htmlSelectors.logo + ", " + htmlSelectors.sidebar).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function () {
                     this.fix();
                     this.fixSidebar();
                 }.bind(this));
@@ -68,12 +68,12 @@
             this.bindedResize = true;
         }
 
-        $(Selector.sidebarMenu).on('expanded.tree', function () {
+        $(htmlSelectors.sidebarMenu).on("expanded.tree", function () {
             this.fix();
             this.fixSidebar();
         }.bind(this));
 
-        $(Selector.sidebarMenu).on('collapsed.tree', function () {
+        $(htmlSelectors.sidebarMenu).on("collapsed.tree", function () {
             this.fix();
             this.fixSidebar();
         }.bind(this));
@@ -81,59 +81,59 @@
 
     Layout.prototype.fix = function () {
         // Remove overflow from .wrapper if layout-boxed exists
-        $(Selector.layoutBoxed + ' > ' + Selector.wrapper).css('overflow', 'hidden');
+        $(htmlSelectors.layoutBoxed + " > " + htmlSelectors.wrapper).css("overflow", "hidden");
 
         // Get window height and the wrapper height
-        var footerHeight = $(Selector.mainFooter).outerHeight() || 0;
-        var headerHeight = $(Selector.mainHeader).outerHeight() || 0;
+        var footerHeight = $(htmlSelectors.mainFooter).outerHeight() || 0;
+        var headerHeight = $(htmlSelectors.mainHeader).outerHeight() || 0;
         var neg = headerHeight + footerHeight;
         var windowHeight = $(window).height();
-        var sidebarHeight = $(Selector.sidebar).height() || 0;
+        var sidebarHeight = $(htmlSelectors.sidebar).height() || 0;
 
         // Set the min-height of the content and sidebar based on
         // the height of the document.
-        if ($('body').hasClass(ClassName.fixed)) {
-            $(Selector.contentWrapper).css('min-height', windowHeight - footerHeight);
+        if ($("body").hasClass(className.fixed)) {
+            $(htmlSelectors.contentWrapper).css("min-height", windowHeight - footerHeight);
         } else {
             var postSetHeight;
 
             if (windowHeight >= sidebarHeight) {
-                $(Selector.contentWrapper).css('min-height', windowHeight - neg);
+                $(htmlSelectors.contentWrapper).css("min-height", windowHeight - neg);
                 postSetHeight = windowHeight - neg;
             } else {
-                $(Selector.contentWrapper).css('min-height', sidebarHeight);
+                $(htmlSelectors.contentWrapper).css("min-height", sidebarHeight);
                 postSetHeight = sidebarHeight;
             }
 
             // Fix for the control sidebar height
-            var $controlSidebar = $(Selector.controlSidebar);
-            if (typeof $controlSidebar !== 'undefined') {
+            var $controlSidebar = $(htmlSelectors.controlSidebar);
+            if (typeof $controlSidebar !== "undefined") {
                 if ($controlSidebar.height() > postSetHeight)
-                    $(Selector.contentWrapper).css('min-height', $controlSidebar.height());
+                    $(htmlSelectors.contentWrapper).css("min-height", $controlSidebar.height());
             }
         }
     };
 
     Layout.prototype.fixSidebar = function () {
         // Make sure the body tag has the .fixed class
-        if (!$('body').hasClass(ClassName.fixed)) {
-            if (typeof $.fn.slimScroll !== 'undefined') {
-                $(Selector.sidebar).slimScroll({
+        if (!$("body").hasClass(className.fixed)) {
+            if (typeof $.fn.slimScroll !== "undefined") {
+                $(htmlSelectors.sidebar).slimScroll({
                     destroy: true
-                }).height('auto');
+                }).height("auto");
             }
             return;
         }
 
         // Enable slimscroll for fixed layout
         if (this.options.slimscroll) {
-            if (typeof $.fn.slimScroll !== 'undefined') {
+            if (typeof $.fn.slimScroll !== "undefined") {
                 // Destroy if it exists
                 // $(Selector.sidebar).slimScroll({ destroy: true }).height('auto')
 
                 // Add slimscroll
-                $(Selector.sidebar).slimScroll({
-                    height: ($(window).height() - $(Selector.mainHeader).height()) + 'px'
+                $(htmlSelectors.sidebar).slimScroll({
+                    height: ($(window).height() - $(htmlSelectors.mainHeader).height()) + "px"
                 });
             }
         }
@@ -144,16 +144,16 @@
     function Plugin(option) {
         return this.each(function () {
             var $this = $(this);
-            var data = $this.data(DataKey);
+            var data = $this.data(dataKey);
 
             if (!data) {
-                var options = $.extend({}, Default, $this.data(), typeof option === 'object' && option);
-                $this.data(DataKey, (data = new Layout(options)));
+                var options = $.extend({}, defaultSettings, $this.data(), typeof option === "object" && option);
+                $this.data(dataKey, (data = new Layout(options)));
             }
 
-            if (typeof option === 'string') {
-                if (typeof data[option] === 'undefined') {
-                    throw new Error('No method named ' + option);
+            if (typeof option === "string") {
+                if (typeof data[option] === "undefined") {
+                    throw new Error("No method named " + option);
                 }
                 data[option]();
             }
@@ -174,7 +174,7 @@
 
     // Layout DATA-API
     // ===============
-    $(window).on('load', function () {
-        Plugin.call($('body'));
+    $(window).on("load", function () {
+        Plugin.call($("body"));
     });
 }(jQuery);

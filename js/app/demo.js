@@ -10,8 +10,6 @@ $(function () {
     /**
      * Get access to plugins
      */
-
-    var $alayout = $.fn.layout;
     $('[data-toggle="control-sidebar"]').controlSidebar();
     $('[data-toggle="push-menu"]').pushMenu();
     var $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');

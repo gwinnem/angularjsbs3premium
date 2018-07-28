@@ -1,8 +1,8 @@
-<link href="/pages/shared/settings.css" rel="stylesheet" />
+    <link href="/pages/shared/settings.css" rel="stylesheet" />
 <script src="/pages/shared/settings.js"></script>
 
 
-<div id="demo-nifty-settings" class="demo-nifty-settings">
+<div id="demo-settings" class="demo-settings">
     <button id="demo-set-btn" class="btn">
         <i class="fa fa-gear"></i>
     </button>
@@ -13,59 +13,86 @@
     <div id="demo-set-content" class="demo-set-content">
         <div class="clearfix">
             <div class="pull-right">
-                <a id="demo-btn-close-settings" href="#">
+                <a id="demo-btn-close-settings" href="javascript:">
                     <i class="fa fa-close fa-2x btn-trans"></i>
                 </a>
             </div>
-            <div class="media">
-                <div class="media-body">
-                    <span class="text-main text-semibold text-lg text-uppercase">Customize</span>
-                    <p class="text-xs">Customize this template's layout, sidebars, and skins.</p>
-                </div>
+            <div style="padding-left: 10px; padding-top: 10px;">
+                <span class="text-main text-uppercase">Customize</span>
+                <p>Customize this template's layout, sidebars, and skins.</p>
             </div>
+
         </div>
         <div class="clearfix">
             <div class="col-xs-6 col-md-3">
                 <p class="text-main text-bold text-uppercase">Layout</p>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        <input type="checkbox" data-layout="fixed" class="pull-right" /> Fixed layout
+                        <input type="checkbox" icheck data-layout="layout-normal" ng-model="layoutNormal" vale="normal" checked/> Normal
                     </label>
                 </div>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        <input type="checkbox" data-layout="layout-boxed" class="pull-right" /> Boxed Layout
+                        <input type="checkbox" icheck data-layout="layout-fixed" ng-model="layoutFixed" value="fixed" /> Fixed Sidebar
                     </label>
                 </div>
+                <div class="form-group">
+                    <label class="control-sidebar-subheading">
+                        <input type="checkbox" icheck data-layout="layout-boxed" ng-model="layoutBoxed" value="boxed" /> Boxed
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="control-sidebar-subheading">
+                        <input type="checkbox" icheck data-layout="layout-topnav" ng-model="layoutTopNav" value="topnav" /> Top Navigation
+                        <p>Simple layout with the top navigation bar only. Opens in a new window.</p>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="control-sidebar-subheading">
+                        <input type="checkbox" icheck data-layout="layout-fixedfooter" ng-model="layoutFixedFooter" /> Fixed Footer
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="control-sidebar-subheading">
+                        <input type="checkbox" icheck data-layout="toggleLeftUserpanel" ng-model="layoutUserpanelOnOff" /> Toggle user panel.
+                    </label>
+                    <p>Toggles visibillity for the userpanel in the left side menu bar.</p>
+                </div>
+                <div class="form-group">
+                    <label class="control-sidebar-subheading">
+                        <input type="checkbox" icheck data-layout="toggleLeftSearchbox" ng-model="layoutSearchBoxOnOff" /> Toggle searchbox.
+                    </label>
+                    <p>Toggles visibillity for the search form in the left side menu bar.</p>
+                </div>
             </div>
-            <div class="col-xs-6 col-md-3">
+            <div class="col-xs-6 col-md-4">
                 <p class="text-bold text-uppercase text-main">Sidebars</p>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        <input type="checkbox" data-layout="sidebar-collapse" class="pull-right" /> Toggle Sidebar
+                        <input type="checkbox" icheck data-layout="sidebar-collapse" ng-model="toggleSidebar" /> Toggle Sidebar
                     </label>
                     <p>Toggle the left sidebar\'s state (open or collapse)</p>
                 </div>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        <input type="checkbox" data-enable="expandOnHover" class="pull-right" /> Sidebar Expand on Hover
+                        <input type="checkbox" icheck data-enable="expandOnHover" ng-model="expandOnHover" /> Sidebar Expand on Hover
                     </label>
                     <p>Let the sidebar mini expand on hover</p>
                 </div>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        <input type="checkbox" data-controlsidebar="control-sidebar-open" class="pull-right" /> Toggle Right Sidebar Slide
+                        <input type="checkbox" icheck data-controlsidebar="control-sidebar-open" ng-model="controlSidebarOpen" /> Toggle Right Sidebar Slide
                     </label>
                     <p>Toggle between slide over content and push content effects</p>
                 </div>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        <input type="checkbox" data-sidebarskin="toggle" class="pull-right" /> Toggle Right Sidebar Skin
+                        <input type="checkbox" icheck data-sidebarskin="toggle" ng-model="sidebarSkinToggle" /> Toggle Right Sidebar Skin
                     </label>
                     <p>Toggle between dark and light skins for the right sidebar</p>
                 </div>
             </div>
-            <div class="col-xs-6 col-md-5">
+            <div class="col-xs-6 col-md-4">
                 <p class="text-main text-bold text-uppercase">Skins</p>
                 <ul class="list-unstyled clearfix">
                     <!-- Black skin -->
@@ -218,7 +245,7 @@
                             <div>
                                 <span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
                                 <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
-                                <div>
+                            </div>
                         </a>
                         <p class="text-center no-margin" style="font-size: 12px">Red White</p>
                     </li>
@@ -237,10 +264,9 @@
                         <p class="text-center no-margin" style="font-size: 12px">Yellow White</p>
                     </li>
                 </ul>
-                </div>
-                </div>
             </div>
         </div>
-        <!--===================================================-->
-        <!-- END SETTINGS -->
     </div>
+</div>
+<!--===================================================-->
+<!-- END SETTINGS -->

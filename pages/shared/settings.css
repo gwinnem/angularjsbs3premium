@@ -5,34 +5,25 @@
     padding-top: 8px;
     background-color: transparent;
     border-color: transparent;
-    box-shadow: none !important
+    box-shadow: none !important;
 }
 
-@media(min-width: 1200px) {
-    .demo-nifty-settings {
-        position: fixed;
-        top: 80px;
-        right: 0;
-        z-index: 99999;
-        max-width: 1120px;
-        max-height: 700px;
-        background-color:#fff;
-    }
-    #demo-set-btn {
-        display: inline-block;
-        background-color: #3a444e;
-        border-radius: 7px 0 0 7px !important;
-        color: #fff;
-        border: 0;
-        position: absolute;
-        top: 250px;
-        left: -45px;
-        margin-left: -1%;
-        border-radius: 2px 0 0 2px;
-        box-shadow: none;
-        z-index: 1;
-        transition: all .3s
-    }
+#demo-set-btn {
+    display: inline-block;
+    background-color: #3a444e;
+    border-radius: 7px 0 0 7px !important;
+    color: #fff;
+    border: 0;
+    position: absolute;
+    top: 100px;
+    left: -45px;
+    margin-left: -1%;
+    border-radius: 2px 0 0 2px;
+    box-shadow: none;
+    z-index: 1;
+    transition: all .3s;
+}
+
     #demo-set-btn i {
         font-size: 25px;
         display: block;
@@ -40,32 +31,32 @@
         height: 1em;
         animation-iteration-count: infinite !important;
         animation-duration: 1.5s !important;
-        animation-play-state: running
+        animation-play-state: running;
     }
-    #demo-set-btn i:before {
-        display: block;
-        line-height: 1em
-    }
-    .demo-set-content {
-        position: relative;
-        background-color: #fff;
-        box-shadow: -7px 0 0 #3a444e;
-        z-index: 2;
-        max-width: 0;
-        overflow: hidden;
-        height: 560px;
-        transition: max-width .15s
-    }
-    .demo-nifty-settings.in .demo-set-content {
-        transition: max-width .15s;
-        max-width: 1120px
-    }
-    .demo-nifty-settings:before {
+
+        #demo-set-btn i:before {
+            display: block;
+            line-height: 1em;
+        }
+
+
+.demo-settings {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    z-index: 99999;
+    max-width: 1024px;
+    max-height: 500px;
+    background-color: #fff;
+}
+
+    .demo-settings:before {
         content: '';
         background-color: rgba(0, 0, 0, 0);
         transition: background-color .4s
     }
-    .demo-nifty-settings.in:before {
+
+    .demo-settings.in:before {
         display: block;
         position: fixed;
         top: 0;
@@ -73,26 +64,40 @@
         left: 0;
         right: 0;
         background-color: rgba(0, 0, 0, .5);
-        transition: background-color .4s
+        transition: background-color .4s;
     }
-    .demo-nifty-settings hr,
-    .demo-nifty-settings .bord-btm,
-    .demo-nifty-settings .bord-top,
-    .demo-nifty-settings .bord-all {
-        border-color: rgba(0, 0, 0, 0.07)
-    }
-    .demo-nifty-settings {
-        color: #7a878e
-    }
-    .demo-nifty-settings .text-muted {
-        color: #909ba1
-    }
-    .demo-nifty-settings .text-main {
-        color: #4d627b
-    }
-    .demo-nifty-settings {
-        background-color: #fff;
+
+
+.demo-settings {
+    color: #000;/*#7a878e;*/
+}
+
+    .demo-settings .text-muted {
         color: #909ba1;
-        border-color: rgba(0, 0, 0, 0.07)
     }
+
+    .demo-settings .text-main {
+        color: #000; /*#4d627b;*/
+    }
+
+.demo-settings {
+    background-color: #fff;
+    /*color: #909ba1;*/
+    border-color: rgba(0, 0, 0, 0.07);
+}
+
+    .demo-settings.in .demo-set-content {
+        transition: max-width .3s;
+        max-width: 800px;
+    }
+
+.demo-set-content {
+    position: relative;
+    background-color: #f1f1f1;
+    box-shadow: -7px 0 0 #3a444e;
+    z-index: 2;
+    max-width: 0;
+    overflow: hidden;
+    height: 560px;
+    transition: max-width .3s;
 }
