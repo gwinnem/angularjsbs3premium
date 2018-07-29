@@ -13,7 +13,7 @@
     var dataKey = "ab.layout";
 
     var defaultSettings = {
-        slimscroll: true,
+        slimscroll: false,
         resetHeight: true
     };
 
@@ -23,6 +23,7 @@
         layoutNormal: ".layout-normal",
         layoutFixed: ".layout-fixed",
         layoutBoxed: ".layout-boxed",
+        layoutTopNav: ".layout-topnav",
         mainFooter: ".main-footer",
         mainHeader: ".main-header",
         sidebar: ".sidebar",
@@ -33,8 +34,11 @@
     };
 
     var className = {
-        fixed: "fixed",
-        holdTransition: "hold-transition"
+        holdTransition: "hold-transition",
+        layoutNormal: "layout-normal",
+        layoutFixed: "layout-fixed",
+        layoutBoxed: "layout-boxed",
+        layoutTopNav: "layout-topnav",
     };
 
     var Layout = function (options) {
@@ -94,7 +98,7 @@
 
         // Set the min-height of the content and sidebar based on
         // the height of the document.
-        if ($("body").hasClass(className.fixed)) {
+        if ($("body").hasClass(className.layoutFixed)) {
             $(htmlSelectors.contentWrapper).css("min-height", windowHeight - footerHeight);
         } else {
             var postSetHeight;
@@ -110,49 +114,48 @@
             // Fix for the control sidebar height
             var $controlSidebar = $(htmlSelectors.controlSidebar);
             if (typeof $controlSidebar !== "undefined") {
-                if ($controlSidebar.height() > postSetHeight)
+                if ($controlSidebar.height() > postSetHeight) {
                     $(htmlSelectors.contentWrapper).css("min-height", $controlSidebar.height());
+                }
             }
         }
     };
 
     Layout.prototype.fixSidebar = function () {
         // Make sure the body tag has the .fixed class
-        if (!$("body").hasClass(className.fixed)) {
-            if (typeof $.fn.slimScroll !== "undefined") {
-                $(htmlSelectors.sidebar).slimScroll({
-                    destroy: true
-                }).height("auto");
-            }
-            return;
-        }
+        // if (!$("body").hasClass(className.layoutFixed)) {
+        //     if (typeof $.fn.slimScroll !== "undefined") {
+        //         $(htmlSelectors.sidebar).slimScroll({
+        //             destroy: true
+        //         }).height("auto");
+        //     }
+        //    // return;
+        // }
 
         // Enable slimscroll for fixed layout
-        if (this.options.slimscroll) {
-            if (typeof $.fn.slimScroll !== "undefined") {
-                // Destroy if it exists
-                $(Selector.sidebar).slimScroll({
-                    destroy: true
-                }).height('auto')
-                debugger;
-                // Add slimscroll
-                $(htmlSelectors.sidebar).slimScroll({
-                    height: ($(window).height() - $(htmlSelectors.mainHeader).height()) + "px",
-                    //position: 'left',
-                    size: '10px',
-                    position: 'left',
-                    color: '#ffcc00',
-                    alwaysVisible: true,
-                    distance: '20px',
-                    railVisible: true,
-                    railColor: '#222',
-                    railOpacity: 0.3,
-                    wheelStep: 10,
-                    allowPageScroll: false,
-                    disableFadeOut: false
-                });
-            }
-        }
+        // if (this.options.slimscroll) {
+        //     if (typeof $.fn.slimScroll !== "undefined") {
+        //         // Destroy if it exists
+        //         $(htmlSelectors.sidebar).slimScroll({
+        //             destroy: true
+        //         }).height('auto')
+        //         // Add slimscroll
+        //         $(htmlSelectors.sidebar).slimScroll({
+        //             height: ($(window).height() - $(htmlSelectors.mainHeader).height()) + "px",
+        //             size: '10px',
+        //             //position: 'left',
+        //             color: '#ffcc00',
+        //             //alwaysVisible: true,
+        //             distance: '20px',
+        //             //railVisible: true,
+        //             railColor: '#222',
+        //             railOpacity: 0.3,
+        //             wheelStep: 10,
+        //             allowPageScroll: true,
+        //             disableFadeOut: false
+        //         });
+        //     }
+        // }
     };
 
     // Plugin Definition
@@ -176,19 +179,19 @@
         });
     }
 
-    var old = $.fn.layout;
+    // var old = $.fn.layout;
 
-    $.fn.layout = Plugin;
-    $.fn.layout.Constuctor = Layout;
+    // $.fn.layout = Plugin;
+    // $.fn.layout.Constuctor = Layout;
 
     // No conflict mode
     // ================
-    $.fn.layout.noConflict = function () {
-        $.fn.layout = old;
-        return this;
-    };
+    // $.fn.layout.noConflict = function () {
+    //     $.fn.layout = old;
+    //     return this;
+    // };
 
-    // Layout DATA-API
+    // Hooking the plugin to the body element.
     // ===============
     $(window).on("load", function () {
         Plugin.call($("body"));

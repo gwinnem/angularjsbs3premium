@@ -1,4 +1,4 @@
-<link href="/pages/shared/settings.css" rel="stylesheet" />
+<link href="/pages/demosidebar/settings.css" rel="stylesheet" />
 
 <div id="demo-settings" class="demo-settings">
     <button id="demo-set-btn" class="btn">
@@ -22,6 +22,7 @@
 
         </div>
         <div class="clearfix">
+            <!-- Layout -->
             <div class="col-xs-6 col-md-3">
                 <p class="text-main text-bold text-uppercase">Layout</p>
                 <div class="form-group">
@@ -41,56 +42,68 @@
                 </div>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        <input type="checkbox" icheck data-layout="layout-topnav" ng-model="layoutTopNav" value="topnav" /> Top Navigation
+                        <input id="layout-topnav" type="checkbox" value="layout-topnav" /> Top Navigation
                         <p>Simple layout with the top navigation bar only. Opens in a new window.</p>
                     </label>
                 </div>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        <input type="checkbox" icheck data-layout="layout-fixedfooter" ng-model="layoutFixedFooter" /> Fixed Footer
+                        <input type="checkbox" value="layout-fixedfooter" /> Fixed Footer
                     </label>
-                </div>
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        <input type="checkbox" icheck data-layout="toggleLeftUserpanel" ng-model="layoutUserpanelOnOff" /> Toggle user panel.
-                    </label>
-                    <p>Toggles visibillity for the userpanel in the left side menu bar.</p>
-                </div>
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        <input type="checkbox" icheck data-layout="toggleLeftSearchbox" ng-model="layoutSearchBoxOnOff" /> Toggle searchbox.
-                    </label>
-                    <p>Toggles visibillity for the search form in the left side menu bar.</p>
                 </div>
             </div>
-            <div class="col-xs-6 col-md-4">
-                <p class="text-bold text-uppercase text-main">Sidebars</p>
+            <!-- Left sidebar -->
+            <div class="col-xs-6 col-md-3">
+                <p class="text-bold text-uppercase text-main">Left Sidebar</p>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        <input type="checkbox" icheck data-layout="sidebar-collapse" ng-model="toggleSidebar" /> Toggle Sidebar
+                        <input id="toggle-left-sidebar" type="checkbox" value="toggle-left-sidebar" /> Toggle Sidebar
                     </label>
                     <p>Toggle the left sidebar\'s state (open or collapse)</p>
                 </div>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        <input type="checkbox" icheck data-enable="expandOnHover" ng-model="expandOnHover" /> Sidebar Expand on Hover
+                        <input id="expand-on-hover" type="checkbox" value="expand-on-hover" /> Sidebar Expand on Hover
                     </label>
                     <p>Let the sidebar mini expand on hover</p>
                 </div>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        <input type="checkbox" icheck data-controlsidebar="control-sidebar-open" ng-model="controlSidebarOpen" /> Toggle Right Sidebar Slide
+                        <input id="user-panel" type="checkbox" value="user-panel" /> Toggle user panel.
+                    </label>
+                    <p>Toggles visibillity for the userpanel in the left side menu bar.</p>
+                </div>
+                <div class="form-group">
+                    <label class="control-sidebar-subheading">
+                        <input id="search-box" type="checkbox" value="search-box" /> Toggle searchbox.
+                    </label>
+                    <p>Toggles visibillity for the search form in the left side menu bar.</p>
+                </div>
+                <div class="form-group">
+                    <label class="control-sidebar-subheading">
+                        <input id="bottom-menu" type="checkbox" value="bottom-box" /> Toggle Bottom Menu.
+                    </label>
+                    <p>Toggles visibillity for the bottom menu in the left side menu bar.</p>
+                </div>
+            </div>
+            <!-- Right sidebar -->
+            <div class="col-xs-6 col-md-3">
+                <p class="text-bold text-uppercase text-main">Right Sidebar</p>
+                <div class="form-group">
+                    <label class="control-sidebar-subheading">
+                        <input id="control-sidebar-open" type="checkbox" value="control-sidebar-open" /> Toggle Right Sidebar Slide
                     </label>
                     <p>Toggle between slide over content and push content effects</p>
                 </div>
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
-                        <input type="checkbox" icheck data-sidebarskin="toggle" ng-model="sidebarSkinToggle" /> Toggle Right Sidebar Skin
+                        <input id="toggle-right-sidebar-skin" type="checkbox" value="toggle-right-sidebar-skin" /> Toggle Right Sidebar Skin
                     </label>
                     <p>Toggle between dark and light skins for the right sidebar</p>
                 </div>
             </div>
-            <div class="col-xs-6 col-md-4">
+            <!-- Skins -->
+            <div class="col-xs-6 col-md-3">
                 <p class="text-main text-bold text-uppercase">Skins</p>
                 <ul class="list-unstyled clearfix">
                     <!-- Black skin -->
@@ -266,6 +279,6 @@
         </div>
     </div>
 </div>
-<script src="/pages/shared/settings.js"></script>
+<script src="/pages/demosidebar/settings.js"></script>
 <!--===================================================-->
 <!-- END SETTINGS -->

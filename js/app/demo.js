@@ -127,7 +127,7 @@ $(function () {
             changeLayout($(this).data('controlsidebar'));
             var slide = !$controlSidebar.options.slide;
 
-            $controlSidebar.options.slide = slide;
+            //$controlSidebar.options.slide = slide;
             if (!slide)
                 $('.control-sidebar').removeClass('control-sidebar-open');
         });
