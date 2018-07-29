@@ -56,7 +56,7 @@
     </script>
 </head>
 
-<body ng-app="aurora" class="sidebar-mini skin-blue" ng-cloak ng-controller="mainController">
+<body ng-app="aurora" class="sidebar-mini layout-fixed" ng-cloak ng-controller="mainController">
     <!-- Loading section used for preloading of page -->
     <div class="loading">
         <div class="loading-bar"></div>
@@ -206,13 +206,13 @@
 
 
     <script>
-                // Bootstrap tooltip needs to be activated manually
-                // $(function () {
-                //     $('[data-toggle="tooltip"]').tooltip();
-                // });
+        // Bootstrap tooltip needs to be activated manually
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
     </script>
-        <!-- Settings for demonstration only -->
-        <div ng-include src="'pages/demosidebar/demo-settings.html'"></div>
+    <!-- Settings for demonstration only -->
+    <div ng-include src="'pages/demosidebar/demo-settings.html'"></div>
 </body>
 
 </html>

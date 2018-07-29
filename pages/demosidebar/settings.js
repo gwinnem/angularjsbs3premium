@@ -1,8 +1,5 @@
 (function () {
     'use strict';
-    /**
-     * Get access to plugins
-     */
 
     // initializing plugins
     $('[data-toggle="control-sidebar"]').controlSidebar();
@@ -13,6 +10,7 @@
     var $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
     var $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
     var $layout = $('body').data('ab.layout');
+
     /**
      * List of all the available skins
      */
@@ -32,9 +30,7 @@
     ];
 
     /**
-     * Replaces the old skin with the new skin
-     * @param String cls the new skin class
-     * @returns Boolean false to prevent link's default action
+     * Replaces the old skin with the new skin.
      */
     function changeSkin(cls) {
         $.each(mySkins, function (i) {
@@ -45,21 +41,22 @@
         store('ab.skin', cls);
     };
 
-    //Checking if the skin value is set in localstorage
+    /**
+     * Overriding skin if it is set in localstorage.
+     */
     var currentSkin = get('ab.skin');
     if (currentSkin && $.inArray(currentSkin, mySkins)) {
         changeSkin(currentSkin);
     }
+
     /**
      * Toggles layout classes
-     *
-     * @param String cls the layout class to toggle
-     * @returns void
      */
     function changeLayout(cls) {
         $('body').toggleClass(cls);
-        if ($('body').hasClass('layout-fixed') && cls === 'layout-fixed') {
+        if (cls === 'layout-fixed') {
             $pushMenu.expandOnHover();
+            $pushmenu.close();
             $layout.activate();
         }
         $controlSidebar.fix();
@@ -84,54 +81,65 @@
             abSettings.hasClass("in") && $(e.target).is(abSettings) && abSettings.removeClass("in");
         });
 
-        // Left side button
+        /**
+         * The setting menu panel left side button.
+         */
         $("#demo-set-btn").on("click", function () {
             return abSettings.toggleClass("in");
         });
 
-        // X close button
+        /**
+         * The close button in the settings panel.
+         */
         $("#demo-btn-close-settings").on("click", function () {
             return abSettings.toggleClass("in");
         });
 
-        // Add the change skin listener
+
+        /**
+         * Change skin listener.
+         */
         $('[data-skin]').on('click', function (e) {
             e.preventDefault();
             changeSkin($(this).data('skin'));
         });
 
-        // Add the layout manager
-        $('[data-layout]').on('click', function () {
-            changeLayout($(this).data('layout'));
-        });
 
-        // Add the control sidebar
-        $('[data-controlsidebar]').on('click', function () {
-            changeLayout($(this).data('controlsidebar'));
-            var slide = !$controlSidebar.options.slide;
-            $controlSidebar.options.slide = slide;
-            if (!slide) {
-                $('.control-sidebar').removeClass('control-sidebar-open');
+        /**
+         * 
+         */
+        $("#toggle-left-sidebar").on('click', function () {
+            if (this.checked) {
+                $pushMenu.close();
+            } else {
+                $pushMenu.open();
             }
         });
 
-        $('[data-sidebarskin="toggle"]').on('click', function () {
+        $('#toggle-right-sidebar-skin').on('click', function () {
             var $sidebar = $('.control-sidebar');
             if ($sidebar.hasClass('control-sidebar-dark')) {
                 $sidebar.removeClass('control-sidebar-dark');
                 $sidebar.addClass('control-sidebar-light');
+                store("ab.controlSidebar", "light");
             } else {
                 $sidebar.removeClass('control-sidebar-light');
                 $sidebar.addClass('control-sidebar-dark');
+                store("ab.controlSidebar", "dark");
             }
         });
 
-        $('[data-enable="expandOnHover"]').on('click', function () {
-            // TODO refactor
-            //$(this).attr('disabled', true);
-            $pushMenu.expandOnHover();
-            if (!$('body').hasClass('sidebar-collapse')){
-                $('[data-layout="sidebar-collapse"]').click();
+        $("#sidebar-expand-on-hover").on('click', function () {
+            debugger;
+            // TODO update checkboxes and it is not working
+            if (this.checked) {
+                $pushMenu.expandOnHover();
+                if (!$('body').hasClass('sidebar-collapse')) {
+                    store("ab.sidebarExpandHover", "false");
+                    $("#toggle-left-sidebar").click();
+                } else {
+                    store("ab.sidebarExpandHover", "false");
+                }
             }
         });
 
@@ -163,43 +171,6 @@
             $("#layout-fixed").attr('disabled', 'disabled');
             $("#layout-boxed").attr('disabled', 'disabled');
         }
-
-        if ($('body').hasClass('sidebar-collapse')) {
-            $('[data-layout="sidebar-collapse"]').attr('checked', 'checked');
-        }
-
-        // // Add the control sidebar
-        // $('[data-controlsidebar]').on('click', function () {
-        //     changeLayout($(this).data('controlsidebar'));
-        //     var slide = !$controlSidebar.options.slide;
-        //     $controlSidebar.options.slide = slide;
-        //     if (!slide) {
-        //         $('.control-sidebar').removeClass('control-sidebar-open');
-        //     }
-        // });
-
-        $('[data-sidebarskin="toggle"]').on('click', function () {
-            var $sidebar = $('.control-sidebar');
-            if ($sidebar.hasClass('control-sidebar-dark')) {
-                $sidebar.removeClass('control-sidebar-dark');
-                $sidebar.addClass('control-sidebar-light');
-            } else {
-                $sidebar.removeClass('control-sidebar-light');
-                $sidebar.addClass('control-sidebar-dark');
-            }
-        });
-
-        // $('[data-enable="expandOnHover"]').on('click', function () {
-        //     // TODO refactor
-        //     //$(this).attr('disabled', true);
-        //     $pushMenu.expandOnHover();
-        //     if (!$('body').hasClass('sidebar-collapse'))
-        //         $('[data-layout="sidebar-collapse"]').click();
-        // });
-        // if ($('body').hasClass('sidebar-collapse')) {
-        //     $('[data-layout="sidebar-collapse"]').attr('checked', 'checked');
-        // }
-
     };
 
     // Main settings button, eventhandle and setting up the panel
@@ -279,7 +250,7 @@
     $("#layout-normal").on('click', function () {
         changeSettings('layout-normal', this.checked);
     });
-    
+
     $("#layout-fixed").on('click', function () {
         changeSettings('layout-fixed', this.checked);
     });
@@ -294,14 +265,14 @@
 
     // Left side user panel
     $("#user-panel").on('click', function () {
-        if(this.checked){
-            store("ab.userpanel","hidden");
-            if(!$("#sidebar-user-panel").hasClass("hidden")){
+        if (this.checked) {
+            store("ab.userpanel", "hidden");
+            if (!$("#sidebar-user-panel").hasClass("hidden")) {
                 $("#sidebar-user-panel").addClass("hidden");
             }
-        }else{
-            store("ab.userpanel","visible");
-            if($("#sidebar-user-panel").hasClass("hidden")){
+        } else {
+            store("ab.userpanel", "visible");
+            if ($("#sidebar-user-panel").hasClass("hidden")) {
                 $("#sidebar-user-panel").removeClass("hidden");
             }
         }
@@ -309,22 +280,45 @@
 
     // Left side search box
     $("#search-box").on('click', function () {
-        if(this.checked){
-            store("ab.searchbox","hidden");
-            if(!$("#sidebar-search-form").hasClass("hidden")){
+        if (this.checked) {
+            store("ab.searchbox", "hidden");
+            if (!$("#sidebar-search-form").hasClass("hidden")) {
                 $("#sidebar-search-form").addClass("hidden");
             }
-        }else{
-            store("ab.searchbox","visible");
-            if($("#sidebar-search-form").hasClass("hidden")){
+        } else {
+            store("ab.searchbox", "visible");
+            if ($("#sidebar-search-form").hasClass("hidden")) {
                 $("#sidebar-search-form").removeClass("hidden");
             }
         }
     });
 
-    // Sidebars
-    $("#toggle-left-sidebar").on('click', function () {
-        changeSettings('layout-topnav', this.checked);
+    // Left side sidebar-footer
+    $("#bottom-menu").on('click', function () {
+        if (this.checked) {
+            store("ab.sidebarFooter", "hidden");
+            if (!$("#sidebar-footer").hasClass("hidden")) {
+                $("#sidebar-footer").addClass("hidden");
+            }
+        } else {
+            store("ab.sidebarFooter", "visible");
+            if ($("##sidebar-footer").hasClass("hidden")) {
+                $("#sidebar-footer").removeClass("hidden");
+            }
+        }
     });
 
+    // Add the control sidebar slide option
+    $("#control-sidebar-slide").on('click', function () {
+        if (this.checked) {
+            store("ab.control.sidebar.slide", "true");
+        } else {
+            store("ab.control.sidebar.slide", "true");
+        }
+        var slide = !$controlSidebar.options.slide;
+        $controlSidebar.options.slide = slide;
+        if (!slide) {
+            $('.control-sidebar').removeClass('control-sidebar-open');
+        }
+    });
 })();
