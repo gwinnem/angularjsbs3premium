@@ -1,3 +1,9 @@
+/**
+ * ABAdmin Demo Settings Menu
+ * ------------------
+ * You should not use this file in production.
+ * This file is for demo purposes only.
+ */
 (function () {
     'use strict';
 
@@ -5,11 +11,20 @@
     $('[data-toggle="control-sidebar"]').controlSidebar();
     $('[data-toggle="push-menu"]').pushMenu();
 
-
     // Getting the plugins
     var $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
     var $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
-    var $layout = $('body').data('ab.layout');
+    var $layout = $('body').data("ab.layout");
+
+    // Reinitialize variables on load
+    $(window).on('load', function () {
+        $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
+        $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
+        $layout = $('body').data('ab.layout');
+        if ($("#demo-settings").hasClass("hidden")) {
+            $("#demo-settings").removeClass("hidden");
+        }
+    });
 
     /**
      * List of all the available skins
@@ -54,10 +69,17 @@
      */
     function changeLayout(cls) {
         $('body').toggleClass(cls);
-        if (cls === 'layout-fixed') {
+        if (cls === 'fixed') {
+            $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
+            $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
+            $layout = $('body').data("ab.layout");
             $pushMenu.expandOnHover();
-            $pushmenu.close();
-            $layout.activate();
+            $pushMenu.close();
+            // $layout is always undefined
+            if ($layout !== undefined) {
+                $layout.activate();
+            }
+
         }
         $controlSidebar.fix();
     };
@@ -76,6 +98,10 @@
     });
 
     var setupPanel = function () {
+        var currentLayout = get("ab.layout")
+        if(currentLayout===undefined || currentLayout===""){
+            store("ab.layout","layout-normal");
+        }
         var abSettings = $("#demo-settings");
         abSettings.on("click", function (e) {
             abSettings.hasClass("in") && $(e.target).is(abSettings) && abSettings.removeClass("in");
@@ -106,7 +132,7 @@
 
 
         /**
-         * 
+         * Toggle left side menu
          */
         $("#toggle-left-sidebar").on('click', function () {
             if (this.checked) {
@@ -116,6 +142,9 @@
             }
         });
 
+        /**
+         * Toggle right sidebar skin black & white
+         */
         $('#toggle-right-sidebar-skin').on('click', function () {
             var $sidebar = $('.control-sidebar');
             if ($sidebar.hasClass('control-sidebar-dark')) {
@@ -130,8 +159,6 @@
         });
 
         $("#sidebar-expand-on-hover").on('click', function () {
-            debugger;
-            // TODO update checkboxes and it is not working
             if (this.checked) {
                 $pushMenu.expandOnHover();
                 if (!$('body').hasClass('sidebar-collapse')) {
@@ -151,7 +178,7 @@
             $("#layout-topnav").attr('disabled', 'disabled');
         }
 
-        if ($('body').hasClass('layout-fixed')) {
+        if ($('body').hasClass('fixed')) {
             $("#layout-fixed").attr('checked', 'checked');
             $("#layout-normal").attr('disabled', 'disabled');
             $("#layout-boxed").attr('disabled', 'disabled');
@@ -197,10 +224,11 @@
                     }
                     break;
                 }
+            case "fixed":
             case "layout-fixed":
                 {
                     if (value) {
-                        store("ab.layout", "layout-fixed");
+                        store("ab.layout", "fixed");
                         $("#layout-normal").attr('disabled', 'disabled');
                         $("#layout-boxed").attr('disabled', 'disabled');
                         $("#layout-topnav").attr('disabled', 'disabled');
@@ -252,7 +280,7 @@
     });
 
     $("#layout-fixed").on('click', function () {
-        changeSettings('layout-fixed', this.checked);
+        changeSettings('fixed', this.checked);
     });
 
     $("#layout-boxed").on('click', function () {
@@ -260,10 +288,13 @@
     });
 
     $("#layout-topnav").on('click', function () {
+        // Adding the mega menu as an example.
         changeSettings('layout-topnav', this.checked);
     });
 
-    // Left side user panel
+    /**
+     * Left side user panel
+     */
     $("#user-panel").on('click', function () {
         if (this.checked) {
             store("ab.userpanel", "hidden");
@@ -278,7 +309,9 @@
         }
     });
 
-    // Left side search box
+    /**
+     * Left side search box
+     */
     $("#search-box").on('click', function () {
         if (this.checked) {
             store("ab.searchbox", "hidden");
@@ -293,7 +326,9 @@
         }
     });
 
-    // Left side sidebar-footer
+    /**
+     * Left side sidebar-footer
+     */
     $("#bottom-menu").on('click', function () {
         if (this.checked) {
             store("ab.sidebarFooter", "hidden");
@@ -302,13 +337,15 @@
             }
         } else {
             store("ab.sidebarFooter", "visible");
-            if ($("##sidebar-footer").hasClass("hidden")) {
+            if ($("#sidebar-footer").hasClass("hidden")) {
                 $("#sidebar-footer").removeClass("hidden");
             }
         }
     });
 
-    // Add the control sidebar slide option
+    /**
+     * Add the control sidebar slide option
+     */
     $("#control-sidebar-slide").on('click', function () {
         if (this.checked) {
             store("ab.control.sidebar.slide", "true");
@@ -319,6 +356,18 @@
         $controlSidebar.options.slide = slide;
         if (!slide) {
             $('.control-sidebar').removeClass('control-sidebar-open');
+        }
+    });
+    /**
+     * Toggle footer fixed
+     */
+    $("#layout-fixedfooter").on('click', function () {
+        if (this.checked) {
+            store("ab.fixedfooter", "true");
+            $("#main-footer").addClass("main-footer-fixed");
+        } else {
+            store("ab.fixedfooter", "false");
+            $("#main-footer").removeClass("main-footer-fixed");
         }
     });
 })();

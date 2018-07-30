@@ -142,7 +142,7 @@ $(function () {
                 $sidebar.addClass('control-sidebar-dark');
             }
         });
-// move to demo settings
+        // move to demo settings
         $('[data-enable="expandOnHover"]').on('click', function () {
             $(this).attr('disabled', true);
             $pushMenu.expandOnHover();

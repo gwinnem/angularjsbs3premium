@@ -563,7 +563,7 @@ a:focus {
   display: block;
   padding: 5px 0 0 0;
   position: fixed;
-  width: 230px;
+  width: 229px;
   height: 43px;
   background: #808080;
   z-index: 999;
@@ -623,7 +623,6 @@ a:focus {
   .sidebar-mini.sidebar-collapse .sidebar-menu > li > a > .pull-right,
   .sidebar-mini.sidebar-collapse .sidebar-menu li.header {
     display: none !important;
-    -webkit-transform: translateZ(0);
   }
   .sidebar-mini.sidebar-collapse .main-header .logo {
     width: 50px;
@@ -7763,7 +7762,7 @@ tags-input .autocomplete .suggestion-item em {
   border: 1px dashed #ddd;
   margin-bottom: 10px;
 }
-/*Used form thead demo settings controlbar*/
+/*Used for the demo settings controlbar*/
 .full-opacity-hover {
   opacity: 0.65;
   filter: alpha(opacity=65);
@@ -7771,6 +7770,12 @@ tags-input .autocomplete .suggestion-item em {
 .full-opacity-hover:hover {
   opacity: 1;
   filter: alpha(opacity=100);
+}
+.main-footer-fixed {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 /*
  * Skin: Black light
