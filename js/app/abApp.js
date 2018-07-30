@@ -2150,33 +2150,6 @@ abApp.config([
                 }
             })
 
-            // DataTables
-            .state("datatable", {
-                url: "/table/datatable",
-                templateUrl: "pages/tables/datatables.html",
-                pageTitle: "DataTable Demo's",
-                pageBreadCrumbs: [{
-                    name: "Home"
-                }, {
-                    name: "Tables"
-                }, {
-                    name: "DataTable"
-                }],
-                resolve: {
-                    ctrl: [
-                        "$ocLazyLoad",
-                        function ($ocLazyLoad) {
-                            return $ocLazyLoad.load({
-                                series: true,
-                                files: ["/js/plugins/datatables/jquery.datatables.js",
-                                    //"/js/plugins/datatables/dataTables.bootstrap.js"
-                                ]
-                            });
-                        }
-                    ]
-                }
-            })
-
             // Pages
             // Invoice page
             .state("invoice", {
