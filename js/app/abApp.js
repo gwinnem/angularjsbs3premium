@@ -2169,7 +2169,7 @@ abApp.config([
                             return $ocLazyLoad.load({
                                 series: true,
                                 files: ["/js/plugins/datatables/jquery.datatables.js",
-                                    "/js/plugins/datatables/dataTables.bootstrap.js"
+                                    //"/js/plugins/datatables/dataTables.bootstrap.js"
                                 ]
                             });
                         }

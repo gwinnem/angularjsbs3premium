@@ -98,9 +98,9 @@
     });
 
     var setupPanel = function () {
-        var currentLayout = get("ab.layout")
-        if(currentLayout===undefined || currentLayout===""){
-            store("ab.layout","layout-normal");
+        var currentLayout = get("ab.layout");
+        if (currentLayout === undefined || currentLayout === "") {
+            store("ab.layout", "layout-normal");
         }
         var abSettings = $("#demo-settings");
         abSettings.on("click", function (e) {
@@ -171,7 +171,7 @@
         });
 
         // Checking if one the layout options are set in the index file
-        if ($('body').hasClass('layout-normal')) {
+        if ($('body').hasClass('layout-normal') || get("ab.layout") === "" || get("ab.layout") === "layout-fixed") {
             $("#layout-normal").attr('checked', 'checked');
             $("#layout-fixed").attr('disabled', 'disabled');
             $("#layout-boxed").attr('disabled', 'disabled');
