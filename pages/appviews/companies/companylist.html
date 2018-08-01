@@ -14,7 +14,7 @@
         <div class="col-md-12">
             <div ng-repeat="company in companies | filter : companyFilter track by $index">
                 <div class="company-list-panel col-md-3 col-sm-2">
-                    <div class="panel-body text-center" ng-click="displayCompany(company.id)">
+                    <div class="panel-body text-center" ng-click="displayCompany(company.id)" uib-tooltip="Display Company">
                         <address>
                             <strong>{{company.name}}</strong>
                             <br /> {{company.address}}

@@ -6,8 +6,8 @@
 (function () {
     "use strict";
     angular.module("ab.companies.list", [])
-        .controller("CompaniesController", ["$scope", "$notification", "config", "abCompaniesSvc", "$state",
-            function ($scope, $notification, config, abCompaniesSvc, $state) {
+        .controller("CompaniesController", ["$scope", "$notification", "config", "abCompaniesSvc", "$state", "modalDialogs",
+            function ($scope, $notification, config, abCompaniesSvc, $state, modalDialogs) {
                 var service = abCompaniesSvc;
                 $scope.action = service.actions;
                 $scope.companies = [];
@@ -44,6 +44,25 @@
                         action: service.actions.edit
                     });
                 };
+
+                $scope.deleteCompany = function (id) {
+                    modalDialogs.openConfirmDialog("Do you really want to delete this company?", "Delete Confirmation")
+                        .then(function (result) {
+                            if (result) {
+                                service.deleteCompany(id).then(function (data) {
+                                    $scope.companies = data;
+                                    if (config.debug) {
+                                        $notification.success("Company deleted", "Company list");
+                                    }
+                                }).catch(function (message) {
+                                    if (config.debug) {
+                                        console.log(message);
+                                    }
+                                    $notification.error(message, "Company delete failed", config.notificationDelay);
+                                });
+                            }
+                        });
+                }
 
                 $scope.getCompanyList();
             }

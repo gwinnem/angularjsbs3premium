@@ -14,7 +14,9 @@
                         </div>
                     </div>
                     <div class="col-md-7 col-sm-7 col-xs-12">
-                        <a ui-sref="companydetails({id: 0, action: '{{action.create}}'})" href="javascript:void(0)" class="btn btn-info btn-xs pull-right" title="New Contact"><i class="fa fa-plus-square-o"></i> New Company</a>
+                        <a ui-sref="companydetails({id: 0, action: '{{action.create}}'})" href="javascript:void(0)" class="btn btn-info btn-xs pull-right"
+                            uib-tooltip="New Company">
+                            <i class="fa fa-plus-square-o"></i> New Company</a>
                     </div>
                 </div>
                 <div class="box-body">
@@ -34,21 +36,39 @@
                         <tbody>
                             <tr ng-repeat="company in companies | filter : companyFilter track by $index">
                                 <td></td>
-                                <td><status-label status="{{company.status}}"></status-label></td>
-                                <td><span ng-bind="company.name"></span></td>
-                                <td><span ng-bind="company.address"></span></td>
-                                <td><span ng-bind="company.country"></span></td>
-                                <td><span ng-bind="company.Phone"></span></td>
-                                <td><span ng-bind="company.email"></span></td>
                                 <td>
-                                    <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right m-l-xxs m-r-xxs" title="Edit Company" ng-click="editCompany(company.id)"><i class="fa fa-edit"></i> Edit</a>
-                                    <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right" title="Display Company" ng-click="displayCompany(company.id)"><i class="fa fa-eye"></i> View</a>
+                                    <status-label status="{{company.status}}"></status-label>
+                                </td>
+                                <td>
+                                    <span ng-bind="company.name"></span>
+                                </td>
+                                <td>
+                                    <span ng-bind="company.address"></span>
+                                </td>
+                                <td>
+                                    <span ng-bind="company.country"></span>
+                                </td>
+                                <td>
+                                    <span ng-bind="company.phone"></span>
+                                </td>
+                                <td>
+                                    <span ng-bind="company.email"></span>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0)" class="btn btn-xs btn-danger pull-right" ng-click="deleteCompany(company.id)" uib-tooltip="Delete Company">
+                                        <i class="fa fa-close"></i></a>
+                                    <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right m-l-xxs m-r-xxs" ng-click="editCompany(company.id)"
+                                        uib-tooltip="Edit Company">
+                                        <i class="fa fa-edit"></i></a>
+                                    <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right" ng-click="displayCompany(company.id)" uib-tooltip="Display Company">
+                                        <i class="fa fa-eye"></i></a>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div ng-if="companies.length===0" class="alert alert-warning">
-                        <i class="fa fa-warning"></i><span class="font-size-18"> Warning</span>
+                        <i class="fa fa-warning"></i>
+                        <span class="font-size-18"> Warning</span>
                         <h3>Could not find any companies.</h3>
                         <span class="font-bold">Please create a new company and try again.</span>
                     </div>
@@ -62,3 +82,9 @@
     <!-- / row -->
 </section>
 <!-- /.content -->
+<script>
+    // Bootstrap tooltip needs to be activated manually
+    // $(function () {
+    //     $('[data-toggle="tooltip"]').tooltip();
+    // });
+</script>

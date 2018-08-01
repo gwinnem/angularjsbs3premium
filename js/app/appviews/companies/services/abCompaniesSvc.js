@@ -1,8 +1,6 @@
 ﻿/**
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Handling company list, details etc.
  */
 
@@ -13,7 +11,7 @@
         ])
         .factory("abCompaniesSvc", ["$q", function ($q) {
 
-           
+
             var getCompany = function () {
                 return {
                     id: faker.random.uuid(),
@@ -24,7 +22,7 @@
                     address: faker.address.streetAddress(),
                     country: faker.address.country(),
                     avatar: faker.internet.avatar(),
-                    contacts : []
+                    contacts: []
                 };
             };
             var actions = {
@@ -67,12 +65,29 @@
                 }
                 return deferred.promise;
             };
+            var deleteCompany = function (id) {
+                // async operation would be a call to a server side operation in a real world scenario.
+                var deferred = $q.defer();
+                try {
+                    var index = companies.find(obj => obj.id === id);
+                    if (index !== null && index !== undefined) {
+                        companies.splice(index,1);
+                        deferred.resolve(companies);
+                    } else {
+                        deferred.resolve("ERROR");
+                    }
 
+                } catch (e) {
+                    deferred.reject(e);
+                }
+                return deferred.promise;
+            }
             return {
                 companyStatus: companyStatus,
                 actions: actions,
                 getAll: getAll,
-                getDetails: getDetails
+                getDetails: getDetails,
+                deleteCompany: deleteCompany
             };
         }]);
 })();

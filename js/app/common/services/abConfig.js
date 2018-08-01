@@ -8,7 +8,7 @@
 
   angular.module("ab.common.config", []).factory("config", function() {
     // If true, debug data will be sent to console log
-    var debug = false;
+    var debug = true;
     // If true all route state changes will be sent to console log
     var debugState = false;
     // Delay used in the notification service

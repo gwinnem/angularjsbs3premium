@@ -1644,7 +1644,7 @@ abApp.config([
 
             // Company Details
             .state("companydetails", {
-                url: "/app/company/:id/:action/details",
+                url: "/app/company/:id/:action/:view/details",
                 templateUrl: "/pages/appviews/companies/companydetails.html",
                 pageTitle: "Company Details",
                 pageBreadCrumbs: [{
