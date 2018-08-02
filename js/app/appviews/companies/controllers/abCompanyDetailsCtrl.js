@@ -36,7 +36,7 @@
                     case abCompaniesSvc.actions.create:
                         {
                             $scope.guid = abHelpersSvc.getNewGuid();
-                            $scope.company.id=$scope.guid;
+                            $scope.company.id = $scope.guid;
                             $scope.boxTitle = "Create new company";
                             $scope.editMode = true;
                             break;
@@ -87,10 +87,11 @@
                 };
 
                 $scope.cancel = function () {
-                    $state.go("companylistv2");
+                    $state.go($stateParams.view);
+
                 };
 
-                $scope.save = function (item) {
+                $scope.save = function () {
                     swal("Not available in the free version!", "ABAdmin!", "success");
                 };
 

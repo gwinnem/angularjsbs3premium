@@ -14,7 +14,7 @@
                         </div>
                     </div>
                     <div class="col-md-7 col-sm-7 col-xs-12">
-                        <a ui-sref="companydetails({id: 0, action: '{{action.create}}'})" href="javascript:void(0)" class="btn btn-info btn-xs pull-right"
+                        <a ui-sref="companydetails({id: 0, action: '{{action.create}}',view: 2})" href="javascript:void(0)" class="btn btn-info btn-xs pull-right"
                             uib-tooltip="New Company">
                             <i class="fa fa-plus-square-o"></i> New Company</a>
                     </div>
@@ -25,7 +25,14 @@
                             <tr>
                                 <th></th>
                                 <th>Status</th>
-                                <th>Name</th>
+
+                                <th>
+                                    <a href="javascript:void(0)" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                                        Name
+                                        <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-chevron-down"></span>
+                                        <span ng-show="sortType == 'name' && sortReverse" class="fa fa-chevron-up"></span>
+                                    </a>
+                                </th>
                                 <th>Address</th>
                                 <th>Country</th>
                                 <th>Phone</th>
@@ -34,7 +41,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="company in companies | filter : companyFilter track by $index">
+                            <tr ng-repeat="company in companies | orderBy:sortType:sortReverse | filter : companyFilter">
                                 <td></td>
                                 <td>
                                     <status-label status="{{company.status}}"></status-label>
@@ -55,13 +62,16 @@
                                     <span ng-bind="company.email"></span>
                                 </td>
                                 <td>
-                                    <a href="javascript:void(0)" class="btn btn-xs btn-danger pull-right" ng-click="deleteCompany(company.id)" uib-tooltip="Delete Company">
-                                        <i class="fa fa-close"></i></a>
-                                    <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right m-l-xxs m-r-xxs" ng-click="editCompany(company.id)"
+                                    <!-- <a href="javascript:void(0)" class="btn btn-xs btn-danger pull-right" ng-click="deleteCompany(company.id)" uib-tooltip="Delete Company">
+                                        <i class="fa fa-close"></i>
+                                    </a> -->
+                                    <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right m-l-xxs m-r-xxs" ng-click="editCompany(company.id,2,2)"
                                         uib-tooltip="Edit Company">
-                                        <i class="fa fa-edit"></i></a>
-                                    <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right" ng-click="displayCompany(company.id)" uib-tooltip="Display Company">
-                                        <i class="fa fa-eye"></i></a>
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <a href="javascript:void(0)" class="btn btn-xs btn-default pull-right" ng-click="displayCompany(company.id,1,2)" uib-tooltip="Display Company">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
                                 </td>
                             </tr>
                         </tbody>

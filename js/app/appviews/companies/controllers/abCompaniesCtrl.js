@@ -11,6 +11,8 @@
                 var service = abCompaniesSvc;
                 $scope.action = service.actions;
                 $scope.companies = [];
+                $scope.sortReverse = false;
+                $scope.sortType = "name";
 
                 $scope.getCompanyList = function () {
                     service.getAll()
@@ -21,9 +23,7 @@
                             }
                             $scope.totalRecords = data.length;
                             $scope.companies = data;
-                            $scope.isLoading = false;
                         }).catch(function (message) {
-                            $scope.isLoading = false;
                             $notification.warning(message);
                             if (config.debug) {
                                 console.log(message);
@@ -31,17 +31,31 @@
                         });
                 };
 
-                $scope.displayCompany = function (id) {
+                $scope.displayCompany = function (id,action, returnview) {
+                    var view = returnview;
+                    if (view === 2) {
+                        view = "companylistv2";
+                    } else {
+                        view = "companylist";
+                    }
                     $state.go("companydetails", {
                         id: id,
-                        action: service.actions.display
+                        action: action,
+                        view: view
                     });
                 };
 
-                $scope.editCompany = function (id) {
-                    $state.go("companydetails", {
+                $scope.editCompany = function (id, action, returnview) {
+                    var view = returnview;
+                    if (view === 2) {
+                        view = "companylistv2";
+                    } else {
+                        view = "companylist";
+                    }
+                    $state.go("companydetails",{
                         id: id,
-                        action: service.actions.edit
+                        action: action,
+                        view: view
                     });
                 };
 

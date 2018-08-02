@@ -38,6 +38,7 @@
             var companies = [];
             for (var index = 0; index <= 50; index++) {
                 companies.push(getCompany());
+
             }
             var getAll = function () {
                 // async operation would be a call to a server side operation in a real world scenario.
@@ -71,7 +72,7 @@
                 try {
                     var index = companies.find(obj => obj.id === id);
                     if (index !== null && index !== undefined) {
-                        companies.splice(index,1);
+                        companies.splice(index, 1);
                         deferred.resolve(companies);
                     } else {
                         deferred.resolve("ERROR");
@@ -82,12 +83,18 @@
                 }
                 return deferred.promise;
             }
+
+            var saveDetails = function (id) {
+
+            };
+
             return {
                 companyStatus: companyStatus,
                 actions: actions,
                 getAll: getAll,
                 getDetails: getDetails,
-                deleteCompany: deleteCompany
+                deleteCompany: deleteCompany,
+                saveDetails: saveDetails
             };
         }]);
 })();
