@@ -364,7 +364,7 @@ aurora.config(
             })
             .state('starter', {
                 url: '/starter',
-                templateUrl: 'starter.html',
+                templateUrl: 'documentation/pages/starter.html',
                 pageTitle: 'Simple starter page',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Starter' }]
             });
