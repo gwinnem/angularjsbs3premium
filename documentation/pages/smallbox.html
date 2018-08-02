@@ -1,4 +1,171 @@
-﻿<!-- Page content -->
+﻿<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-info" id="box1">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Examples</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body">
+                    <!-- Small boxes -->
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4>Without boxsref</h4>
+                            <pre class="prettyprint">
+<code>&lt;small-box boxbg="bg-aqua"
+           boxtitle="210"
+           boxmessage="New Orders"
+           boxicon="fa fa-shopping-cart"
+           boxfooter="More Info"&gt;
+&lt;/small-box&gt;</code>
+</pre>
+                        </div>
+                        <h4>Output</h4>
+                        <div class="col-md-4">
+                            <!-- small box -->
+                            <small-box boxbg="bg-aqua"
+                                       boxtitle="210"
+                                       boxmessage="New Orders"
+                                       boxicon="fa fa-shopping-cart"
+                                       boxfooter="More Info">
+
+                            </small-box>
+                        </div>
+                        <!-- / col -->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4>With boxsref</h4>
+                            <pre class="prettyprint">
+<code>&lt;small-box boxbg="bg-aqua"
+           boxtitle="210"
+           boxmessage="New Orders"
+           boxicon="fa fa-shopping-cart"
+           boxsref="widgets"
+           boxfooter="Click Me"&gt;
+&lt;/small-box&gt;</code>
+</pre>
+                        </div>
+                        <h4>Output</h4>
+                        <div class="col-md-4">
+                            <!-- small box -->
+                            <small-box boxbg="bg-aqua"
+                                       boxtitle="210"
+                                       boxmessage="New Orders"
+                                       boxicon="fa fa-shopping-cart"
+                                       boxsref="widgets"
+                                       boxfooter="Click Me">
+
+                            </small-box>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-info" id="box2">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Options</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body">
+                    <div class="callout callout-info">
+                        <ul>
+                            <li>CSS styles is located in: content/less/plugins/small-box.less</li>
+                            <li>min-width is 134px</li>
+                            <li>min-height is 128px</li>
+                            <li>margin-bottom is 20px</li>
+                        </ul>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Attribute</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>boxbg</code></td>
+                                <td>Color used as background. <br /><a ui-sref="csshelpers" href="javascript:void(0)">Available Colors</a></td>
+                            </tr>
+                            <tr>
+                                <td><code>boxicon</code></td>
+                                <td>Any css class representing a icon.</td>
+                            </tr>
+                            <tr>
+                                <td><code>boxtitle</code></td>
+                                <td>Boxt title text</td>
+                            </tr>
+                            <tr>
+                                <td><code>boxmessage</code></td>
+                                <td>Text displayed as content of the <code>SmallBox</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>boxfooter</code></td>
+                                <td>Text displayed in the footer of the <code>SmallBox</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>boxsref</code></td>
+                                <td>ui-sref value for the footer text</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="box box-info" id="box3">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Html markup</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
+                </div>
+                <div class="box-body">
+                    <pre class="prettyprint">
+<code>&lt;div class="small-box bg-aqua"&gt;
+    &lt;div class="small-box-inner"&gt;
+        &lt;h3&gt;150&lt;/h3&gt;
+        &lt;p&gt;New Orders&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="small-box-icon"&gt;
+        &lt;i class="fa fa-shopping-cart"&gt;&lt;/i&gt;
+    &lt;/div&gt;
+    &lt;a href="javascript:void(0)" class="small-box-footer"&gt;More info &lt;i class="fa fa-arrow-circle-right"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;</code>
+</pre>
+                    <div class="small-box bg-aqua">
+                        <div class="small-box-inner">
+                            <h3>150</h3>
+                            <p>New Orders</p>
+                        </div>
+                        <div class="small-box-icon">
+                            <i class="fa fa-shopping-cart"></i>
+                        </div>
+                        <a href="javascript:void(0)" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                    <!-- small box -->
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+
+</section>
+<!-- /.content -->
+<!-- Script omly used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
+
+
+
+<!-- Page content -->
 <section class="content animated fadeInRight">
     <!-- box -->
     <div id="smallbox" class="box box-white">
