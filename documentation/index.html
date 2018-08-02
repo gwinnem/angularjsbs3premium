@@ -99,7 +99,7 @@
     <!-- Main application file -->
     <script src="/documentation/js/app/abApp.js"></script>
 </head>
-<body ng-app="aurora" class="skin-blue-light sidebar-mini" ng-controller="MainController">
+<body ng-app="aurora" class="skin-blue sidebar-mini" ng-controller="MainController">
     <div class="wrapper">
         <!-- top navigation -->
         <header class="main-header">
@@ -134,9 +134,9 @@
             <section class="sidebar">
                 <ul class="sidebar-menu" data-widget="tree">
                     <li><a href="#" ui-sref="welcome"><i class="fa fa-lg fa-book"></i><span> Introduction</span></a></li>
-                    <li><a ui-sref="roadmap" href="#"><i class="fa fa-lg fa-th"></i><span> Roadmap</span></a></li>
+                    <li><a ui-sref="roadmap" href="#"><i class="fa fa-lg fa-th"></i><span> Roadmaps</span></a></li>
                     <li><a ui-sref="dependencies" href="#"><i class="fa fa-lg fa-handshake-o"></i><span> Dependencies</span></a></li>
-                    <li><a ui-sref="layouts" href="#"><i class="fa fa-lg fa-files-o"></i><span> Layouts</span></a></li>
+                    <li><a ui-sref="layouts" href="#"><i class="fa fa-lg fa-files-o"></i><span> Page Layouts</span></a></li>
                     <li><a ui-sref="plugins" href="#"><i class="fa fa-lg fa-external-link"></i><span> Plugins</span></a></li>
                     <li class="treeview">
                         <a href="#">
@@ -260,17 +260,12 @@
         <!-- Footer. Hidden on small devices -->
         <footer class="main-footer hidden-xs">
             <div class="pull-right">
-                <b>Version</b> 1.8.0
+                <b>Version</b> 1.1.0
             </div>
             <strong>Copyright &copy; 2017-2018 <a href="#">Geirr Winnem</a>.</strong> All rights reserved.
         </footer>
         <!-- / Footer -->
     </div>
     <!-- / wrapper -->
-
-    <script>
-        // Bootstrap tooltip needs to be activated manually
-        $(function () { $("[data-toggle='tooltip']").tooltip() });
-    </script>
 </body>
 </html>

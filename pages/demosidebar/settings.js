@@ -18,14 +18,13 @@
 
     // Reinitialize variables on load
     $(window).on('load', function () {
-        $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
-        $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
-        $layout = $('body').data('ab.layout');
-        if ($("#demo-settings").hasClass("hidden")) {
-            $("#demo-settings").removeClass("hidden");
-        }
     });
-
+    $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
+    $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
+    $layout = $('body').data('ab.layout');
+    if ($("#demo-settings").hasClass("hidden")) {
+        $("#demo-settings").removeClass("hidden");
+    }
     /**
      * List of all the available skins
      */
