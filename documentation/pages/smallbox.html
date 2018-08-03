@@ -6,7 +6,6 @@
             <div class="box box-info" id="box1">
                 <div class="box-header with-border">
                     <h3 class="box-title">Examples</h3>
-                    <box-tools start-collapsed="0" hide-refresh="1" hide-full-screen="1" hide-remove="1"></box-tools>
                 </div>
                 <div class="box-body">
                     <!-- Small boxes -->
@@ -25,11 +24,7 @@
                         <h4>Output</h4>
                         <div class="col-md-4">
                             <!-- small box -->
-                            <small-box boxbg="bg-aqua"
-                                       boxtitle="210"
-                                       boxmessage="New Orders"
-                                       boxicon="fa fa-shopping-cart"
-                                       boxfooter="More Info">
+                            <small-box boxbg="bg-aqua" boxtitle="210" boxmessage="New Orders" boxicon="fa fa-shopping-cart" boxfooter="More Info">
 
                             </small-box>
                         </div>
@@ -51,12 +46,7 @@
                         <h4>Output</h4>
                         <div class="col-md-4">
                             <!-- small box -->
-                            <small-box boxbg="bg-aqua"
-                                       boxtitle="210"
-                                       boxmessage="New Orders"
-                                       boxicon="fa fa-shopping-cart"
-                                       boxsref="widgets"
-                                       boxfooter="Click Me">
+                            <small-box boxbg="bg-aqua" boxtitle="210" boxmessage="New Orders" boxicon="fa fa-shopping-cart" boxsref="widgets" boxfooter="Click Me">
 
                             </small-box>
                         </div>
@@ -93,27 +83,46 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><code>boxbg</code></td>
-                                <td>Color used as background. <br /><a ui-sref="csshelpers" href="javascript:void(0)">Available Colors</a></td>
+                                <td>
+                                    <code>boxbg</code>
+                                </td>
+                                <td>Color used as background.
+                                    <br />
+                                    <a ui-sref="csshelpers" href="javascript:void(0)">Available Colors</a>
+                                </td>
                             </tr>
                             <tr>
-                                <td><code>boxicon</code></td>
+                                <td>
+                                    <code>boxicon</code>
+                                </td>
                                 <td>Any css class representing a icon.</td>
                             </tr>
                             <tr>
-                                <td><code>boxtitle</code></td>
+                                <td>
+                                    <code>boxtitle</code>
+                                </td>
                                 <td>Boxt title text</td>
                             </tr>
                             <tr>
-                                <td><code>boxmessage</code></td>
-                                <td>Text displayed as content of the <code>SmallBox</code></td>
+                                <td>
+                                    <code>boxmessage</code>
+                                </td>
+                                <td>Text displayed as content of the
+                                    <code>SmallBox</code>
+                                </td>
                             </tr>
                             <tr>
-                                <td><code>boxfooter</code></td>
-                                <td>Text displayed in the footer of the <code>SmallBox</code></td>
+                                <td>
+                                    <code>boxfooter</code>
+                                </td>
+                                <td>Text displayed in the footer of the
+                                    <code>SmallBox</code>
+                                </td>
                             </tr>
                             <tr>
-                                <td><code>boxsref</code></td>
+                                <td>
+                                    <code>boxsref</code>
+                                </td>
                                 <td>ui-sref value for the footer text</td>
                             </tr>
                         </tbody>
@@ -146,7 +155,9 @@
                         <div class="small-box-icon">
                             <i class="fa fa-shopping-cart"></i>
                         </div>
-                        <a href="javascript:void(0)" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="javascript:void(0)" class="small-box-footer">More info
+                            <i class="fa fa-arrow-circle-right"></i>
+                        </a>
                     </div>
                     <!-- small box -->
                 </div>
@@ -171,11 +182,6 @@
     <div id="smallbox" class="box box-white">
         <div class="box-header with-border">
             <h3 class="box-title">ABAdmin small-box</h3>
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
-                <button type="button" class="btn btn-box-tool" data-widget="fullscreen" data-toggle="tooltip" title="Toggle Full screen"><i class="fa fa-arrows-alt"></i></button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
-            </div>
         </div>
         <!-- box-body -->
         <div class="box-body">
@@ -186,7 +192,3 @@
     <!-- / box -->
 </section>
 <!-- / Page content -->
-<script>
-    // Activating ab box
-    $("#plugins").boxWidget();
-</script>
