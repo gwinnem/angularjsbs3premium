@@ -5,21 +5,25 @@
  */
 (function () {
     "use strict";
-    angular.module("abAddProjectContacts", [["js/app/appViews/companies/services/abCompaniesSvc.js"]])
-        .controller("addContactsController", ["$scope", "$notification", "config", "$uibModalInstance", "modalOptions", "abCompaniesSvc",
-            function ($scope, $notification, config, $uibModalInstance, modalOptions, abCompaniesSvc) {
-                debugger;
-                $scope.modalOptions = modalOptions;
+    angular.module("abAddProjectContacts", ["/js/app/appviews/contacts/services/abContactsSvc.js"])
+        .controller("addContactsController", ["$scope", "$notification", "config", "$uibModalInstance", "modalOptions", "abContactsSvc",
+            function ($scope, $notification, config, $uibModalInstance, modalOptions, abContactsSvc) {
+                $scope.company = modalOptions.model;
+                abContactsSvc.getContactsNoCompany().then(function (data) {
+                    $scope.contacts = data;
+                }).catch(function (error) {
+                    $notification.error(error, "Not able to get contact list");
+                });
                 $scope.ok = function () {
                     var contacts = [];
-                    angular.forEach($scope.modalOptions.model, function (item) {
-                        if (item.done) {
-                            contacts.push(item.id);
-                        }
-                    });
+                    // angular.forEach($scope.modalOptions.model, function (item) {
+                    //     if (item.done) {
+                    //         contacts.push(item.id);
+                    //     }
+                    // });
 
                     var model = {
-                        id: $scope.modalOptions.companyId,
+                        id: $scope.company.id,
                         contactsId: contacts.join()
                     }
                     if (contacts.length > 0) {
@@ -28,17 +32,19 @@
                                 if (config.debug) {
                                     console.log("addCompanyContacts: " + result);
                                 }
-                            }), function (message) {
+                            }),
+                            function (message) {
                                 $notification.error(message, "addCompanyContacts error", config.notificationDelay);
                             };
                     }
-                    $uibModalInstance.close(true, $scope.modalOptions.model);
+                    $uibModalInstance.close(true, $scope.company);
                 };
 
 
                 $scope.cancel = function () {
                     $uibModalInstance.close(false);
                 };
+
                 if (config.debug) {
                     $notification.success("AddContacts loaded", "Company details", config.notificationDelay);
                 }

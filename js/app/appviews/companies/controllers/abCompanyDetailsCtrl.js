@@ -5,11 +5,10 @@
  */
 (function () {
     "use strict";
-    angular.module("ab.company.details", [
-            []
-        ])
-        .controller("CompanyDetailsController", ["$scope", "$notification", "config", "abCompaniesSvc", "$stateParams", "abHelpersSvc", "$state",
-            function ($scope, $notification, config, abCompaniesSvc, $stateParams, abHelpersSvc, $state) {
+    angular.module("ab.company.details", [])
+        .controller("CompanyDetailsController", ["$scope", "$notification", "config", "abCompaniesSvc", "$stateParams", "abHelpersSvc",
+            "$state", "modalDialogs",
+            function ($scope, $notification, config, abCompaniesSvc, $stateParams, abHelpersSvc, $state, modalDialogs) {
                 if (config.debug) {
                     console.info("$stateParams");
                     console.log($stateParams);
@@ -123,12 +122,67 @@
                 };
 
                 $scope.addContacts = function () {
-                    swal("Not available in the free version!", "ABAdmin!", "success");
-                };
+                    abContactsSvc.getContactsNoCompany().then(function (data) {
+                        var modalDefaults = {
+                            contacts: data,
+
+                            controller: "addContactsController",
+                            size: "lg"
+                        };
+                        var modalOptions = {
+                            model: $scope.company,
+                            headerText: "Add Contacts",
+                            hideOkButton: false,
+                            contentUrl: "js/app/appviews/companies/templates/addContacts.html"
+                        };
+                        if (config.debug) {
+                            console.log("Add Contacts modalOptions");
+                            console.log(modalOptions);
+                        }
+                        modalDialogs.openDialog(modalDefaults, modalOptions).then(function (result) {
+                            if (result) {
+                                // $timeout(function () {
+                                //     // getCompanyContacts();
+                                // }, 100);
+                            }
+                        }).catch(function (error) {
+                            console.log(error);
+                        });
+                    }).catch(function (error) {
+                        console.log(error);
+                    });
+                }
 
                 $scope.removeContact = function (id) {
-                    swal("Not available in the free version!", "ABAdmin!", "success");
-                };
+                    modalDialogs.openConfirmDialog("Do you really want to remove this contact?", "Remove contact")
+                        .then(function (result) {
+                            if (result) {
+                                service.removeCompanyContact({
+                                        id: $scope.company.id,
+                                        contactId: id
+                                    })
+                                    .then(function (data) {
+                                        if (config.debug) {
+                                            console.log(data);
+                                        }
+                                        $notification.success("Contact removed from company", "Success!", config.notificationDelay);
+                                    }, function (message) {
+                                        if (config.debug) {
+                                            console.log("removeContact");
+                                            console.log(message);
+                                        }
+                                        $notification.error(message, "RemoveContact", config.notificationDelay);
+                                    });
+                                getCompanyContacts();
+                            }
+                        });
+                }
+
+                $scope.displayContact = function (contactId) {
+                    $state.go("contactdetails", {
+                        id: contactId
+                    });
+                }
 
                 // $scope.displayContact = function (contactId) {
                 //     $state.go("contactdetails", {

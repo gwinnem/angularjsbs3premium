@@ -1663,10 +1663,10 @@ abApp.config([
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 series: true,
-                                files: ["/js/app/appViews/companies/services/abCompaniesSvc.js",
-                                    "/js/app/appViews/companies/controllers/abCompanyDetailsCtrl.js",
-                                    "/js/plugins/bootstrap-sweetalert/dist/sweetalert.css",
-                                    "/js/plugins/bootstrap-sweetalert/dist/sweetalert.js"
+                                files: ["/js/app/appviews/companies/services/abCompaniesSvc.js",
+                                    "/js/app/appviews/companies/controllers/abCompanyDetailsCtrl.js",
+                                    "/js/app/appviews/companies/controllers/abAddContactsCtrl.js",
+                                    "/js/app/appviews/contacts/services/abContactsSvc.js"
                                 ]
                             });
                         }

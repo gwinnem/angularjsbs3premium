@@ -7,7 +7,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in modalOptions.model track by $index">
+            <tr ng-repeat="item in contacts track by $index">
                 <td style="width: 50px;"><input type="checkbox" icheck class="flat" id="{{item.id}}" ng-change="addRemoveContact(item)" ng-model="item.done" /></td>
                 <td style="width: 300px;" ng-bind="item.title"></td>
                 <td ng-bind="item.fullName"></td>
