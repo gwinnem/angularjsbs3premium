@@ -6,8 +6,8 @@
 (function () {
     "use strict";
     angular.module("ab.companies.list", [])
-        .controller("CompaniesController", ["$scope", "$notification", "config", "abCompaniesSvc", "$state", "modalDialogs",
-            function ($scope, $notification, config, abCompaniesSvc, $state, modalDialogs) {
+        .controller("CompaniesController", ["$scope", "$notification", "config", "abCompaniesSvc", "$state", "modalDialogs", "$timeout",
+            function ($scope, $notification, config, abCompaniesSvc, $state, modalDialogs, $timeout) {
                 var service = abCompaniesSvc;
                 $scope.action = service.actions;
                 $scope.companies = [];
@@ -21,8 +21,11 @@
                                 console.log("get companies");
                                 console.log(data);
                             }
-                            $scope.totalRecords = data.length;
                             $scope.companies = data;
+                            // $timeout(function () {
+                            //     $scope.companies = data;
+                            // }, 1000);
+
                         }).catch(function (message) {
                             $notification.warning(message);
                             if (config.debug) {
@@ -31,7 +34,7 @@
                         });
                 };
 
-                $scope.displayCompany = function (id,action, returnview) {
+                $scope.displayCompany = function (id, action, returnview) {
                     var view = returnview;
                     if (view === 2) {
                         view = "companylistv2";
@@ -52,7 +55,7 @@
                     } else {
                         view = "companylist";
                     }
-                    $state.go("companydetails",{
+                    $state.go("companydetails", {
                         id: id,
                         action: action,
                         view: view

@@ -1,16 +1,13 @@
-(function($) {
+(function ($) {
   $.extend($.summernote.lang, {
     'de-DE': {
       font: {
         bold: 'Fett',
         italic: 'Kursiv',
         underline: 'Unterstreichen',
+        strikethrough: 'Durchgestrichen',
         clear: 'Zurücksetzen',
         height: 'Zeilenhöhe',
-        name: 'Schriftart',
-        strikethrough: 'Durchgestrichen',
-        subscript: 'Tiefgestellt',
-        superscript: 'Hochgestellt',
         size: 'Schriftgröße'
       },
       image: {
@@ -22,25 +19,10 @@
         floatLeft: 'Linksbündig',
         floatRight: 'Rechtsbündig',
         floatNone: 'Kein Textfluss',
-        shapeRounded: 'Rahmen: Abgerundet',
-        shapeCircle: 'Rahmen: Kreisförmig',
-        shapeThumbnail: 'Rahmen: Thumbnail',
-        shapeNone: 'Kein Rahmen',
         dragImageHere: 'Ziehen Sie ein Bild mit der Maus hierher',
-        dropImage: 'Drop image or Text',
         selectFromFiles: 'Wählen Sie eine Datei aus',
-        maximumFileSize: 'Maximale Dateigröße',
-        maximumFileSizeError: 'Maximale Dateigröße überschritten',
         url: 'Grafik URL',
-        remove: 'Grafik entfernen',
-        original: 'Original'
-      },
-      video: {
-        video: 'Video',
-        videoLink: 'Video Link',
-        insert: 'Video einfügen',
-        url: 'Video URL?',
-        providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion oder Youku)'
+		remove: 'Grafik entfernen'
       },
       link: {
         link: 'Link',
@@ -51,22 +33,22 @@
         url: 'Ziel des Links?',
         openInNewWindow: 'In einem neuen Fenster öffnen'
       },
+      video: {
+        video: 'Video',
+        videoLink: 'Video Link',
+        insert: 'Video einfügen',
+        url: 'Video URL?',
+        providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion, oder Youku)'
+      },
       table: {
-        table: 'Tabelle',
-        addRowAbove: 'Zeile oberhalb einfügen',
-        addRowBelow: 'Zeile unterhalb einfügen',
-        addColLeft: 'Spalte links einfügen',
-        addColRight: 'Spalte rechts einfügen',
-        delRow: 'Zeile löschen',
-        delCol: 'Spalte löschen',
-        delTable: 'Tabelle löschen'
+        table: 'Tabelle'
       },
       hr: {
         insert: 'Eine horizontale Linie einfügen'
       },
       style: {
         style: 'Stil',
-        p: 'Normal',
+        normal: 'Normal',
         blockquote: 'Zitat',
         pre: 'Quellcode',
         h1: 'Überschrift 1',
@@ -112,43 +94,11 @@
         paragraphFormatting: 'Absatzformatierung',
         documentStyle: 'Dokumentenstil'
       },
-      help: {
-        'insertParagraph': 'Insert Paragraph',
-        'undo': 'Undoes the last command',
-        'redo': 'Redoes the last command',
-        'tab': 'Tab',
-        'untab': 'Untab',
-        'bold': 'Set a bold style',
-        'italic': 'Set a italic style',
-        'underline': 'Set a underline style',
-        'strikethrough': 'Set a strikethrough style',
-        'removeFormat': 'Clean a style',
-        'justifyLeft': 'Set left align',
-        'justifyCenter': 'Set center align',
-        'justifyRight': 'Set right align',
-        'justifyFull': 'Set full align',
-        'insertUnorderedList': 'Toggle unordered list',
-        'insertOrderedList': 'Toggle ordered list',
-        'outdent': 'Outdent on current paragraph',
-        'indent': 'Indent on current paragraph',
-        'formatPara': 'Change current block\'s format as a paragraph(P tag)',
-        'formatH1': 'Change current block\'s format as H1',
-        'formatH2': 'Change current block\'s format as H2',
-        'formatH3': 'Change current block\'s format as H3',
-        'formatH4': 'Change current block\'s format as H4',
-        'formatH5': 'Change current block\'s format as H5',
-        'formatH6': 'Change current block\'s format as H6',
-        'insertHorizontalRule': 'Insert horizontal rule',
-        'linkDialog.show': 'Show Link Dialog'
-      },
       history: {
         undo: 'Rückgängig',
         redo: 'Wiederholen'
-      },
-      specialChar: {
-        specialChar: 'SONDERZEICHEN',
-        select: 'Sonderzeichen auswählen'
       }
+
     }
   });
 })(jQuery);

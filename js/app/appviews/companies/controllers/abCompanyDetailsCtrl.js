@@ -14,8 +14,9 @@
                     console.info("$stateParams");
                     console.log($stateParams);
                 }
+                var returnView = $stateParams.view;
                 $scope.company = {
-                    status: 1,
+                    status: abCompaniesSvc.companyStatus.active,
                     country: "",
                     contacts: []
                 };
@@ -39,6 +40,7 @@
                             $scope.company.id = $scope.guid;
                             $scope.boxTitle = "Create new company";
                             $scope.editMode = true;
+                            $scope.action = abCompaniesSvc.actions.create;
                             break;
                         }
                     case abCompaniesSvc.actions.display:
@@ -61,6 +63,7 @@
                         {
                             $scope.boxTitle = "Edit company details";
                             $scope.editMode = true;
+                            $scope.action = abCompaniesSvc.actions.edit;
                             abCompaniesSvc.getDetails($stateParams.id).then(function (data) {
                                 $scope.company = data;
                                 if (config.debug) {
@@ -87,16 +90,32 @@
                 };
 
                 $scope.cancel = function () {
-                    $state.go($stateParams.view);
+                    $state.go(returnView);
 
                 };
 
                 $scope.save = function () {
-                    swal("Not available in the free version!", "ABAdmin!", "success");
+                    abCompaniesSvc.saveDetails($scope.company, $scope.action).then(function (data) {
+                        $scope.company = data;
+                        $state.go(returnView);
+                    }).catch(function (error) {
+                        $notification.error(error, "Contact details save failed.", config.notificationDelay);
+                    });
                 };
 
-                $scope.delete = function () {
-                    swal("Not available in the free version!", "ABAdmin!", "success");
+                $scope.delete = function (id) {
+                    $scope.company = [];
+                    abCompaniesSvc.deleteCompany(id).then(function (data) {
+                        if (config.debug) {
+                            console.log("Delete Company");
+                            console.log(data);
+                            $notification.success("Delete success", "Company delete", config.notificationDelay);
+                        }
+
+                        $state.go(returnView);
+                    }).catch(function (error) {
+                        $notification.error(error, "Contact details save failed.", config.notificationDelay);
+                    });;
                 };
 
                 $scope.edit = function () {
@@ -111,11 +130,11 @@
                     swal("Not available in the free version!", "ABAdmin!", "success");
                 };
 
-                $scope.displayContact = function (contactId) {
-                    $state.go("contactdetails", {
-                        id: contactId
-                    });
-                };
+                // $scope.displayContact = function (contactId) {
+                //     $state.go("contactdetails", {
+                //         id: contactId
+                //     });
+                // };
 
                 if (config.debug) {
                     $notification.success("Company Details loaded", "ABAdmin Companies", config.notificationDelay);

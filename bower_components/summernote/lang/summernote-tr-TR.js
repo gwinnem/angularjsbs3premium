@@ -1,16 +1,13 @@
-(function($) {
+(function ($) {
   $.extend($.summernote.lang, {
     'tr-TR': {
       font: {
         bold: 'Kalın',
         italic: 'İtalik',
         underline: 'Altı çizili',
+        strikethrough: 'Üstü çizili',
         clear: 'Temizle',
         height: 'Satır yüksekliği',
-        name: 'Yazı Tipi',
-        strikethrough: 'Üstü çizili',
-        subscript: 'Alt Simge',
-        superscript: 'Üst Simge',
         size: 'Yazı tipi boyutu'
       },
       image: {
@@ -22,18 +19,17 @@
         floatLeft: 'Sola hizala',
         floatRight: 'Sağa hizala',
         floatNone: 'Hizalamayı kaldır',
-        shapeRounded: 'Şekil: Yuvarlatılmış Köşe',
-        shapeCircle: 'Şekil: Daire',
-        shapeThumbnail: 'Şekil: K.Resim',
-        shapeNone: 'Şekil: Yok',
         dragImageHere: 'Buraya sürükleyin',
-        dropImage: 'Resim veya metni bırakın',
         selectFromFiles: 'Dosya seçin',
-        maximumFileSize: 'Maksimum dosya boyutu',
-        maximumFileSizeError: 'Maksimum dosya boyutu aşıldı.',
-        url: 'Resim bağlantısı',
-        remove: 'Resimi Kaldır',
-        original: 'Original'
+        url: 'Resim bağlantısı'
+      },
+      link: {
+        link: 'Bağlantı',
+        insert: 'Bağlantı ekle',
+        unlink: 'Bağlantıyı kaldır',
+        edit: 'Bağlantıyı düzenle',
+        textToDisplay: 'Görüntülemek için',
+        url: 'Bağlantı adresi?'
       },
       video: {
         video: 'Video',
@@ -42,31 +38,15 @@
         url: 'Video bağlantısı?',
         providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion veya Youku)'
       },
-      link: {
-        link: 'Bağlantı',
-        insert: 'Bağlantı ekle',
-        unlink: 'Bağlantıyı kaldır',
-        edit: 'Bağlantıyı düzenle',
-        textToDisplay: 'Görüntülemek için',
-        url: 'Bağlantı adresi?',
-        openInNewWindow: 'Yeni pencerede aç'
-      },
       table: {
-        table: 'Tablo',
-        addRowAbove: 'Yukarı satır ekle',
-        addRowBelow: 'Aşağı satır ekle',
-        addColLeft: 'Sola sütun ekle',
-        addColRight: 'Sağa sütun ekle',
-        delRow: 'Satırı sil',
-        delCol: 'Sütunu sil',
-        delTable: 'Tabloyu sil'
+        table: 'Tablo'
       },
       hr: {
         insert: 'Yatay çizgi ekle'
       },
       style: {
         style: 'Biçim',
-        p: 'p',
+        normal: 'Normal',
         blockquote: 'Alıntı',
         pre: 'Önbiçimli',
         h1: 'Başlık 1',
@@ -110,46 +90,13 @@
         textFormatting: 'Yazı biçimlendirme',
         action: 'Eylem',
         paragraphFormatting: 'Paragraf biçimlendirme',
-        documentStyle: 'Biçim',
-        extraKeys: 'İlave anahtarlar'
-      },
-      help: {
-        'insertParagraph': 'Paragraf ekler',
-        'undo': 'Son komudu geri alır',
-        'redo': 'Son komudu yineler',
-        'tab': 'Girintiyi artırır',
-        'untab': 'Girintiyi azaltır',
-        'bold': 'Kalın yazma stilini ayarlar',
-        'italic': 'İtalik yazma stilini ayarlar',
-        'underline': 'Altı çizgili yazma stilini ayarlar',
-        'strikethrough': 'Üstü çizgili yazma stilini ayarlar',
-        'removeFormat': 'Biçimlendirmeyi temizler',
-        'justifyLeft': 'Yazıyı sola hizalar',
-        'justifyCenter': 'Yazıyı ortalar',
-        'justifyRight': 'Yazıyı sağa hizalar',
-        'justifyFull': 'Yazıyı her iki tarafa yazlar',
-        'insertUnorderedList': 'Madde işaretli liste ekler',
-        'insertOrderedList': 'Numaralı liste ekler',
-        'outdent': 'Aktif paragrafın girintisini azaltır',
-        'indent': 'Aktif paragrafın girintisini artırır',
-        'formatPara': 'Aktif bloğun biçimini paragraf (p) olarak değiştirir',
-        'formatH1': 'Aktif bloğun biçimini başlık 1 (h1) olarak değiştirir',
-        'formatH2': 'Aktif bloğun biçimini başlık 2 (h2) olarak değiştirir',
-        'formatH3': 'Aktif bloğun biçimini başlık 3 (h3) olarak değiştirir',
-        'formatH4': 'Aktif bloğun biçimini başlık 4 (h4) olarak değiştirir',
-        'formatH5': 'Aktif bloğun biçimini başlık 5 (h5) olarak değiştirir',
-        'formatH6': 'Aktif bloğun biçimini başlık 6 (h6) olarak değiştirir',
-        'insertHorizontalRule': 'Yatay çizgi ekler',
-        'linkDialog.show': 'Bağlantı ayar kutusunu gösterir'
+        documentStyle: 'Biçim'
       },
       history: {
         undo: 'Geri al',
-        redo: 'Yinele'
-      },
-      specialChar: {
-        specialChar: 'ÖZEL KARAKTERLER',
-        select: 'Özel Karakterleri seçin'
+        redo: 'Yeniden yap'
       }
+
     }
   });
 })(jQuery);

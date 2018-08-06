@@ -1,16 +1,13 @@
-(function($) {
+(function ($) {
   $.extend($.summernote.lang, {
     'da-DK': {
       font: {
         bold: 'Fed',
         italic: 'Kursiv',
         underline: 'Understreget',
+        strikethrough: 'Genemstreget',
         clear: 'Fjern formatering',
         height: 'Højde',
-        name: 'Skrifttype',
-        strikethrough: 'Gennemstreget',
-        subscript: 'Sænket skrift',
-        superscript: 'Hævet skrift',
         size: 'Skriftstørrelse'
       },
       image: {
@@ -22,25 +19,10 @@
         floatLeft: 'Venstrestillet',
         floatRight: 'Højrestillet',
         floatNone: 'Fjern formatering',
-        shapeRounded: 'Form: Runde kanter',
-        shapeCircle: 'Form: Cirkel',
-        shapeThumbnail: 'Form: Miniature',
-        shapeNone: 'Form: Ingen',
         dragImageHere: 'Træk billede hertil',
-        dropImage: 'Slip billede',
         selectFromFiles: 'Vælg billed-fil',
-        maximumFileSize: 'Maks fil størrelse',
-        maximumFileSizeError: 'Filen er større end maks tilladte fil størrelse!',
         url: 'Billede URL',
-        remove: 'Fjern billede',
-        original: 'Original'
-      },
-      video: {
-        video: 'Video',
-        videoLink: 'Video Link',
-        insert: 'Indsæt Video',
-        url: 'Video URL?',
-        providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion eller Youku)'
+		remove: 'Fjern billede'
       },
       link: {
         link: 'Link',
@@ -51,22 +33,22 @@
         url: 'Hvor skal linket pege hen?',
         openInNewWindow: 'Åbn i nyt vindue'
       },
+      video: {
+        video: 'Video',
+        videoLink: 'Video Link',
+        insert: 'Indsæt Video',
+        url: 'Video URL?',
+        providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion, or Youku)'
+      },
       table: {
-        table: 'Tabel',
-        addRowAbove: 'Add row above',
-        addRowBelow: 'Add row below',
-        addColLeft: 'Add column left',
-        addColRight: 'Add column right',
-        delRow: 'Delete row',
-        delCol: 'Delete column',
-        delTable: 'Delete table'
+        table: 'Tabel'
       },
       hr: {
         insert: 'Indsæt horisontal linje'
       },
       style: {
         style: 'Stil',
-        p: 'p',
+        normal: 'Normal',
         blockquote: 'Citat',
         pre: 'Kode',
         h1: 'Overskrift 1',
@@ -99,7 +81,7 @@
         more: 'Flere farver',
         background: 'Baggrund',
         foreground: 'Forgrund',
-        transparent: 'Transparent',
+        transparent: 'Transparetn',
         setTransparent: 'Sæt transparent',
         reset: 'Nulstil',
         resetToDefault: 'Gendan standardindstillinger'
@@ -110,46 +92,13 @@
         textFormatting: 'Tekstformatering',
         action: 'Handling',
         paragraphFormatting: 'Afsnitsformatering',
-        documentStyle: 'Dokumentstil',
-        extraKeys: 'Extra keys'
-      },
-      help: {
-        'insertParagraph': 'Insert Paragraph',
-        'undo': 'Undoes the last command',
-        'redo': 'Redoes the last command',
-        'tab': 'Tab',
-        'untab': 'Untab',
-        'bold': 'Set a bold style',
-        'italic': 'Set a italic style',
-        'underline': 'Set a underline style',
-        'strikethrough': 'Set a strikethrough style',
-        'removeFormat': 'Clean a style',
-        'justifyLeft': 'Set left align',
-        'justifyCenter': 'Set center align',
-        'justifyRight': 'Set right align',
-        'justifyFull': 'Set full align',
-        'insertUnorderedList': 'Toggle unordered list',
-        'insertOrderedList': 'Toggle ordered list',
-        'outdent': 'Outdent on current paragraph',
-        'indent': 'Indent on current paragraph',
-        'formatPara': 'Change current block\'s format as a paragraph(P tag)',
-        'formatH1': 'Change current block\'s format as H1',
-        'formatH2': 'Change current block\'s format as H2',
-        'formatH3': 'Change current block\'s format as H3',
-        'formatH4': 'Change current block\'s format as H4',
-        'formatH5': 'Change current block\'s format as H5',
-        'formatH6': 'Change current block\'s format as H6',
-        'insertHorizontalRule': 'Insert horizontal rule',
-        'linkDialog.show': 'Show Link Dialog'
+        documentStyle: 'Dokumentstil'
       },
       history: {
         undo: 'Fortryd',
-        redo: 'Annuller fortryd'
-      },
-      specialChar: {
-        specialChar: 'SPECIAL CHARACTERS',
-        select: 'Select Special characters'
+        redo: 'Anuller fortryd'
       }
+
     }
   });
 })(jQuery);

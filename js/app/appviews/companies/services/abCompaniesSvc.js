@@ -84,8 +84,27 @@
                 return deferred.promise;
             }
 
-            var saveDetails = function (id) {
+            var saveDetails = function (company, action) {
+                // async operation would be a call to a server side operation in a real world scenario.
+                var deferred = $q.defer();
+                try {
+                    if (action === actions.edit) {
+                        var result = companies.find(obj => obj.id === company.id);
+                        if (result !== null && result !== undefined) {
+                            companies[result] = company;
+                            deferred.resolve(result);
+                        } else {
+                            deferred.resolve("ERROR");
+                        }
+                    } else {
+                        companies.push(company);
+                        deferred.resolve(company);
+                    }
 
+                } catch (e) {
+                    deferred.reject(e);
+                }
+                return deferred.promise;
             };
 
             return {

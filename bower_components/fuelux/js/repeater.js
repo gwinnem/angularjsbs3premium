@@ -359,7 +359,7 @@
 				dropMenu.empty();
 				for(i=0; i<pages; i++){
 					l = i + 1;
-					dropMenu.append('<li data-value="' + l + '"><a href="javascript:void(0)">' + l + '</a></li>');
+					dropMenu.append('<li data-value="' + l + '"><a href="#">' + l + '</a></li>');
 				}
 				this.$primaryPaging.find('input.form-control').val(this.currentPage+1);
 			}else{

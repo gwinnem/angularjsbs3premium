@@ -1,16 +1,14 @@
-(function($) {
+(function ($) {
   $.extend($.summernote.lang, {
     'it-IT': {
       font: {
         bold: 'Testo in grassetto',
         italic: 'Testo in corsivo',
         underline: 'Testo sottolineato',
+        strikethrough: 'Testo barrato',
         clear: 'Elimina la formattazione del testo',
         height: 'Altezza della linea di testo',
         name: 'Famiglia Font',
-        strikethrough: 'Testo barrato',
-        subscript: 'Subscript',
-        superscript: 'Superscript',
         size: 'Dimensione del carattere'
       },
       image: {
@@ -22,25 +20,10 @@
         floatLeft: 'Posiziona a sinistra',
         floatRight: 'Posiziona a destra',
         floatNone: 'Nessun posizionamento',
-        shapeRounded: 'Shape: Rounded',
-        shapeCircle: 'Shape: Circle',
-        shapeThumbnail: 'Shape: Thumbnail',
-        shapeNone: 'Shape: None',
         dragImageHere: 'Trascina qui un\'immagine',
-        dropImage: 'Drop image or Text',
         selectFromFiles: 'Scegli dai Documenti',
-        maximumFileSize: 'Maximum file size',
-        maximumFileSizeError: 'Maximum file size exceeded.',
         url: 'URL dell\'immagine',
-        remove: 'Rimuovi immagine',
-        original: 'Original'
-      },
-      video: {
-        video: 'Video',
-        videoLink: 'Collegamento ad un Video',
-        insert: 'Inserisci Video',
-        url: 'URL del Video',
-        providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion o Youku)'
+        remove: 'Rimuovi immagine'
       },
       link: {
         link: 'Collegamento',
@@ -51,22 +34,22 @@
         url: 'URL del collegamento',
         openInNewWindow: 'Apri in una nuova finestra'
       },
+      video: {
+        video: 'Video',
+        videoLink: 'Collegamento ad un Video',
+        insert: 'Inserisci Video',
+        url: 'URL del Video',
+        providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion o Youku)'
+      },
       table: {
-        table: 'Tabella',
-        addRowAbove: 'Add row above',
-        addRowBelow: 'Add row below',
-        addColLeft: 'Add column left',
-        addColRight: 'Add column right',
-        delRow: 'Delete row',
-        delCol: 'Delete column',
-        delTable: 'Delete table'
+        table: 'Tabella'
       },
       hr: {
         insert: 'Inserisce una linea di separazione'
       },
       style: {
         style: 'Stili',
-        p: 'pe',
+        normal: 'Normale',
         blockquote: 'Citazione',
         pre: 'Codice',
         h1: 'Titolo 1',
@@ -110,45 +93,11 @@
         textFormatting: 'Formattazione testo',
         action: 'Azioni',
         paragraphFormatting: 'Formattazione paragrafo',
-        documentStyle: 'Stili',
-        extraKeys: 'Extra keys'
-      },
-      help: {
-        'insertParagraph': 'Insert Paragraph',
-        'undo': 'Undoes the last command',
-        'redo': 'Redoes the last command',
-        'tab': 'Tab',
-        'untab': 'Untab',
-        'bold': 'Set a bold style',
-        'italic': 'Set a italic style',
-        'underline': 'Set a underline style',
-        'strikethrough': 'Set a strikethrough style',
-        'removeFormat': 'Clean a style',
-        'justifyLeft': 'Set left align',
-        'justifyCenter': 'Set center align',
-        'justifyRight': 'Set right align',
-        'justifyFull': 'Set full align',
-        'insertUnorderedList': 'Toggle unordered list',
-        'insertOrderedList': 'Toggle ordered list',
-        'outdent': 'Outdent on current paragraph',
-        'indent': 'Indent on current paragraph',
-        'formatPara': 'Change current block\'s format as a paragraph(P tag)',
-        'formatH1': 'Change current block\'s format as H1',
-        'formatH2': 'Change current block\'s format as H2',
-        'formatH3': 'Change current block\'s format as H3',
-        'formatH4': 'Change current block\'s format as H4',
-        'formatH5': 'Change current block\'s format as H5',
-        'formatH6': 'Change current block\'s format as H6',
-        'insertHorizontalRule': 'Insert horizontal rule',
-        'linkDialog.show': 'Show Link Dialog'
+        documentStyle: 'Stili'
       },
       history: {
         undo: 'Annulla',
         redo: 'Ripristina'
-      },
-      specialChar: {
-        specialChar: 'SPECIAL CHARACTERS',
-        select: 'Select Special characters'
       }
     }
   });

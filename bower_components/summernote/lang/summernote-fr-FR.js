@@ -1,16 +1,16 @@
-(function($) {
+(function ($) {
   $.extend($.summernote.lang, {
     'fr-FR': {
       font: {
         bold: 'Gras',
         italic: 'Italique',
         underline: 'Souligné',
+        strikethrough: 'Barré',
+        superscript: 'Exposant',
+        subscript: 'Indicé',
         clear: 'Effacer la mise en forme',
         height: 'Interligne',
         name: 'Famille de police',
-        strikethrough: 'Barré',
-        superscript: 'Exposant',
-        subscript: 'Indice',
         size: 'Taille de police'
       },
       image: {
@@ -22,25 +22,10 @@
         floatLeft: 'Aligné à gauche',
         floatRight: 'Aligné à droite',
         floatNone: 'Pas d\'alignement',
-        shapeRounded: 'Forme: Rectangle arrondie',
-        shapeCircle: 'Forme: Cercle',
-        shapeThumbnail: 'Forme: Vignette',
-        shapeNone: 'Forme: Aucune',
-        dragImageHere: 'Faites glisser une image ou un texte dans ce cadre',
-        dropImage: 'Lachez l\'image ou le texte',
+        dragImageHere: 'Faites glisser une image avec la souris dans ce cadre',
         selectFromFiles: 'Choisir un fichier',
-        maximumFileSize: 'Taille de fichier maximale',
-        maximumFileSizeError: 'Taille maximale du fichier dépassée',
         url: 'URL de l\'image',
-        remove: 'Supprimer l\'image',
-        original: 'Original'
-      },
-      video: {
-        video: 'Vidéo',
-        videoLink: 'Lien vidéo',
-        insert: 'Insérer une vidéo',
-        url: 'URL de la vidéo',
-        providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion ou Youku)'
+        remove: 'Supprimer l\'image'
       },
       link: {
         link: 'Lien',
@@ -51,22 +36,22 @@
         url: 'URL du lien',
         openInNewWindow: 'Ouvrir dans une nouvelle fenêtre'
       },
+      video: {
+        video: 'Vidéo',
+        videoLink: 'Lien vidéo',
+        insert: 'Insérer une vidéo',
+        url: 'URL de la vidéo',
+        providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion ou Youku)'
+      },
       table: {
-        table: 'Tableau',
-        addRowAbove: 'Ajouter une ligne au-dessus',
-        addRowBelow: 'Ajouter une ligne en dessous',
-        addColLeft: 'Ajouter une colonne à gauche',
-        addColRight: 'Ajouter une colonne à droite',
-        delRow: 'Supprimer la ligne',
-        delCol: 'Supprimer la colonne',
-        delTable: 'Supprimer le tableau'
+        table: 'Tableau'
       },
       hr: {
-        insert: 'Insérer une ligne horizontale'
+        insert: 'Insérer une ligne horizontale de séparation'
       },
       style: {
         style: 'Style',
-        p: 'Normal',
+        normal: 'Normal',
         blockquote: 'Citation',
         pre: 'Code source',
         h1: 'Titre 1',
@@ -110,46 +95,13 @@
         textFormatting: 'Mise en forme du texte',
         action: 'Action',
         paragraphFormatting: 'Mise en forme des paragraphes',
-        documentStyle: 'Style du document',
-        extraKeys: 'Touches supplémentaires'
-      },
-      help: {
-        'insertParagraph': 'Insérer paragraphe',
-        'undo': 'Défaire la dernière commande',
-        'redo': 'Refaire la dernière commande',
-        'tab': 'Tabulation',
-        'untab': 'Tabulation arrière',
-        'bold': 'Mettre en caractère gras',
-        'italic': 'Mettre en italique',
-        'underline': 'Mettre en souligné',
-        'strikethrough': 'Mettre en texte barré',
-        'removeFormat': 'Nettoyer les styles',
-        'justifyLeft': 'Aligner à gauche',
-        'justifyCenter': 'Centrer',
-        'justifyRight': 'Aligner à droite',
-        'justifyFull': 'Justifier à gauche et à droite',
-        'insertUnorderedList': 'Basculer liste à puces',
-        'insertOrderedList': 'Basculer liste ordonnée',
-        'outdent': 'Diminuer le retrait du paragraphe',
-        'indent': 'Augmenter le retrait du paragraphe',
-        'formatPara': 'Changer le paragraphe en cours en normal (P)',
-        'formatH1': 'Changer le paragraphe en cours en entête H1',
-        'formatH2': 'Changer le paragraphe en cours en entête H2',
-        'formatH3': 'Changer le paragraphe en cours en entête H3',
-        'formatH4': 'Changer le paragraphe en cours en entête H4',
-        'formatH5': 'Changer le paragraphe en cours en entête H5',
-        'formatH6': 'Changer le paragraphe en cours en entête H6',
-        'insertHorizontalRule': 'Insérer séparation horizontale',
-        'linkDialog.show': 'Afficher fenêtre d\'hyperlien'
+        documentStyle: 'Style du document'
       },
       history: {
         undo: 'Annuler la dernière action',
         redo: 'Restaurer la dernière action annulée'
-      },
-      specialChar: {
-        specialChar: 'CARACTÈRES SPÉCIAUX',
-        select: 'Choisir des caractères spéciaux'
       }
+
     }
   });
 })(jQuery);
