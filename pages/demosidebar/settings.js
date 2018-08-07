@@ -29,13 +29,13 @@
      * List of all the available skins
      */
     var mySkins = [
+        'skin-blue-light',
         'skin-blue',
         'skin-black',
         'skin-red',
         'skin-yellow',
         'skin-purple',
         'skin-green',
-        'skin-blue-light',
         'skin-black-light',
         'skin-red-light',
         'skin-yellow-light',

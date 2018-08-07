@@ -1,14 +1,12 @@
 /**
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Generating contact details.
  */
 
 (function () {
     "use strict";
-    angular.module("abContactsDataService", ["/js/plugins/faker.js/faker.min.js"])
+    angular.module("ab.contacts.data.service", [["/js/plugins/faker.js/faker.js"]])
         .factory("abContactsDataSvc", [function () {
             var contacts = [];
             for (var index = 0; index <= 50; index++) {

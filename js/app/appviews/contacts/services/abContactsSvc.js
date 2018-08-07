@@ -1,14 +1,12 @@
 ﻿/**
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Service for contact lists
  */
 
 (function () {
     "use strict";
-    angular.module("abContactsServiceModule", [
+    angular.module("ab.contacts.service", [
             ["/js/app/appviews/contacts/services/abContactsDataSvc.js"]
         ])
         .factory("abContactsSvc", ["$q", "abContactsDataSvc", function ($q, abContactsDataSvc) {
