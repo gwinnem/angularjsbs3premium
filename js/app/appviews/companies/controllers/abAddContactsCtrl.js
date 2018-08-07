@@ -1,14 +1,21 @@
 ﻿/**
  * @author Geirr Winnem
  * @version 1.0.0
- * @summary
+ * @summary Adding contacts to a company.
  */
 (function () {
     "use strict";
-    angular.module("abAddProjectContacts", ["/js/app/appviews/contacts/services/abContactsSvc.js"])
+    angular.module("ab.company.details.addcontacts", [
+       //"/js/app/appviews/contacts/services/abContactsSvc.js"
+    ])
         .controller("addContactsController", ["$scope", "$notification", "config", "$uibModalInstance", "modalOptions", "abContactsSvc",
             function ($scope, $notification, config, $uibModalInstance, modalOptions, abContactsSvc) {
-                $scope.company = modalOptions.model;
+                debugger;
+                if(config.debug){
+                    console.log("addContactsController loaded");
+                }
+                $scope.company = modalOptions.company;
+                debugger;
                 abContactsSvc.getContactsNoCompany().then(function (data) {
                     $scope.contacts = data;
                 }).catch(function (error) {

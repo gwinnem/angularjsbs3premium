@@ -177,11 +177,5 @@
         });
 
     });
-    $(document).ready(function(){
-        var tree=$("#sidebar-tree");
-        // $(Selector.data).each(function () {
-        //     Plugin.call($(this));
-        // });
-    });
 
 }(jQuery);

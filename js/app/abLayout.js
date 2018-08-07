@@ -52,7 +52,9 @@
         this.fix();
         this.fixSidebar();
 
-        $("body").removeClass(className.holdTransition);
+        if($("body").hasClass(className.holdTransition)){
+            $("body").removeClass(className.holdTransition);
+        }
 
         if (this.options.resetHeight) {
             $("body, html, " + htmlSelectors.wrapper).css({
@@ -99,7 +101,7 @@
 
         // Set the min-height of the content and sidebar based on
         // the height of the document.
-        if ($("body").hasClass(className.layoutFixed)) {
+        if (!$("body").hasClass(className.layoutFixed)) {
             $(htmlSelectors.contentWrapper).css("min-height", windowHeight - footerHeight);
         } else {
             var postSetHeight;

@@ -1379,13 +1379,13 @@ abApp.config([
                 templateUrl: "/pages/appviews/introduction.html",
                 pageTitle: "Application Views",
                 pageBreadCrumbs: [{
-                        name: "Home"
-                    }, {
-                        name: "App Views"
-                    },
-                    {
-                        name: "Introduction"
-                    }
+                    name: "Home"
+                }, {
+                    name: "App Views"
+                },
+                {
+                    name: "Introduction"
+                }
                 ]
             })
             // Contact list v1
@@ -1407,9 +1407,9 @@ abApp.config([
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 series: true,
-                                files: ["/js/app/appViews/contacts/services/abContactsSvc.js",
-                                    "/js/app/appViews/contacts/directives/abShowAvatar.js",
-                                    "/js/app/appViews/contacts/version-one/controllers/abContactsCtrl.js"
+                                files: ["/js/app/appviews/contacts/services/abContactsSvc.js",
+                                    "/js/app/appviews/contacts/directives/abShowAvatar.js",
+                                    "/js/app/appviews/contacts/version-one/controllers/abContactsCtrl.js"
                                 ]
                             });
                         }
@@ -1435,9 +1435,9 @@ abApp.config([
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 series: true,
-                                files: ["/js/app/appViews/contacts/services/abContactsSvc.js",
-                                    "/js/app/appViews/contacts/directives/abShowAvatar.js",
-                                    "/js/app/appViews/contacts/version-one/controllers/abContactsCtrl.js"
+                                files: ["/js/app/appviews/contacts/services/abContactsSvc.js",
+                                    "/js/app/appviews/contacts/directives/abShowAvatar.js",
+                                    "/js/app/appviews/contacts/version-one/controllers/abContactsCtrl.js"
                                 ]
                             });
                         }
@@ -1463,9 +1463,9 @@ abApp.config([
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 series: true,
-                                files: ["/js/app/appViews/contacts/services/abContactsSvc.js",
-                                    "/js/app/appViews/contacts/directives/abShowAvatar.js",
-                                    "/js/app/appViews/contacts/version-one/controllers/abContactsCtrl.js"
+                                files: ["/js/app/appviews/contacts/services/abContactsSvc.js",
+                                    "/js/app/appviews/contacts/directives/abShowAvatar.js",
+                                    "/js/app/appviews/contacts/version-one/controllers/abContactsCtrl.js"
                                 ]
                             });
                         }
@@ -1491,9 +1491,9 @@ abApp.config([
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 series: true,
-                                files: ["/js/app/appViews/contacts/services/abContactsSvc.js",
-                                    "/js/app/appViews/contacts/directives/abShowAvatar.js",
-                                    "/js/app/appViews/contacts/version-one/controllers/abContactDetailsCtrl.js"
+                                files: ["/js/app/appviews/contacts/services/abContactsSvc.js",
+                                    "/js/app/appviews/contacts/directives/abShowAvatar.js",
+                                    "/js/app/appviews/contacts/version-one/controllers/abContactDetailsCtrl.js"
                                 ]
                             });
                         }
@@ -1519,10 +1519,10 @@ abApp.config([
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 series: true,
-                                files: ["/js/app/appViews/projects/services/abProjectEnumsSvc.js",
-                                    "/js/app/appViews/projects/services/abProjectDataSvc.js",
-                                    "/js/app/appViews/projects/services/abProjectsSvc.js",
-                                    "/js/app/appViews/projects/controllers/abProjectsCtrl.js"
+                                files: ["/js/app/appviews/projects/services/abProjectEnumsSvc.js",
+                                    "/js/app/appviews/projects/services/abProjectDataSvc.js",
+                                    "/js/app/appviews/projects/services/abProjectsSvc.js",
+                                    "/js/app/appviews/projects/controllers/abProjectsCtrl.js"
                                 ]
                             });
                         }
@@ -1564,15 +1564,15 @@ abApp.config([
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 series: true,
-                                files: ["/js/app/appViews/projects/services/abProjectEnumsSvc.js",
-                                    "/js/app/appViews/projects/services/abProjectDataSvc.js",
-                                    "/js/app/appViews/projects/services/abProjectsSvc.js",
-                                    "/js/app/appViews/projects/services/abProjectDetailsSvc.js",
-                                    "/js/app/appViews/companies/services/abCompaniesSvc.js",
-                                    "/js/app/appViews/projects/controllers/abAddContactsCtrl.js",
-                                    "/js/app/appViews/projects/controllers/abAddTaskCtrl.js",
-                                    "/js/app/appViews/projects/controllers/abEditTaskCtrl.js",
-                                    "/js/app/appViews/projects/controllers/abProjectDetailsCtrl.js",
+                                files: ["/js/app/appviews/projects/services/abProjectEnumsSvc.js",
+                                    "/js/app/appviews/projects/services/abProjectDataSvc.js",
+                                    "/js/app/appviews/projects/services/abProjectsSvc.js",
+                                    "/js/app/appviews/projects/services/abProjectDetailsSvc.js",
+                                    "/js/app/appviews/companies/services/abCompaniesSvc.js",
+                                    "/js/app/appviews/projects/controllers/abAddContactsCtrl.js",
+                                    "/js/app/appviews/projects/controllers/abAddTaskCtrl.js",
+                                    "/js/app/appviews/projects/controllers/abEditTaskCtrl.js",
+                                    "/js/app/appviews/projects/controllers/abProjectDetailsCtrl.js",
                                     "/js/plugins/bootstrap-sweetalert/dist/sweetalert.css",
                                     "/js/plugins/bootstrap-sweetalert/dist/sweetalert.js"
                                 ]
@@ -1603,8 +1603,8 @@ abApp.config([
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 series: true,
-                                files: ["/js/app/appViews/companies/services/abCompaniesSvc.js",
-                                    "/js/app/appViews/companies/controllers/abCompaniesCtrl.js"
+                                files: ["/js/app/appviews/companies/services/abCompaniesSvc.js",
+                                    "/js/app/appviews/companies/controllers/abCompaniesCtrl.js"
                                 ]
                             });
                         }
@@ -1633,8 +1633,8 @@ abApp.config([
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 series: true,
-                                files: ["/js/app/appViews/companies/services/abCompaniesSvc.js",
-                                    "/js/app/appViews/companies/controllers/abCompaniesCtrl.js"
+                                files: ["/js/app/appviews/companies/services/abCompaniesSvc.js",
+                                    "/js/app/appviews/companies/controllers/abCompaniesCtrl.js"
                                 ]
                             });
                         }
@@ -1664,9 +1664,8 @@ abApp.config([
                             return $ocLazyLoad.load({
                                 series: true,
                                 files: ["/js/app/appviews/companies/services/abCompaniesSvc.js",
-                                    "/js/app/appviews/companies/controllers/abCompanyDetailsCtrl.js",
                                     "/js/app/appviews/companies/controllers/abAddContactsCtrl.js",
-                                    "/js/app/appviews/contacts/services/abContactsSvc.js"
+                                    "/js/app/appviews/companies/controllers/abCompanyDetailsCtrl.js"
                                 ]
                             });
                         }

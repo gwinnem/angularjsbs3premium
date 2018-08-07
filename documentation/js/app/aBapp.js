@@ -110,6 +110,13 @@ aurora.config(
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Html' }, { name: 'InfoBox' }]
 
             })
+            .state('htmliconbox', {
+                url: '/components/html/iconbox',
+                templateUrl: 'documentation/pages/iconbox.html',
+                pageTitle: 'Html Component IconBox',
+                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Html' }, { name: 'IconBox' }]
+
+            })
             .state('htmltreeview', {
                 url: '/components/html/treeview',
                 templateUrl: 'documentation/pages/treeview.html',

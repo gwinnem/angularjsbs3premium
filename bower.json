@@ -75,7 +75,7 @@
     "dropzone": "~4.2.0"
   },
   "resolutions": {
-    "jquery": ">=1.10",
+    "jquery": ">=3.3.1",
     "bootstrap": "3.3.7",
     "moment": "~2.10.3"
   },

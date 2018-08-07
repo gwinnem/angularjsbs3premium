@@ -17,7 +17,7 @@
     var defaultConfig = {
         collapseScreenSize: 767,
         expandOnHover: false,
-        expandTransitionDelay: 200
+        expandTransitionDelay: 100
     };
 
     var htmlSelectors = {
@@ -28,7 +28,7 @@
         sidebarFooter: '.sidebar-footer',
         contentWrapper: '.content-wrapper',
         button: '[data-toggle="push-menu"]',
-        mini: '.sidebar-mini',
+        // not in use mini: '.sidebar-mini',
         expanded: '.sidebar-expanded-on-hover',
         layoutFixed: '.fixed'
     };

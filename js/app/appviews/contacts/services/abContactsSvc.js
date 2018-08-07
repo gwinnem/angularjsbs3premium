@@ -9,7 +9,7 @@
 (function () {
     "use strict";
     angular.module("abContactsServiceModule", [
-            ["/js/app/appViews/contacts/services/abContactsDataSvc.js"]
+            ["/js/app/appviews/contacts/services/abContactsDataSvc.js"]
         ])
         .factory("abContactsSvc", ["$q", "abContactsDataSvc", function ($q, abContactsDataSvc) {
             var actions = {

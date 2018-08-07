@@ -54,7 +54,7 @@ body {
   clear: both;
 }
 .layout-boxed {
-  background: url('../assets/img/boxed-bg.jpg') repeat fixed;
+  background: url('../assets/img/backgrounds/vincent-burkhead.jpg') repeat fixed;
 }
 /*
  * Content Wrapper - contains the main content
@@ -407,7 +407,7 @@ a:focus {
   }
 }
 /*
- * Component: Sidebar
+ * Styles for the main sidebar Sidebar
  * ------------------
  */
 .main-sidebar {
@@ -498,9 +498,6 @@ a:focus {
 .user-panel > .info > a > .glyphicon {
   margin-right: 3px;
 }
-.sidebar-menu > li.treeview.menu-open {
-  border-right: 3px solid #1ABB9C;
-}
 .sidebar-menu {
   list-style: none;
   margin: 0;
@@ -582,7 +579,7 @@ a:focus {
   background: #425567;
 }
 /*
- * Component: Sidebar Mini
+ * TODO find out wat this is for.
  */
 @media (min-width: 768px) {
   .sidebar-mini.sidebar-collapse .content-wrapper,
@@ -7865,9 +7862,6 @@ tags-input .autocomplete .suggestion-item em {
 .skin-black-light .main-footer {
   border-left: 1px solid #d2d6de;
 }
-.skin-black-light .main-sidebar {
-  border-right: 1px solid #d2d6de;
-}
 .skin-black-light .user-panel > .info,
 .skin-black-light .user-panel > .info > a {
   color: #0e131c;
@@ -7876,6 +7870,7 @@ tags-input .autocomplete .suggestion-item em {
   -webkit-transition: border-left-color 0.3s ease;
   -o-transition: border-left-color 0.3s ease;
   transition: border-left-color 0.3s ease;
+  border-left: 3px solid transparent;
 }
 .skin-black-light .sidebar-menu > li.header {
   color: #384b71;
@@ -7883,12 +7878,11 @@ tags-input .autocomplete .suggestion-item em {
 }
 .skin-black-light .sidebar-menu > li > a {
   border-left: 3px solid transparent;
+  font-weight: 600;
 }
 .skin-black-light .sidebar-menu > li:hover > a,
 .skin-black-light .sidebar-menu > li.active > a {
   color: #000;
-}
-.skin-black-light .sidebar-menu > li:hover > a {
   background: #f4f4f5;
 }
 .skin-black-light .sidebar-menu > li.active {
@@ -7906,16 +7900,21 @@ tags-input .autocomplete .suggestion-item em {
 .skin-black-light .sidebar a:hover {
   text-decoration: none;
 }
+.skin-black-light .sidebar-menu > li.treeview.menu-open {
+  border-right: 3px solid #fff;
+}
 .skin-black-light .sidebar-menu .treeview-menu > li > a {
   color: #111;
 }
 .skin-black-light .sidebar-menu .treeview-menu > li.active > a,
 .skin-black-light .sidebar-menu .treeview-menu > li > a:hover {
   color: #000;
-  background: #f4f4f5;
 }
 .skin-black-light .sidebar-menu .treeview-menu > li.active > a {
-  font-weight: 800;
+  font-weight: 600;
+}
+.skin-black-light .sidebar-menu .treeview-menu > li.active {
+  border-left: 3px solid #fff;
 }
 .skin-black-light .sidebar-form {
   border-radius: 3px;
@@ -8064,6 +8063,9 @@ tags-input .autocomplete .suggestion-item em {
   margin: 0 1px;
   background: #2c3b41;
 }
+.skin-black .sidebar-menu > li.treeview.menu-open {
+  border-right: 3px solid #fff;
+}
 .skin-black .sidebar a {
   color: #b8c7ce;
 }
@@ -8076,6 +8078,9 @@ tags-input .autocomplete .suggestion-item em {
 .skin-black .sidebar-menu .treeview-menu > li.active > a,
 .skin-black .sidebar-menu .treeview-menu > li > a:hover {
   color: #fff;
+}
+.skin-black .sidebar-menu .treeview-menu > li.active {
+  border-left: 3px solid #fff;
 }
 .skin-black .sidebar-form {
   border-radius: 3px;
@@ -8178,9 +8183,6 @@ tags-input .autocomplete .suggestion-item em {
 .skin-blue-light .main-footer {
   border-left: 1px solid #d2d6de;
 }
-.skin-blue-light .main-sidebar {
-  border-right: 1px solid #d2d6de;
-}
 .skin-blue-light .user-panel > .info,
 .skin-blue-light .user-panel > .info > a {
   color: #0e131c;
@@ -8189,6 +8191,7 @@ tags-input .autocomplete .suggestion-item em {
   -webkit-transition: border-left-color 0.3s ease;
   -o-transition: border-left-color 0.3s ease;
   transition: border-left-color 0.3s ease;
+  border-left: 3px solid transparent;
 }
 .skin-blue-light .sidebar-menu > li.header {
   color: #384b71;
@@ -8196,12 +8199,11 @@ tags-input .autocomplete .suggestion-item em {
 }
 .skin-blue-light .sidebar-menu > li > a {
   border-left: 3px solid transparent;
+  font-weight: 600;
 }
 .skin-blue-light .sidebar-menu > li:hover > a,
 .skin-blue-light .sidebar-menu > li.active > a {
   color: #000;
-}
-.skin-blue-light .sidebar-menu > li:hover > a {
   background: #f4f4f5;
 }
 .skin-blue-light .sidebar-menu > li.active {
@@ -8219,16 +8221,21 @@ tags-input .autocomplete .suggestion-item em {
 .skin-blue-light .sidebar a:hover {
   text-decoration: none;
 }
+.skin-blue-light .sidebar-menu > li.treeview.menu-open {
+  border-right: 3px solid #74b9ff;
+}
 .skin-blue-light .sidebar-menu .treeview-menu > li > a {
   color: #111;
 }
 .skin-blue-light .sidebar-menu .treeview-menu > li.active > a,
 .skin-blue-light .sidebar-menu .treeview-menu > li > a:hover {
   color: #000;
-  background: #f4f4f5;
 }
 .skin-blue-light .sidebar-menu .treeview-menu > li.active > a {
-  font-weight: 800;
+  font-weight: 600;
+}
+.skin-blue-light .sidebar-menu .treeview-menu > li.active {
+  border-left: 3px solid #74b9ff;
 }
 .skin-blue-light .sidebar-form {
   border-radius: 3px;
@@ -8367,6 +8374,9 @@ tags-input .autocomplete .suggestion-item em {
   margin: 0 1px;
   background: #2c3b41;
 }
+.skin-blue .sidebar-menu > li.treeview.menu-open {
+  border-right: 3px solid #74b9ff;
+}
 .skin-blue .sidebar a {
   color: #b8c7ce;
 }
@@ -8379,6 +8389,9 @@ tags-input .autocomplete .suggestion-item em {
 .skin-blue .sidebar-menu .treeview-menu > li.active > a,
 .skin-blue .sidebar-menu .treeview-menu > li > a:hover {
   color: #fff;
+}
+.skin-blue .sidebar-menu .treeview-menu > li.active {
+  border-left: 3px solid #74b9ff;
 }
 .skin-blue .sidebar-form {
   border-radius: 3px;
@@ -8489,9 +8502,6 @@ tags-input .autocomplete .suggestion-item em {
 .skin-green-light .main-footer {
   border-left: 1px solid #d2d6de;
 }
-.skin-green-light .main-sidebar {
-  border-right: 1px solid #d2d6de;
-}
 .skin-green-light .user-panel > .info,
 .skin-green-light .user-panel > .info > a {
   color: #0e131c;
@@ -8500,6 +8510,7 @@ tags-input .autocomplete .suggestion-item em {
   -webkit-transition: border-left-color 0.3s ease;
   -o-transition: border-left-color 0.3s ease;
   transition: border-left-color 0.3s ease;
+  border-left: 3px solid transparent;
 }
 .skin-green-light .sidebar-menu > li.header {
   color: #384b71;
@@ -8507,12 +8518,11 @@ tags-input .autocomplete .suggestion-item em {
 }
 .skin-green-light .sidebar-menu > li > a {
   border-left: 3px solid transparent;
+  font-weight: 600;
 }
 .skin-green-light .sidebar-menu > li:hover > a,
 .skin-green-light .sidebar-menu > li.active > a {
   color: #000;
-}
-.skin-green-light .sidebar-menu > li:hover > a {
   background: #f4f4f5;
 }
 .skin-green-light .sidebar-menu > li.active {
@@ -8530,16 +8540,21 @@ tags-input .autocomplete .suggestion-item em {
 .skin-green-light .sidebar a:hover {
   text-decoration: none;
 }
+.skin-green-light .sidebar-menu > li.treeview.menu-open {
+  border-right: 3px solid #26B99A;
+}
 .skin-green-light .sidebar-menu .treeview-menu > li > a {
   color: #111;
 }
 .skin-green-light .sidebar-menu .treeview-menu > li.active > a,
 .skin-green-light .sidebar-menu .treeview-menu > li > a:hover {
   color: #000;
-  background: #f4f4f5;
 }
 .skin-green-light .sidebar-menu .treeview-menu > li.active > a {
-  font-weight: 800;
+  font-weight: 600;
+}
+.skin-green-light .sidebar-menu .treeview-menu > li.active {
+  border-left: 3px solid #26B99A;
 }
 .skin-green-light .sidebar-form {
   border-radius: 3px;
@@ -8667,6 +8682,9 @@ tags-input .autocomplete .suggestion-item em {
   margin: 0 1px;
   background: #2c3b41;
 }
+.skin-green .sidebar-menu > li.treeview.menu-open {
+  border-right: 3px solid #26B99A;
+}
 .skin-green .sidebar a {
   color: #b8c7ce;
 }
@@ -8679,6 +8697,9 @@ tags-input .autocomplete .suggestion-item em {
 .skin-green .sidebar-menu .treeview-menu > li.active > a,
 .skin-green .sidebar-menu .treeview-menu > li > a:hover {
   color: #fff;
+}
+.skin-green .sidebar-menu .treeview-menu > li.active {
+  border-left: 3px solid #26B99A;
 }
 .skin-green .sidebar-form {
   border-radius: 3px;
@@ -8781,9 +8802,6 @@ tags-input .autocomplete .suggestion-item em {
 .skin-purple-light .main-footer {
   border-left: 1px solid #d2d6de;
 }
-.skin-purple-light .main-sidebar {
-  border-right: 1px solid #d2d6de;
-}
 .skin-purple-light .user-panel > .info,
 .skin-purple-light .user-panel > .info > a {
   color: #0e131c;
@@ -8792,6 +8810,7 @@ tags-input .autocomplete .suggestion-item em {
   -webkit-transition: border-left-color 0.3s ease;
   -o-transition: border-left-color 0.3s ease;
   transition: border-left-color 0.3s ease;
+  border-left: 3px solid transparent;
 }
 .skin-purple-light .sidebar-menu > li.header {
   color: #384b71;
@@ -8799,12 +8818,11 @@ tags-input .autocomplete .suggestion-item em {
 }
 .skin-purple-light .sidebar-menu > li > a {
   border-left: 3px solid transparent;
+  font-weight: 600;
 }
 .skin-purple-light .sidebar-menu > li:hover > a,
 .skin-purple-light .sidebar-menu > li.active > a {
   color: #000;
-}
-.skin-purple-light .sidebar-menu > li:hover > a {
   background: #f4f4f5;
 }
 .skin-purple-light .sidebar-menu > li.active {
@@ -8822,16 +8840,21 @@ tags-input .autocomplete .suggestion-item em {
 .skin-purple-light .sidebar a:hover {
   text-decoration: none;
 }
+.skin-purple-light .sidebar-menu > li.treeview.menu-open {
+  border-right: 3px solid #984dff;
+}
 .skin-purple-light .sidebar-menu .treeview-menu > li > a {
   color: #111;
 }
 .skin-purple-light .sidebar-menu .treeview-menu > li.active > a,
 .skin-purple-light .sidebar-menu .treeview-menu > li > a:hover {
   color: #000;
-  background: #f4f4f5;
 }
 .skin-purple-light .sidebar-menu .treeview-menu > li.active > a {
-  font-weight: 800;
+  font-weight: 600;
+}
+.skin-purple-light .sidebar-menu .treeview-menu > li.active {
+  border-left: 3px solid #984dff;
 }
 .skin-purple-light .sidebar-form {
   border-radius: 3px;
@@ -8959,6 +8982,9 @@ tags-input .autocomplete .suggestion-item em {
   margin: 0 1px;
   background: #2c3b41;
 }
+.skin-purple .sidebar-menu > li.treeview.menu-open {
+  border-right: 3px solid #984dff;
+}
 .skin-purple .sidebar a {
   color: #b8c7ce;
 }
@@ -8971,6 +8997,9 @@ tags-input .autocomplete .suggestion-item em {
 .skin-purple .sidebar-menu .treeview-menu > li.active > a,
 .skin-purple .sidebar-menu .treeview-menu > li > a:hover {
   color: #fff;
+}
+.skin-purple .sidebar-menu .treeview-menu > li.active {
+  border-left: 3px solid #984dff;
 }
 .skin-purple .sidebar-form {
   border-radius: 3px;
@@ -9073,9 +9102,6 @@ tags-input .autocomplete .suggestion-item em {
 .skin-red-light .main-footer {
   border-left: 1px solid #d2d6de;
 }
-.skin-red-light .main-sidebar {
-  border-right: 1px solid #d2d6de;
-}
 .skin-red-light .user-panel > .info,
 .skin-red-light .user-panel > .info > a {
   color: #0e131c;
@@ -9084,6 +9110,7 @@ tags-input .autocomplete .suggestion-item em {
   -webkit-transition: border-left-color 0.3s ease;
   -o-transition: border-left-color 0.3s ease;
   transition: border-left-color 0.3s ease;
+  border-left: 3px solid transparent;
 }
 .skin-red-light .sidebar-menu > li.header {
   color: #384b71;
@@ -9091,12 +9118,11 @@ tags-input .autocomplete .suggestion-item em {
 }
 .skin-red-light .sidebar-menu > li > a {
   border-left: 3px solid transparent;
+  font-weight: 600;
 }
 .skin-red-light .sidebar-menu > li:hover > a,
 .skin-red-light .sidebar-menu > li.active > a {
   color: #000;
-}
-.skin-red-light .sidebar-menu > li:hover > a {
   background: #f4f4f5;
 }
 .skin-red-light .sidebar-menu > li.active {
@@ -9114,16 +9140,21 @@ tags-input .autocomplete .suggestion-item em {
 .skin-red-light .sidebar a:hover {
   text-decoration: none;
 }
+.skin-red-light .sidebar-menu > li.treeview.menu-open {
+  border-right: 3px solid #dd4b39;
+}
 .skin-red-light .sidebar-menu .treeview-menu > li > a {
   color: #111;
 }
 .skin-red-light .sidebar-menu .treeview-menu > li.active > a,
 .skin-red-light .sidebar-menu .treeview-menu > li > a:hover {
   color: #000;
-  background: #f4f4f5;
 }
 .skin-red-light .sidebar-menu .treeview-menu > li.active > a {
-  font-weight: 800;
+  font-weight: 600;
+}
+.skin-red-light .sidebar-menu .treeview-menu > li.active {
+  border-left: 3px solid #dd4b39;
 }
 .skin-red-light .sidebar-form {
   border-radius: 3px;
@@ -9251,6 +9282,9 @@ tags-input .autocomplete .suggestion-item em {
   margin: 0 1px;
   background: #2c3b41;
 }
+.skin-red .sidebar-menu > li.treeview.menu-open {
+  border-right: 3px solid #dd4b39;
+}
 .skin-red .sidebar a {
   color: #b8c7ce;
 }
@@ -9263,6 +9297,9 @@ tags-input .autocomplete .suggestion-item em {
 .skin-red .sidebar-menu .treeview-menu > li.active > a,
 .skin-red .sidebar-menu .treeview-menu > li > a:hover {
   color: #fff;
+}
+.skin-red .sidebar-menu .treeview-menu > li.active {
+  border-left: 3px solid #dd4b39;
 }
 .skin-red .sidebar-form {
   border-radius: 3px;
@@ -9365,9 +9402,6 @@ tags-input .autocomplete .suggestion-item em {
 .skin-yellow-light .main-footer {
   border-left: 1px solid #d2d6de;
 }
-.skin-yellow-light .main-sidebar {
-  border-right: 1px solid #d2d6de;
-}
 .skin-yellow-light .user-panel > .info,
 .skin-yellow-light .user-panel > .info > a {
   color: #0e131c;
@@ -9376,6 +9410,7 @@ tags-input .autocomplete .suggestion-item em {
   -webkit-transition: border-left-color 0.3s ease;
   -o-transition: border-left-color 0.3s ease;
   transition: border-left-color 0.3s ease;
+  border-left: 3px solid transparent;
 }
 .skin-yellow-light .sidebar-menu > li.header {
   color: #384b71;
@@ -9383,12 +9418,11 @@ tags-input .autocomplete .suggestion-item em {
 }
 .skin-yellow-light .sidebar-menu > li > a {
   border-left: 3px solid transparent;
+  font-weight: 600;
 }
 .skin-yellow-light .sidebar-menu > li:hover > a,
 .skin-yellow-light .sidebar-menu > li.active > a {
   color: #000;
-}
-.skin-yellow-light .sidebar-menu > li:hover > a {
   background: #f4f4f5;
 }
 .skin-yellow-light .sidebar-menu > li.active {
@@ -9406,16 +9440,21 @@ tags-input .autocomplete .suggestion-item em {
 .skin-yellow-light .sidebar a:hover {
   text-decoration: none;
 }
+.skin-yellow-light .sidebar-menu > li.treeview.menu-open {
+  border-right: 3px solid #f8ac59;
+}
 .skin-yellow-light .sidebar-menu .treeview-menu > li > a {
   color: #111;
 }
 .skin-yellow-light .sidebar-menu .treeview-menu > li.active > a,
 .skin-yellow-light .sidebar-menu .treeview-menu > li > a:hover {
   color: #000;
-  background: #f4f4f5;
 }
 .skin-yellow-light .sidebar-menu .treeview-menu > li.active > a {
-  font-weight: 800;
+  font-weight: 600;
+}
+.skin-yellow-light .sidebar-menu .treeview-menu > li.active {
+  border-left: 3px solid #f8ac59;
 }
 .skin-yellow-light .sidebar-form {
   border-radius: 3px;
@@ -9543,6 +9582,9 @@ tags-input .autocomplete .suggestion-item em {
   margin: 0 1px;
   background: #2c3b41;
 }
+.skin-yellow .sidebar-menu > li.treeview.menu-open {
+  border-right: 3px solid #f8ac59;
+}
 .skin-yellow .sidebar a {
   color: #b8c7ce;
 }
@@ -9555,6 +9597,9 @@ tags-input .autocomplete .suggestion-item em {
 .skin-yellow .sidebar-menu .treeview-menu > li.active > a,
 .skin-yellow .sidebar-menu .treeview-menu > li > a:hover {
   color: #fff;
+}
+.skin-yellow .sidebar-menu .treeview-menu > li.active {
+  border-left: 3px solid #f8ac59;
 }
 .skin-yellow .sidebar-form {
   border-radius: 3px;

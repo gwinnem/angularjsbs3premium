@@ -8,11 +8,8 @@
 
 (function () {
     "use strict";
-    angular.module("abContactsDataService", [
-            ["js/plugins/faker.js/faker.min.js", ]
-        ])
+    angular.module("abContactsDataService", ["/js/plugins/faker.js/faker.min.js"])
         .factory("abContactsDataSvc", [function () {
-            //faker.helpers.userCard();
             var contacts = [];
             for (var index = 0; index <= 50; index++) {
 

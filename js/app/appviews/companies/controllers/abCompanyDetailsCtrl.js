@@ -122,32 +122,24 @@
                 };
 
                 $scope.addContacts = function () {
-                    abContactsSvc.getContactsNoCompany().then(function (data) {
-                        var modalDefaults = {
-                            contacts: data,
+                    var modalDefaults = {
+                        controller: "addContactsController",
+                        size: ""
+                    };
+                    var modalOptions = {
+                        company: $scope.company,
+                        headerText: "Add Company Contacts",
+                        hideOkButton: false,
+                        contentUrl: "js/app/appviews/companies/templates/addContacts.html"
+                    };
 
-                            controller: "addContactsController",
-                            size: "lg"
-                        };
-                        var modalOptions = {
-                            model: $scope.company,
-                            headerText: "Add Contacts",
-                            hideOkButton: false,
-                            contentUrl: "js/app/appviews/companies/templates/addContacts.html"
-                        };
-                        if (config.debug) {
-                            console.log("Add Contacts modalOptions");
-                            console.log(modalOptions);
+                    modalDialogs.openDialog(modalDefaults, modalOptions).then(function (result) {
+                        debugger;
+                        if (result) {
+                            // $timeout(function () {
+                            //     // getCompanyContacts();
+                            // }, 100);
                         }
-                        modalDialogs.openDialog(modalDefaults, modalOptions).then(function (result) {
-                            if (result) {
-                                // $timeout(function () {
-                                //     // getCompanyContacts();
-                                // }, 100);
-                            }
-                        }).catch(function (error) {
-                            console.log(error);
-                        });
                     }).catch(function (error) {
                         console.log(error);
                     });
@@ -158,9 +150,9 @@
                         .then(function (result) {
                             if (result) {
                                 service.removeCompanyContact({
-                                        id: $scope.company.id,
-                                        contactId: id
-                                    })
+                                    id: $scope.company.id,
+                                    contactId: id
+                                })
                                     .then(function (data) {
                                         if (config.debug) {
                                             console.log(data);
@@ -184,14 +176,8 @@
                     });
                 }
 
-                // $scope.displayContact = function (contactId) {
-                //     $state.go("contactdetails", {
-                //         id: contactId
-                //     });
-                // };
-
                 if (config.debug) {
-                    $notification.success("Company Details loaded", "ABAdmin Companies", config.notificationDelay);
+                    $notification.info("Company Details loaded", "ABAdmin Companies", config.notificationDelay);
                 }
             }
         ]);
