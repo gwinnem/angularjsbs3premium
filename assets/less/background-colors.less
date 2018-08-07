@@ -19,6 +19,7 @@
 .bg-aqua,
 .bg-blue,
 .bg-light-blue,
+.bg-dark-blue,
 .bg-blue-alt,
 .bg-green,
 .bg-navy,
@@ -36,6 +37,7 @@
 .bg-blue-active,
 .bg-light-blue-active,
 .bg-blue-alt-active,
+.bg-dark-blue-active,
 .bg-green-active,
 .bg-navy-active,
 .bg-teal-active,
@@ -78,12 +80,16 @@
     background-color: @blue !important;
 }
 
-.bg-blue-alt {
-    background-color: @blue-alt !important;
-}
-
 .bg-light-blue {
     background-color: @light-blue !important;
+}
+
+.bg-dark-blue {
+    background-color: @dark-blue !important;
+}
+
+.bg-blue-alt {
+    background-color: @blue-alt !important;
 }
 
 .bg-green {
@@ -152,6 +158,10 @@
     background-color: darken(@light-blue, 6%) !important;
 }
 
+.bg-dark-blue-active {
+    background-color: darken(@dark-blue, 6%) !important;
+}
+
 .bg-blue-alt-active {
     background-color: darken(@blue-alt, 6%) !important;
 }
@@ -205,6 +215,10 @@
 
 .bg-blue-gradient {
     .gradient(@blue; @blue; lighten(@blue, 7%)) !important;
+    color: #fff;
+}
+.bg-dark-blue-gradient {
+    .gradient(@dark-blue; @dark-blue; lighten(@dark-blue, 7%)) !important;
     color: #fff;
 }
 
