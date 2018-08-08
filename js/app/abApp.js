@@ -876,7 +876,7 @@ abApp.config([
                 }, {
                     name: "Richshaw Charts"
                 }],
-                //controller: "RickshawChartsController",
+                controller: "RickshawChartsController",
                 resolve: {
                     ctrl: [
                         "$ocLazyLoad",
@@ -885,7 +885,7 @@ abApp.config([
                                 series: true,
                                 files: ["/js/plugins/rickshaw/rickshaw.min.css",
                                     "/js/plugins/rickshaw/rickshaw.js",
-                                    //"/js/app/charts/rickshaw/controllers/abRickshawCtrl.js"
+                                    "/js/app/charts/rickshaw/controllers/abRickshawCtrl.js"
                                 ]
                             });
                         }
