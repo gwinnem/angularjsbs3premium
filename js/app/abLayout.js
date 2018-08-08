@@ -19,7 +19,7 @@
 
     var htmlSelectors = {
         wrapper: ".wrapper",
-        fixed:".fixed",
+        fixed: ".fixed",
         contentWrapper: ".content-wrapper",
         layoutNormal: ".layout-normal",
         layoutFixed: ".fixed",
@@ -52,7 +52,7 @@
         this.fix();
         this.fixSidebar();
 
-        if($("body").hasClass(className.holdTransition)){
+        if ($("body").hasClass(className.holdTransition)) {
             $("body").removeClass(className.holdTransition);
         }
 
@@ -106,7 +106,8 @@
         } else {
             var postSetHeight;
 
-            if (windowHeight >= sidebarHeight) {
+            //if (windowHeight >= sidebarHeight) {
+            if (windowHeight >= sidebarHeight + headerHeight) {
                 $(htmlSelectors.contentWrapper).css("min-height", windowHeight - neg);
                 postSetHeight = windowHeight - neg;
             } else {
@@ -132,7 +133,7 @@
                     destroy: true
                 }).height("auto");
             }
-           // return;
+            // return;
         }
 
         // Enable slimscroll for fixed layout
