@@ -22,276 +22,301 @@
             </div>
 
         </div>
-        <div class="clearfix">
-            <!-- Layout -->
-            <div class="col-xs-6 col-md-3">
-                <p class="text-main text-bold text-uppercase">Layout</p>
-                <fieldset>
-                    <div class="form-check abc-checkbox abc-checkbox-success">
-                        <input class="form-check-input" id="layout-normal" type="checkbox" value="layout-normal">
-                        <label class="form-check-label" for="layout-normal">Normal</label>
+        <div class="nav-tabs-custom clearfix" style="margin-left:20px; margin-right:20px; bottom:20px; width: 800px;">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a data-target="#tab_1" data-toggle="tab">Layout</a>
+                </li>
+                <li>
+                    <a data-target="#tab_2" data-toggle="tab">Skins</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_1">
+                    <!-- Layout -->
+                    <div class="col-xs-6 col-md-4">
+                        <fieldset>
+                            <div class="form-check abc-checkbox abc-checkbox-success">
+                                <input class="form-check-input" id="layout-normal" type="checkbox" value="layout-normal">
+                                <label class="form-check-label" for="layout-normal">Normal</label>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-check abc-checkbox abc-checkbox-success">
+                                <input class="form-check-input" id="layout-fixed" type="checkbox" value="layout-fixed">
+                                <label class="form-check-label" for="layout-fixed">Fixed Sidebar</label>
+                            </div>
+                            <p>Activate the fixed layout. You can't use fixed and boxed layouts together.</p>
+                        </fieldset>
+                        <fieldset></fieldset>
+                        <div class="form-check abc-checkbox abc-checkbox-success">
+                            <input class="form-check-input" id="layout-boxed" type="checkbox" value="layout-boxed">
+                            <label class="form-check-label" for="layout-boxed">Boxed Layout.</label>
+                        </div>
+                        <p>Activate the boxed layout. Bacground image settings is located in variables.less.</p>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-check abc-checkbox abc-checkbox-success">
+                                <input class="form-check-input" id="layout-topnav" type="checkbox" value="layout-topnav">
+                                <label class="form-check-label" for="layout-topnav">Top Navigation</label>
+                            </div>
+                            <p>Simple layout with the top navigation bar only. Opens in a new window.</p>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-check abc-checkbox abc-checkbox-success">
+                                <input class="form-check-input" id="layout-fixedfooter" type="checkbox" value="layout-fixedfooter">
+                                <label class="form-check-label" for="layout-fixedfooter">Fixed footer</label>
+                            </div>
+                            <p>Does not work with the boxed layout.</p>
+                        </fieldset>
                     </div>
-                </fieldset>
-                <fieldset>
-                    <div class="form-check abc-checkbox abc-checkbox-success">
-                        <input class="form-check-input" id="layout-fixed" type="checkbox" value="layout-fixed">
-                        <label class="form-check-label" for="layout-fixed">Fixed Sidebar</label>
+                    <!-- Left sidebar -->
+                    <div class="col-xs-6 col-md-4">
+                        <p class="text-bold text-uppercase text-main">Left Sidebar</p>
+                        <fieldset>
+                            <div class="form-check abc-checkbox abc-checkbox-success">
+                                <input class="form-check-input" id="toggle-left-sidebar" type="checkbox">
+                                <label class="form-check-label" for="toggle-left-sidebar">Toggle Sidebar</label>
+                            </div>
+                            <p>Toggle the left sidebar\'s state (open or collapsed)</p>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-check abc-checkbox abc-checkbox-success">
+                                <input class="form-check-input" id="sidebar-expand-on-hover" type="checkbox">
+                                <label class="form-check-label" for="sidebar-expand-on-hover">Sidebar Expand on Hover</label>
+                            </div>
+                            <p>Let the sidebar mini expand on hover</p>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-check abc-checkbox abc-checkbox-success">
+                                <input class="form-check-input" id="user-panel" type="checkbox">
+                                <label class="form-check-label" for="user-panel">Toggle user panel.</label>
+                            </div>
+                            <p>Toggles visibillity for the userpanel in the left side menu bar. Only for demo purpose.</p>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-check abc-checkbox abc-checkbox-success">
+                                <input class="form-check-input" id="search-box" type="checkbox">
+                                <label class="form-check-label" for="search-box">Toggle Searchbox.</label>
+                            </div>
+                            <p>Toggles visibillity for the search form in the left side menu bar. Only for demo purpose.</p>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-check abc-checkbox abc-checkbox-success">
+                                <input class="form-check-input" id="bottom-menu" type="checkbox">
+                                <label class="form-check-label" for="bottom-menu">Toggle Bottom Menu.</label>
+                            </div>
+                            <p>Toggles visibillity for the bottom menu in the left side menu bar. Only for demo purpose.</p>
+                        </fieldset>
                     </div>
-                    <p>Activate the fixed layout. You can't use fixed and boxed layouts together.</p>
-                </fieldset>
-                <fieldset></fieldset>
-                <div class="form-check abc-checkbox abc-checkbox-success">
-                    <input class="form-check-input" id="layout-boxed" type="checkbox" value="layout-boxed">
-                    <label class="form-check-label" for="layout-boxed">Boxed Layout.</label>
+                    <!-- Right sidebar -->
+                    <div class="col-xs-6 col-md-4">
+                        <p class="text-bold text-uppercase text-main">Right Sidebar</p>
+                        <fieldset>
+                            <div class="form-check abc-checkbox abc-checkbox-success">
+                                <input class="form-check-input" id="control-sidebar-slide" type="checkbox">
+                                <label class="form-check-label" for="control-sidebar-slide">Toggle Right Sidebar Slide.</label>
+                            </div>
+                            <p>Toggle between slide over content and push content effect.</p>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-check abc-checkbox abc-checkbox-success">
+                                <input class="form-check-input" id="toggle-right-sidebar-skin" type="checkbox">
+                                <label class="form-check-label" for="toggle-right-sidebar-skin">Toggle Right Sidebar Skin.</label>
+                            </div>
+                            <p>Toggle between dark and light skins for the right sidebar</p>
+                        </fieldset>
+                    </div>
                 </div>
-                <p>Activate the boxed layout. Bacground image settings is located in variables.less.</p>
-                </fieldset>
-                <fieldset>
-                    <div class="form-check abc-checkbox abc-checkbox-success">
-                        <input class="form-check-input" id="layout-topnav" type="checkbox" value="layout-topnav">
-                        <label class="form-check-label" for="layout-topnav">Top Navigation</label>
+                <!-- /.tab-pane -->
+                <div class="tab-pane" id="tab_2">
+                    <!-- Skins -->
+                    <div class="col-lg-12">
+                        <h4>Black Sidebar:</h4>
+                        <ul class="list-unstyled clearfix">
+                            <!-- Black skin -->
+                            <li style="float:left; width:15%; padding: 5px;">
+                                <a href="javascript:" data-skin="skin-black" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;" class="clearfix full-opacity-hover">
+                                    <div style="box-shadow: 0 0 2px rgba(0,0,0,0.1)" class="clearfix">
+                                        <span style="display:block; width: 20%; float: left; height: 7px; background: #fefefe"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 7px; background: #fefefe"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 20px; background: #222"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                                <p class="text-center no-margin">Black</p>
+                            </li>
+                            <!-- Blue skin -->
+                            <li style="float:left; width:15%; padding: 5px;">
+                                <a href="javascript:" data-skin="skin-blue" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;" class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 7px; background: #367fa9"></span>
+                                        <span class="bg-light-blue" style="display:block; width: 80%; float: left; height: 7px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                                <p class="text-center no-margin">Blue</p>
+                            </li>
+                            <!-- Purple skin -->
+                            <li style="float:left; width:15%; padding: 5px;">
+                                <a href="javascript:" data-skin="skin-purple" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;" class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-purple-active"></span>
+                                        <span class="bg-purple" style="display:block; width: 80%; float: left; height: 7px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                                <p class="text-center no-margin">Purple</p>
+                            </li>
+                            <!-- Green skin -->
+                            <li style="float:left; width:15%; padding: 5px;">
+                                <a href="javascript:" data-skin="skin-green" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;" class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-green-active"></span>
+                                        <span class="bg-green" style="display:block; width: 80%; float: left; height: 7px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                                <p class="text-center no-margin">Green</p>
+                            </li>
+                            <!-- Red skin -->
+                            <li style="float:left; width:15%; padding: 5px;">
+                                <a href="javascript:" data-skin="skin-red" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;" class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-red-active"></span>
+                                        <span class="bg-red" style="display:block; width: 80%; float: left; height: 7px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                                <p class="text-center no-margin">Red</p>
+                            </li>
+                            <!-- Yellow skin -->
+                            <li style="float:left; width:15%; padding: 5px;">
+                                <a href="javascript:" data-skin="skin-yellow" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;" class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-yellow-active"></span>
+                                        <span class="bg-yellow" style="display:block; width: 80%; float: left; height: 7px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                                <p class="text-center no-margin">Yellow</p>
+                            </li>
+                        </ul>
+                        <h4>White Sidebar</h4>
+                        <ul class="list-unstyled clearfix">
+                            <!-- White skin -->
+                            <li style="float:left; width:15%; padding: 5px;">
+                                <a href="javascript:" data-skin="skin-black-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div style="box-shadow: 0 0 2px rgba(0,0,0,0.1)" class="clearfix">
+                                        <span style="display:block; width: 20%; float: left; height: 7px; background: #fefefe"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 7px; background: #fefefe"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                                <p class="text-center no-margin" style="font-size: 12px">White</p>
+                            </li>
+                            <!-- Blue White skin -->
+                            <li style="float:left; width:15%; padding: 5px;">
+                                <a href="javascript:" data-skin="skin-blue-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 7px; background: #367fa9"></span>
+                                        <span class="bg-light-blue" style="display:block; width: 80%; float: left; height: 7px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                                <p class="text-center no-margin" style="font-size: 12px">Blue</p>
+                            </li>
+                            <!-- Purple White skin -->
+                            <li style="float:left; width:15%; padding: 5px;">
+                                <a href="javascript:" data-skin="skin-purple-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-purple-active"></span>
+                                        <span class="bg-purple" style="display:block; width: 80%; float: left; height: 7px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                                <p class="text-center no-margin" style="font-size: 12px">Purple</p>
+                            </li>
+                            <!-- Green White skin -->
+                            <li style="float:left; width:15%; padding: 5px;">
+                                <a href="javascript:" data-skin="skin-green-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-green-active"></span>
+                                        <span class="bg-green" style="display:block; width: 80%; float: left; height: 7px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                                <p class="text-center no-margin" style="font-size: 12px">Green</p>
+                            </li>
+                            <!-- Red White skin -->
+                            <li style="float:left; width:15%; padding: 5px;">
+                                <a href="javascript:" data-skin="skin-red-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-red-active"></span>
+                                        <span class="bg-red" style="display:block; width: 80%; float: left; height: 7px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                                <p class="text-center no-margin" style="font-size: 12px">Red</p>
+                            </li>
+                            <!-- Yellow White skin -->
+                            <li style="float:left; width:15%; padding: 5px;">
+                                <a href="javascript:" data-skin="skin-yellow-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-yellow-active"></span>
+                                        <span class="bg-yellow" style="display:block; width: 80%; float: left; height: 7px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                                <p class="text-center no-margin" style="font-size: 12px">Yellow</p>
+                            </li>
+                        </ul>
                     </div>
-                    <p>Simple layout with the top navigation bar only. Opens in a new window.</p>
-                </fieldset>
-                <fieldset>
-                    <div class="form-check abc-checkbox abc-checkbox-success">
-                        <input class="form-check-input" id="layout-fixedfooter" type="checkbox" value="layout-fixedfooter">
-                        <label class="form-check-label" for="layout-fixedfooter">Fixed footer</label>
-                    </div>
-                    <p>Does not work with the boxed layout.</p>
-                </fieldset>
+                </div>
+                <!-- /.tab-pane -->
             </div>
-            <!-- Left sidebar -->
-            <div class="col-xs-6 col-md-3">
-                <p class="text-bold text-uppercase text-main">Left Sidebar</p>
-                <fieldset>
-                    <div class="form-check abc-checkbox abc-checkbox-success">
-                        <input class="form-check-input" id="toggle-left-sidebar" type="checkbox">
-                        <label class="form-check-label" for="toggle-left-sidebar">Toggle Sidebar</label>
-                    </div>
-                    <p>Toggle the left sidebar\'s state (open or collapsed)</p>
-                </fieldset>
-                <fieldset>
-                    <div class="form-check abc-checkbox abc-checkbox-success">
-                        <input class="form-check-input" id="sidebar-expand-on-hover" type="checkbox">
-                        <label class="form-check-label" for="sidebar-expand-on-hover">Sidebar Expand on Hover</label>
-                    </div>
-                    <p>Let the sidebar mini expand on hover</p>
-                </fieldset>
-                <fieldset>
-                    <div class="form-check abc-checkbox abc-checkbox-success">
-                        <input class="form-check-input" id="user-panel" type="checkbox">
-                        <label class="form-check-label" for="user-panel">Toggle user panel.</label>
-                    </div>
-                    <p>Toggles visibillity for the userpanel in the left side menu bar. Only for demo purpose.</p>
-                </fieldset>
-                <fieldset>
-                    <div class="form-check abc-checkbox abc-checkbox-success">
-                        <input class="form-check-input" id="search-box" type="checkbox">
-                        <label class="form-check-label" for="search-box">Toggle Searchbox.</label>
-                    </div>
-                    <p>Toggles visibillity for the search form in the left side menu bar. Only for demo purpose.</p>
-                </fieldset>
-                <fieldset>
-                    <div class="form-check abc-checkbox abc-checkbox-success">
-                        <input class="form-check-input" id="bottom-menu" type="checkbox">
-                        <label class="form-check-label" for="bottom-menu">Toggle Bottom Menu.</label>
-                    </div>
-                    <p>Toggles visibillity for the bottom menu in the left side menu bar. Only for demo purpose.</p>
-                </fieldset>
-            </div>
-            <!-- Right sidebar -->
-            <div class="col-xs-6 col-md-3">
-                <p class="text-bold text-uppercase text-main">Right Sidebar</p>
-                <fieldset>
-                    <div class="form-check abc-checkbox abc-checkbox-success">
-                        <input class="form-check-input" id="control-sidebar-slide" type="checkbox">
-                        <label class="form-check-label" for="control-sidebar-slide">Toggle Right Sidebar Slide.</label>
-                    </div>
-                    <p>Toggle between slide over content and push content effect.</p>
-                </fieldset>
-                <fieldset>
-                    <div class="form-check abc-checkbox abc-checkbox-success">
-                        <input class="form-check-input" id="toggle-right-sidebar-skin" type="checkbox">
-                        <label class="form-check-label" for="toggle-right-sidebar-skin">Toggle Right Sidebar Skin.</label>
-                    </div>
-                    <p>Toggle between dark and light skins for the right sidebar</p>
-                </fieldset>
-            </div>
-            <!-- Skins -->
-            <div class="col-xs-6 col-md-3">
-                <p class="text-main text-bold text-uppercase">Skins</p>
-                <ul class="list-unstyled clearfix">
-                    <!-- Black skin -->
-                    <li style="float:left; width: 33.33333%; padding: 5px;">
-                        <a href="javascript:" data-skin="skin-black" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                            <div style="box-shadow: 0 0 2px rgba(0,0,0,0.1)" class="clearfix">
-                                <span style="display:block; width: 20%; float: left; height: 7px; background: #fefefe"></span>
-                                <span style="display:block; width: 80%; float: left; height: 7px; background: #fefefe"></span>
-                            </div>
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 20px; background: #222"></span>
-                                <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
-                            </div>
-                        </a>
-                        <p class="text-center no-margin">White Black</p>
-                    </li>
-                    <!-- Blue skin -->
-                    <li style="float:left; width: 33.33333%; padding: 5px;">
-                        <a href="javascript:" data-skin="skin-blue" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 7px; background: #367fa9"></span>
-                                <span class="bg-light-blue" style="display:block; width: 80%; float: left; height: 7px;"></span>
-                            </div>
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span>
-                                <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
-                            </div>
-                        </a>
-                        <p class="text-center no-margin">Black Blue</p>
-                    </li>
-                    <!-- Purple skin -->
-                    <li style="float:left; width: 33.33333%; padding: 5px;">
-                        <a href="javascript:" data-skin="skin-purple" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-purple-active"></span>
-                                <span class="bg-purple" style="display:block; width: 80%; float: left; height: 7px;"></span>
-                            </div>
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span>
-                                <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
-                            </div>
-                        </a>
-                        <p class="text-center no-margin">Black Purple</p>
-                    </li>
-                    <!-- Green skin -->
-                    <li style="float:left; width: 33.33333%; padding: 5px;">
-                        <a href="javascript:" data-skin="skin-green" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-green-active"></span>
-                                <span class="bg-green" style="display:block; width: 80%; float: left; height: 7px;"></span>
-                            </div>
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span>
-                                <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
-                            </div>
-                        </a>
-                        <p class="text-center no-margin">Black Green</p>
-                    </li>
-                    <!-- Red skin -->
-                    <li style="float:left; width: 33.33333%; padding: 5px;">
-                        <a href="javascript:" data-skin="skin-red" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-red-active"></span>
-                                <span class="bg-red" style="display:block; width: 80%; float: left; height: 7px;"></span>
-                            </div>
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span>
-                                <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
-                            </div>
-                        </a>
-                        <p class="text-center no-margin">Black Red</p>
-                    </li>
-                    <!-- Yellow skin -->
-                    <li style="float:left; width: 33.33333%; padding: 5px;">
-                        <a href="javascript:" data-skin="skin-yellow" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-yellow-active"></span>
-                                <span class="bg-yellow" style="display:block; width: 80%; float: left; height: 7px;"></span>
-                            </div>
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 20px; background: #222d32"></span>
-                                <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
-                            </div>
-                        </a>
-                        <p class="text-center no-margin">Black Yellow</p>
-                    </li>
-                    <!-- White skin -->
-                    <li style="float:left; width: 33.33333%; padding: 5px;">
-                        <a href="javascript:" data-skin="skin-black-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                            <div style="box-shadow: 0 0 2px rgba(0,0,0,0.1)" class="clearfix">
-                                <span style="display:block; width: 20%; float: left; height: 7px; background: #fefefe"></span>
-                                <span style="display:block; width: 80%; float: left; height: 7px; background: #fefefe"></span>
-                            </div>
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
-                                <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
-                            </div>
-                        </a>
-                        <p class="text-center no-margin" style="font-size: 12px">White White</p>
-                    </li>
-                    <!-- Blue White skin -->
-                    <li style="float:left; width: 33.33333%; padding: 5px;">
-                        <a href="javascript:" data-skin="skin-blue-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 7px; background: #367fa9"></span>
-                                <span class="bg-light-blue" style="display:block; width: 80%; float: left; height: 7px;"></span>
-                            </div>
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
-                                <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
-                            </div>
-                        </a>
-                        <p class="text-center no-margin" style="font-size: 12px">Blue White</p>
-                    </li>
-                    <!-- Purple White skin -->
-                    <li style="float:left; width: 33.33333%; padding: 5px;">
-                        <a href="javascript:" data-skin="skin-purple-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-purple-active"></span>
-                                <span class="bg-purple" style="display:block; width: 80%; float: left; height: 7px;"></span>
-                            </div>
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
-                                <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
-                            </div>
-                        </a>
-                        <p class="text-center no-margin" style="font-size: 12px">Purple White</p>
-                    </li>
-                    <!-- Green White skin -->
-                    <li style="float:left; width: 33.33333%; padding: 5px;">
-                        <a href="javascript:" data-skin="skin-green-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-green-active"></span>
-                                <span class="bg-green" style="display:block; width: 80%; float: left; height: 7px;"></span>
-                            </div>
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
-                                <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
-                            </div>
-                        </a>
-                        <p class="text-center no-margin" style="font-size: 12px">Green White</p>
-                    </li>
-                    <!-- Red White skin -->
-                    <li style="float:left; width: 33.33333%; padding: 5px;">
-                        <a href="javascript:" data-skin="skin-red-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-red-active"></span>
-                                <span class="bg-red" style="display:block; width: 80%; float: left; height: 7px;"></span>
-                            </div>
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
-                                <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
-                            </div>
-                        </a>
-                        <p class="text-center no-margin" style="font-size: 12px">Red White</p>
-                    </li>
-                    <!-- Yellow White skin -->
-                    <li style="float:left; width: 33.33333%; padding: 5px;">
-                        <a href="javascript:" data-skin="skin-yellow-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-yellow-active"></span>
-                                <span class="bg-yellow" style="display:block; width: 80%; float: left; height: 7px;"></span>
-                            </div>
-                            <div>
-                                <span style="display:block; width: 20%; float: left; height: 20px; background: #f9fafc"></span>
-                                <span style="display:block; width: 80%; float: left; height: 20px; background: #f4f5f7"></span>
-                            </div>
-                        </a>
-                        <p class="text-center no-margin" style="font-size: 12px">Yellow White</p>
-                    </li>
-                </ul>
-            </div>
+            <!-- /.tab-content -->
         </div>
     </div>
 </div>
