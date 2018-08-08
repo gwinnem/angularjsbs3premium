@@ -1,7 +1,4 @@
-﻿body {
-}
-
-@charset "UTF-8";
+﻿@charset "UTF-8";
 
 .abc-checkbox {
     cursor: default;
@@ -13,7 +10,8 @@
         display: inline;
         vertical-align: top;
         position: relative;
-        padding-left: 5px;
+        padding-left: 10px;
+        padding-top: 2px;
     }
 
         .abc-checkbox label::before {

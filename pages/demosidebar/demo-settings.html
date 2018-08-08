@@ -1,4 +1,5 @@
 <link href="/pages/demosidebar/settings.css" rel="stylesheet" />
+<link href="/css/awesome-bootstrap-checkbox/abc.css" rel="stylesheet" />
 
 <div id="demo-settings" class="demo-settings hidden">
     <button id="demo-set-btn" class="btn">
@@ -25,11 +26,17 @@
             <!-- Layout -->
             <div class="col-xs-6 col-md-3">
                 <p class="text-main text-bold text-uppercase">Layout</p>
-                <div class="form-group">
+                <fieldset>
+                    <div class="form-check abc-checkbox abc-checkbox-success">
+                        <input class="form-check-input" id="layout-normal" type="checkbox" value="layout-normal">
+                        <label class="form-check-label" for="layout-normal"> Normal</label>
+                    </div>
+                </fieldset>
+                <!-- <div class="form-group">
                     <label class="control-sidebar-subheading">
                         <input id="layout-normal" type="checkbox" value="layout-normal" /> Normal
                     </label>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
                         <input id="layout-fixed" type="checkbox" value="layout-fixed" /> Fixed Sidebar
