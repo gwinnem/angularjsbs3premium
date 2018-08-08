@@ -1,5 +1,5 @@
 ﻿<!-- Main content -->
-<section class="content animated fadeInUp">
+<section class="content animated fadeInRight">
     <div class="row">
         <div class="col-md-12">
             <!-- Default box -->
@@ -79,7 +79,8 @@
                                 <dl class="dl-horizontal">
                                     <dt>Project Manager:</dt>
                                     <dd>
-                                        <input type="text" ng-model="project.projectManagerFullName" maxlength="50" style="width: 100%;" placeholder="Project Manager" />
+                                        <input type="text" ng-model="project.projectManagerFullName" maxlength="50" style="width: 100%;" placeholder="Project Manager"
+                                        />
                                     </dd>
                                 </dl>
                             </div>
@@ -188,27 +189,27 @@
                                 <tbody>
                                     <tr ng-repeat="task in project.tasks track by $index">
                                         <td>
-                                            <status-label status="{{::task.status}}"></status-label>
+                                            <status-label status="{{task.status}}"></status-label>
                                         </td>
                                         <td>
-                                            <priority-label status="{{::task.priority}}"></priority-label>
+                                            <priority-label status="{{task.priority}}"></priority-label>
                                         </td>
                                         <td>
-                                            <span ng-bind="::task.title | limitTo:20"></span>
+                                            <span ng-bind="task.title | limitTo:20"></span>
                                         </td>
                                         <td>
-                                            <span ng-bind="::task.startDate | date"></span>
+                                            <span ng-bind="task.startDate | date"></span>
                                         </td>
                                         <td>
-                                            <span ng-bind="::task.endDate | date"></span>
+                                            <span ng-bind="task.endDate | date"></span>
                                         </td>
                                         <td>
                                             <a href="javascript:" class="btn btn-xs btn-danger pull-right m-l-xs" title="Delete Task" ng-click="deleteTask(task.id)"
                                                 data-toggle="tooltip" data-placement="top">
                                                 <i class="fa fa-remove"></i>
                                             </a>
-                                            <a href="javascript:" class="btn btn-xs btn-default pull-right m-l-xs" title="Edit Task" ng-click="editTask(task)"
-                                                data-toggle="tooltip" data-placement="top">
+                                            <a href="javascript:" class="btn btn-xs btn-default pull-right m-l-xs" title="Edit Task" ng-click="editTask(task)" data-toggle="tooltip"
+                                                data-placement="top">
                                                 <i class="fa fa-pencil"></i>
                                             </a>
                                             <a href="javascript:" class="btn btn-xs btn-default pull-right" title="View Task" ng-click="displayTask(task)" data-toggle="tooltip"
@@ -239,7 +240,7 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="contact in project.contacts track by $index">
-                                        <td ng-bind="::contact.title"></td>
+                                        <td ng-bind="contact.title"></td>
                                         <td ng-bind="contact.fullName"></td>
                                         <td ng-bind="contact.email"></td>
                                         <td>
@@ -247,8 +248,8 @@
                                                 data-toggle="tooltip" data-placement="top">
                                                 <i class="fa fa-remove"></i>
                                             </a>
-                                            <a href="javascript:" class="btn btn-xs btn-default pull-right" title="View Contact" ng-click="displayContact(contact)"
-                                                data-toggle="tooltip" data-placement="top">
+                                            <a href="javascript:" class="btn btn-xs btn-default pull-right" title="View Contact" ng-click="displayContact(contact)" data-toggle="tooltip"
+                                                data-placement="top">
                                                 <i class="fa fa-eye"></i>
                                             </a>
                                         </td>
@@ -259,7 +260,7 @@
                     </div>
 
 
-                    <div ng-show="!editMode">
+                    <!-- <div ng-show="!editMode">
                         <div class="col-md-9 col-sm-9 col-xs-12">
                             <!-- project estimations-->
                             <ul class="stats-overview">
@@ -328,9 +329,9 @@
                                 <div class="col-md-4">
                                     <dl class="dl-horizontal" ng-if="!createProject">
                                         <dt>Updated At:</dt>
-                                        <dd>{{::project.updatedAt | date}}</dd>
+                                        <dd>{{project.updatedAt | date}}</dd>
                                         <dt>Updated By:</dt>
-                                        <dd>{{::project.updatedByFullName}}</dd>
+                                        <dd>{{project.updatedByFullName}}</dd>
                                     </dl>
                                 </div>
                             </div>
@@ -374,8 +375,8 @@
                                                         <span ng-bind="::task.endDate | date"></span>
                                                     </td>
                                                     <td>
-                                                        <a href="javascript:" class="btn btn-xs btn-danger pull-right m-l-xs" title="Delete" ng-click="deleteTask(task.id)"
-                                                            data-toggle="tooltip" data-placement="top">
+                                                        <a href="javascript:" class="btn btn-xs btn-danger pull-right m-l-xs" title="Delete" ng-click="deleteTask(task.id)" data-toggle="tooltip"
+                                                            data-placement="top">
                                                             <i class="fa fa-remove"></i>
                                                         </a>
                                                         <a href="javascript:" class="btn btn-xs btn-default pull-right m-l-xs" title="Edit" ng-click="editTask(task)" data-toggle="tooltip"
@@ -422,8 +423,8 @@
                                                             data-toggle="tooltip" data-placement="top">
                                                             <i class="fa fa-remove"></i>
                                                         </a>
-                                                        <a href="javascript:" class="btn btn-xs btn-default pull-right" title="Display" ng-click="displayContact(contact)"
-                                                            data-toggle="tooltip" data-placement="top">
+                                                        <a href="javascript:" class="btn btn-xs btn-default pull-right" title="Display" ng-click="displayContact(contact)" data-toggle="tooltip"
+                                                            data-placement="top">
                                                             <i class="fa fa-eye"></i>
                                                         </a>
                                                     </td>
@@ -444,8 +445,7 @@
                                     <i class="fa fa-pencil"></i> Edit</a>
                                 <a href="javascript:" class="btn btn-warning btn-sm" title="Cancel" ng-click="cancel()" data-toggle="tooltip" data-placement="top">
                                     <i class="fa fa-trash-o"></i> Cancel</a>
-                                <a href="javascript:" class="btn btn-danger btn-sm" title="Delete Details" ng-click="delete()" data-toggle="tooltip"
-                                    data-placement="top">
+                                <a href="javascript:" class="btn btn-danger btn-sm" title="Delete Details" ng-click="delete()" data-toggle="tooltip" data-placement="top">
                                     <i class="fa fa-remove"></i> Delete</a>
                             </div>
                         </div>
@@ -470,10 +470,10 @@
                                 </div>
                             </section>
                         </div>
-                    </div>
+                    </div> -->
 
 
-
+                    <!-- Buttons at bottom -->
                     <div ng-show="editMode">
                         <div class="m-l-lg">
                             <a href="javascript:" class="btn btn-success btn-sm" title="Save Details" type="submit" ng-click="save()" data-toggle="tooltip"
@@ -481,8 +481,8 @@
                                 <i class="fa fa-save"></i> Save</a>
                             <a href="javascript:" class="btn btn-warning btn-sm" title="Cancel" ng-click="cancel()" data-toggle="tooltip" data-placement="top">
                                 <i class="fa fa-trash-o"></i> Cancel</a>
-                            <a href="javascript:" ng-if="!createProject" class="btn btn-danger btn-sm" title="Delete Details" ng-click="delete()"
-                                data-toggle="tooltip" data-placement="top">
+                            <a href="javascript:" ng-if="!createProject" class="btn btn-danger btn-sm" title="Delete Details" ng-click="delete()" data-toggle="tooltip"
+                                data-placement="top">
                                 <i class="fa fa-remove"></i> Delete</a>
                         </div>
                     </div>
