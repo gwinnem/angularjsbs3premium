@@ -29,86 +29,94 @@
                 <fieldset>
                     <div class="form-check abc-checkbox abc-checkbox-success">
                         <input class="form-check-input" id="layout-normal" type="checkbox" value="layout-normal">
-                        <label class="form-check-label" for="layout-normal"> Normal</label>
+                        <label class="form-check-label" for="layout-normal">Normal</label>
                     </div>
                 </fieldset>
-                <!-- <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        <input id="layout-normal" type="checkbox" value="layout-normal" /> Normal
-                    </label>
-                </div> -->
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        <input id="layout-fixed" type="checkbox" value="layout-fixed" /> Fixed Sidebar
-                    </label>
+                <fieldset>
+                    <div class="form-check abc-checkbox abc-checkbox-success">
+                        <input class="form-check-input" id="layout-fixed" type="checkbox" value="layout-fixed">
+                        <label class="form-check-label" for="layout-fixed">Fixed Sidebar</label>
+                    </div>
+                    <p>Activate the fixed layout. You can't use fixed and boxed layouts together.</p>
+                </fieldset>
+                <fieldset></fieldset>
+                <div class="form-check abc-checkbox abc-checkbox-success">
+                    <input class="form-check-input" id="layout-boxed" type="checkbox" value="layout-boxed">
+                    <label class="form-check-label" for="layout-boxed">Boxed Layout.</label>
                 </div>
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        <input id="layout-boxed" type="checkbox" value="layout-boxed" /> Boxed
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        <input id="layout-topnav" type="checkbox" value="layout-topnav" /> Top Navigation
-                        <p>Simple layout with the top navigation bar only. Opens in a new window.</p>
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        <input id="layout-fixedfooter" type="checkbox" value="layout-fixedfooter" /> Fixed Footer
-                    </label>
+                <p>Activate the boxed layout. Bacground image settings is located in variables.less.</p>
+                </fieldset>
+                <fieldset>
+                    <div class="form-check abc-checkbox abc-checkbox-success">
+                        <input class="form-check-input" id="layout-topnav" type="checkbox" value="layout-topnav">
+                        <label class="form-check-label" for="layout-topnav">Top Navigation</label>
+                    </div>
+                    <p>Simple layout with the top navigation bar only. Opens in a new window.</p>
+                </fieldset>
+                <fieldset>
+                    <div class="form-check abc-checkbox abc-checkbox-success">
+                        <input class="form-check-input" id="layout-fixedfooter" type="checkbox" value="layout-fixedfooter">
+                        <label class="form-check-label" for="layout-fixedfooter">Fixed footer</label>
+                    </div>
                     <p>Does not work with the boxed layout.</p>
-                </div>
+                </fieldset>
             </div>
             <!-- Left sidebar -->
             <div class="col-xs-6 col-md-3">
                 <p class="text-bold text-uppercase text-main">Left Sidebar</p>
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        <input id="toggle-left-sidebar" type="checkbox" value="toggle-left-sidebar" /> Toggle Sidebar
-                    </label>
+                <fieldset>
+                    <div class="form-check abc-checkbox abc-checkbox-success">
+                        <input class="form-check-input" id="toggle-left-sidebar" type="checkbox">
+                        <label class="form-check-label" for="toggle-left-sidebar">Toggle Sidebar</label>
+                    </div>
                     <p>Toggle the left sidebar\'s state (open or collapsed)</p>
-                </div>
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        <input id="sidebar-expand-on-hover" type="checkbox" value="sidebar-expand-on-hover" /> Sidebar Expand on Hover
-                    </label>
+                </fieldset>
+                <fieldset>
+                    <div class="form-check abc-checkbox abc-checkbox-success">
+                        <input class="form-check-input" id="sidebar-expand-on-hover" type="checkbox">
+                        <label class="form-check-label" for="sidebar-expand-on-hover">Sidebar Expand on Hover</label>
+                    </div>
                     <p>Let the sidebar mini expand on hover</p>
-                </div>
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        <input id="user-panel" type="checkbox" value="user-panel" /> Toggle user panel.
-                    </label>
-                    <p>Toggles visibillity for the userpanel in the left side menu bar.</p>
-                </div>
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        <input id="search-box" type="checkbox" value="search-box" /> Toggle searchbox.
-                    </label>
-                    <p>Toggles visibillity for the search form in the left side menu bar.</p>
-                </div>
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        <input id="bottom-menu" type="checkbox" value="bottom-box" /> Toggle Bottom Menu.
-                    </label>
-                    <p>Toggles visibillity for the bottom menu in the left side menu bar.</p>
-                </div>
+                </fieldset>
+                <fieldset>
+                    <div class="form-check abc-checkbox abc-checkbox-success">
+                        <input class="form-check-input" id="user-panel" type="checkbox">
+                        <label class="form-check-label" for="user-panel">Toggle user panel.</label>
+                    </div>
+                    <p>Toggles visibillity for the userpanel in the left side menu bar. Only for demo purpose.</p>
+                </fieldset>
+                <fieldset>
+                    <div class="form-check abc-checkbox abc-checkbox-success">
+                        <input class="form-check-input" id="search-box" type="checkbox">
+                        <label class="form-check-label" for="search-box">Toggle Searchbox.</label>
+                    </div>
+                    <p>Toggles visibillity for the search form in the left side menu bar. Only for demo purpose.</p>
+                </fieldset>
+                <fieldset>
+                    <div class="form-check abc-checkbox abc-checkbox-success">
+                        <input class="form-check-input" id="bottom-menu" type="checkbox">
+                        <label class="form-check-label" for="bottom-menu">Toggle Bottom Menu.</label>
+                    </div>
+                    <p>Toggles visibillity for the bottom menu in the left side menu bar. Only for demo purpose.</p>
+                </fieldset>
             </div>
             <!-- Right sidebar -->
             <div class="col-xs-6 col-md-3">
                 <p class="text-bold text-uppercase text-main">Right Sidebar</p>
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        <input id="control-sidebar-slide" type="checkbox" value="control-sidebar-slide" /> Toggle Right Sidebar Slide
-                    </label>
-                    <p>Toggle between slide over content and push content effects</p>
-                </div>
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        <input id="toggle-right-sidebar-skin" type="checkbox" value="toggle-right-sidebar-skin" /> Toggle Right Sidebar Skin
-                    </label>
+                <fieldset>
+                    <div class="form-check abc-checkbox abc-checkbox-success">
+                        <input class="form-check-input" id="control-sidebar-slide" type="checkbox">
+                        <label class="form-check-label" for="control-sidebar-slide">Toggle Right Sidebar Slide.</label>
+                    </div>
+                    <p>Toggle between slide over content and push content effect.</p>
+                </fieldset>
+                <fieldset>
+                    <div class="form-check abc-checkbox abc-checkbox-success">
+                        <input class="form-check-input" id="toggle-right-sidebar-skin" type="checkbox">
+                        <label class="form-check-label" for="toggle-right-sidebar-skin">Toggle Right Sidebar Skin.</label>
+                    </div>
                     <p>Toggle between dark and light skins for the right sidebar</p>
-                </div>
+                </fieldset>
             </div>
             <!-- Skins -->
             <div class="col-xs-6 col-md-3">
