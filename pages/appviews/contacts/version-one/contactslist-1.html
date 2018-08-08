@@ -14,7 +14,7 @@
                         </div>
                     </div>
                     <div class="col-md-7 col-sm-7 col-xs-12">
-                        <a ui-sref="contactdetailsv1({type:1,return:1,id:0})" href="javascript:void(0)" class="btn btn-info btn-xs pull-right" title="New Contact">
+                        <a ui-sref="contactdetailsv1({type:1,return:1,id:0})" href="javascript" class="btn btn-info btn-xs pull-right" title="New Contact">
                             <i class="fa fa-plus-square-o"></i> New contact
                         </a>
                     </div>
@@ -24,10 +24,11 @@
                         <div class="col-lg-3" ng-repeat="item in contacts | filter : contactsFilter track by $index">
                             <!-- Contact box -->
                             <div class="contact-box center-version">
-                                <button ng-click="displayContact(item.id,1)" class="btn btn-outline btn-default pull-right m-r-sm m-t-sm" title="Edit contact">
+                                <!-- <button ng-click="displayContact(item.id,1)" 
+                                class="btn btn-outline btn-default pull-right m-r-sm m-t-sm" title="Edit contact">
                                     <i class="fa fa-edit"></i>
-                                </button>
-                                <a href="javascript:void(0)">
+                                </button> -->
+                                <a href="javascript:" ng-click="displayContact(item.id,1)" >
                                     <contact-avatar avatar="{{item.avatar}}"></contact-avatar>
                                     <h4 class="m-b-xs">
                                         <strong>{{item.firstName}} {{item.lastName}}</strong>
@@ -49,13 +50,13 @@
                                 </a>
                                 <div class="contact-box-footer">
                                     <div class="btn-group">
-                                        <a href="javascript:void(0)" class="btn btn-xs btn-default m-r-xs">
+                                        <a href="javascript:" class="btn btn-xs btn-default m-r-xs">
                                             <i class="fa fa-phone"></i> Call
                                         </a>
-                                        <a href="javascript:void(0)" class="btn btn-xs btn-default m-r-xs">
+                                        <a href="javascript:" class="btn btn-xs btn-default m-r-xs">
                                             <i class="fa fa-envelope"></i> Email
                                         </a>
-                                        <a href="javascript:void(0)" class="btn btn-xs btn-default m-r-xs">
+                                        <a href="javascript:" class="btn btn-xs btn-default m-r-xs">
                                             <i class="fa fa-user-plus"></i> Follow
                                         </a>
                                     </div>
@@ -74,9 +75,3 @@
     </div>
 </section>
 <!-- /.content -->
-<script>
-    // Bootstrap tooltip needs to be activated manually
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-    })
-</script>

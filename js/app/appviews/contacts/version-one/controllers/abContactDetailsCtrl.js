@@ -5,9 +5,7 @@
  */
 (function () {
     "use strict";
-    angular.module("abContactDetailsModule", [
-            []
-        ])
+    angular.module("abContactDetailsModule", [])
         .controller("ContactDetailsController", ["$scope", "$stateParams", "$notification", "abContactsSvc", "config", "$q", "abHelpersSvc", "$state",
             function ($scope, $stateParams, $notification, abContactsSvc, config, $q, abHelpersSvc, $state) {
                 if (config.debug) {
