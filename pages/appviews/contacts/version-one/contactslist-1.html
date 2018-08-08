@@ -1,6 +1,6 @@
 ﻿<!-- Main content -->
 <section class="content animated fadeInRight">
-    <div class="row">   
+    <div class="row">
         <div class="col-lg-12">
             <!-- Default box -->
             <div class="box box-white" id="box1">
@@ -24,8 +24,7 @@
                         <div class="col-lg-3" ng-repeat="item in contacts | filter : contactsFilter track by $index">
                             <!-- Contact box -->
                             <div class="contact-box center-version">
-                                <button ng-click="displayContact(item.id,1)" class="btn btn-outline btn-default pull-right m-r-sm m-t-sm" data-toggle="tooltip"
-                                        data-placement="top" title="Edit contact">
+                                <button ng-click="displayContact(item.id,1)" class="btn btn-outline btn-default pull-right m-r-sm m-t-sm" title="Edit contact">
                                     <i class="fa fa-edit"></i>
                                 </button>
                                 <a href="javascript:void(0)">
