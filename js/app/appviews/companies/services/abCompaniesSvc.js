@@ -92,7 +92,7 @@
                         var result = companies.find(obj => obj.id === company.id);
                         if (result !== null && result !== undefined) {
                             companies[result] = company;
-                            deferred.resolve(result);
+                            deferred.resolve(companies);
                         } else {
                             deferred.resolve("ERROR");
                         }

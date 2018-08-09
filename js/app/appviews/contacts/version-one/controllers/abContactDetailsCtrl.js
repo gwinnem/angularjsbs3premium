@@ -6,13 +6,13 @@
 (function () {
     "use strict";
     angular.module("abContactDetailsModule", [])
-        .controller("ContactDetailsController", ["$scope", "$stateParams", "$notification", "abContactsSvc", "config", "$q", "abHelpersSvc", "$state",
-            function ($scope, $stateParams, $notification, abContactsSvc, config, $q, abHelpersSvc, $state) {
+        .controller("ContactDetailsController", ["$scope", "$stateParams", "$notification", "abContactsSvc", "config", "abHelpersSvc", "$state",
+            function ($scope, $stateParams, $notification, abContactsSvc, config, abHelpersSvc, $state) {
                 if (config.debug) {
                     console.info("$stateParams");
                     console.log($stateParams);
                 }
-
+                $scope.contact = null;
                 var returnToView = function () {
                     switch ($stateParams.return) {
                         case "1":

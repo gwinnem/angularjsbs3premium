@@ -95,7 +95,6 @@
 
                 $scope.save = function () {
                     abCompaniesSvc.saveDetails($scope.company, $scope.action).then(function (data) {
-                        $scope.company = data;
                         $state.go(returnView);
                     }).catch(function (error) {
                         $notification.error(error, "Contact details save failed.", config.notificationDelay);

@@ -6,16 +6,14 @@
 (function () {
     "use strict";
     angular.module("ab.company.details.addcontacts", [
-       //"/js/app/appviews/contacts/services/abContactsSvc.js"
-    ])
+        ["/js/app/appViews/companies/services/abCompaniesSvc.js"]])
         .controller("addContactsController", ["$scope", "$notification", "config", "$uibModalInstance", "modalOptions", "abContactsSvc",
             function ($scope, $notification, config, $uibModalInstance, modalOptions, abContactsSvc) {
                 debugger;
-                if(config.debug){
+                if (config.debug) {
                     console.log("addContactsController loaded");
                 }
                 $scope.company = modalOptions.company;
-                debugger;
                 abContactsSvc.getContactsNoCompany().then(function (data) {
                     $scope.contacts = data;
                 }).catch(function (error) {
@@ -23,11 +21,11 @@
                 });
                 $scope.ok = function () {
                     var contacts = [];
-                    // angular.forEach($scope.modalOptions.model, function (item) {
-                    //     if (item.done) {
-                    //         contacts.push(item.id);
-                    //     }
-                    // });
+                    angular.forEach($scope.modalOptions.model, function (item) {
+                        if (item.done) {
+                            contacts.push(item.id);
+                        }
+                    });
 
                     var model = {
                         id: $scope.company.id,

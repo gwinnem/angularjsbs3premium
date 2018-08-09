@@ -63,7 +63,7 @@ abApp.config([
         $urlMatcherFactoryProvider.strictMode(true);
 
         // Turning on / off debug information
-        $compileProvider.debugInfoEnabled(false);
+        $compileProvider.debugInfoEnabled(true);
 
         // Set to true if you want to see what and when is dynamically loaded. https://github.com/ocombe/ocLazyLoad
         $ocLazyLoadProvider.config({
