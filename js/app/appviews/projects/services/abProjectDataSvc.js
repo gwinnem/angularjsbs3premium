@@ -1,8 +1,6 @@
 ﻿/**
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Dummy data used for projects.
  */
 
@@ -11,7 +9,7 @@
     angular.module("abProjectsDataModule", [
             []
         ])
-        .factory("abProjectDataSvc", ["$q", function ($q) {
+        .factory("abProjectDataSvc", [ function () {
             var projects = [{
                 "id": "6ebe459b-34c8-462a-a920-c5fab14ccdad",
                 "name": "Client meeting",

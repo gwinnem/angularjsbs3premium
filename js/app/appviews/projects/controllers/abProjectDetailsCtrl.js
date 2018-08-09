@@ -1,14 +1,13 @@
 ﻿/**
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Displaying and editing project details.
  */
 (function () {
     "use strict";
     angular.module("ab.project.detail", [])
-        .controller("ProjectDetailsController", ["$scope", "$notification", "config", "$state", "abProjectsSvc", "$stateParams", "$timeout",
+        .controller("ProjectDetailsController", ["$scope", "$notification", "config", "$state",
+            "abProjectsSvc", "$stateParams", "$timeout",
             "abHelpersSvc", "modalDialogs", "abCompaniesSvc", "abProjectEnumsSvc",
             function ($scope, $notification, config, $state, abProjectsSvc, $stateParams, $timeout,
                 abHelpersSvc, modalDialogs, abCompaniesSvc, abProjectEnumsSvc) {
@@ -104,7 +103,7 @@
                         closeButtonText: "Close",
                         contentUrl: "/js/app/appviews/projects/templates/displaycontact.html"
                     };
-                    modalDialogs.openDialog(modalDefaults, modalOptions).then(function () {});
+                    modalDialogs.openDialog(modalDefaults, modalOptions).then(function () { });
 
                 };
                 $scope.createTask = function () {
@@ -156,7 +155,10 @@
 
                 $scope.save = function () {
                     if (!$scope.createProject) {
-                        swal("Not available in the free version!", "ABAdmin!", "success");
+                        abProjectsSvc.saveProject($scope.project).then(function (data) {
+                        }).catch(function (error) {
+                            $notification.error(error, "Failed to save project.", config.notificationDelay);
+                        });
                     } else {
                         swal("Not available in the free version!", "ABAdmin!", "success");
                     }

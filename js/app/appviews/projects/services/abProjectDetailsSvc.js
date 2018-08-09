@@ -1,8 +1,6 @@
 ﻿/**
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Service for project data
  */
 
@@ -438,13 +436,32 @@
                 return deferred.promise;
             };
 
+            var saveProject=function(project){
+                // async operation would be a call to a server side operation in a real world scenario.
+                var deferred = $q.defer();
+                try {
+                    var result = contacts.find(obj => obj.id === project.id);
+                    if (result !== null && result !== undefined) {
+                        result = model;
+                        deferred.resolve(result);
+                    } else {
+                        deferred.resolve();
+                    }
+
+                } catch (e) {
+                    deferred.reject(e);
+                }
+                return deferred.promise;
+            };
+
             return {
                 actions: actions,
                 status: projectStatus,
                 priority: projectPriority,
                 taskStatus: taskStatus,
                 taskPriority: taskPriority,
-                getProject: getProject
+                getProject: getProject,
+                saveProject:saveProject
             };
         }]);
 })();
