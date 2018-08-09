@@ -2,8 +2,6 @@
  * Helper service for angularjs modal service
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Easy way of creating confirm,information and any type of modal windows.
  */
 

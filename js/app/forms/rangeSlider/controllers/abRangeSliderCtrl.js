@@ -1,7 +1,6 @@
 ﻿/**
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
  * @summary Demos for the ion Rangeslider plugin.
  */
 (function () {

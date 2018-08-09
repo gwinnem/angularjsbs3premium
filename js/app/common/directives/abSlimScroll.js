@@ -1,11 +1,7 @@
 ﻿/**
- * ab-slimScroll
  * @author Geirr Winnem
  * @version 0.2.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Module for adding a custom scrollbar to elements.
- * @todo Refactor
  */
 
 

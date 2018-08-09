@@ -1,9 +1,6 @@
 ﻿/**
- * abSelect2Ctrl.js.js
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary select2 controller
  */
 (function () {

@@ -1,9 +1,6 @@
 ﻿/**
  * @author Geirr Winnem
- * @copywright 2017- Geirr Winnem. All Rights Reserved
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Displaying a label with priority
  * Bootstrap tooltip is an optin component so in order to activate it you need to do so in the page manually.
  * $(function () { $('[data-toggle="tooltip"]').tooltip() })

@@ -2,8 +2,6 @@
  * 
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary
  */
 (function () {

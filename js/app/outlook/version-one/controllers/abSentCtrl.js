@@ -1,9 +1,6 @@
 ﻿/**
- * abSentV1Ctrl.js
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Controller for the sent view version one
  */
 (function () {

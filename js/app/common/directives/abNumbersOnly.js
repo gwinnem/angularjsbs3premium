@@ -1,10 +1,7 @@
 ﻿/**
- * abNumbersOnly.js
  * @author Geirr Winnem
  * @version 0.1.0
- * @link http://www.abadmin.com
- * @license MIT
- * @summary Used to enforca that a input element contains numbers only.
+ * @summary Used to enforce that a input element contains numbers only.
  */
 (function () {
     "use strict";

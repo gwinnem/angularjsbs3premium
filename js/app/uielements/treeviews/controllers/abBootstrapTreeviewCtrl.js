@@ -1,9 +1,6 @@
 ﻿/**
- * abBootstrapTreeviewCtrl.js
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Converting nested ul li to a treeview
  */
 (function () {

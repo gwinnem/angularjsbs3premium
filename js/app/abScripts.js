@@ -1,5 +1,3 @@
-/* Adjusting height.
- */
 function autoHeight() {
     var docHeight = $(document).height();
     var bodyHeight = $("body").height();

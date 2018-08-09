@@ -2,8 +2,6 @@
  * @author Geirr Winnem
  * @copywright 2018- Geirr Winnem. All Rights Reserved
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Folder directive for inbox version one.
  */
 (function () {

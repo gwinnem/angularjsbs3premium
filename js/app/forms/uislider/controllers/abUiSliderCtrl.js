@@ -1,9 +1,6 @@
 ﻿/**
- * abUiSliderCtrl.js
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Demos for the uiSlider plugin.
  */
 (function () {

@@ -1,10 +1,8 @@
 ﻿/**
+ * Not in use
  * IOS style On Off Switch component.
  * @author Geirr Winnem
- * @copywright 2018- Geirr Winnem. All Rights Reserved
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Styles can be found in the on-off-switch.less file.
  */
 (function () {

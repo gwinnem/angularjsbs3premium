@@ -2,8 +2,6 @@
  * Mock service for Inboxes
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Generating fake data for the different mailbox folders.
  */
 

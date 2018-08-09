@@ -1,10 +1,7 @@
 ﻿/**
  * Small box widget
  * @author Geirr Winnem
- * @copywright 2017- Geirr Winnem. All Rights Reserved
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Directive for displaying small boxes.
  */
 

@@ -1,12 +1,9 @@
-﻿///**
-// * iCheck directive
-// * @author Geirr Winnem
-// * @copywright 2017- Geirr Winnem. All Rights Reserved
-// * @version 1.0.0
-// * @link http://www.abadmin.com
-// * @license MIT
-// * @summary 
-// */
+﻿/**
+* iCheck directive
+* @author Geirr Winnem
+* @version 1.0.0
+* @summary 
+*/
 (function () {
     "use strict";
     angular.module("abIcheck", [])

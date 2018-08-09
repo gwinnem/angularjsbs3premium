@@ -1,9 +1,6 @@
 ﻿/**
- * abDateTimePickersCtrl.js
  * @author Geirr Winnem
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary Date Time Pickers controller.
  */
 (function () {
