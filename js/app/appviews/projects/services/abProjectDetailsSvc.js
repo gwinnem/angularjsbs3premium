@@ -436,32 +436,13 @@
                 return deferred.promise;
             };
 
-            var saveProject = function (project) {
-                // async operation would be a call to a server side operation in a real world scenario.
-                var deferred = $q.defer();
-                try {
-                    var result = contacts.find(obj => obj.id === project.id);
-                    if (result !== null && result !== undefined) {
-                        result = model;
-                        deferred.resolve(result);
-                    } else {
-                        deferred.resolve("ERROR");
-                    }
-
-                } catch (e) {
-                    deferred.reject(e);
-                }
-                return deferred.promise;
-            };
-
             return {
                 actions: actions,
                 status: projectStatus,
                 priority: projectPriority,
                 taskStatus: taskStatus,
                 taskPriority: taskPriority,
-                getProject: getProject,
-                saveProject: saveProject
+                getProject: getProject
             };
         }]);
 })();

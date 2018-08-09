@@ -155,13 +155,17 @@
 
                 $scope.save = function () {
                     if (!$scope.createProject) {
-                        abProjectsSvc.saveProject($scope.project).then(function (data) {
+                        abProjectsSvc.saveProject($scope.project).then(function () {
+                            if (config.debug) {
+                                $notification.success("Save succeded", "Project", config.notificationDelay);
+                            }
                         }).catch(function (error) {
                             $notification.error(error, "Failed to save project.", config.notificationDelay);
                         });
                     } else {
                         swal("Not available in the free version!", "ABAdmin!", "success");
                     }
+                    $state.go("projects");
                 };
                 $scope.edit = function () {
                     $scope.editMode = true;
@@ -169,8 +173,15 @@
                 $scope.cancel = function () {
                     $state.go("projects");
                 };
-                $scope.delete = function () {
-                    swal("Not available in the free version!", "ABAdmin!", "success");
+                $scope.deleteProject = function () {
+                    abProjectsSvc.deleteProject($scope.project.id)
+                        .then(function () {
+
+                        })
+                        .catch(function (error) {
+                            $notification.error(error, "Project delete", config.notificationDelay);
+                        });
+                    $state.go("projects");
                 };
 
                 // Settings and init for datepicker directive
