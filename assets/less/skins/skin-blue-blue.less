@@ -1,0 +1,61 @@
+/*
+ * Skin: Blue
+ * ----------
+ */
+// Bootstrap Variables & Mixins
+// The core bootstrap code have not been modified. These files are included only for reference.
+//--------------------------------------------------------
+@import (reference) "../../bootstrap-less/mixins";
+@import (reference) "../../bootstrap-less/variables";
+@import "../variables.less";
+@import "../mixins.less";
+
+.skin-blue-blue {
+  //Navbar
+  .main-header {
+    .navbar {
+      .navbar-variant(@blue; #fff);
+      .sidebar-toggle {
+        color: #fff;
+        &:hover {
+          background-color: darken(@blue, 5%);
+        }
+      }
+      @media (max-width: @screen-header-collapse) {
+        .dropdown-menu {
+          li {
+            &.divider {
+              background-color: rgba(255, 255, 255, 0.1);
+            }
+            a {
+              color: #fff;
+              &:hover {
+                background: darken(@blue, 5%);
+              }
+            }
+          }
+        }
+      }
+    }
+    //Logo
+    .logo {
+      .logo-variant(darken(@blue, 5%));
+    }
+
+    li.user-header {
+      background-color: @blue;
+    }
+  }
+
+  //Content Header
+  .content-header {
+    background: transparent;
+  }
+
+  //Create the sidebar skin
+  .skin-color-sidebar(@blue);
+}
+
+.skin-blue-blue.layout-top-nav .main-header > .logo {
+  .logo-variant(@blue);
+}
