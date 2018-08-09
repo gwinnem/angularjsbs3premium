@@ -29,18 +29,33 @@
      * List of all the available skins
      */
     var mySkins = [
-        'skin-blue-light',
-        'skin-blue',
+        /**
+         * Black sidebar
+         */
         'skin-black',
-        'skin-red',
-        'skin-yellow',
+        'skin-blue',
         'skin-purple',
         'skin-green',
+        'skin-red',
+        'skin-yellow',
+        /**
+         * White sidebar
+         */
         'skin-black-light',
+        'skin-blue-light',
+        'skin-purple-light',
+        'skin-green-light',
         'skin-red-light',
         'skin-yellow-light',
-        'skin-purple-light',
-        'skin-green-light'
+        /**
+         * Color sidebar
+         */
+        'skin-black-black',
+        'skin-blue-blue',
+        'skin-purple-purple',
+        'skin-green-green',
+        'skin-red-red',
+        'skin-yellow-yellow'
     ];
 
     /**
