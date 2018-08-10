@@ -69,7 +69,7 @@
         });
 
         // Adding active class to the selected top level menu item
-        $(element.context.parentElement).addClass(ClassName.active);
+        $(element[0].parentElement).addClass(ClassName.active);
 
         if (this.options.accordion) {
             var openMenuLi = $("li.treeview").siblings(Selector.open);
