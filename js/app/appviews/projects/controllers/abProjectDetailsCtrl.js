@@ -107,7 +107,27 @@
 
                 };
                 $scope.createTask = function () {
-                    swal("Not available in the free version!", "ABAdmin!", "success");
+                    var modalDefaults = {
+                        controller: "AddTaskController",
+                        size: "lg"
+                    };
+                    var modalOptions = {
+                        project: $scope.project,
+                        task: {},
+                        headerText: "Create new task",
+                        hideOkButton: false,
+                        hideCloseButton: false,
+                        contentUrl: "/js/app/appviews/projects/templates/addedittask.html"
+                    };
+                    modalDialogs.openDialog(modalDefaults, modalOptions).then(function (result) {
+                        if (result) {
+                            $timeout(function () {
+                                abProjectsSvc.getProject($scope.project.id).then(function (data) {
+                                    $scope.project = data;
+                                });
+                            });
+                        }
+                    });
                 };
 
                 $scope.editTask = function (task) {
@@ -116,8 +136,7 @@
                         size: "lg"
                     };
                     var modalOptions = {
-                        projectName: $scope.project.name,
-                        projectId: $scope.project.id,
+                        project: $scope.project,
                         task: task,
                         headerText: task.title,
                         hideOkButton: false,
@@ -126,10 +145,9 @@
                     };
                     modalDialogs.openDialog(modalDefaults, modalOptions).then(function (result) {
                         if (result) {
-                            $scope.project.tasks = [];
                             $timeout(function () {
-                                abProjectsSvc.getTasks($scope.project.id).then(function (data) {
-                                    $scope.project.tasks = data;
+                                abProjectsSvc.getProject($scope.project.id).then(function (data) {
+                                    $scope.project = data;
                                 });
                             });
                         }
@@ -149,8 +167,19 @@
                     modalDialogs.openDialog(modalDefaults, modalOptions);
                 };
 
-                $scope.deleteTask = function (taskId) {
-                    swal("Not available in the free version!", "ABAdmin!", "success");
+                $scope.deleteTask = function (task) {
+                    modalDialogs.openConfirmDialog("Do you really want to delete this task?", "Delete Confirmation")
+                        .then(function (result) {
+                            if (result) {
+                                abProjectsSvc.deleteTask($scope.project, task.id).then(function (data) {
+                                    $scope.project = data;
+                                    $notification.success("", "", config.notificationDelay);
+                                }).catch(function (error) {
+                                    $notification.error(error, "Delete task failed!", config.notificationDelay);
+                                });
+                            }
+                        });
+
                 };
 
                 $scope.save = function () {
@@ -167,6 +196,7 @@
                     }
                     $state.go("projects");
                 };
+
                 $scope.edit = function () {
                     $scope.editMode = true;
                 };

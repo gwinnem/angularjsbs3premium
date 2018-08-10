@@ -6,11 +6,11 @@
 (function () {
     "use strict";
     angular.module("ab.project.addtask", [["/js/app/appViews/projects/services/abProjectsSvc.js"]])
-        .controller("addTaskController", ["$scope", "$notification", "config", "$uibModalInstance", "modalOptions", "abProjectsSvc",
+        .controller("AddTaskController", ["$scope", "$notification", "config", "$uibModalInstance", "modalOptions", "abProjectsSvc",
             function ($scope, $notification, config, $uibModalInstance, modalOptions, abProjectsSvc) {
                 $scope.modalOptions = modalOptions;
-                $scope.status = abProjectsSvc.taskStatus;
-                $scope.priority = abProjectsSvc.taskPriority;
+                $scope.status = 1;
+                $scope.priority = 0;
                 $scope.task = modalOptions.task;
                 // Settings and init for datepicker directive
                 $scope.format = "MMMM/dd/yyyy";
@@ -32,7 +32,7 @@
                 // Disable weekend selection
                 function disabled(data) {
                     var date = data.date,
-                      mode = data.mode;
+                        mode = data.mode;
                     return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
                 }
 
@@ -51,7 +51,7 @@
                         console.log("Task");
                         console.log($scope.task);
                     }
-                    abProjectsSvc.createTask($scope.task).then(function (result) {
+                    abProjectsSvc.createTask($scope.modalOptions.project, $scope.task).then(function (result) {
                         if (result) {
                             $notification.success("Task successfully added!", "Project task", config.notificationDelay);
                             $uibModalInstance.close(true);
@@ -70,7 +70,7 @@
                     $uibModalInstance.close(false);
                 };
                 if (config.debug) {
-                    $notification.success("addTaskController loaded", "Project Details", config.notificationDelay);
+                    $notification.success("AddTaskController loaded", "Project Details", config.notificationDelay);
                 }
             }
         ]);

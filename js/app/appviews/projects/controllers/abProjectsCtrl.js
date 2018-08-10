@@ -6,8 +6,8 @@
 (function () {
     "use strict";
     angular.module("ab.project.list", [
-            []
-        ])
+        []
+    ])
         .controller("ProjectListController", ["$scope", "$notification", "config", "$state", "abProjectsSvc", "abProjectEnumsSvc",
             function ($scope, $notification, config, $state, abProjectsSvc, abProjectEnumsSvc) {
                 // ngRepeat sort options
@@ -31,6 +31,9 @@
                 };
 
                 var getAll = function () {
+                    if ($scope.projects.length > 0) {
+                        $scope.projects = [];
+                    }
                     abProjectsSvc.getAll().then(function (data) {
                         $scope.projects = data;
                         $scope.totalProjects = data.length;

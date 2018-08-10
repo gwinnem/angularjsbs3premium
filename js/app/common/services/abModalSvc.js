@@ -87,7 +87,7 @@
 
             
             
-            // Simple confirmstioin dialog
+            // Simple confirmation dialog
             var confirmInstanceController = ["$scope", "$uibModalInstance", "modalOptions", function ($scope, $uibModalInstance, modalOptions) {
                 $scope.modalOptions = modalOptions;
                 $scope.ok = function () {

@@ -207,7 +207,7 @@
                                             <span ng-bind="task.endDate | date"></span>
                                         </td>
                                         <td>
-                                            <a href="javascript:" class="btn btn-xs btn-danger pull-right m-l-xs" title="Delete Task" ng-click="deleteTask(task.id)"
+                                            <a href="javascript:" class="btn btn-xs btn-danger pull-right m-l-xs" title="Delete Task" ng-click="deleteTask(task)"
                                                 data-toggle="tooltip" data-placement="top">
                                                 <i class="fa fa-remove"></i>
                                             </a>
@@ -378,7 +378,7 @@
                                                         <span ng-bind="::task.endDate | date"></span>
                                                     </td>
                                                     <td>
-                                                        <a href="javascript:" class="btn btn-xs btn-danger pull-right m-l-xs" title="Delete" ng-click="deleteTask(task.id)" data-toggle="tooltip"
+                                                        <a href="javascript:" class="btn btn-xs btn-danger pull-right m-l-xs" title="Delete" ng-click="deleteTask(task)" data-toggle="tooltip"
                                                             data-placement="top">
                                                             <i class="fa fa-remove"></i>
                                                         </a>

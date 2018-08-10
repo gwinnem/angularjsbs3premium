@@ -6,7 +6,7 @@
 
 (function () {
     "use strict";
-    angular.module("abProjectsDataModule", [
+    angular.module("ab.projects.data.svc", [
             []
         ])
         .factory("abProjectDataSvc", [ function () {

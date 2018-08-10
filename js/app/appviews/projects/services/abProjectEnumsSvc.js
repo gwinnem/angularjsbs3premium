@@ -6,10 +6,10 @@
 
 (function () {
     "use strict";
-    angular.module("abProjectsEnumModule", [
+    angular.module("ab.projects.enums.svc", [
         []
     ])
-        .factory("abProjectEnumsSvc", ["$q", function ($q) {
+        .factory("abProjectEnumsSvc", [function () {
             var actions = {
                 create: 0,
                 display: 1,

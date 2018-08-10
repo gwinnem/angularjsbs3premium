@@ -25,14 +25,16 @@
                             <thead>
                                 <tr>
                                     <th class="project-status">
-                                        <a href="javascript:void(0)" ng-click="sortType = 'status'; sortReverse = !sortReverse">
+                                        <a href="javascript:" ng-click="sortType = 'status'; sortReverse = !sortReverse" data-toggle="tooltip" data-placement="top"
+                                            title="Click to sort column">
                                             Status
                                             <span ng-show="sortType == 'status' && !sortReverse" class="fa fa-chevron-down"></span>
                                             <span ng-show="sortType == 'status' && sortReverse" class="fa fa-chevron-up"></span>
                                         </a>
                                     </th>
                                     <th class="project-status">
-                                        <a href="javascript:void(0)" ng-click="sortType = 'priority'; sortReverse = !sortReverse">
+                                        <a href="javascript:" ng-click="sortType = 'priority'; sortReverse = !sortReverse" data-toggle="tooltip" data-placement="top"
+                                            title="Click to sort column">
                                             Priority
                                             <span ng-show="sortType == 'priority' && !sortReverse" class="fa fa-chevron-down"></span>
                                             <span ng-show="sortType == 'priority' && sortReverse" class="fa fa-chevron-up"></span>
@@ -41,14 +43,16 @@
                                     <th>Title</th>
                                     <th>Progress</th>
                                     <th>
-                                        <a href="javascript:void(0)" ng-click="sortType = 'startDate'; sortReverse = !sortReverse">
+                                        <a href="javascript:" ng-click="sortType = 'startDate'; sortReverse = !sortReverse" data-toggle="tooltip" data-placement="top"
+                                            title="Click to sort column">
                                             <i class="fa fa-calendar"></i> Starts
                                             <span ng-show="sortType == 'startDate' && !sortReverse" class="fa fa-chevron-down"></span>
                                             <span ng-show="sortType == 'startDate' && sortReverse" class="fa fa-chevron-up"></span>
                                         </a>
                                     </th>
                                     <th>
-                                        <a href="javascript:void(0)" ng-click="sortType = 'endDate'; sortReverse = !sortReverse">
+                                        <a href="javascript:" ng-click="sortType = 'endDate'; sortReverse = !sortReverse" data-toggle="tooltip" data-placement="top"
+                                            title="Click to sort column">
                                             <i class="fa fa-calendar-o"></i> Ends
                                             <span ng-show="sortType == 'endDate' && !sortReverse" class="fa fa-chevron-down"></span>
                                             <span ng-show="sortType == 'endDate' && sortReverse" class="fa fa-chevron-up"></span>
@@ -58,7 +62,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="project in projects | orderBy:sortType:sortReverse | filter:projectFilter">
+                                <tr ng-repeat="project in projects | orderBy:sortType:sortReverse | filter:projectFilter track by $index">
                                     <td>
                                         <status-label status="{{project.status}}"></status-label>
                                     </td>
@@ -74,11 +78,11 @@
                                     <td ng-bind="::project.startDate | date"></td>
                                     <td ng-bind="::project.endDate | date"></td>
                                     <td class="project-actions">
-                                        <a href="javascript:void(0)" class="btn btn-default btn-xs" title="View Project" ng-click="displayProject(project.id)">
-                                            <i class="fa fa-eye"></i> View
+                                        <a href="javascript:" class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="top" title="View Project" ng-click="displayProject(project.id)">
+                                            <i class="fa fa-eye"></i>
                                         </a>
-                                        <a href="javascript:void(0)" class="btn btn-default btn-xs" title="Edit Project" ng-click="editProject(project.id)">
-                                            <i class="fa fa-pencil"></i> Edit
+                                        <a href="javascript:" class="btn btn-default btn-xs" data-toggle="tooltip" data-placement="top" title="Edit Project" ng-click="editProject(project.id)">
+                                            <i class="fa fa-pencil"></i>
                                         </a>
                                     </td>
                                 </tr>
@@ -101,3 +105,9 @@
     <!-- / row -->
 </section>
 <!-- /.content -->
+<script>
+    $(function () {
+        // Have to manually activate bootstrap tooltip.
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

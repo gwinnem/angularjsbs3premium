@@ -9,6 +9,7 @@
         .controller("EditTaskController", ["$scope", "$notification", "config", "$uibModalInstance", "modalOptions", "abProjectsSvc",
             function ($scope, $notification, config, $uibModalInstance, modalOptions, abProjectsSvc) {
                 $scope.modalOptions = modalOptions;
+                $scope.project = modalOptions.project;
                 $scope.status = abProjectsSvc.taskStatus;
                 $scope.priority = abProjectsSvc.taskPriority;
                 $scope.task = modalOptions.task;
@@ -36,7 +37,7 @@
                 // Disable weekend selection
                 function disabled(data) {
                     var date = data.date,
-                      mode = data.mode;
+                        mode = data.mode;
                     return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
                 }
 
@@ -56,7 +57,7 @@
                         console.log($scope.task);
                     }
 
-                    abProjectsSvc.updateTask($scope.task).then(function (result) {
+                    abProjectsSvc.updateTask($scope.project, $scope.task).then(function (result) {
                         if (result) {
                             $notification.success("Task successfully updated!", "Project task", config.notificationDelay);
                             $uibModalInstance.close(true);
@@ -64,10 +65,10 @@
                             $notification.error("Failed to update task!", "Project task", config.notificationDelay);
                             $uibModalInstance.close(false);
                         }
-                    }), function (message) {
-                        $notification.error(message, "Project Task", config.notificationDelay);
+                    }).catch(function (error) {
+                        $notification.error(error, "Project Task", config.notificationDelay);
                         $uibModalInstance.close(false);
-                    };
+                    });
                 };
 
 
