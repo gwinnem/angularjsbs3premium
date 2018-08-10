@@ -27,17 +27,18 @@
 
                 // async operation would be a call to a server side operation in a real world scenario.
                 var getProject = function (id) {
+                    // async operation would be a call to a server side operation in a real world scenario.
                     var deferred = $q.defer();
                     try {
-                        var result = null;
-                        angular.forEach(projects, function (detail) {
-                            if (detail.id === id) {
-                                result = detail;
-                            }
-                        });
-                        deferred.resolve(result);
-                    } catch (e) {
-                        deferred.reject(e);
+                        var result = projects.findIndex(obj => obj.id === id);
+                        if (result !== null && result !== undefined) {
+                            deferred.resolve(projects[result]);
+                        } else {
+                            deferred.resolve("ERROR");
+                        }
+
+                    } catch (error) {
+                        deferred.reject(error);
                     }
                     return deferred.promise;
                 };
@@ -46,7 +47,7 @@
                     // async operation would be a call to a server side operation in a real world scenario.
                     var deferred = $q.defer();
                     try {
-                        var result = projects.find(obj => obj.id === project.id);
+                        var result = projects.findIndex(obj => obj.id === project.id);
                         if (result !== null && result !== undefined) {
                             projects[result] = project;
                             deferred.resolve(projects);
@@ -171,6 +172,10 @@
                     }
                     return deferred.promise;
                 };
+
+                var addContacts = function (project) {
+                    return saveProject(project);
+                }
                 return {
                     getAll: getAll,
                     getProject: getProject,
@@ -179,7 +184,8 @@
                     updateTask: updateTask,
                     deleteTask: deleteTask,
                     createTask: createTask,
-                    deleteContact: deleteContact
+                    deleteContact: deleteContact,
+                    addContacts: addContacts
                 };
             }]);
 })();

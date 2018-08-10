@@ -9,8 +9,9 @@
         .controller("ProjectDetailsController", ["$scope", "$notification", "config", "$state",
             "abProjectsSvc", "$stateParams", "$timeout",
             "abHelpersSvc", "modalDialogs", "abCompaniesSvc", "abProjectEnumsSvc",
+            "abContactsSvc",
             function ($scope, $notification, config, $state, abProjectsSvc, $stateParams, $timeout,
-                abHelpersSvc, modalDialogs, abCompaniesSvc, abProjectEnumsSvc) {
+                abHelpersSvc, modalDialogs, abCompaniesSvc, abProjectEnumsSvc, abContactsSvc) {
 
                 if (config.debug) {
                     console.info("$stateParams");
@@ -84,20 +85,57 @@
                     $scope.project.clientName = item.name;
                 };
 
-                $scope.addContact = function (contact) {
-                    swal("Not available in the free version!", "ABAdmin!", "success");
+                $scope.addContact = function () {
+                    abContactsSvc.getAllContacts()
+                        .then(function (contacts) {
+                            if (config.debug) {
+                                console.log("Add Contacts");
+                                console.log(contacts);
+                            }
+                            // Only when there is no backend
+                            angular.forEach(contacts, function (contact) {
+                                contact.checked = false;
+                            });
+
+                            var modalDefaults = {
+                                controller: "addContactsController",
+                                size: ""
+                            };
+                            var modalOptions = {
+                                model: contacts,
+                                project: $scope.project,
+                                headerText: "Add Contacts",
+                                hideOkButton: false,
+                                contentUrl: "js/app/appviews/projects/templates/addContacts.html"
+                            };
+
+                            modalDialogs.openDialog(modalDefaults, modalOptions).then(function (result) {
+                                if (result) {
+                                    abProjectsSvc.getProject($scope.project.id)
+                                        .then(function (result) {
+                                            $scope.project = result;
+                                        })
+                                        .catch(function (error) {
+                                            $notification.error(error, "Project add contacts failed", config.notificationDelay);
+                                        });
+                                }
+                            });
+                        }).catch(function (error) {
+                            $notification.error(error, "Add Contacts failed", config.notificationDelay);
+                        });
                 };
 
                 $scope.deleteContact = function (contact) {
                     modalDialogs.openConfirmDialog("Do you really want to delete this contact?", "Delete Confirmation")
                         .then(function (result) {
                             if (result) {
-                                abProjectsSvc.deleteContact($scope.project, contact).then(function (data) {
-                                    $scope.project = data;
-                                    $notification.success("Delete Contact", "Success", config.notificationDelay);
-                                }).catch(function (error) {
-                                    $notification.error(error, "Delete contact failed!", config.notificationDelay);
-                                });
+                                abProjectsSvc.deleteContact($scope.project, contact)
+                                    .then(function (data) {
+                                        $scope.project = data;
+                                        $notification.success("Delete Contact", "Success", config.notificationDelay);
+                                    }).catch(function (error) {
+                                        $notification.error(error, "Delete contact failed!", config.notificationDelay);
+                                    });
                             }
                         });
                 };
@@ -108,7 +146,7 @@
                     };
                     var modalOptions = {
                         model: contact,
-                        headerText: contact.fullName,
+                        headerText: contact.firstName + " " + contact.lastName,
                         hideOkButton: true,
                         closeButtonText: "Close",
                         contentUrl: "/js/app/appviews/projects/templates/displaycontact.html"
@@ -129,15 +167,18 @@
                         hideCloseButton: false,
                         contentUrl: "/js/app/appviews/projects/templates/addedittask.html"
                     };
-                    modalDialogs.openDialog(modalDefaults, modalOptions).then(function (result) {
-                        if (result) {
-                            $timeout(function () {
-                                abProjectsSvc.getProject($scope.project.id).then(function (data) {
-                                    $scope.project = data;
+                    modalDialogs.openDialog(modalDefaults, modalOptions)
+                        .then(function (result) {
+                            if (result) {
+                                $timeout(function () {
+                                    abProjectsSvc.getProject($scope.project.id).then(function (data) {
+                                        $scope.project = data;
+                                    });
                                 });
-                            });
-                        }
-                    });
+                            }
+                        }).catch(function (error) {
+                            $notification.error(error, "Create task failed", config.notificationDelay);
+                        });
                 };
 
                 $scope.editTask = function (task) {
@@ -214,14 +255,18 @@
                     $state.go("projects");
                 };
                 $scope.deleteProject = function () {
-                    abProjectsSvc.deleteProject($scope.project.id)
-                        .then(function () {
-
-                        })
-                        .catch(function (error) {
-                            $notification.error(error, "Project delete", config.notificationDelay);
+                    modalDialogs.openConfirmDialog("Do you really want to delete this project?", "Delete Confirmation")
+                        .then(function (result) {
+                            if (result) {
+                                abProjectsSvc.deleteProject($scope.project.id)
+                                    .then(function () {
+                                        $state.go("projects");
+                                    })
+                                    .catch(function (error) {
+                                        $notification.error(error, "Project delete", config.notificationDelay);
+                                    });
+                            }
                         });
-                    $state.go("projects");
                 };
 
                 // Settings and init for datepicker directive

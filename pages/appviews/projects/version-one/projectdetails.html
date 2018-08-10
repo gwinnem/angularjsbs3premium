@@ -231,7 +231,7 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>
-                                            <a href="javascript:" class="btn btn-info btn-xs pull-right" title="Add participant" ng-click="addContact()" data-toggle="tooltip"
+                                            <a href="javascript:" class="btn btn-info btn-xs pull-right" title="Add contact" ng-click="addContact()" data-toggle="tooltip"
                                                 data-placement="top">
                                                 <i class="fa fa-plus"></i>
                                             </a>
@@ -240,8 +240,8 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="contact in project.contacts track by $index">
-                                        <td ng-bind="contact.title"></td>
-                                        <td ng-bind="contact.fullName"></td>
+                                        <td ng-bind="contact.jobTitle"></td>
+                                        <td>{{contact.firstName}} {{contact.lastName}}</td>
                                         <td ng-bind="contact.email"></td>
                                         <td>
                                             <a href="javascript:" class="btn btn-xs btn-danger pull-right m-l-xs" title="Remove Contact" ng-click="deleteContact(contact)"

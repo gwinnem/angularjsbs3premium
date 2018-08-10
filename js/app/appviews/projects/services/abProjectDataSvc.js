@@ -7,9 +7,9 @@
 (function () {
     "use strict";
     angular.module("ab.projects.data.svc", [
-            []
-        ])
-        .factory("abProjectDataSvc", [ function () {
+        []
+    ])
+        .factory("abProjectDataSvc", [function () {
             var projects = [{
                 "id": "6ebe459b-34c8-462a-a920-c5fab14ccdad",
                 "name": "Client meeting",
@@ -35,9 +35,10 @@
                     "updatedByFullName": "Maren Winnem",
                     "contacts": [{
                         "id": "fc8eda73-5ee3-4ca8-8e3c-2322d62ac618",
-                        "title": "Project Manager",
+                        "jobTitle": "Project Manager",
                         "salutation": "Mrs",
-                        "fullName": "Mrs Katja Schneider",
+                        "firstName": "Katja",
+                        "lastName": "Schneider",
                         "email": "schneider@abadmin.com",
                         "phone": "+44 172 682 69 80",
                         "mobile": "+44 172 682 69 80",
@@ -70,18 +71,20 @@
                     "updatedByFullName": "Maren Winnem",
                     "contacts": [{
                         "id": "755ba030-d183-4aff-bbdd-bd9ad542570f",
-                        "title": "Graphic Designer",
+                        "jobTitle": "Graphic Designer",
                         "salutation": "Mr",
-                        "fullName": "Mr Viktor Lemke",
+                        "firstName": "Victor",
+                        "lastName": "Lemke",
                         "email": "lemke@abadmin.com",
                         "phone": "+44 699 123 45 67",
                         "mobile": "+44 699 123 45 67",
                         "avatar": "/Content/Contacts/755ba030-d183-4aff-bbdd-bd9ad542570f/1.jpg"
                     }, {
                         "id": "84db2e98-1a60-467e-b6e7-d49d8c12e5f8",
-                        "title": "CEO",
+                        "jobTitle": "CEO",
                         "salutation": "Mrs",
-                        "fullName": "Mrs Marleen Metzger",
+                        "firstName": "Marleen",
+                        "lastName": "Metzger",
                         "email": "metzger@abadmin.com",
                         "phone": "+44 172 682 69 80",
                         "mobile": "+44 172 682 69 80",
@@ -94,7 +97,7 @@
                         "priority": 0,
                         "startDate": "2018-04-01T02:53:10",
                         "endDate": "2018-04-27T02:53:10",
-                        "title": "Preparing software",
+                        "jobTitle": "Preparing software",
                         "description": "Building software packages for automatically distribution.",
                         "hours": 10
                     }]
@@ -116,18 +119,20 @@
                 "updatedByFullName": "Maren Winnem",
                 "contacts": [{
                     "id": "755ba030-d183-4aff-bbdd-bd9ad542570f",
-                    "title": "Graphic Designer",
+                    "jobTitle": "Graphic Designer",
                     "salutation": "Mr",
-                    "fullName": "Mr Viktor Lemke",
+                    "firstName": "Katja",
+                    "lastName": "Schneider",
                     "email": "lemke@abadmin.com",
                     "phone": "+44 699 123 45 67",
                     "mobile": "+44 699 123 45 67",
                     "avatar": "/Content/Contacts/755ba030-d183-4aff-bbdd-bd9ad542570f/1.jpg"
                 }, {
                     "id": "84db2e98-1a60-467e-b6e7-d49d8c12e5f8",
-                    "title": "CEO",
+                    "jobTitle": "CEO",
                     "salutation": "Mrs",
-                    "fullName": "Mrs Marleen Metzger",
+                    "firstName": "Marleen",
+                    "lastName": "Hansen",
                     "email": "metzger@abadmin.com",
                     "phone": "+44 172 682 69 80",
                     "mobile": "+44 172 682 69 80",
@@ -140,7 +145,7 @@
                     "priority": 0,
                     "startDate": "2018-04-01T02:53:10",
                     "endDate": "2018-04-27T02:53:10",
-                    "title": "Preparing software",
+                    "jobTitle": "Preparing software",
                     "description": "Building software packages for automatically distribution.",
                     "hours": 10
                 }],
@@ -168,36 +173,39 @@
                 "updatedByFullName": "Maren Winnem",
                 "contacts": [{
                     "id": "fc8eda73-5ee3-4ca8-8e3c-2322d62ac618",
-                    "title": "Project Manager",
+                    "jobTitle": "Project Manager",
                     "salutation": "Mrs",
-                    "fullName": "Mrs Katja Schneider",
+                    "firstName": "Katja",
+                    "lastName": "Schneider",
                     "email": "schneider@abadmin.com",
                     "phone": "+44 172 682 69 80",
                     "mobile": "+44 172 682 69 80",
                     "avatar": "/Content/Contacts/fc8eda73-5ee3-4ca8-8e3c-2322d62ac618/2.jpg"
                 }, {
                     "id": "16cb4fad-6a91-475c-8441-4bd33ebb70ce",
-                    "title": "Student",
-                    "salutation": "Mr",
-                    "fullName": "Mr Florian Scmith",
+                    "jobTitle": "Student",
+                    "salutation": "Mr", "firstName": "Florian",
+                    "lastName": "Schneider",
                     "email": "fs@acme.com",
                     "phone": null,
                     "mobile": null,
                     "avatar": "/Content/Contacts/16cb4fad-6a91-475c-8441-4bd33ebb70ce/5.jpg"
                 }, {
                     "id": "48721577-bdbf-4ac4-a416-0c7bd1e5e6c4",
-                    "title": "Designer",
+                    "jobTitle": "Designer",
                     "salutation": "Mrs",
-                    "fullName": "Mrs Rikke Sørensen",
+                    "firstName": "Rikke",
+                    "lastName": "Olsen",
                     "email": "rsoerensen@abadmin.com",
                     "phone": "+44 172 682 69 80",
                     "mobile": "+44 172 682 69 80",
                     "avatar": "/Content/Contacts/48721577-bdbf-4ac4-a416-0c7bd1e5e6c4/3.jpg"
                 }, {
                     "id": "afebfc33-9336-496d-9151-3308f24acc6b",
-                    "title": "Senior Developer",
+                    "jobTitle": "Senior Developer",
                     "salutation": "Mr",
-                    "fullName": "Mr Geirr Winnem",
+                    "firstName": "Geirr",
+                    "lastName": "Winnem",
                     "email": "gwinnem@abadmin.com",
                     "phone": "+43 699 123 45 67",
                     "mobile": "+43 699 123 45 67",
@@ -210,7 +218,7 @@
                     "priority": 0,
                     "startDate": "2018-07-01T14:03:29",
                     "endDate": "2018-07-09T14:03:29",
-                    "title": "Requirements",
+                    "jobTitle": "Requirements",
                     "description": "Define requirements with client",
                     "hours": 40
                 }, {
@@ -220,7 +228,7 @@
                     "priority": 0,
                     "startDate": "2018-07-01T14:04:02",
                     "endDate": "2018-07-01T14:04:02",
-                    "title": "Define team",
+                    "jobTitle": "Define team",
                     "description": "Put together development team",
                     "hours": 2
                 }, {
@@ -230,7 +238,7 @@
                     "priority": 0,
                     "startDate": "2018-07-01T14:04:26",
                     "endDate": "2018-07-01T14:04:26",
-                    "title": "Assign scrum master",
+                    "jobTitle": "Assign scrum master",
                     "description": null,
                     "hours": 1
                 }],
@@ -258,18 +266,20 @@
                 "updatedByFullName": "Maren Winnem",
                 "contacts": [{
                     "id": "5dbf8d7f-d9a1-4709-b649-175d0c3c79f6",
-                    "title": "Chief Technical Officer",
+                    "jobTitle": "Chief Technical Officer",
                     "salutation": "Mr",
-                    "fullName": "Mr Mikkel Mortensen",
+                    "firstName": "Mikkel",
+                    "lastName": "Schneider",
                     "email": "mortensen@abadmin.com",
                     "phone": "+44 172 682 69 80",
                     "mobile": "+44 172 682 69 80",
                     "avatar": "/Content/Contacts/5dbf8d7f-d9a1-4709-b649-175d0c3c79f6/3.jpg"
                 }, {
                     "id": "d5a6179d-5f48-4161-ab6e-ee0bd4ce780b",
-                    "title": "Student",
+                    "jobTitle": "Student",
                     "salutation": "Mrs",
-                    "fullName": "Mrs Maren Winnem",
+                    "firstName": "Katja",
+                    "lastName": "Schneider",
                     "email": "maren@abadmin.com",
                     "phone": null,
                     "mobile": null,
@@ -282,7 +292,7 @@
                     "priority": 0,
                     "startDate": "2018-04-02T01:49:04",
                     "endDate": "2018-04-25T01:49:04",
-                    "title": "Test version",
+                    "jobTitle": "Test version",
                     "description": null,
                     "hours": 20
                 }, {
@@ -292,7 +302,7 @@
                     "priority": 0,
                     "startDate": "2018-04-25T03:49:29",
                     "endDate": "2018-04-25T03:49:29",
-                    "title": "Request budget",
+                    "jobTitle": "Request budget",
                     "description": null,
                     "hours": 2
                 }, {
@@ -302,7 +312,7 @@
                     "priority": 0,
                     "startDate": "2018-04-25T23:50:05",
                     "endDate": "2018-04-25T23:50:05",
-                    "title": "Order  licenses",
+                    "jobTitle": "Order  licenses",
                     "description": null,
                     "hours": 1
                 }, {
@@ -312,7 +322,7 @@
                     "priority": 0,
                     "startDate": "2018-04-27T05:51:16",
                     "endDate": "2018-04-27T05:51:16",
-                    "title": "Distribute licenses",
+                    "jobTitle": "Distribute licenses",
                     "description": null,
                     "hours": 1
                 }],
@@ -340,18 +350,20 @@
                 "updatedByFullName": "Maren Winnem",
                 "contacts": [{
                     "id": "5dbf8d7f-d9a1-4709-b649-175d0c3c79f6",
-                    "title": "Chief Technical Officer",
+                    "jobTitle": "Chief Technical Officer",
                     "salutation": "Mr",
-                    "fullName": "Mr Mikkel Mortensen",
+                    "firstName": "Mikkel",
+                    "lastName": "Schneider",
                     "email": "mortensen@abadmin.com",
                     "phone": "+44 172 682 69 80",
                     "mobile": "+44 172 682 69 80",
                     "avatar": "/Content/Contacts/5dbf8d7f-d9a1-4709-b649-175d0c3c79f6/3.jpg"
                 }, {
-                    "id": "d5a6179d-5f48-4161-ab6e-ee0bd4ce780b",
-                    "title": "Student",
+                    "id": "d5a6179d-5f48-4161-ab6e-ee0bd4ce780v",
+                    "jobTitle": "Student",
                     "salutation": "Mrs",
-                    "fullName": "Mrs Maren Winnem",
+                    "firstName": "Maren",
+                    "lastName": "Winnem",
                     "email": "maren@abadmin.com",
                     "phone": null,
                     "mobile": null,
@@ -364,7 +376,7 @@
                     "priority": 0,
                     "startDate": "2018-04-02T01:49:04",
                     "endDate": "2018-04-25T01:49:04",
-                    "title": "Test version",
+                    "jobTitle": "Test version",
                     "description": null,
                     "hours": 20
                 }, {
@@ -374,7 +386,7 @@
                     "priority": 0,
                     "startDate": "2018-04-25T03:49:29",
                     "endDate": "2018-04-25T03:49:29",
-                    "title": "Request budget",
+                    "jobTitle": "Request budget",
                     "description": null,
                     "hours": 2
                 }, {
@@ -384,7 +396,7 @@
                     "priority": 0,
                     "startDate": "2018-04-25T23:50:05",
                     "endDate": "2018-04-25T23:50:05",
-                    "title": "Order  licenses",
+                    "jobTitle": "Order  licenses",
                     "description": null,
                     "hours": 1
                 }, {
@@ -394,11 +406,11 @@
                     "priority": 0,
                     "startDate": "2018-04-27T05:51:16",
                     "endDate": "2018-04-27T05:51:16",
-                    "title": "Distribute licenses",
+                    "jobTitle": "Distribute licenses",
                     "description": null,
                     "hours": 1
                 }],
-                "id": "07169268-57db-4e11-bec6-4c119f85aa8e",
+                "id": "07169268-57db-4e11-bec6-4c119f85aa8x",
                 "name": "Testing new software version",
                 "progress": 37,
                 "status": 0,
@@ -446,9 +458,10 @@
                 "updatedByFullName": "Maren Winnem",
                 "contacts": [{
                     "id": "48721577-bdbf-4ac4-a416-0c7bd1e5e6c4",
-                    "title": "Designer",
+                    "jobTitle": "Designer",
                     "salutation": "Mrs",
-                    "fullName": "Mrs Rikke Sørensen",
+                    "firstName": "Katja",
+                    "lastName": "Schneider",
                     "email": "rsoerensen@abadmin.com",
                     "phone": "+44 172 682 69 80",
                     "mobile": "+44 172 682 69 80",
@@ -479,27 +492,30 @@
                 "updatedByFullName": "Maren Winnem",
                 "contacts": [{
                     "id": "755ba030-d183-4aff-bbdd-bd9ad542570f",
-                    "title": "Graphic Designer",
+                    "jobTitle": "Graphic Designer",
                     "salutation": "Mr",
-                    "fullName": "Mr Viktor Lemke",
+                    "firstName": "Viktor",
+                    "lastName": "Lemke",
                     "email": "lemke@abadmin.com",
                     "phone": "+44 699 123 45 67",
                     "mobile": "+44 699 123 45 67",
                     "avatar": "/Content/Contacts/755ba030-d183-4aff-bbdd-bd9ad542570f/1.jpg"
                 }, {
                     "id": "84db2e98-1a60-467e-b6e7-d49d8c12e5f8",
-                    "title": "CEO",
+                    "jobTitle": "CEO",
                     "salutation": "Mrs",
-                    "fullName": "Mrs Marleen Metzger",
+                    "firstName": "Katja",
+                    "lastName": "Schneider",
                     "email": "metzger@abadmin.com",
                     "phone": "+44 172 682 69 80",
                     "mobile": "+44 172 682 69 80",
                     "avatar": "/Content/Contacts/84db2e98-1a60-467e-b6e7-d49d8c12e5f8/1.jpg"
                 }, {
                     "id": "d3eb7062-34a4-4461-b0f5-f966515f5e9e",
-                    "title": "Project Manager",
+                    "jobTitle": "Project Manager",
                     "salutation": "Mr",
-                    "fullName": "Mr Bertram Mogens",
+                    "firstName": "Bertram",
+                    "lastName": "Schneider",
                     "email": "bmogens@abadmin.com",
                     "phone": "+44 172 682 69 80",
                     "mobile": "+44 172 682 69 80",
@@ -512,7 +528,7 @@
                     "priority": 0,
                     "startDate": "2018-07-01T14:00:37",
                     "endDate": "2018-07-01T14:00:37",
-                    "title": "Analyse pages",
+                    "jobTitle": "Analyse pages",
                     "description": "Go through all pages and define sub tasks",
                     "hours": 10
                 }, {
@@ -522,7 +538,7 @@
                     "priority": 0,
                     "startDate": "2018-07-01T14:01:42",
                     "endDate": "2018-07-02T14:01:42",
-                    "title": "Set up team",
+                    "jobTitle": "Set up team",
                     "description": "Define project team.",
                     "hours": 2
                 }],

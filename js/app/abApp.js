@@ -1569,6 +1569,7 @@ abApp.config([
                                     "/js/app/appviews/projects/services/abProjectsSvc.js",
                                     "/js/app/appviews/projects/services/abProjectDetailsSvc.js",
                                     "/js/app/appviews/companies/services/abCompaniesSvc.js",
+                                    "/js/app/appviews/contacts/services/abContactsSvc.js",
                                     "/js/app/appviews/projects/controllers/abAddContactsCtrl.js",
                                     "/js/app/appviews/projects/controllers/abAddTaskCtrl.js",
                                     "/js/app/appviews/projects/controllers/abEditTaskCtrl.js",
