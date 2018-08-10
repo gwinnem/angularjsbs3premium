@@ -1,4 +1,4 @@
-<table class="table table-responsive table-condensed table-hover">
+<table class="table table-responsive table-condensed table-hover" style="display: block;">
     <thead>
         <tr>
             <th></th>
@@ -6,7 +6,7 @@
             <th>Name</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody style="display: inline-block; height: 250px !important;">
         <tr ng-repeat="item in modalOptions.model track by $index">
             <td style="width: 50px;">
                 <input type="checkbox" icheck class="flat" id="{{item.id}}" ng-change="addContacts(item)" ng-model="item.checked"
