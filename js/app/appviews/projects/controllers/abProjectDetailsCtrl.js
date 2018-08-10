@@ -33,7 +33,7 @@
                         {
                             $scope.editMode = true;
                             $scope.createProject = true;
-                            $scope.project.id = abHelpersSvc.getNewGuid;
+                            $scope.project.id = abHelpersSvc.getNewGuid();
                             $scope.project.status = 0;
                             $scope.project.priority = 0;
                             $scope.project.progress = 1;
@@ -316,8 +316,7 @@
                 // Bootstrap tooltip needs to be activated manually
                 $timeout(function () {
                     $('[data-toggle="tooltip"]').tooltip();
-                }, 500);
-
+                }, 500); 
             }
         ]);
 })();
