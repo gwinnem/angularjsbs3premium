@@ -42,7 +42,17 @@
                     }
                     return deferred.promise;
                 };
-
+                var createProject = function (project) {
+                    // async operation would be a call to a server side operation in a real world scenario.
+                    var deferred = $q.defer();
+                    try {
+                        projects.push(project);
+                        deferred.resolve(projects);
+                    } catch (error) {
+                        deferred.reject(error);
+                    }
+                    return deferred.promise;
+                };
                 var saveProject = function (project) {
                     // async operation would be a call to a server side operation in a real world scenario.
                     var deferred = $q.defer();
@@ -180,6 +190,7 @@
                     getAll: getAll,
                     getProject: getProject,
                     saveProject: saveProject,
+                    createProject: createProject,
                     deleteProject: deleteProject,
                     updateTask: updateTask,
                     deleteTask: deleteTask,

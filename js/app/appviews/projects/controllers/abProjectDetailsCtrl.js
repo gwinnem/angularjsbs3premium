@@ -243,7 +243,13 @@
                             $notification.error(error, "Failed to save project.", config.notificationDelay);
                         });
                     } else {
-                        swal("Not available in the free version!", "ABAdmin!", "success");
+                        abProjectsSvc.createProject($scope.project)
+                            .then(function () {
+
+                            })
+                            .catch(function (error) {
+                                $notification(error, "Failed to create project", config.notificationDelay);
+                            });
                     }
                     $state.go("projects");
                 };
