@@ -1572,9 +1572,7 @@ abApp.config([
                                     "/js/app/appviews/projects/controllers/abAddContactsCtrl.js",
                                     "/js/app/appviews/projects/controllers/abAddTaskCtrl.js",
                                     "/js/app/appviews/projects/controllers/abEditTaskCtrl.js",
-                                    "/js/app/appviews/projects/controllers/abProjectDetailsCtrl.js",
-                                    "/js/plugins/bootstrap-sweetalert/dist/sweetalert.css",
-                                    "/js/plugins/bootstrap-sweetalert/dist/sweetalert.js"
+                                    "/js/app/appviews/projects/controllers/abProjectDetailsCtrl.js"
                                 ]
                             });
                         }

@@ -84,12 +84,22 @@
                     $scope.project.clientName = item.name;
                 };
 
-                $scope.addContact = function () {
+                $scope.addContact = function (contact) {
                     swal("Not available in the free version!", "ABAdmin!", "success");
                 };
 
-                $scope.deleteContact = function (id) {
-                    swal("Not available in the free version!", "ABAdmin!", "success");
+                $scope.deleteContact = function (contact) {
+                    modalDialogs.openConfirmDialog("Do you really want to delete this contact?", "Delete Confirmation")
+                        .then(function (result) {
+                            if (result) {
+                                abProjectsSvc.deleteContact($scope.project, contact).then(function (data) {
+                                    $scope.project = data;
+                                    $notification.success("Delete Contact", "Success", config.notificationDelay);
+                                }).catch(function (error) {
+                                    $notification.error(error, "Delete contact failed!", config.notificationDelay);
+                                });
+                            }
+                        });
                 };
 
                 $scope.displayContact = function (contact) {
@@ -173,7 +183,7 @@
                             if (result) {
                                 abProjectsSvc.deleteTask($scope.project, task.id).then(function (data) {
                                     $scope.project = data;
-                                    $notification.success("", "", config.notificationDelay);
+                                    $notification.success("Delete Task", "Success", config.notificationDelay);
                                 }).catch(function (error) {
                                     $notification.error(error, "Delete task failed!", config.notificationDelay);
                                 });

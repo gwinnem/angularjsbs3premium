@@ -71,10 +71,7 @@
                                 <dl class="dl-horizontal">
                                     <dt>Description:</dt>
                                     <dd>
-                                        <textarea ng-model="project.description" 
-                                        ab-elastic style="overflow: hidden; width: 100%; resize: none;" 
-                                        
-                                        placeholder="Description"></textarea>
+                                        <textarea ng-model="project.description" ab-elastic style="overflow: hidden; width: 100%; resize: none;" placeholder="Description"></textarea>
                                     </dd>
                                 </dl>
                             </div>
@@ -207,8 +204,8 @@
                                             <span ng-bind="task.endDate | date"></span>
                                         </td>
                                         <td>
-                                            <a href="javascript:" class="btn btn-xs btn-danger pull-right m-l-xs" title="Delete Task" ng-click="deleteTask(task)"
-                                                data-toggle="tooltip" data-placement="top">
+                                            <a href="javascript:" class="btn btn-xs btn-danger pull-right m-l-xs" title="Delete Task" ng-click="deleteTask(task)" data-toggle="tooltip"
+                                                data-placement="top">
                                                 <i class="fa fa-remove"></i>
                                             </a>
                                             <a href="javascript:" class="btn btn-xs btn-default pull-right m-l-xs" title="Edit Task" ng-click="editTask(task)" data-toggle="tooltip"
@@ -247,7 +244,7 @@
                                         <td ng-bind="contact.fullName"></td>
                                         <td ng-bind="contact.email"></td>
                                         <td>
-                                            <a href="javascript:" class="btn btn-xs btn-danger pull-right m-l-xs" title="Remove Contact" ng-click="removeContact(contact.id)"
+                                            <a href="javascript:" class="btn btn-xs btn-danger pull-right m-l-xs" title="Remove Contact" ng-click="deleteContact(contact)"
                                                 data-toggle="tooltip" data-placement="top">
                                                 <i class="fa fa-remove"></i>
                                             </a>
@@ -484,8 +481,8 @@
                                 <i class="fa fa-save"></i> Save</a>
                             <a href="javascript:" class="btn btn-warning btn-sm" title="Cancel" ng-click="cancel()" data-toggle="tooltip" data-placement="top">
                                 <i class="fa fa-trash-o"></i> Cancel</a>
-                            <a href="javascript:" ng-if="!createProject" class="btn btn-danger btn-sm" title="Delete Details" ng-click="deleteProject()" data-toggle="tooltip"
-                                data-placement="top">
+                            <a href="javascript:" ng-if="!createProject" class="btn btn-danger btn-sm" title="Delete Details" ng-click="deleteProject()"
+                                data-toggle="tooltip" data-placement="top">
                                 <i class="fa fa-remove"></i> Delete</a>
                         </div>
                     </div>

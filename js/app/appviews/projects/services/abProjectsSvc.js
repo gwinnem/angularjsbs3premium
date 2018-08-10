@@ -147,7 +147,30 @@
                     }
                     return deferred.promise;
                 };
+                var deleteContact = function (project, contact) {
+                    // async operation would be a call to a server side operation in a real world scenario.
+                    var deferred = $q.defer();
+                    try {
+                        var projectIndex = projects.findIndex(obj => obj.id === project.id);
+                        if (projectIndex !== null && projectIndex !== undefined && projectIndex >= 0) {
+                            // get the task and update it
+                            var contactIndex = project.contacts.findIndex(obj => obj.id === contact.id);
+                            if (contactIndex !== null && contactIndex !== undefined && contactIndex >= 0) {
+                                project.contacts.splice(contactIndex, 1);
+                                projects[projectIndex] = project;
+                                deferred.resolve(project);
+                            } else {
+                                deferred.reject("ERROR not able to find project contact.");
+                            }
+                        } else {
+                            deferred.reject("ERROR not able to find project.");
+                        }
 
+                    } catch (e) {
+                        deferred.reject(e);
+                    }
+                    return deferred.promise;
+                };
                 return {
                     getAll: getAll,
                     getProject: getProject,
@@ -155,7 +178,8 @@
                     deleteProject: deleteProject,
                     updateTask: updateTask,
                     deleteTask: deleteTask,
-                    createTask: createTask
+                    createTask: createTask,
+                    deleteContact: deleteContact
                 };
             }]);
 })();
