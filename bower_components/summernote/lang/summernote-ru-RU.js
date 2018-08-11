@@ -1,16 +1,16 @@
-(function ($) {
+(function($) {
   $.extend($.summernote.lang, {
     'ru-RU': {
       font: {
         bold: 'Полужирный',
         italic: 'Курсив',
         underline: 'Подчёркнутый',
-        strikethrough: 'Зачёркнутый',
-        subscript: 'Нижний индекс',
-        superscript: 'Верхний индекс',
         clear: 'Убрать стили шрифта',
         height: 'Высота линии',
         name: 'Шрифт',
+        strikethrough: 'Зачёркнутый',
+        subscript: 'Нижний индекс',
+        superscript: 'Верхний индекс',
         size: 'Размер шрифта'
       },
       image: {
@@ -22,10 +22,25 @@
         floatLeft: 'Расположить слева',
         floatRight: 'Расположить справа',
         floatNone: 'Расположение по-умолчанию',
+        shapeRounded: 'Форма: Закругленная',
+        shapeCircle: 'Форма: Круг',
+        shapeThumbnail: 'Форма: Миниатюра',
+        shapeNone: 'Форма: Нет',
         dragImageHere: 'Перетащите сюда картинку',
+        dropImage: 'Перетащите картинку',
         selectFromFiles: 'Выбрать из файлов',
+        maximumFileSize: 'Максимальный размер файла',
+        maximumFileSizeError: 'Превышен максимальный размер файла',
         url: 'URL картинки',
-        remove: 'Удалить картинку'
+        remove: 'Удалить картинку',
+        original: 'Оригинал'
+      },
+      video: {
+        video: 'Видео',
+        videoLink: 'Ссылка на видео',
+        insert: 'Вставить видео',
+        url: 'URL видео',
+        providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion или Youku)'
       },
       link: {
         link: 'Ссылка',
@@ -36,22 +51,22 @@
         url: 'URL для перехода',
         openInNewWindow: 'Открывать в новом окне'
       },
-      video: {
-        video: 'Видео',
-        videoLink: 'Ссылка на видео',
-        insert: 'Вставить видео',
-        url: 'URL видео',
-        providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion или Youku)'
-      },
       table: {
-        table: 'Таблица'
+        table: 'Таблица',
+        addRowAbove: 'Добавить строку выше',
+        addRowBelow: 'Добавить строку ниже',
+        addColLeft: 'Добавить столбец слева',
+        addColRight: 'Добавить столбец справа',
+        delRow: 'Удалить строку',
+        delCol: 'Удалить столбец',
+        delTable: 'Удалить таблицу'
       },
       hr: {
         insert: 'Вставить горизонтальную линию'
       },
       style: {
         style: 'Стиль',
-        normal: 'Нормальный',
+        p: 'Нормальный',
         blockquote: 'Цитата',
         pre: 'Код',
         h1: 'Заголовок 1',
@@ -95,12 +110,45 @@
         textFormatting: 'Форматирование текста',
         action: 'Действие',
         paragraphFormatting: 'Форматирование параграфа',
-        documentStyle: 'Стиль документа', 
+        documentStyle: 'Стиль документа',
         extraKeys: 'Дополнительные комбинации'
+      },
+      help: {
+        'insertParagraph': 'Новый параграф',
+        'undo': 'Отменить последнюю команду',
+        'redo': 'Повторить последнюю команду',
+        'tab': 'Tab',
+        'untab': 'Untab',
+        'bold': 'Установить стиль "Жирный"',
+        'italic': 'Установить стиль "Наклонный"',
+        'underline': 'Установить стиль "Подчеркнутый"',
+        'strikethrough': 'Установить стиль "Зачеркнутый"',
+        'removeFormat': 'Сборсить стили',
+        'justifyLeft': 'Выровнять по левому краю',
+        'justifyCenter': 'Выровнять по центру',
+        'justifyRight': 'Выровнять по правому краю',
+        'justifyFull': 'Растянуть на всю ширину',
+        'insertUnorderedList': 'Включить/отключить маркированный список',
+        'insertOrderedList': 'Включить/отключить нумерованный список',
+        'outdent': 'Убрать отступ в текущем параграфе',
+        'indent': 'Вставить отступ в текущем параграфе',
+        'formatPara': 'Форматировать текущий блок как параграф (тег P)',
+        'formatH1': 'Форматировать текущий блок как H1',
+        'formatH2': 'Форматировать текущий блок как H2',
+        'formatH3': 'Форматировать текущий блок как H3',
+        'formatH4': 'Форматировать текущий блок как H4',
+        'formatH5': 'Форматировать текущий блок как H5',
+        'formatH6': 'Форматировать текущий блок как H6',
+        'insertHorizontalRule': 'Вставить горизонтальную черту',
+        'linkDialog.show': 'Показать диалог "Ссылка"'
       },
       history: {
         undo: 'Отменить',
         redo: 'Повтор'
+      },
+      specialChar: {
+        specialChar: 'SPECIAL CHARACTERS',
+        select: 'Select Special characters'
       }
     }
   });

@@ -1,13 +1,15 @@
-(function ($) {
+(function($) {
   $.extend($.summernote.lang, {
     'sk-SK': {
       font: {
         bold: 'Tučné',
         italic: 'Kurzíva',
-        underline: 'Podtržené',
-        strikethrough: 'Preškrtnuté',
+        underline: 'Podčiarknutie',
         clear: 'Odstrániť štýl písma',
         height: 'Výška riadku',
+        strikethrough: 'Prečiarknuté',
+        subscript: 'Subscript',
+        superscript: 'Superscript',
         size: 'Veľkosť písma'
       },
       image: {
@@ -19,9 +21,25 @@
         floatLeft: 'Umiestniť doľava',
         floatRight: 'Umiestniť doprava',
         floatNone: 'Bez zarovnania',
+        shapeRounded: 'Shape: Rounded',
+        shapeCircle: 'Shape: Circle',
+        shapeThumbnail: 'Shape: Thumbnail',
+        shapeNone: 'Shape: None',
         dragImageHere: 'Pretiahnuť sem obrázok',
+        dropImage: 'Drop image or Text',
         selectFromFiles: 'Vybrať súbor',
-        url: 'URL obrázku'
+        maximumFileSize: 'Maximum file size',
+        maximumFileSizeError: 'Maximum file size exceeded.',
+        url: 'URL obrázku',
+        remove: 'Remove Image',
+        original: 'Original'
+      },
+      video: {
+        video: 'Video',
+        videoLink: 'Odkaz videa',
+        insert: 'Vložiť video',
+        url: 'URL videa?',
+        providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion alebo Youku)'
       },
       link: {
         link: 'Odkaz',
@@ -32,22 +50,22 @@
         url: 'Na akú URL adresu má tento odkaz viesť?',
         openInNewWindow: 'Otvoriť v novom okne'
       },
-      video: {
-        video: 'Video',
-        videoLink: 'Odkaz videa',
-        insert: 'Vložiť video',
-        url: 'URL videa?',
-        providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion nebo Youku)'
-      },
       table: {
-        table: 'Tabuľka'
+        table: 'Tabuľka',
+        addRowAbove: 'Add row above',
+        addRowBelow: 'Add row below',
+        addColLeft: 'Add column left',
+        addColRight: 'Add column right',
+        delRow: 'Delete row',
+        delCol: 'Delete column',
+        delTable: 'Delete table'
       },
       hr: {
         insert: 'Vložit vodorovnú čiaru'
       },
       style: {
         style: 'Štýl',
-        normal: 'Normálny',
+        p: 'Normálny',
         blockquote: 'Citácia',
         pre: 'Kód',
         h1: 'Nadpis 1',
@@ -67,8 +85,8 @@
         codeview: 'HTML kód'
       },
       paragraph: {
-        paragraph: 'Odstavec',
-        outdent: 'Zvečiť odsadenie',
+        paragraph: 'Odsek',
+        outdent: 'Zväčšiť odsadenie',
         indent: 'Zmenšiť odsadenie',
         left: 'Zarovnať doľava',
         center: 'Zarovnať na stred',
@@ -80,7 +98,7 @@
         more: 'Dalšie farby',
         background: 'Farba pozadia',
         foreground: 'Farba písma',
-        transparent: 'Priehľednosť',
+        transparent: 'Priehľadnosť',
         setTransparent: 'Nastaviť priehľadnosť',
         reset: 'Obnoviť',
         resetToDefault: 'Obnoviť prednastavené'
@@ -90,12 +108,45 @@
         close: 'Zavrieť',
         textFormatting: 'Formátovanie textu',
         action: 'Akcia',
-        paragraphFormatting: 'Formátovánie odstavca',
+        paragraphFormatting: 'Formátovanie odseku',
         documentStyle: 'Štýl dokumentu'
+      },
+      help: {
+        'insertParagraph': 'Insert Paragraph',
+        'undo': 'Undoes the last command',
+        'redo': 'Redoes the last command',
+        'tab': 'Tab',
+        'untab': 'Untab',
+        'bold': 'Set a bold style',
+        'italic': 'Set a italic style',
+        'underline': 'Set a underline style',
+        'strikethrough': 'Set a strikethrough style',
+        'removeFormat': 'Clean a style',
+        'justifyLeft': 'Set left align',
+        'justifyCenter': 'Set center align',
+        'justifyRight': 'Set right align',
+        'justifyFull': 'Set full align',
+        'insertUnorderedList': 'Toggle unordered list',
+        'insertOrderedList': 'Toggle ordered list',
+        'outdent': 'Outdent on current paragraph',
+        'indent': 'Indent on current paragraph',
+        'formatPara': 'Change current block\'s format as a paragraph(P tag)',
+        'formatH1': 'Change current block\'s format as H1',
+        'formatH2': 'Change current block\'s format as H2',
+        'formatH3': 'Change current block\'s format as H3',
+        'formatH4': 'Change current block\'s format as H4',
+        'formatH5': 'Change current block\'s format as H5',
+        'formatH6': 'Change current block\'s format as H6',
+        'insertHorizontalRule': 'Insert horizontal rule',
+        'linkDialog.show': 'Show Link Dialog'
       },
       history: {
         undo: 'Krok vzad',
         redo: 'Krok dopredu'
+      },
+      specialChar: {
+        specialChar: 'SPECIAL CHARACTERS',
+        select: 'Select Special characters'
       }
     }
   });

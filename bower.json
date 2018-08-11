@@ -72,7 +72,8 @@
     "morris.js": "~0.5.1",
     "dygraphs": "~1.1.1",
     "bower-jvectormap": "~1.2.2",
-    "dropzone": "~4.2.0"
+    "dropzone": "~4.2.0",
+    "angular-summernote": "^0.8.1"
   },
   "resolutions": {
     "jquery": ">=3.3.1",
