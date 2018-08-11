@@ -48,6 +48,13 @@
                             $scope.editMode = false;
                             abCompaniesSvc.getDetails($stateParams.id).then(function (data) {
                                 $scope.company = data;
+                                if(data==="ERROR"){
+                                    $notification.warning("Failed to load details.","Company details",config.notificationDelay);
+                                }
+                                if(config.debug){
+                                    console.log("Company details:");
+                                    console.log(data);
+                                }
                             }).catch(function (message) {
                                 $notification.error("Error loading details: " + message, "AppView Company Details", config.notificationDelay);
                             });
@@ -94,7 +101,7 @@
                 };
 
                 $scope.save = function () {
-                    abCompaniesSvc.saveDetails($scope.company, $scope.action).then(function (data) {
+                    abCompaniesSvc.saveDetails($scope.company, $scope.action).then(function () {
                         $state.go(returnView);
                     }).catch(function (error) {
                         $notification.error(error, "Contact details save failed.", config.notificationDelay);
@@ -113,7 +120,7 @@
                         $state.go(returnView);
                     }).catch(function (error) {
                         $notification.error(error, "Contact details save failed.", config.notificationDelay);
-                    });;
+                    });
                 };
 
                 $scope.edit = function () {
@@ -132,23 +139,23 @@
                         contentUrl: "js/app/appviews/companies/templates/addContacts.html"
                     };
 
-                    modalDialogs.openDialog(modalDefaults, modalOptions).then(function (result) {
+                    modalDialogs.openDialog(modalDefaults, modalOptions).then(function () {
                         debugger;
-                        if (result) {
-                            // $timeout(function () {
-                            //     // getCompanyContacts();
-                            // }, 100);
-                        }
+                        // if (result) {
+                        //     // $timeout(function () {
+                        //     //     // getCompanyContacts();
+                        //     // }, 100);
+                        // }
                     }).catch(function (error) {
                         console.log(error);
                     });
-                }
+                };
 
                 $scope.removeContact = function (id) {
                     modalDialogs.openConfirmDialog("Do you really want to remove this contact?", "Remove contact")
                         .then(function (result) {
                             if (result) {
-                                service.removeCompanyContact({
+                                abCompaniesSvc.removeCompanyContact({
                                     id: $scope.company.id,
                                     contactId: id
                                 })
@@ -164,16 +171,16 @@
                                         }
                                         $notification.error(message, "RemoveContact", config.notificationDelay);
                                     });
-                                getCompanyContacts();
+                                //getCompanyContacts();
                             }
                         });
-                }
+                };
 
                 $scope.displayContact = function (contactId) {
                     $state.go("contactdetails", {
                         id: contactId
                     });
-                }
+                };
 
                 if (config.debug) {
                     $notification.info("Company Details loaded", "ABAdmin Companies", config.notificationDelay);
