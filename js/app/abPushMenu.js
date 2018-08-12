@@ -76,7 +76,7 @@
         if (windowWidth <= this.options.collapseScreenSize) {
             isOpen = $(htmlSelectors.body).hasClass(pushMenuClassName.open);
         }
-
+        // Hiding sidebar bottom menu if it exists
         if (!isOpen) {
             $(htmlSelectors.sidebarFooter).removeClass(pushMenuClassName.hidden);
             this.open();
@@ -167,7 +167,7 @@
         e.preventDefault();
         plugin.call($(this), 'toggle');
     });
-    
+
     $(window).on('load', function () {
         plugin.call($(htmlSelectors.button));
         if (localStorage.getItem(dataKey) === null) {
