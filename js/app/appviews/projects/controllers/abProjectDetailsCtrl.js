@@ -73,7 +73,7 @@
                                 $notification.error(message, "ABAdmin Projects", config.notificationDelay);
                             });
                             break;
-                        };
+                        }
                 }
 
                 $scope.updateCompany = function (item) {

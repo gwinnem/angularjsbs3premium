@@ -185,7 +185,7 @@
 
                 var addContacts = function (project) {
                     return saveProject(project);
-                }
+                };
                 return {
                     getAll: getAll,
                     getProject: getProject,
