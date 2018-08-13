@@ -1664,6 +1664,7 @@ abApp.config([
                                 series: true,
                                 files: ["/js/app/appviews/companies/services/abCompaniesSvc.js",
                                     "/js/app/appviews/companies/controllers/abAddContactsCtrl.js",
+                                    "/js/app/appviews/contacts/services/abContactsSvc.js",
                                     "/js/app/appviews/companies/controllers/abCompanyDetailsCtrl.js"
                                 ]
                             });

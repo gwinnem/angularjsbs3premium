@@ -6,8 +6,8 @@
 (function () {
     "use strict";
     angular.module("ab.companies.list", [])
-        .controller("CompaniesController", ["$scope", "$notification", "config", "abCompaniesSvc", "$state", "modalDialogs", "$timeout",
-            function ($scope, $notification, config, abCompaniesSvc, $state, modalDialogs, $timeout) {
+        .controller("CompaniesController", ["$scope", "$notification", "config", "abCompaniesSvc", "$state", "modalDialogs",
+            function ($scope, $notification, config, abCompaniesSvc, $state, modalDialogs) {
                 var service = abCompaniesSvc;
                 $scope.action = service.actions;
                 $scope.companies = [];
@@ -22,9 +22,6 @@
                                 console.log(data);
                             }
                             $scope.companies = data;
-                            // $timeout(function () {
-                            //     $scope.companies = data;
-                            // }, 1000);
 
                         }).catch(function (message) {
                             $notification.warning(message);
