@@ -2446,14 +2446,19 @@ abApp.config([
                 }, {
                     name: "Miscellaneous"
                 }, {
-                    name: "Tasks"
+                    name: "Task Board"
                 }],
                 controller: "TasksController",
                 resolve: {
                     ctrl: [
                         "$ocLazyLoad",
                         function ($ocLazyLoad) {
-                            return $ocLazyLoad.load("/js/app/misc/controllers/abTasksCtrl.js");
+                            return $ocLazyLoad.load({
+                                serie:true,
+                                files:["/js/plugins/ui-sortable/src/sortable.js",
+                                    "/js/app/misc/controllers/abTasksCtrl.js"
+                                ]
+                            });
                         }
                     ]
                 }

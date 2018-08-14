@@ -91,11 +91,13 @@
             $pushMenu.close();
             // $layout is always undefined
             if ($layout !== undefined) {
+                debugger;
                 $layout.activate();
             }
 
         }
         $controlSidebar.fix();
+        
     };
 
     //Overriding layout classes if they are set in localstorage
