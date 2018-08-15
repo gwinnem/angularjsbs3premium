@@ -1,10 +1,7 @@
 ﻿/**
  * Dependencies bootstrap tooltip and jqueryUI sortable.
  * @author Geirr Winnem
- * @copywright 2018- Geirr Winnem. All Rights Reserved
  * @version 1.0.0
- * @link http://www.abadmin.com
- * @license MIT
  * @summary TODO List widget.
  */
 (function () {
@@ -17,7 +14,7 @@
                 templateUrl: "js/app/common/templates/todo-widget.html",
                 link: function () {
                     $timeout(function () {
-                        // jQuery plugins
+                        // jQuery plugin
                         $(".todo-list").sortable({
                             placeholder: "sort-highlight",
                             handle: ".handle",
