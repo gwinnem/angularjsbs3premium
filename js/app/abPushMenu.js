@@ -28,7 +28,6 @@
         sidebarFooter: '.sidebar-footer',
         contentWrapper: '.content-wrapper',
         button: '[data-toggle="push-menu"]',
-        // not in use mini: '.sidebar-mini',
         expanded: '.sidebar-expanded-on-hover',
         layoutFixed: '.fixed'
     };
@@ -108,23 +107,18 @@
             $(htmlSelectors.body).removeClass(pushMenuClassName.open + ' ' + pushMenuClassName.collapsed).trigger($.Event(pushMenuEvent.collapsed));
         }
     };
-
-    PushMenu.prototype.expandOnHover = function () {
-        $(htmlSelectors.mainSidebar).hover(function () {
-            var mini = $(htmlSelectors.body).is(htmlSelectors.mini);
-            var collapsed = htmlSelectors.collapsed;
-            var ww = $(window).width();
-            var cs = this.options.collapseScreenSize;
-            var aa = $(htmlSelectors.body).is(htmlSelectors.mini + htmlSelectors.collapsed);
-            if ($(htmlSelectors.body).is(htmlSelectors.mini + htmlSelectors.collapsed) && $(window).width() > this.options.collapseScreenSize) {
-                this.expand();
-            }
-        }.bind(this), function () {
-            if ($(htmlSelectors.body).is(htmlSelectors.expanded)) {
-                this.collapse();
-            }
-        }.bind(this));
-    };
+    // Not in use
+    // PushMenu.prototype.expandOnHover = function () {
+    //     $(htmlSelectors.mainSidebar).hover(function () {
+    //         if ($(htmlSelectors.body).is(htmlSelectors.mini + htmlSelectors.collapsed) && $(window).width() > this.options.collapseScreenSize) {
+    //             this.expand();
+    //         }
+    //     }.bind(this), function () {
+    //         if ($(htmlSelectors.body).is(htmlSelectors.expanded)) {
+    //             this.collapse();
+    //         }
+    //     }.bind(this));
+    // };
 
     PushMenu.prototype.expand = function () {
         setTimeout(function () {
