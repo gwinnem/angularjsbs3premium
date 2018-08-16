@@ -91,7 +91,6 @@
             $pushMenu.close();
             // $layout is always undefined
             if ($layout !== undefined) {
-                debugger;
                 $layout.activate();
             }
 

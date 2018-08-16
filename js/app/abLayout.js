@@ -13,7 +13,7 @@
     var dataKey = "ab.layout";
 
     var defaultSettings = {
-        slimscroll: false,
+        slimscroll: true,           // Enables slimscroll for fixed layout.
         resetHeight: true
     };
 
@@ -131,7 +131,7 @@
                     destroy: true
                 }).height("auto");
             }
-            // return;
+            return;
         }
 
         // Enable slimscroll for fixed layout
@@ -144,17 +144,17 @@
                 // Add slimscroll
                 $(htmlSelectors.sidebar).slimScroll({
                     height: ($(window).height() - $(htmlSelectors.mainHeader).height()) + "px",
-                    size: '10px',
-                    //position: 'left',
-                    color: '#ffcc00',
-                    //alwaysVisible: true,
-                    distance: '20px',
-                    //railVisible: true,
-                    railColor: '#222',
-                    railOpacity: 0.3,
+                    size: '1px',
+                    position: 'left',
+                    //color: '#ffcc00',
+                    alwaysVisible: false,
+                    //distance: '20px',
+                    railVisible: false,
+                    //railColor: '#222',
+                    //railOpacity: 0.3,
                     wheelStep: 10,
                     allowPageScroll: true,
-                    disableFadeOut: false
+                    disableFadeOut: true
                 });
             }
         }

@@ -116,7 +116,6 @@
             var ww = $(window).width();
             var cs = this.options.collapseScreenSize;
             var aa = $(htmlSelectors.body).is(htmlSelectors.mini + htmlSelectors.collapsed);
-            debugger;
             if ($(htmlSelectors.body).is(htmlSelectors.mini + htmlSelectors.collapsed) && $(window).width() > this.options.collapseScreenSize) {
                 this.expand();
             }
