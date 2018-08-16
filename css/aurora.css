@@ -412,7 +412,7 @@ a:focus {
   }
 }
 /*
- * Styles for the main sidebar Sidebar
+ * Sidebar toggles out of sight on left side
  * ------------------
  */
 .main-sidebar {
@@ -584,7 +584,7 @@ a:focus {
   background: #425567;
 }
 /*
- * TODO find out wat this is for.
+ * Normal sidebar which toggles with icons on left side.
  */
 @media (min-width: 768px) {
   .sidebar-mini.sidebar-collapse .content-wrapper,
