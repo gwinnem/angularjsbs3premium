@@ -111,6 +111,12 @@
 
     PushMenu.prototype.expandOnHover = function () {
         $(htmlSelectors.mainSidebar).hover(function () {
+            var mini = $(htmlSelectors.body).is(htmlSelectors.mini);
+            var collapsed = htmlSelectors.collapsed;
+            var ww = $(window).width();
+            var cs = this.options.collapseScreenSize;
+            var aa = $(htmlSelectors.body).is(htmlSelectors.mini + htmlSelectors.collapsed);
+            debugger;
             if ($(htmlSelectors.body).is(htmlSelectors.mini + htmlSelectors.collapsed) && $(window).width() > this.options.collapseScreenSize) {
                 this.expand();
             }
@@ -124,6 +130,7 @@
     PushMenu.prototype.expand = function () {
         setTimeout(function () {
             $(htmlSelectors.body).removeClass(pushMenuClassName.collapsed).addClass(pushMenuClassName.expanded);
+            this.open();
         }, this.options.expandTransitionDelay);
     };
 

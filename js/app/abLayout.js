@@ -105,8 +105,6 @@
             $(htmlSelectors.contentWrapper).css("min-height", windowHeight - footerHeight);
         } else {
             var postSetHeight;
-
-            //if (windowHeight >= sidebarHeight) {
             if (windowHeight >= sidebarHeight + headerHeight) {
                 $(htmlSelectors.contentWrapper).css("min-height", windowHeight - neg);
                 postSetHeight = windowHeight - neg;
