@@ -285,13 +285,6 @@ aurora.config(
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'small-box' }]
 
             })
-            .state('staticinclude', {
-                url: '/Directives/staticinclude',
-                templateUrl: 'documentation/pages/staticinclude.html',
-                pageTitle: 'Static-include Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'static-include' }]
-
-            })
             .state('statuslabel', {
                 url: '/Directives/statuslabel',
                 templateUrl: 'documentation/pages/statuslabel.html',
