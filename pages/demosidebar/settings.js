@@ -87,16 +87,14 @@
             $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
             $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
             $layout = $('body').data("ab.layout");
-            $pushMenu.expandOnHover();
+            //$pushMenu.expandOnHover();
             $pushMenu.close();
             // $layout is always undefined
             if ($layout !== undefined) {
                 $layout.activate();
             }
-
+            $controlSidebar.fix();
         }
-        $controlSidebar.fix();
-        
     };
 
     //Overriding layout classes if they are set in localstorage
@@ -190,29 +188,29 @@
             $("#layout-normal").attr('checked', 'checked');
             $("#layout-fixed").attr('disabled', 'disabled');
             $("#layout-boxed").attr('disabled', 'disabled');
-            $("#layout-topnav").attr('disabled', 'disabled');
+            //$("#layout-topnav").attr('disabled', 'disabled');
         }
 
         if ($('body').hasClass('fixed')) {
             $("#layout-fixed").attr('checked', 'checked');
             $("#layout-normal").attr('disabled', 'disabled');
             $("#layout-boxed").attr('disabled', 'disabled');
-            $("#layout-topnav").attr('disabled', 'disabled');
+            //$("#layout-topnav").attr('disabled', 'disabled');
         }
 
         if ($('body').hasClass('layout-boxed')) {
             $("#layout-boxed").attr('checked', 'checked');
             $("#layout-normal").attr('disabled', 'disabled');
             $("#layout-fixed").attr('disabled', 'disabled');
-            $("#layout-topnav").attr('disabled', 'disabled');
+            //$("#layout-topnav").attr('disabled', 'disabled');
         }
 
-        if ($('body').hasClass('layout-topnav')) {
-            $("#layout-topnav").attr('checked', 'checked');
-            $("#layout-normal").attr('disabled', 'disabled');
-            $("#layout-fixed").attr('disabled', 'disabled');
-            $("#layout-boxed").attr('disabled', 'disabled');
-        }
+        // if ($('body').hasClass('layout-topnav')) {
+        //     $("#layout-topnav").attr('checked', 'checked');
+        //     $("#layout-normal").attr('disabled', 'disabled');
+        //     $("#layout-fixed").attr('disabled', 'disabled');
+        //     $("#layout-boxed").attr('disabled', 'disabled');
+        // }
     };
 
     // Main settings button, eventhandle and setting up the panel
