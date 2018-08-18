@@ -1,20 +1,35 @@
 ﻿<!-- Page content -->
 <section class="content animated fadeInRight">
     <section id="layout">
-        <div class="callout callout-info">
+        <div class="row">
+                <div class="col-md-12">
+                        <pre class="hierarchy bring-up"><code class="language-bash" data-lang="bash"><strong>Html layout hierarchy.</strong>
+
+            body/ Here the skin and the layout is configured in the class attribute
+            ├── wrapper/ The main page wrapper.
+            │    ├── header with class main-header / Wrapper for the the logo and the nav-bar.
+            │    ├── aside with class main-sidebar / Contains the user panel, search panel and the Left side Tree menu.
+            │    ├── content-wrapper / Wrapper for the page content.
+            │    |──── content-header / The content header.
+            │    |──── content container-fluid / The wrapper for the ui-view.
+            │── The main-footer / The page footer.
+                                            </code></pre>
+                </div>
+        </div>
+        <!-- <div class="callout callout-info">
             <h4>Tip!</h4>
             <p>
                 The <a ui-sref="starter" href="#">starter page</a> is a good place to start building a page. The index.html file contains the css and js files needed.
             </p>
-        </div>
-        <p>The page layout ( index.html ) consists of five major parts:</p>
+        </div> -->
+        <!-- <p>The page layout ( index.html ) consists of five major parts:</p>
         <ul>
             <li>Wrapper <code>.wrapper</code>. A div that wraps the whole page.</li>
             <li>Main Header <code>.main-header</code>. Contains the logo and navbar.</li>
             <li>Sidebar <code>.main-sidebar</code>. Contains the user panel and sidebar menu.</li>
             <li>Content <code>.content-wrapper</code>. Contains the page header and content.</li>
             <li>Footer <code>.main-footer</code>. Contains the page footer.</li>
-        </ul>
+        </ul> -->
         <h3>Layout Options</h3>
         <div class="callout callout-warning">
             <h4>Note!</h4>
@@ -28,7 +43,7 @@
             <li><b>Fixed:</b> use the class <code>.fixed</code> to get a fixed header and sidebar. <strong class="text-red">Main content not scrollable</strong></li>
             <li><b>Collapsed Sidebar:</b> use the class <code>.sidebar-collapse</code> to have a collapsed sidebar upon loading.</li>
             <li><b>Boxed Layout:</b> use the class <code>.layout-boxed</code> to get a boxed layout that stretches only to 1250px.</li>
-            <li><b>Top Navigation</b> use the class <code>.layout-top-nav</code> to remove the sidebar and have your links at the top navbar. <strong class="text-red">Not working</strong></li>
+            <!-- <li><b>Top Navigation</b> use the class <code>.layout-top-nav</code> to remove the sidebar and have your links at the top navbar. <strong class="text-red">Not working</strong></li> -->
             <li><b>Fixed Footer</b> use the class <code>.fixed-footer</code> to make the footer stick at the bottom of the screen.</li>
         </ul>
         <h3>Skins</h3>
