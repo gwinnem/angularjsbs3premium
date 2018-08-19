@@ -182,35 +182,19 @@
                 }
             }
         });
-
+        var storeLayout = get('ab.layout');
         // Checking if one the layout options are set in the index file
-        if ($('body').hasClass('layout-normal') || get("ab.layout") === "" || get("ab.layout") === "layout-fixed") {
+        if (storeLayout === 'layout-normal') {
             $("#layout-normal").attr('checked', 'checked');
-            $("#layout-fixed").attr('disabled', 'disabled');
-            $("#layout-boxed").attr('disabled', 'disabled');
-            //$("#layout-topnav").attr('disabled', 'disabled');
         }
 
-        if ($('body').hasClass('fixed')) {
+        if (storeLayout === 'fixed') {
             $("#layout-fixed").attr('checked', 'checked');
-            $("#layout-normal").attr('disabled', 'disabled');
-            $("#layout-boxed").attr('disabled', 'disabled');
-            //$("#layout-topnav").attr('disabled', 'disabled');
         }
 
-        if ($('body').hasClass('layout-boxed')) {
+        if (storeLayout === 'layout-boxed') {
             $("#layout-boxed").attr('checked', 'checked');
-            $("#layout-normal").attr('disabled', 'disabled');
-            $("#layout-fixed").attr('disabled', 'disabled');
-            //$("#layout-topnav").attr('disabled', 'disabled');
         }
-
-        // if ($('body').hasClass('layout-topnav')) {
-        //     $("#layout-topnav").attr('checked', 'checked');
-        //     $("#layout-normal").attr('disabled', 'disabled');
-        //     $("#layout-fixed").attr('disabled', 'disabled');
-        //     $("#layout-boxed").attr('disabled', 'disabled');
-        // }
     };
 
     // Main settings button, eventhandle and setting up the panel
@@ -226,30 +210,15 @@
                 {
                     if (value) {
                         store("ab.layout", "layout-normal");
-                        $("#layout-fixed").attr('disabled', 'disabled');
-                        $("#layout-boxed").attr('disabled', 'disabled');
-                        $("#layout-topnav").attr('disabled', 'disabled');
-                    } else {
-                        store("ab.layout", "");
-                        $("#layout-fixed").removeAttr('disabled', 'disabled');
-                        $("#layout-boxed").removeAttr('disabled', 'disabled');
-                        $("#layout-topnav").removeAttr('disabled', 'disabled');
                     }
                     break;
                 }
             case "fixed":
-            case "layout-fixed":
                 {
                     if (value) {
                         store("ab.layout", "fixed");
-                        $("#layout-normal").attr('disabled', 'disabled');
-                        $("#layout-boxed").attr('disabled', 'disabled');
-                        $("#layout-topnav").attr('disabled', 'disabled');
                     } else {
-                        store("ab.layout", "");
-                        $("#layout-normal").removeAttr('disabled', 'disabled');
-                        $("#layout-boxed").removeAttr('disabled', 'disabled');
-                        $("#layout-topnav").removeAttr('disabled', 'disabled');
+                        store("ab.layout", "layout-normal");
                     }
                     break;
                 }
@@ -257,29 +226,8 @@
                 {
                     if (value) {
                         store("ab.layout", "layout-boxed");
-                        $("#layout-normal").attr('disabled', 'disabled');
-                        $("#layout-fixed").attr('disabled', 'disabled');
-                        $("#layout-topnav").attr('disabled', 'disabled');
                     } else {
-                        store("ab.layout", "");
-                        $("#layout-normal").removeAttr('disabled', 'disabled');
-                        $("#layout-fixed").removeAttr('disabled', 'disabled');
-                        $("#layout-topnav").removeAttr('disabled', 'disabled');
-                    }
-                    break;
-                }
-            case "layout-topnav":
-                {
-                    if (value) {
-                        store("ab.layout", "layout-topnav");
-                        $("#layout-normal").attr('disabled', 'disabled');
-                        $("#layout-fixed").attr('disabled', 'disabled');
-                        $("#layout-boxed").attr('disabled', 'disabled');
-                    } else {
-                        store("ab.layout", "");
-                        $("#layout-normal").removeAttr('disabled', 'disabled');
-                        $("#layout-fixed").removeAttr('disabled', 'disabled');
-                        $("#layout-boxed").removeAttr('disabled', 'disabled');
+                        store("ab.layout", "layout-normal");
                     }
                     break;
                 }
