@@ -6,10 +6,6 @@
  */
 (function () {
     'use strict';
-
-    // initializing plugins
-    // $('[data-toggle="control-sidebar"]').controlSidebar();
-    // $('[data-toggle="push-menu"]').pushMenu();
     
     // Getting the plugins
     var $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
