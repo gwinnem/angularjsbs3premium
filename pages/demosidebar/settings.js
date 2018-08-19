@@ -14,13 +14,11 @@
     // Getting the plugins
     var $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
     var $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
-    var $layout = $('body').data("ab.layout");
 
     // Reinitialize variables on load
     $(window).on('load', function () {
         $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
         $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
-        $layout = $('body').data('ab.layout');
     });
     if ($("#demo-settings").hasClass("hidden")) {
         $("#demo-settings").removeClass("hidden");
@@ -86,13 +84,8 @@
         if (cls === 'fixed') {
             $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
             $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
-            $layout = $('body').data("ab.layout");
             $pushMenu.expandOnHover();
             $pushMenu.close();
-            // $layout is always undefined
-            if ($layout !== undefined) {
-                $layout.activate();
-            }
             $controlSidebar.fix();
         }
     };
@@ -101,7 +94,6 @@
     $(window).on('load', function () {
         $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
         $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
-        $layout = $('body').data('ab.layout');
     });
 
     var setupPanel = function () {
@@ -137,17 +129,6 @@
             changeSkin($(this).data('skin'));
         });
 
-
-        /**
-         * Left side menu event handler
-         */
-        $("#toggle-left-sidebar").on('click', function () {
-            if (this.checked) {
-                $pushMenu.close();
-            } else {
-                $pushMenu.open();
-            }
-        });
 
         /**
          * Sidebar skin black & white event handler
@@ -289,7 +270,7 @@
         if (this.checked) {
             store("ab.control.sidebar.slide", "true");
         } else {
-            store("ab.control.sidebar.slide", "true");
+            store("ab.control.sidebar.slide", "false");
         }
         var slide = !$controlSidebar.options.slide;
         $controlSidebar.options.slide = slide;
