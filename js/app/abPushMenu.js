@@ -107,18 +107,18 @@
             $(htmlSelectors.body).removeClass(pushMenuClassName.open + ' ' + pushMenuClassName.collapsed).trigger($.Event(pushMenuEvent.collapsed));
         }
     };
-    
-    PushMenu.prototype.expandOnHover = function () {
-        $(htmlSelectors.mainSidebar).hover(function () {
-            if ($(htmlSelectors.body).is(htmlSelectors.mini + htmlSelectors.collapsed) && $(window).width() > this.options.collapseScreenSize) {
-                this.expand();
-            }
-        }.bind(this), function () {
-            if ($(htmlSelectors.body).is(htmlSelectors.expanded)) {
-                this.collapse();
-            }
-        }.bind(this));
-    };
+    // Not in use
+    // PushMenu.prototype.expandOnHover = function () {
+    //     $(htmlSelectors.mainSidebar).hover(function () {
+    //         if ($(htmlSelectors.body).is(htmlSelectors.mini + htmlSelectors.collapsed) && $(window).width() > this.options.collapseScreenSize) {
+    //             this.expand();
+    //         }
+    //     }.bind(this), function () {
+    //         if ($(htmlSelectors.body).is(htmlSelectors.expanded)) {
+    //             this.collapse();
+    //         }
+    //     }.bind(this));
+    // };
 
     PushMenu.prototype.expand = function () {
         setTimeout(function () {
