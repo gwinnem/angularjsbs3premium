@@ -87,7 +87,7 @@
             $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
             $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
             $layout = $('body').data("ab.layout");
-            //$pushMenu.expandOnHover();
+            $pushMenu.expandOnHover();
             $pushMenu.close();
             // $layout is always undefined
             if ($layout !== undefined) {
@@ -96,12 +96,6 @@
             $controlSidebar.fix();
         }
     };
-
-    //Overriding layout classes if they are set in localstorage
-    var currentLayout = get('ab.layout');
-    if (currentLayout) {
-        changeLayout(currentLayout);
-    }
 
     // Reinitialize variables on load
     $(window).on('load', function () {
@@ -199,7 +193,7 @@
         }
     };
 
-    // Main settings button, eventhandle and setting up the panel
+    // Main settings button, eventhandler and setting up the panel
     $("#demo-set-btn").one("click", function () {
         $("#demo-settings").addClass("in");
         setupPanel();
@@ -248,11 +242,6 @@
 
     $("#layout-boxed").on('click', function () {
         changeSettings('layout-boxed', this.checked);
-    });
-
-    $("#layout-topnav").on('click', function () {
-        // Adding the mega menu as an example.
-        changeSettings('layout-topnav', this.checked);
     });
 
     /**
@@ -321,6 +310,7 @@
             $('.control-sidebar').removeClass('control-sidebar-open');
         }
     });
+
     /**
      * Toggle footer fixed
      */
