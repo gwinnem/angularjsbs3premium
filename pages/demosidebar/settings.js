@@ -20,6 +20,7 @@
         $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
         $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
     });
+
     if ($("#demo-settings").hasClass("hidden")) {
         $("#demo-settings").removeClass("hidden");
     }
@@ -90,18 +91,17 @@
         }
     };
 
-    // Reinitialize variables on load
-    $(window).on('load', function () {
-        $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
-        $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
-    });
-
     var setupPanel = function () {
         var currentLayout = get("ab.layout");
-        if (currentLayout === undefined || currentLayout === "") {
+        if (currentLayout === undefined || currentLayout === '') {
             store("ab.layout", "layout-normal");
         }
+
         var abSettings = $("#demo-settings");
+        
+        /**
+         * Hiding demo settings panel when clicked outside panel.
+         */
         abSettings.on("click", function (e) {
             abSettings.hasClass("in") && $(e.target).is(abSettings) && abSettings.removeClass("in");
         });
@@ -110,14 +110,14 @@
          * The setting menu panel left side button event handler.
          */
         $("#demo-set-btn").on("click", function () {
-            return abSettings.toggleClass("in");
+            abSettings.toggleClass("in");
         });
 
         /**
          * The close button in the settings panel event handler.
          */
         $("#demo-btn-close-settings").on("click", function () {
-            return abSettings.toggleClass("in");
+             abSettings.toggleClass("in");
         });
 
 
