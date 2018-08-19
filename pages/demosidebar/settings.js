@@ -115,14 +115,14 @@
         });
 
         /**
-         * The setting menu panel left side button.
+         * The setting menu panel left side button event handler.
          */
         $("#demo-set-btn").on("click", function () {
             return abSettings.toggleClass("in");
         });
 
         /**
-         * The close button in the settings panel.
+         * The close button in the settings panel event handler.
          */
         $("#demo-btn-close-settings").on("click", function () {
             return abSettings.toggleClass("in");
@@ -130,7 +130,7 @@
 
 
         /**
-         * Change skin  event handler.
+         * Change skin event handler.
          */
         $('[data-skin]').on('click', function (e) {
             e.preventDefault();
@@ -139,7 +139,7 @@
 
 
         /**
-         * Left side menu  event handler
+         * Left side menu event handler
          */
         $("#toggle-left-sidebar").on('click', function () {
             if (this.checked) {
@@ -150,7 +150,7 @@
         });
 
         /**
-         * Sidebar skin black & white  event handler
+         * Sidebar skin black & white event handler
          */
         $('#toggle-right-sidebar-skin').on('click', function () {
             var $sidebar = $('.control-sidebar');
@@ -164,20 +164,7 @@
                 store("ab.controlSidebar", "dark");
             }
         });
-        /**
-         * Sidebar expand on hover event handler
-         */
-        $("#sidebar-expand-on-hover").on('click', function () {
-            if (this.checked) {
-                $pushMenu.expandOnHover();
-                if (!$('body').hasClass('sidebar-collapse')) {
-                    store("ab.sidebarExpandHover", "false");
-                    $("#toggle-left-sidebar").click();
-                } else {
-                    store("ab.sidebarExpandHover", "false");
-                }
-            }
-        });
+
         var storeLayout = get('ab.layout');
         // Checking if one the layout options are set in the index file
         if (storeLayout === 'layout-normal') {
@@ -245,7 +232,7 @@
     });
 
     /**
-     * Left side user panel
+     * Left side user panel event handler
      */
     $("#user-panel").on('click', function () {
         if (this.checked) {
@@ -262,7 +249,7 @@
     });
 
     /**
-     * Left side search box
+     * Left side search box event handler
      */
     $("#search-box").on('click', function () {
         if (this.checked) {
@@ -279,7 +266,7 @@
     });
 
     /**
-     * Left side sidebar-footer
+     * Left side sidebar-footer event handler
      */
     $("#bottom-menu").on('click', function () {
         if (this.checked) {
@@ -296,7 +283,7 @@
     });
 
     /**
-     * Add the control sidebar slide option
+     * Add the control sidebar slide option event handler
      */
     $("#control-sidebar-slide").on('click', function () {
         if (this.checked) {
@@ -312,7 +299,7 @@
     });
 
     /**
-     * Toggle footer fixed
+     * Toggle footer fixed event handler
      */
     $("#layout-fixedfooter").on('click', function () {
         if (this.checked) {
