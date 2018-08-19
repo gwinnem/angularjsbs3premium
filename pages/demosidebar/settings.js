@@ -136,7 +136,7 @@
 
 
         /**
-         * Change skin listener.
+         * Change skin  event handler.
          */
         $('[data-skin]').on('click', function (e) {
             e.preventDefault();
@@ -145,7 +145,7 @@
 
 
         /**
-         * Toggle left side menu
+         * Left side menu  event handler
          */
         $("#toggle-left-sidebar").on('click', function () {
             if (this.checked) {
@@ -156,7 +156,7 @@
         });
 
         /**
-         * Toggle right sidebar skin black & white
+         * Sidebar skin black & white  event handler
          */
         $('#toggle-right-sidebar-skin').on('click', function () {
             var $sidebar = $('.control-sidebar');
@@ -170,7 +170,9 @@
                 store("ab.controlSidebar", "dark");
             }
         });
-
+        /**
+         * Sidebar expand on hover event handler
+         */
         $("#sidebar-expand-on-hover").on('click', function () {
             if (this.checked) {
                 $pushMenu.expandOnHover();
