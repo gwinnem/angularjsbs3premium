@@ -93,12 +93,12 @@
 
     var setupPanel = function () {
         var currentLayout = get("ab.layout");
-        if (currentLayout === undefined || currentLayout === '') {
+        if (currentLayout === undefined || currentLayout === '' || currentLayout === null) {
             store("ab.layout", "layout-normal");
         }
 
         var abSettings = $("#demo-settings");
-        
+
         /**
          * Hiding demo settings panel when clicked outside panel.
          */
@@ -117,7 +117,7 @@
          * The close button in the settings panel event handler.
          */
         $("#demo-btn-close-settings").on("click", function () {
-             abSettings.toggleClass("in");
+            abSettings.toggleClass("in");
         });
 
 
