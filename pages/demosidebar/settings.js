@@ -6,10 +6,11 @@
  */
 (function () {
     'use strict';
-    
+
     // Getting the plugins
     var $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
     var $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
+    var $layout = $('body').data("ab.layout");
 
     if ($("#demo-settings").hasClass("hidden")) {
         $("#demo-settings").removeClass("hidden");
@@ -74,6 +75,7 @@
         if (cls === 'fixed') {
             $pushMenu.expandOnHover();
             $pushMenu.close();
+            store('ab.pushmenu', 'closed');
         }
     };
 
@@ -283,13 +285,14 @@
         $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
         $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
         $layout = $('body').data("ab.layout");
-        
+
         var storeLayout = get('ab.layout');
         var storePushMenu = get('ab.pushmenu');
 
         // Setting pushmenu
-        if (storePushMenu === 'closed' && storeLayout === 'fixed') {
+        if (storeLayout === 'fixed') {
             $pushMenu.collapse();
+            store('ab.pushmenu', 'closed');
         } else if (storePushMenu === 'closed' && storeLayout !== 'fixed') {
             $pushMenu.collapse();
         }
