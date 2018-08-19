@@ -50,7 +50,6 @@
 
     Layout.prototype.activate = function () {
         this.fix();
-        this.fixSidebar();
 
         if ($("body").hasClass(className.holdTransition)) {
             $("body").removeClass(className.holdTransition);
@@ -66,11 +65,9 @@
         if (!this.bindedResize) {
             $(window).resize(function () {
                 this.fix();
-                this.fixSidebar();
 
                 $(htmlSelectors.logo + ", " + htmlSelectors.sidebar).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function () {
                     this.fix();
-                    this.fixSidebar();
                 }.bind(this));
             }.bind(this));
 
@@ -79,12 +76,10 @@
 
         $(htmlSelectors.sidebarMenu).on("expanded.tree", function () {
             this.fix();
-            this.fixSidebar();
         }.bind(this));
 
         $(htmlSelectors.sidebarMenu).on("collapsed.tree", function () {
             this.fix();
-            this.fixSidebar();
         }.bind(this));
     };
 
@@ -121,9 +116,6 @@
                 }
             }
         }
-    };
-
-    Layout.prototype.fixSidebar = function () {
         // Make sure the body tag has the .fixed class
         if (!$("body").hasClass(className.layoutFixed)) {
             if (typeof $.fn.slimScroll !== "undefined") {

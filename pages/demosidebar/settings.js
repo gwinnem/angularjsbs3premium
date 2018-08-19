@@ -19,6 +19,17 @@
     $(window).on('load', function () {
         $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
         $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
+
+        var storeLayout = get('ab.layout');
+        var storePushMenu = get('ab.pushmenu');
+
+        // Setting pushmenu
+        if (storePushMenu === 'closed' && storeLayout === 'fixed') {
+            $pushMenu.collapse();
+        } else if (storePushMenu === 'closed' && storeLayout !== 'fixed') {
+            $pushMenu.collapse();
+        }
+
     });
 
     if ($("#demo-settings").hasClass("hidden")) {
