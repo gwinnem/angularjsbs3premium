@@ -8,29 +8,12 @@
     'use strict';
 
     // initializing plugins
-    $('[data-toggle="control-sidebar"]').controlSidebar();
-    $('[data-toggle="push-menu"]').pushMenu();
-
+    // $('[data-toggle="control-sidebar"]').controlSidebar();
+    // $('[data-toggle="push-menu"]').pushMenu();
+    
     // Getting the plugins
     var $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
     var $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
-
-    // Reinitialize variables on load
-    $(window).on('load', function () {
-        $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
-        $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
-
-        var storeLayout = get('ab.layout');
-        var storePushMenu = get('ab.pushmenu');
-
-        // Setting pushmenu
-        if (storePushMenu === 'closed' && storeLayout === 'fixed') {
-            $pushMenu.collapse();
-        } else if (storePushMenu === 'closed' && storeLayout !== 'fixed') {
-            $pushMenu.collapse();
-        }
-
-    });
 
     if ($("#demo-settings").hasClass("hidden")) {
         $("#demo-settings").removeClass("hidden");
@@ -92,13 +75,9 @@
      * Toggles layout classes
      */
     function changeLayout(cls) {
-        $('body').toggleClass(cls);
         if (cls === 'fixed') {
-            $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
-            $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
             $pushMenu.expandOnHover();
             $pushMenu.close();
-            $controlSidebar.fix();
         }
     };
 
@@ -301,5 +280,23 @@
             store("ab.fixedfooter", "false");
             $("#main-footer").removeClass("main-footer-fixed");
         }
+    });
+
+    // Reinitialize variables on load
+    $(window).on('load', function () {
+        $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
+        $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
+        $layout = $('body').data("ab.layout");
+        
+        var storeLayout = get('ab.layout');
+        var storePushMenu = get('ab.pushmenu');
+
+        // Setting pushmenu
+        if (storePushMenu === 'closed' && storeLayout === 'fixed') {
+            $pushMenu.collapse();
+        } else if (storePushMenu === 'closed' && storeLayout !== 'fixed') {
+            $pushMenu.collapse();
+        }
+        changeLayout(storeLayout);
     });
 })();

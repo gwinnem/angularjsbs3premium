@@ -89,18 +89,12 @@ function ($) {
     };
 
     ControlSidebar.prototype.fix = function () {
-        if ($("body").is(Selector.boxed)) {
-            this._fixForBoxed($(Selector.bg));
+        if ($("body").hasClass(Selector.boxed)) {
+            bg.css({
+                position: "absolute",
+                height: $(Selector.wrapper).height()
+            });
         }
-    };
-
-    // Private
-
-    ControlSidebar.prototype._fixForBoxed = function (bg) {
-        bg.css({
-            position: "absolute",
-            height: $(Selector.wrapper).height()
-        });
     };
 
     // Plugin Definition
