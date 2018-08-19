@@ -170,11 +170,5 @@
 
     $(window).on('load', function () {
         plugin.call($(htmlSelectors.button));
-        if (localStorage.getItem(dataKey) === null) {
-            localStorage.setItem(dataKey, pushMenuOpen);
-        }
-        if (localStorage.getItem(dataKey) === pushMenuClosed) {
-            plugin.call($(this), 'toggle');
-        }
     });
 }(jQuery);
