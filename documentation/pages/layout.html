@@ -2,8 +2,8 @@
 <section class="content animated fadeInRight">
     <section id="layout">
         <div class="row">
-                <div class="col-md-12">
-                        <pre class="hierarchy bring-up"><code class="language-bash" data-lang="bash"><strong>Html layout hierarchy.</strong>
+            <div class="col-md-12">
+                <pre class="hierarchy bring-up"><code class="language-bash" data-lang="bash"><strong>Html layout hierarchy.</strong>
 
             body/ Here the skin and the layout is configured in the class attribute
             ├── wrapper/ The main page wrapper.
@@ -14,45 +14,76 @@
             │    |──── content container-fluid / The wrapper for the ui-view.
             │── The main-footer / The page footer.
                                             </code></pre>
-                </div>
+            </div>
         </div>
-        <!-- <div class="callout callout-info">
-            <h4>Tip!</h4>
-            <p>
-                The <a ui-sref="starter" href="#">starter page</a> is a good place to start building a page. The index.html file contains the css and js files needed.
-            </p>
-        </div> -->
-        <!-- <p>The page layout ( index.html ) consists of five major parts:</p>
-        <ul>
-            <li>Wrapper <code>.wrapper</code>. A div that wraps the whole page.</li>
-            <li>Main Header <code>.main-header</code>. Contains the logo and navbar.</li>
-            <li>Sidebar <code>.main-sidebar</code>. Contains the user panel and sidebar menu.</li>
-            <li>Content <code>.content-wrapper</code>. Contains the page header and content.</li>
-            <li>Footer <code>.main-footer</code>. Contains the page footer.</li>
-        </ul> -->
         <h3>Layout Options</h3>
         <div class="callout callout-warning">
             <h4>Note!</h4>
             <p>You cannot use both layout-boxed and fixed at the same time. Anything else can be mixed together.</p>
         </div>
-        <p>
-            AbAdmin provides a set of options to apply to your main layout. Each one of these classes can be added
-            to the body tag to get the desired goal.
-        </p>
-        <ul>
-            <li><b>Fixed:</b> use the class <code>.fixed</code> to get a fixed header and sidebar. <strong class="text-red">Main content not scrollable</strong></li>
-            <li><b>Collapsed Sidebar:</b> use the class <code>.sidebar-collapse</code> to have a collapsed sidebar upon loading.</li>
-            <li><b>Boxed Layout:</b> use the class <code>.layout-boxed</code> to get a boxed layout that stretches only to 1250px.</li>
-            <!-- <li><b>Top Navigation</b> use the class <code>.layout-top-nav</code> to remove the sidebar and have your links at the top navbar. <strong class="text-red">Not working</strong></li> -->
-            <li><b>Fixed Footer</b> use the class <code>.fixed-footer</code> to make the footer stick at the bottom of the screen.</li>
-        </ul>
+        <div class="callout callout-danger">
+            <p>
+                The template depends on the following files to make the layout work correct.
+            </p>
+        </div>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>File</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>abLayout.js</td>
+                    <td>The main layout handler.</td>
+                </tr>
+                <tr>
+                    <td>abPushMenu.js</td>
+                    <td>For layout options fixed and layout-boxed.</td>
+                </tr>
+                <tr>
+                    <td>abControlSidebar.js</td>
+                    <td>For righ side menubar/control sidebar.</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="well">
+            <p>
+                AbAdmin provides a set of options to apply to your main layout. Each one of these classes can be added to the body tag to
+                get the desired goal.
+            </p>
+            <ul>
+                <li>
+                    <b>Normal:</b> use the class
+                    <code>.layout-normal</code> to get the normal layout.
+                </li>
+                <li>
+                    <b>Fixed:</b> use the class
+                    <code>.layout-fixed</code> to get a fixed header and sidebar.
+                    <strong class="text-red">Main content not scrollable</strong>
+                </li>
+                <li>
+                    <b>Boxed Layout:</b> use the class
+                    <code>.layout-boxed</code> to get a boxed layout that stretches only to 1250px.
+                </li>
+                <li>
+                    <b>Collapsed Sidebar:</b> use the class
+                    <code>.sidebar-collapse</code> to have a collapsed sidebar upon loading.
+                </li>
+                <li>
+                    <b>Fixed Footer</b> use the class
+                    <code>.main-footer-fixed</code> to make the footer stick at the bottom of the screen.
+                </li>
+            </ul>
+        </div>
         <h3>Skins</h3>
         <p>
-            Skins can be found in the <code>dist/css/skins</code> folder.
-            Choose the skin file that you want and then add the appropriate
-            class to the body tag to change the template's appearance. Here is the list of available skins:
+            Skins can be found in the
+            <code>dist/css/skins</code> folder. Choose the skin file that you want and then add the appropriate class to the body tag to change the
+            template's appearance. Here is the list of available skins:
         </p>
-        <div class="box box-solid" style="max-width: 600px;">
+        <!-- <div class="box box-solid" style="max-width: 600px;">
             <div class="box-body no-padding">
                 <table class="table table-striped">
                     <thead>
@@ -65,46 +96,120 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><code>skin-blue</code></td>
-                            <td><a class="btn btn-primary btn-xs" href="#" data-skin="skin-blue"><i class="fa fa-eye"></i></a></td>
-                            <td><code>skin-blue-light</code></td>
-                            <td><a class="btn btn-primary btn-xs" href="#" data-skin="skin-blue-light"><i class="fa fa-eye"></i></a></td>
+                            <td>
+                                <code>skin-blue</code>
+                            </td>
+                            <td>
+                                <a class="btn btn-primary btn-xs" href="#" data-skin="skin-blue">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-blue-light</code>
+                            </td>
+                            <td>
+                                <a class="btn btn-primary btn-xs" href="#" data-skin="skin-blue-light">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </td>
                         </tr>
 
                         <tr>
-                            <td><code>skin-yellow</code></td>
-                            <td><a class="btn btn-warning btn-xs" href="#" data-skin="skin-yellow"><i class="fa fa-eye"></i></a></td>
-                            <td><code>skin-yellow-light</code></td>
-                            <td><a class="btn btn-warning btn-xs" href="#" data-skin="skin-yellow-light"><i class="fa fa-eye"></i></a></td>
+                            <td>
+                                <code>skin-yellow</code>
+                            </td>
+                            <td>
+                                <a class="btn btn-warning btn-xs" href="#" data-skin="skin-yellow">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-yellow-light</code>
+                            </td>
+                            <td>
+                                <a class="btn btn-warning btn-xs" href="#" data-skin="skin-yellow-light">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </td>
                         </tr>
                         <tr>
-                            <td><code>skin-green</code></td>
-                            <td><a class="btn btn-success btn-xs" href="#" data-skin="skin-green"><i class="fa fa-eye"></i></a></td>
-                            <td><code>skin-green-light</code></td>
-                            <td><a class="btn btn-success btn-xs" href="#" data-skin="skin-green-light"><i class="fa fa-eye"></i></a></td>
+                            <td>
+                                <code>skin-green</code>
+                            </td>
+                            <td>
+                                <a class="btn btn-success btn-xs" href="#" data-skin="skin-green">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-green-light</code>
+                            </td>
+                            <td>
+                                <a class="btn btn-success btn-xs" href="#" data-skin="skin-green-light">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </td>
                         </tr>
                         <tr>
-                            <td><code>skin-purple</code></td>
-                            <td><a class="btn bg-purple btn-xs" href="#" data-skin="skin-purple"><i class="fa fa-eye"></i></a></td>
-                            <td><code>skin-purple-light</code></td>
-                            <td><a class="btn bg-purple btn-xs" href="#" data-skin="skin-purple-light"><i class="fa fa-eye"></i></a></td>
+                            <td>
+                                <code>skin-purple</code>
+                            </td>
+                            <td>
+                                <a class="btn bg-purple btn-xs" href="#" data-skin="skin-purple">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-purple-light</code>
+                            </td>
+                            <td>
+                                <a class="btn bg-purple btn-xs" href="#" data-skin="skin-purple-light">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </td>
                         </tr>
                         <tr>
-                            <td><code>skin-red</code></td>
-                            <td><a class="btn btn-danger btn-xs" href="#" data-skin="skin-red"><i class="fa fa-eye"></i></a></td>
-                            <td><code>skin-red-light</code></td>
-                            <td><a class="btn btn-danger btn-xs" href="#" data-skin="skin-red-light"><i class="fa fa-eye"></i></a></td>
+                            <td>
+                                <code>skin-red</code>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger btn-xs" href="#" data-skin="skin-red">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-red-light</code>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger btn-xs" href="#" data-skin="skin-red-light">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </td>
                         </tr>
                         <tr>
-                            <td><code>skin-black</code></td>
-                            <td><a class="btn bg-black btn-xs" href="#" data-skin="skin-black"><i class="fa fa-eye"></i></a></td>
-                            <td><code>skin-black-light</code></td>
-                            <td><a class="btn bg-black btn-xs" href="#" data-skin="skin-black-light"><i class="fa fa-eye"></i></a></td>
+                            <td>
+                                <code>skin-black</code>
+                            </td>
+                            <td>
+                                <a class="btn bg-black btn-xs" href="#" data-skin="skin-black">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-black-light</code>
+                            </td>
+                            <td>
+                                <a class="btn bg-black btn-xs" href="#" data-skin="skin-black-light">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
-            </div><!-- /.box-body -->
-        </div><!-- /.box -->
+            </div>
+            <!-- /.box-body -->
+        </div> -->
+        <!-- /.box -->
     </section>
 </section>
 <!-- / Page content -->

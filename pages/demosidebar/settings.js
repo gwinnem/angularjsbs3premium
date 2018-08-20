@@ -7,11 +7,20 @@
 (function () {
     'use strict';
 
+    // Possible class names in the body element.
+    var className = {
+        layoutNormal: "layout-normal",
+        layoutFixed: "fixed",
+        layoutBoxed: "layout-boxed",
+        fixedFooter: "main-footer-fixed"
+    };
+
     // Getting the plugins
     var $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
     var $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
     var $layout = $('body').data("ab.layout");
 
+    // Making sure demo-settins are hidden until page is loaded
     if ($("#demo-settings").hasClass("hidden")) {
         $("#demo-settings").removeClass("hidden");
     }
@@ -79,6 +88,9 @@
         }
     };
 
+    /**
+     * Setting up the settings panel.
+     */
     var setupPanel = function () {
         var currentLayout = get("ab.layout");
         if (currentLayout === undefined || currentLayout === '' || currentLayout === null) {
@@ -95,7 +107,7 @@
         });
 
         /**
-         * The setting menu panel left side button event handler.
+         * The setting menu panel right side button event handler.
          */
         $("#demo-set-btn").on("click", function () {
             abSettings.toggleClass("in");
@@ -119,7 +131,7 @@
 
 
         /**
-         * Sidebar skin black & white event handler
+         * Control Sidebar skin black & white event handler
          */
         $('#toggle-right-sidebar-skin').on('click', function () {
             var $sidebar = $('.control-sidebar');

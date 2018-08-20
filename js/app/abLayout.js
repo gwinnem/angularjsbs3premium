@@ -4,8 +4,6 @@
  * Fixes the layout height in case min-height fails.
  *
  * @usage activated automatically upon window load.
- *        Configure any options by passing data-option="value"
- *        to the body tag.
  */
 + function ($) {
     "use strict";
@@ -13,23 +11,19 @@
     var dataKey = "ab.layout";
 
     var defaultSettings = {
-        slimscroll: true,           // Enables slimscroll for fixed layout.
         resetHeight: true
     };
 
     var htmlSelectors = {
         wrapper: ".wrapper",
-        fixed: ".fixed",
         contentWrapper: ".content-wrapper",
         layoutNormal: ".layout-normal",
         layoutFixed: ".fixed",
         layoutBoxed: ".layout-boxed",
-        layoutTopNav: ".layout-topnav",
         mainFooter: ".main-footer",
         mainHeader: ".main-header",
         sidebar: ".sidebar",
         controlSidebar: ".control-sidebar",
-
         sidebarMenu: ".sidebar-menu",
         logo: ".main-header .logo"
     };
@@ -39,7 +33,7 @@
         layoutNormal: "layout-normal",
         layoutFixed: "fixed",
         layoutBoxed: "layout-boxed",
-        layoutTopNav: "layout-topnav"
+        fixedFooter: "main-footer-fixed"
     };
 
     var Layout = function (options) {
@@ -81,9 +75,15 @@
         $(htmlSelectors.sidebarMenu).on("collapsed.tree", function () {
             this.fix();
         }.bind(this));
+
+        // Adding fixed footer if main-footer-fixed exists
+        if ($("body").hasClass(className.fixedFooter)) {
+            $("#main-footer").addClass(className.fixedFooter);
+        }
     };
 
     Layout.prototype.fix = function () {
+
         // Remove overflow from .wrapper if layout-boxed exists
         $(htmlSelectors.layoutBoxed + " > " + htmlSelectors.wrapper).css("overflow", "hidden");
 
@@ -94,9 +94,9 @@
         var windowHeight = $(window).height();
         var sidebarHeight = $(htmlSelectors.sidebar).height() || 0;
 
-        // Set the min-height of the content and sidebar based on
-        // the height of the document.
-        if (!$("body").hasClass(className.layoutFixed)) {
+        // Set the min-height of the content and sidebar based on the height of the document. 
+        // Adding slim-scroll if layout is fixed.
+        if ($("body").hasClass(className.layoutFixed)) {
             $(htmlSelectors.contentWrapper).css("min-height", windowHeight - footerHeight);
         } else {
             var postSetHeight;
@@ -116,7 +116,8 @@
                 }
             }
         }
-        // Make sure the body tag has the .fixed class
+
+        // Removing slimscroll if layout is not layout-fixed
         if (!$("body").hasClass(className.layoutFixed)) {
             if (typeof $.fn.slimScroll !== "undefined") {
                 $(htmlSelectors.sidebar).slimScroll({
@@ -124,31 +125,22 @@
                 }).height("auto");
             }
             return;
-        }
-
-        // Enable slimscroll for fixed layout
-        if (this.options.slimscroll) {
-            if (typeof $.fn.slimScroll !== "undefined") {
-                // Destroy if it exists
-                $(htmlSelectors.sidebar).slimScroll({
-                    destroy: true
-                }).height('auto')
-                // Add slimscroll
-                $(htmlSelectors.sidebar).slimScroll({
-                    height: ($(window).height() - $(htmlSelectors.mainHeader).height()) + "px",
-                    size: '1px',
-                    position: 'left',
-                    //color: '#ffcc00',
-                    alwaysVisible: false,
-                    //distance: '20px',
-                    railVisible: false,
-                    //railColor: '#222',
-                    //railOpacity: 0.3,
-                    wheelStep: 10,
-                    allowPageScroll: true,
-                    disableFadeOut: true
-                });
-            }
+        } else {
+            // Add slimscroll for layout-fixed
+            $(htmlSelectors.sidebar).slimScroll({
+                height: ($(window).height() - $(htmlSelectors.mainHeader).height()) + "px",
+                size: '0px',
+                position: 'left',
+                //color: '#ffcc00',
+                alwaysVisible: false,
+                //distance: '10px',
+                railVisible: false,
+                //railColor: '#222',
+                //railOpacity: 0.3,
+                //wheelStep: 5,
+                //allowPageScroll: true,
+                //disableFadeOut: false
+            });
         }
     };
 
@@ -171,7 +163,7 @@
                 data[option]();
             }
         });
-    }
+    };
 
     var old = $.fn.layout;
 

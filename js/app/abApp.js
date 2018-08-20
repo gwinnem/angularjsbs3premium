@@ -948,6 +948,33 @@ abApp.config([
 
             // Advanced form elements
 
+            // Bootstrap Switch
+            .state("bootstrapswitch", {
+                url: "/forms/elements/advanced/bootstrapswitch",
+                templateUrl: "pages/forms/bootstrapswitch.html",
+                pageTitle: "Bootstrap Switch",
+                pageBreadCrumbs: [{
+                    name: "Home"
+                }, {
+                    name: "Forms"
+                }, {
+                    name: "Advanced Elements"
+                }, {
+                    name: "Bootstrap Switch"
+                }],
+                resolve: {
+                    ctrl: [
+                        "$ocLazyLoad",
+                        function ($ocLazyLoad) {
+                            return $ocLazyLoad.load({
+                                series: true,
+                                files: ["/js/plugins/bootstrap-switch-3.3.4/dist/css/bootstrap3/bootstrap-switch.min.css",
+                                "/js/plugins/bootstrap-switch-3.3.4/dist/js/bootstrap-switch.js"]
+                            });
+                        }
+                    ]
+                }
+            })
             // Awesome Bootstrap Checkbox v1.0.0
             .state("awesomecheckbox", {
                 url: "/forms/elements/advanced/awesomecheckboxes",
@@ -2454,8 +2481,8 @@ abApp.config([
                         "$ocLazyLoad",
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
-                                serie:true,
-                                files:["/js/plugins/ui-sortable/src/sortable.js",
+                                serie: true,
+                                files: ["/js/plugins/ui-sortable/src/sortable.js",
                                     "/js/app/misc/controllers/abTasksCtrl.js"
                                 ]
                             });

@@ -13,6 +13,325 @@
                         <div class="col-sm-6 col-lg-4">
                             <h2 class="h4">State</h2>
                             <p>
+                                <div class="bootstrap-switch-on bootstrap-switch-id-switch-state bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate"
+                                    style="width: 106px;">
+                                    <div class="bootstrap-switch-container" style="width: 156px; margin-left: 0px;">
+                                        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 52px;">ON</span>
+                                        <span class="bootstrap-switch-label" style="width: 52px;">&nbsp;</span>
+                                        <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 52px;">OFF</span>
+                                        <input id="switch-state" type="checkbox" checked="checked">
+                                    </div>
+                                </div>
+                            </p>
+                            <div class="btn-group">
+                                <button type="button" data-switch-toggle="state" class="btn btn-default">Toggle</button>
+                                <button type="button" data-switch-set="state" data-switch-value="true" class="btn btn-default">Set true</button>
+                                <button type="button" data-switch-set="state" data-switch-value="false"
+                                    class="btn btn-default">Set false</button>
+                                <button type="button" data-switch-get="state" class="btn btn-default">Get</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <h2 class="h4">Size</h2>
+                            <p>
+                                <div class="bootstrap-switch-on bootstrap-switch-mini bootstrap-switch-id-switch-size bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate"
+                                    style="width: 70px;">
+                                    <div class="bootstrap-switch-container" style="width: 102px; margin-left: 0px;">
+                                        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 34px;">ON</span>
+                                        <span class="bootstrap-switch-label" style="width: 34px;">&nbsp;</span>
+                                        <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 34px;">OFF</span>
+                                        <input id="switch-size" type="checkbox" checked="checked" data-size="mini">
+                                    </div>
+                                </div>
+                            </p>
+                            <div class="btn-group">
+                                <button type="button" data-switch-set="size" data-switch-value="mini" class="btn btn-default">Mini</button>
+                                <button type="button" data-switch-set="size" data-switch-value="small" class="btn btn-default">Small</button>
+                                <button type="button" data-switch-set="size" data-switch-value="normal" class="btn btn-default">Normal</button>
+                                <button type="button" data-switch-set="size" data-switch-value="large" class="btn btn-default">Large</button>
+                                <button type="button" data-switch-get="size" class="btn btn-default">Get</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <h2 class="h4">Animate</h2>
+                            <p>
+                                <div class="bootstrap-switch-on bootstrap-switch-id-switch-animate bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate"
+                                    style="width: 106px;">
+                                    <div class="bootstrap-switch-container" style="width: 156px; margin-left: 0px;">
+                                        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 52px;">ON</span>
+                                        <span class="bootstrap-switch-label" style="width: 52px;">&nbsp;</span>
+                                        <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 52px;">OFF</span>
+                                        <input id="switch-animate" type="checkbox" checked="checked">
+                                    </div>
+                                </div>
+                            </p>
+                            <p>
+                                <button type="button" data-switch-toggle="animate" class="btn btn-default">Toggle</button>
+                                <button type="button" data-switch-get="animate" class="btn btn-default">Get</button>
+                            </p>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <h2 class="h4">Disabled</h2>
+                            <p>
+                                <div class="bootstrap-switch-on bootstrap-switch-disabled bootstrap-switch-id-switch-disabled bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate"
+                                    style="width: 106px;">
+                                    <div class="bootstrap-switch-container" style="width: 156px; margin-left: 0px;">
+                                        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 52px;">ON</span>
+                                        <span class="bootstrap-switch-label" style="width: 52px;">&nbsp;</span>
+                                        <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 52px;">OFF</span>
+                                        <input id="switch-disabled" type="checkbox" checked="checked" disabled="disabled">
+                                    </div>
+                                </div>
+                            </p>
+                            <p>
+                                <button type="button" data-switch-toggle="disabled" class="btn btn-default">Toggle</button>
+                                <button type="button" data-switch-get="disabled" class="btn btn-default">Get</button>
+                            </p>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <h2 class="h4">Readonly</h2>
+                            <p>
+                                <div class="bootstrap-switch-on bootstrap-switch-readonly bootstrap-switch-id-switch-readonly bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate"
+                                    style="width: 106px;">
+                                    <div class="bootstrap-switch-container" style="width: 156px; margin-left: 0px;">
+                                        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 52px;">ON</span>
+                                        <span class="bootstrap-switch-label" style="width: 52px;">&nbsp;</span>
+                                        <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 52px;">OFF</span>
+                                        <input id="switch-readonly" type="checkbox" checked="checked" readonly="readonly">
+                                    </div>
+                                </div>
+                            </p>
+                            <p>
+                                <button type="button" data-switch-toggle="readonly" class="btn btn-default">Toggle</button>
+                                <button type="button" data-switch-get="readonly" class="btn btn-default">Get</button>
+                            </p>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <h2 class="h4">Indeterminate</h2>
+                            <p>
+                                <div class="bootstrap-switch-on bootstrap-switch-indeterminate bootstrap-switch-id-switch-indeterminate bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate"
+                                    style="width: 106px;">
+                                    <div class="bootstrap-switch-container" style="width: 156px; margin-left: -26px;">
+                                        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 52px;">ON</span>
+                                        <span class="bootstrap-switch-label" style="width: 52px;">&nbsp;</span>
+                                        <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 52px;">OFF</span>
+                                        <input id="switch-indeterminate" type="checkbox" checked="checked" data-indeterminate="true">
+                                    </div>
+                                </div>
+                            </p>
+                            <p>
+                                <button type="button" data-switch-toggle="indeterminate" class="btn btn-default">Toggle</button>
+                                <button type="button" data-switch-get="indeterminate" class="btn btn-default">Get</button>
+                            </p>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <h2 class="h4">Inverse</h2>
+                            <p>
+                                <div class="bootstrap-switch-on bootstrap-switch-inverse bootstrap-switch-id-switch-inverse bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate"
+                                    style="width: 106px;">
+                                    <div class="bootstrap-switch-container" style="width: 156px; margin-left: -52px;">
+                                        <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 52px;">OFF</span>
+                                        <span class="bootstrap-switch-label" style="width: 52px;">&nbsp;</span>
+                                        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 52px;">ON</span>
+                                        <input id="switch-inverse" type="checkbox" checked="checked" data-inverse="true">
+                                    </div>
+                                </div>
+                            </p>
+                            <p>
+                                <button type="button" data-switch-toggle="inverse" class="btn btn-default">Toggle</button>
+                                <button type="button" data-switch-get="inverse" class="btn btn-default">Get</button>
+                            </p>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <h2 class="h4">On Color</h2>
+                            <p>
+                                <div class="bootstrap-switch-on bootstrap-switch-id-switch-onColor bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate"
+                                    style="width: 106px;">
+                                    <div class="bootstrap-switch-container" style="width: 156px; margin-left: 0px;">
+                                        <span class="bootstrap-switch-handle-on bootstrap-switch-info" style="width: 52px;">ON</span>
+                                        <span class="bootstrap-switch-label" style="width: 52px;">&nbsp;</span>
+                                        <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 52px;">OFF</span>
+                                        <input id="switch-onColor" type="checkbox" checked="checked" data-on-color="info">
+                                    </div>
+                                </div>
+                            </p>
+                            <p class="btn-group"></p>
+                            <div class="btn-group">
+                                <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Set &nbsp;
+                                    <span class="caret"></span>
+                                </button>
+                                <div role="menu" class="dropdown-menu">
+                                    <li>
+                                        <a data-switch-set="onColor" data-switch-value="primary">Primary</a>
+                                    </li>
+                                    <li>
+                                        <a data-switch-set="onColor" data-switch-value="info">Info</a>
+                                    </li>
+                                    <li>
+                                        <a data-switch-set="onColor" data-switch-value="success">Success</a>
+                                    </li>
+                                    <li>
+                                        <a data-switch-set="onColor" data-switch-value="warning">Warning</a>
+                                    </li>
+                                    <li>
+                                        <a data-switch-set="onColor" data-switch-value="default">Default</a>
+                                    </li>
+                                </div>
+                            </div>
+                            <button type="button" data-switch-get="onColor" class="btn btn-default">Get</button>
+                            <p></p>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <h2 class="h4">Off Color</h2>
+                            <p>
+                                <div class="bootstrap-switch-off bootstrap-switch-id-switch-offColor bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate"
+                                    style="width: 106px;">
+                                    <div class="bootstrap-switch-container" style="width: 156px; margin-left: -52px;">
+                                        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 52px;">ON</span>
+                                        <span class="bootstrap-switch-label" style="width: 52px;">&nbsp;</span>
+                                        <span class="bootstrap-switch-handle-off bootstrap-switch-warning" style="width: 52px;">OFF</span>
+                                        <input id="switch-offColor" type="checkbox" data-off-color="warning">
+                                    </div>
+                                </div>
+                            </p>
+                            <p class="btn-group"></p>
+                            <div class="btn-group">
+                                <button type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle">Set &nbsp;
+                                    <span class="caret"></span>
+                                </button>
+                                <div role="menu" class="dropdown-menu">
+                                    <li>
+                                        <a data-switch-set="offColor" data-switch-value="primary">Primary</a>
+                                    </li>
+                                    <li>
+                                        <a data-switch-set="offColor" data-switch-value="info">Info</a>
+                                    </li>
+                                    <li>
+                                        <a data-switch-set="offColor" data-switch-value="success">Success</a>
+                                    </li>
+                                    <li>
+                                        <a data-switch-set="offColor" data-switch-value="warning">Warning</a>
+                                    </li>
+                                    <li>
+                                        <a data-switch-set="offColor" data-switch-value="default">Default</a>
+                                    </li>
+                                </div>
+                            </div>
+                            <button type="button" data-switch-get="offColor" class="btn btn-default">Get</button>
+                            <p></p>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <h2 class="h4">On Text</h2>
+                            <p>
+                                <div class="bootstrap-switch-on bootstrap-switch-id-switch-onText bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate"
+                                    style="width: 106px;">
+                                    <div class="bootstrap-switch-container" style="width: 156px; margin-left: 0px;">
+                                        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 52px;">Yes</span>
+                                        <span class="bootstrap-switch-label" style="width: 52px;">&nbsp;</span>
+                                        <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 52px;">OFF</span>
+                                        <input id="switch-onText" type="checkbox" checked="checked" data-on-text="Yes">
+                                    </div>
+                                </div>
+                            </p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" data-switch-set-value="onText" value="Yes" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <h2 class="h4">Off Text</h2>
+                            <p>
+                                <div class="bootstrap-switch-off bootstrap-switch-id-switch-offText bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate"
+                                    style="width: 92px;">
+                                    <div class="bootstrap-switch-container" style="width: 135px; margin-left: -45px;">
+                                        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 45px;">ON</span>
+                                        <span class="bootstrap-switch-label" style="width: 45px;">&nbsp;</span>
+                                        <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 45px;">No</span>
+                                        <input id="switch-offText" type="checkbox" data-off-text="No">
+                                    </div>
+                                </div>
+                            </p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" data-switch-set-value="offText" value="No" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <h2 class="h4">Label Text</h2>
+                            <p>
+                                <div class="bootstrap-switch-off bootstrap-switch-id-switch-labelText bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate"
+                                    style="width: 113px;">
+                                    <div class="bootstrap-switch-container" style="width: 163px; margin-left: -52px;">
+                                        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 52px;">ON</span>
+                                        <span class="bootstrap-switch-label" style="width: 59px;">Label</span>
+                                        <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 52px;">OFF</span>
+                                        <input id="switch-labelText" type="checkbox" data-label-text="Label">
+                                    </div>
+                                </div>
+                            </p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" data-switch-set-value="labelText" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <h2 class="h4">Handle Width</h2>
+                            <p>
+                                <div class="bootstrap-switch-id-switch-handleWidth bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate bootstrap-switch-off"
+                                    style="width: 240px;">
+                                    <div class="bootstrap-switch-container" style="width: 357px; margin-left: -119px;">
+                                        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 124px;">ON</span>
+                                        <span class="bootstrap-switch-label" style="width: 124px;">&nbsp;</span>
+                                        <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 124px;">OFF</span>
+                                        <input id="switch-handleWidth" type="checkbox" data-handle-width="100">
+                                    </div>
+                                </div>
+                            </p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="number" data-switch-set-value="handleWidth" value="100" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <h2 class="h4">Label Width</h2>
+                            <p>
+                                <div class="bootstrap-switch-id-switch-labelWidth bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-animate bootstrap-switch-off"
+                                    style="width: 178px;">
+                                    <div class="bootstrap-switch-container" style="width: 228px; margin-left: -52px;">
+                                        <span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 52px;">ON</span>
+                                        <span class="bootstrap-switch-label" style="width: 124px;">&nbsp;</span>
+                                        <span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 52px;">OFF</span>
+                                        <input id="switch-labelWidth" type="checkbox" data-label-width="100">
+                                    </div>
+                                </div>
+                            </p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="number" data-switch-set-value="labelWidth" value="100" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <h2 class="h4">Create | Destroy</h2>
+                            <p>
+                                <input id="switch-create-destroy" type="checkbox" checked="checked" data-switch-no-init="data-switch-no-init">
+                            </p>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <button type="button" data-switch-create-destroy="data-switch-create-destroy" data-destroy-text="Destroy"
+                                        class="btn btn-default">Create</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col-sm-6 col-lg-4">
+                            <h2 class="h4">State</h2>
+                            <p>
                                 <input id="switch-state" type="checkbox" checked="checked">
                             </p>
                             <div class="btn-group">
@@ -167,8 +486,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <br><br>
+                    </div> -->
+                    <br>
+                    <br>
                 </div>
                 <!-- /.box-body -->
             </div>
@@ -340,15 +660,20 @@
                                 <td>Function</td>
                                 <td>Callback function to execute on initialization</td>
                                 <td>Function</td>
-                                <td><pre class="prettyprint"><code class="javascript">function(event, state) {}</code></pre></td>
+                                <td>
+                                    <pre class="prettyprint"><code class="javascript">function(event, state) {}</code></pre>
+                                </td>
                             </tr>
                             <tr>
                                 <td>onSwitchChange</td>
                                 <td></td>
                                 <td>Function</td>
-                                <td>Callback function to execute on switch state change. If false is returned, the status will be reverted, otherwise nothing changes</td>
+                                <td>Callback function to execute on switch state change. If false is returned, the status will
+                                    be reverted, otherwise nothing changes</td>
                                 <td>Function</td>
-                                <td><pre class=" prettyprint"><code class="javascript">function(event, state) {}</code></pre></td>
+                                <td>
+                                    <pre class=" prettyprint"><code class="javascript">function(event, state) {}</code></pre>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

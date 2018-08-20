@@ -56,7 +56,7 @@
     </script>
 </head>
 
-<body ng-app="aurora" class="sidebar-mini layout-normal" ng-cloak ng-controller="mainController">
+<body ng-app="aurora" class="sidebar-mini layout-normal skin-green-light" ng-cloak ng-controller="mainController">
     <!-- Loading section used for preloading of page -->
     <div class="loading">
         <div class="loading-bar"></div>
@@ -333,6 +333,11 @@
                                     </span>
                                 </a>
                                 <ul class="treeview-menu">
+                                    <li>
+                                        <a ui-sref="bootstrapswitch" hret="#">
+                                            Bootstrap Switch
+                                        </a>
+                                    </li>
                                     <li>
                                         <a ui-sref="awesomecheckbox" href="#">
                                             Awesome Checkbox
@@ -666,12 +671,9 @@
                             <li>
                                 <li>
                                     <a ui-sref="badgesandlabels" href="#">
-                                        Badges,Labels
+                                        Badges / Labels
                                         <span class="label label-primary pull-right">12</span>
                                     </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="toggleswitch" href="#"> Toogle Switch</a>
                                 </li>
                                 <li>
                                     <a ui-sref="bootstrapmodals" href="#"> Modals</a>
@@ -1132,7 +1134,7 @@
     <script src="js/app/common/directives/abInfobox.js"></script>
     <script src="js/app/common/directives/abNoUISlider.js"></script>
     <script src="js/app/common/directives/abNumbersOnly.js"></script>
-    <script src="js/app/common/directives/abOIosToggleSwitch.js"></script>
+    <script src="js/app/common/directives/abOiosToggleSwitch.js"></script>
     <script src="js/app/common/directives/abPageTitle.js"></script>
     <script src="js/app/common/directives/abPriorityLabel.js"></script>
     <script src="js/app/common/directives/abSimpleBreadCrumb.js"></script>
@@ -1142,7 +1144,11 @@
     <script src="js/app/common/directives/abTodoList.js"></script>
     <script src="js/app/common/directives/abToggleSwitch.js"></script>
     <script src="js/app/common/directives/abWhenScrollEnds.js"></script>
+
+
     <!-- <script src="js/app/common/directives/abNotificationDropdown.js"></script> -->
+
+
     <!-- Services -->
     <script src="/js/app/common/services/abConfig.js"></script>
     <script src="/js/app/common/services/abDataService.js"></script>
