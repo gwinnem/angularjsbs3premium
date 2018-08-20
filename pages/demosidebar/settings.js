@@ -15,6 +15,22 @@
         fixedFooter: "main-footer-fixed"
     };
 
+    var storeName = {
+        layout: 'ab.layout',
+        pushmenu: 'ab.pushmenu',
+        fixedFooter: 'ab.fixedfooter',
+        skin: 'ab.skin',
+        controlsidebar: 'ab.controlSidebar',
+        searchbox: 'ab.searchbox',
+        userpanel: 'ab.userpanel',
+        sidebarFooter: 'ab.sidebarFooter'
+    }
+
+    var storeValue = {
+        fixed: 'fixed',
+        closed: 'closed'
+    }
+
     // Getting the plugins
     var $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
     var $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
@@ -66,13 +82,13 @@
         });
 
         $('body').addClass(cls);
-        store('ab.skin', cls);
+        store(storeName.skin, cls);
     };
 
     /**
      * Overriding skin if it is set in localstorage.
      */
-    var currentSkin = get('ab.skin');
+    var currentSkin = get(storeName.skin);
     if (currentSkin && $.inArray(currentSkin, mySkins)) {
         changeSkin(currentSkin);
     }
@@ -81,20 +97,52 @@
      * Toggles layout classes
      */
     function changeLayout(cls) {
-        if (cls === 'fixed') {
+        if (cls === className.layoutFixed) {
             $pushMenu.expandOnHover();
             $pushMenu.close();
-            store('ab.pushmenu', 'closed');
+            store(storeName.pushmenu, 'closed');
         }
+    };
+
+    // Adding layout settings to local storage
+    function changeSettings(layout, value) {
+        switch (layout) {
+            case "layout-normal":
+                {
+                    if (value) {
+                        store("ab.layout", "layout-normal");
+                    }
+                    break;
+                }
+            case "fixed":
+                {
+                    if (value) {
+                        store("ab.layout", "fixed");
+                    } else {
+                        store("ab.layout", "layout-normal");
+                    }
+                    break;
+                }
+            case "layout-boxed":
+                {
+                    if (value) {
+                        store("ab.layout", "layout-boxed");
+                    } else {
+                        store("ab.layout", "layout-normal");
+                    }
+                    break;
+                }
+        }
+        changeLayout(layout);
     };
 
     /**
      * Setting up the settings panel.
      */
     var setupPanel = function () {
-        var currentLayout = get("ab.layout");
+        var currentLayout = get(storeName.layout);
         if (currentLayout === undefined || currentLayout === '' || currentLayout === null) {
-            store("ab.layout", "layout-normal");
+            store(storeName.layout, "layout-normal");
         }
 
         var abSettings = $("#demo-settings");
@@ -131,7 +179,7 @@
 
 
         /**
-         * Control Sidebar skin black & white event handler
+         * Control  Sidebar skin black & white event handler
          */
         $('#toggle-right-sidebar-skin').on('click', function () {
             var $sidebar = $('.control-sidebar');
@@ -167,37 +215,7 @@
         setupPanel();
     });
 
-    // Adding layout settings to local storage
-    function changeSettings(layout, value) {
-        switch (layout) {
-            case "layout-normal":
-                {
-                    if (value) {
-                        store("ab.layout", "layout-normal");
-                    }
-                    break;
-                }
-            case "fixed":
-                {
-                    if (value) {
-                        store("ab.layout", "fixed");
-                    } else {
-                        store("ab.layout", "layout-normal");
-                    }
-                    break;
-                }
-            case "layout-boxed":
-                {
-                    if (value) {
-                        store("ab.layout", "layout-boxed");
-                    } else {
-                        store("ab.layout", "layout-normal");
-                    }
-                    break;
-                }
-        }
-        changeLayout(layout);
-    };
+
 
     // Setting up event handlers for layout checkboxes
     $("#layout-normal").on('click', function () {
@@ -279,35 +297,60 @@
         }
     });
 
-    /**
-     * Toggle footer fixed event handler
-     */
-    $("#layout-fixedfooter").on('click', function () {
-        if (this.checked) {
-            store("ab.fixedfooter", "true");
-            $("#main-footer").addClass("main-footer-fixed");
-        } else {
-            store("ab.fixedfooter", "false");
-            $("#main-footer").removeClass("main-footer-fixed");
-        }
+    // Initializing Fixed Footer switch
+    $('#layout-fixedfooter').bootstrapToggle({
+        on: 'On',
+        off: 'Off',
+        onstyle: 'success',
+        offstyle: 'danger',
+        size: 'mini',
+        width: 50
+        // height: 10 Not working
     });
 
+    // Event handler Fixed Footer switch
+    $('#layout-fixedfooter').change(function () {
+        if ($(this).prop('checked')) {
+            store(storeName.fixedFooter, "true");
+            $("#main-footer").addClass(className.fixedFooter);
+        };
+        if (!$(this).prop('checked')) {
+            store(storeName.fixedFooter, "false");
+            $("#main-footer").removeClass(className.fixedFooter);
+        };
+    });
+
+    // Setting value on switch from store
+    if (get(storeName.fixedFooter) === 'true') {
+        $('#layout-fixedfooter').bootstrapToggle('on');
+    } else {
+        $('#layout-fixedfooter').bootstrapToggle('off');
+    }
+
+
     // Reinitialize variables on load
+    // TODO REFACTOR
     $(window).on('load', function () {
         $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
         $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
         $layout = $('body').data("ab.layout");
 
-        var storeLayout = get('ab.layout');
-        var storePushMenu = get('ab.pushmenu');
+        // Updating push menu state -- NOT WORKING
+        if (get(storeName.pushmenu) === storeValue.closed) {
+            $pushMenu.collapse();
+        }
+
+        var storeLayout = get(storeName.layout);
+        var storePushMenu = get(storeName.pushmenu);
 
         // Setting pushmenu
-        if (storeLayout === 'fixed') {
+        if (storeLayout === storeValue.fixed) {
             $pushMenu.collapse();
-            store('ab.pushmenu', 'closed');
-        } else if (storePushMenu === 'closed' && storeLayout !== 'fixed') {
+            store(storeName.pushmenu, storeValue.closed);
+        } else if (storePushMenu === storeValue.closed && storeLayout !== storeValue.fixed) {
             $pushMenu.collapse();
         }
         changeLayout(storeLayout);
     });
+
 })();

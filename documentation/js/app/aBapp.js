@@ -344,6 +344,12 @@ aurora.config(
                 pageTitle: 'Browser Support',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Browser Support' }]
             })
+            .state('faq', {
+                url: '/welcome',
+                templateUrl: 'documentation/pages/faq.html',
+                pageTitle: 'Frequently Asked Questions',
+                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Faq' }]
+            })
             .state('aspnetmvc6', {
                 url: '/implementations',
                 templateUrl: 'documentation/pages/aspnetmvc.html',
