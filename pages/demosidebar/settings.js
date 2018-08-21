@@ -439,34 +439,64 @@
         $('#control-sidebar').bootstrapToggle('off');
     }
 
+    /**
+     * Toggle Control Sidebar slide
+     */
+    // Initializing switch
+    $('#control-sidebarslide').bootstrapToggle({
+        on: 'On',
+        off: 'Off',
+        onstyle: 'success',
+        offstyle: 'danger',
+        size: 'mini',
+        width: 60
+    });
+
+    // Setting value on switch from store
+    if (get(storeName.controlsidebarslide) === storeValue.on) {
+        $('#control-sidebarslide').bootstrapToggle('on');
+    } else {
+        $('#control-sidebarslide').bootstrapToggle('off');
+    }
+
+    // Event handler.
+    $('#control-sidebarslide').change(function () {
+        if ($(this).prop('checked')) {
+            store(storeName.controlsidebarslide, storeValue.on);
+        };
+        if (!$(this).prop('checked')) {
+            store(storeName.controlsidebarslide, storeValue.off);
+        };
+    });
 
 
     // Reinitialize variables on load
     // TODO REFACTOR
     $(window).on('load', function () {
-        $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
-        $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
-        $layout = $('body').data("ab.layout");
+        alert('Loading');
+        // $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
+        // $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
+        // $layout = $('body').data("ab.layout");
 
-        // Updating push menu state -- NOT WORKING
-        if (get(storeName.pushmenu) === storeValue.closed) {
-            if ($pushMenu === undefined) {
-                $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
-            }
-            $pushMenu.collapse();
-        }
+        // // Updating push menu state -- NOT WORKING
+        // if (get(storeName.pushmenu) === storeValue.closed) {
+        //     if ($pushMenu === undefined) {
+        //         $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
+        //     }
+        //     $pushMenu.collapse();
+        // }
 
-        var storeLayout = get(storeName.layout);
-        var storePushMenu = get(storeName.pushmenu);
+        // var storeLayout = get(storeName.layout);
+        // var storePushMenu = get(storeName.pushmenu);
 
-        // Setting pushmenu
-        if (storeLayout === storeValue.fixed) {
-            $pushMenu.collapse();
-            store(storeName.pushmenu, storeValue.closed);
-        } else if (storePushMenu === storeValue.closed && storeLayout !== storeValue.fixed) {
-            $pushMenu.collapse();
-        }
-        changeLayout(storeLayout);
+        // // Setting pushmenu
+        // if (storeLayout === storeValue.fixed) {
+        //     $pushMenu.collapse();
+        //     store(storeName.pushmenu, storeValue.closed);
+        // } else if (storePushMenu === storeValue.closed && storeLayout !== storeValue.fixed) {
+        //     $pushMenu.collapse();
+        // }
+        // changeLayout(storeLayout);
     });
 
 })();
