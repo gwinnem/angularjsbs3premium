@@ -110,8 +110,8 @@
      */
     function changeLayout(cls) {
         if (cls === className.layoutFixed) {
-            $pushMenu.expandOnHover();
-            $pushMenu.close();
+            //$pushMenu.expandOnHover();
+            //$pushMenu.close();
             store(storeName.pushmenu, 'closed');
         }
     }
