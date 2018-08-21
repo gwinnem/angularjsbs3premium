@@ -370,6 +370,17 @@
         width: 60
     });
 
+    // Default value when store is null
+    if (get(storeName.sidebarFooter) === null) {
+        store(storeName.sidebarFooter, storeValue.visible);
+    }
+    // Setting value on switch from store
+    if (get(storeName.sidebarFooter) === storeValue.visible) {
+        $('#bottom-menu').bootstrapToggle('on');
+    } else {
+        $('#bottom-menu').bootstrapToggle('off');
+    }
+
     // Event handler.
     $('#bottom-menu').change(function () {
         if ($(this).prop('checked')) {
@@ -385,16 +396,6 @@
             }
         };
     });
-
-    // Setting value on switch from store
-    if (get(storeName.sidebarFooter) === undefined) {
-        store(storeName.sidebarFooter, storeValue.visible);
-    }
-    if (get(storeName.sidebarFooter) === storeValue.visible) {
-        $('#bottom-menu').bootstrapToggle('on');
-    } else {
-        $('#bottom-menu').bootstrapToggle('off');
-    }
 
 
     /**
