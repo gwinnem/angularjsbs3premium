@@ -1,6 +1,6 @@
 {
   "name": "Jcrop",
-  "version": "0.9.13",
+  "version": "0.9.15",
   "homepage": "https://github.com/tapmodo/Jcrop",
   "authors": [
     "Tapmodo <khallman@tapmodo.com>"
@@ -26,11 +26,11 @@
     "node_modules",
     "bower_components"
   ],
-  "_release": "0.9.13",
+  "_release": "0.9.15",
   "_resolution": {
     "type": "version",
-    "tag": "v0.9.13",
-    "commit": "f68e8f79ab53f871796b7a4b555a6b5517b6b8cd"
+    "tag": "v0.9.15",
+    "commit": "43c396817f992cbbfd010f35c07e2f1f58d6a7ac"
   },
   "_source": "https://github.com/tapmodo/Jcrop.git",
   "_target": "~0.9.12",

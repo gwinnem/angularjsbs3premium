@@ -60,6 +60,5 @@
   },
   "_source": "https://github.com/summernote/angular-summernote.git",
   "_target": "^0.8.1",
-  "_originalSource": "angular-summernote",
-  "_direct": true
+  "_originalSource": "angular-summernote"
 }
