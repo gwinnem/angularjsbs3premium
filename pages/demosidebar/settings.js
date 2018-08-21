@@ -12,7 +12,9 @@
         layoutNormal: "layout-normal",
         layoutFixed: "fixed",
         layoutBoxed: "layout-boxed",
-        fixedFooter: "main-footer-fixed"
+        fixedFooter: "main-footer-fixed",
+        visible: "visible",
+        hidden: "hidden"
     };
 
     var storeName = {
@@ -24,12 +26,16 @@
         searchbox: 'ab.searchbox',
         userpanel: 'ab.userpanel',
         sidebarFooter: 'ab.sidebarFooter'
-    }
+    };
 
     var storeValue = {
         fixed: 'fixed',
-        closed: 'closed'
-    }
+        closed: 'closed',
+        visible: 'visible',
+        hidden: 'hidden',
+        true: 'true',
+        false: 'false'
+    };
 
     // Getting the plugins
     var $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
@@ -83,7 +89,7 @@
 
         $('body').addClass(cls);
         store(storeName.skin, cls);
-    };
+    }
 
     /**
      * Overriding skin if it is set in localstorage.
@@ -102,7 +108,7 @@
             $pushMenu.close();
             store(storeName.pushmenu, 'closed');
         }
-    };
+    }
 
     // Adding layout settings to local storage
     function changeSettings(layout, value) {
@@ -297,6 +303,9 @@
         }
     });
 
+    /**
+     * Fixed footer Switch
+     */
     // Initializing Fixed Footer switch
     $('#layout-fixedfooter').bootstrapToggle({
         on: 'On',
@@ -326,6 +335,77 @@
     } else {
         $('#layout-fixedfooter').bootstrapToggle('off');
     }
+
+    /**
+    * User Panel Switch
+    */
+    // Initializing switch
+    $('#toggle-userpanel').bootstrapToggle({
+        on: 'On',
+        off: 'Off',
+        onstyle: 'success',
+        offstyle: 'danger',
+        size: 'mini',
+        width: 50
+        // height: 10 Not working
+    });
+
+    // Event handler.
+    $('#toggle-userpanel').change(function () {
+        if ($(this).prop('checked')) {
+            store(storeName.userpanel, storeValue.hidden);
+            if (!$("#sidebar-user-panel").hasClass(className.hidden)) {
+                $("#sidebar-user-panel").addClass(className.hidden);
+            }
+        };
+        if (!$(this).prop('checked')) {
+            store(storeName.userpanel, storeValue.visible);
+            if ($("#sidebar-user-panel").hasClass(className.hidden)) {
+                $("#sidebar-user-panel").removeClass(className.hidden);
+            }
+        };
+    });
+
+    // Setting value on switch from store
+    if (get(storeName.userpanel) === storeValue.hidden) {
+        $('#toggle-userpanel').bootstrapToggle('on');
+    } else {
+        $('#toggle-userpanel').bootstrapToggle('off');
+    }
+
+    /**
+     * Left side search box event handler
+     */
+    $("#search-box").on('click', function () {
+        if (this.checked) {
+            store("ab.searchbox", "hidden");
+            if (!$("#sidebar-search-form").hasClass("hidden")) {
+                $("#sidebar-search-form").addClass("hidden");
+            }
+        } else {
+            store("ab.searchbox", "visible");
+            if ($("#sidebar-search-form").hasClass("hidden")) {
+                $("#sidebar-search-form").removeClass("hidden");
+            }
+        }
+    });
+
+    /**
+     * Left side sidebar-footer event handler
+     */
+    $("#bottom-menu").on('click', function () {
+        if (this.checked) {
+            store("ab.sidebarFooter", "hidden");
+            if (!$("#sidebar-footer").hasClass("hidden")) {
+                $("#sidebar-footer").addClass("hidden");
+            }
+        } else {
+            store("ab.sidebarFooter", "visible");
+            if ($("#sidebar-footer").hasClass("hidden")) {
+                $("#sidebar-footer").removeClass("hidden");
+            }
+        }
+    });
 
 
     // Reinitialize variables on load
