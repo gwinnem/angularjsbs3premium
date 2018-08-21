@@ -245,24 +245,6 @@
 
 
     /**
-     * Add the control sidebar slide option event handler
-     */
-    $("#control-sidebar-slide").on('click', function () {
-        if (this.checked) {
-            store("ab.control.sidebar.slide", "true");
-        } else {
-            store("ab.control.sidebar.slide", "false");
-        }
-        var slide = !$controlSidebar.options.slide;
-        $controlSidebar.options.slide = slide;
-        if (!slide) {
-            $('.control-sidebar').removeClass('control-sidebar-open');
-        }
-    });
-
-
-
-    /**
      * Fixed footer Switch
      */
     // Initializing Fixed Footer switch
@@ -383,13 +365,13 @@
     // Event handler.
     $('#bottom-menu').change(function () {
         if ($(this).prop('checked')) {
-            store(storeName.searchbox, storeValue.visible);
+            store(storeName.sidebarFooter, storeValue.visible);
             if ($("#sidebar-footer").hasClass(className.hidden)) {
                 $("#sidebar-footer").removeClass(className.hidden);
             }
         };
         if (!$(this).prop('checked')) {
-            store(storeName.searchbox, storeValue.hidden);
+            store(storeName.sidebarFooter, storeValue.hidden);
             if (!$("#sidebar-footer").hasClass(className.hidden)) {
                 $("#sidebar-footer").addClass(className.hidden);
             }
@@ -397,6 +379,9 @@
     });
 
     // Setting value on switch from store
+    if (get(storeName.sidebarFooter) === undefined) {
+        store(storeName.sidebarFooter, storeValue.visible);
+    }
     if (get(storeName.sidebarFooter) === storeValue.visible) {
         $('#bottom-menu').bootstrapToggle('on');
     } else {
@@ -469,11 +454,62 @@
         };
     });
 
+    /**
+     * Control Sidebar Skin
+     */
+    // Initializing switch
+    $('#toggle-right-sidebar-skin').bootstrapToggle({
+        on: 'Dark',
+        off: 'Light',
+        onstyle: 'default',
+        offstyle: 'info',
+        size: 'mini',
+        width: 60
+    });
+
+    //Getting default values and Setting value on switch from store
+    if (get(storeName.controlsidebarcolor) === null) {
+        if ($('#control-sidebar-panel').hasClass('control-sidebar-light')) {
+            store(storeName.controlsidebarcolor, storeValue.light);
+        }
+        if ($('#control-sidebar-panel').hasClass('control-sidebar-dark')) {
+            store(storeName.controlsidebarcolor, storeValue.dark);
+        }
+    }
+
+    if (get(storeName.controlsidebarcolor) === storeValue.dark) {
+        $('#toggle-right-sidebar-skin').bootstrapToggle('on');
+    } else {
+        $('#toggle-right-sidebar-skin').bootstrapToggle('off');
+    }
+
+
+    // Event handler.
+    $('#toggle-right-sidebar-skin').change(function () {
+        if ($(this).prop('checked')) {
+            store(storeName.controlsidebarcolor, storeValue.dark);
+            if ($('#control-sidebar-panel').hasClass('control-sidebar-light')) {
+                $('#control-sidebar-panel').removeClass('control-sidebar-light')
+            }
+            if (!$('#control-sidebar-panel').hasClass('control-sidebar-dark')) {
+                $('#control-sidebar-panel').addClass('control-sidebar-dark')
+            }
+        };
+        if (!$(this).prop('checked')) {
+            store(storeName.controlsidebarcolor, storeValue.light);
+            if ($('#control-sidebar-panel').hasClass('control-sidebar-dark')) {
+                $('#control-sidebar-panel').removeClass('control-sidebar-dark')
+            }
+            if (!$('#control-sidebar-panel').hasClass('control-sidebar-light')) {
+                $('#control-sidebar-panel').addClass('control-sidebar-light')
+            }
+        };
+    });
+
 
     // Reinitialize variables on load
-    // TODO REFACTOR
+    // window on load not triggered
     $(window).on('load', function () {
-        alert('Loading');
         // $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
         // $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
         // $layout = $('body').data("ab.layout");
