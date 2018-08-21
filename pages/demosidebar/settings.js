@@ -289,6 +289,17 @@
         width: 60
     });
 
+    // Default value when store is null & Setting value on switch from store
+    if (get(storeName.userpanel) === null) {
+        store(storeName.userpanel, storeValue.visible);
+    }
+
+    if (get(storeName.userpanel) === storeValue.visible) {
+        $('#toggle-userpanel').bootstrapToggle('on');
+    } else {
+        $('#toggle-userpanel').bootstrapToggle('off');
+    }
+
     // Event handler.
     $('#toggle-userpanel').change(function () {
         if ($(this).prop('checked')) {
@@ -305,13 +316,6 @@
         };
     });
 
-    // Setting value on switch from store
-    if (get(storeName.userpanel) === storeValue.visible) {
-        $('#toggle-userpanel').bootstrapToggle('on');
-    } else {
-        $('#toggle-userpanel').bootstrapToggle('off');
-    }
-
 
     /**
     * Searchbox Switch
@@ -325,6 +329,17 @@
         size: 'mini',
         width: 60
     });
+
+    // Setting default value when store is null
+    if (get(storeName.searchbox) === null) {
+        store(storeName.searchbox, storeValue.visible);
+    }
+    // Setting value on switch from store
+    if (get(storeName.searchbox) === storeValue.visible) {
+        $('#search-box').bootstrapToggle('on');
+    } else {
+        $('#search-box').bootstrapToggle('off');
+    }
 
     // Event handler.
     $('#search-box').change(function () {
@@ -341,13 +356,6 @@
             }
         };
     });
-
-    // Setting value on switch from store
-    if (get(storeName.searchbox) === storeValue.visible) {
-        $('#search-box').bootstrapToggle('on');
-    } else {
-        $('#search-box').bootstrapToggle('off');
-    }
 
     /**
      * Bottom menu Switch
