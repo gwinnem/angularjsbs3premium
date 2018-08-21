@@ -407,22 +407,6 @@
     } else {
         $('#search-box').bootstrapToggle('off');
     }
-    /**
-     * Left side search box event handler
-     */
-    // $("#search-box").on('click', function () {
-    //     if (this.checked) {
-    //         store("ab.searchbox", "hidden");
-    //         if (!$("#sidebar-search-form").hasClass("hidden")) {
-    //             $("#sidebar-search-form").addClass("hidden");
-    //         }
-    //     } else {
-    //         store("ab.searchbox", "visible");
-    //         if ($("#sidebar-search-form").hasClass("hidden")) {
-    //             $("#sidebar-search-form").removeClass("hidden");
-    //         }
-    //     }
-    // });
 
     /**
      * Left side sidebar-footer event handler
