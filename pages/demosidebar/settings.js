@@ -110,8 +110,8 @@
      */
     function changeLayout(cls) {
         if (cls === className.layoutFixed) {
-            //$pushMenu.expandOnHover();
-            //$pushMenu.close();
+            // $pushMenu.expandOnHover();
+            // $pushMenu.close();
             store(storeName.pushmenu, 'closed');
         }
     }
@@ -234,8 +234,8 @@
         });
 
         /**
- * Fixed footer Switch
- */
+         * Fixed footer Switch
+         */
         // Initializing Fixed Footer switch
         $('#layout-fixedfooter').bootstrapToggle({
             on: 'On',
@@ -512,33 +512,31 @@
         setupPanel();
     });
 
+    // Reinitialize variables when document is ready and loaded.
+    $(document).ready(function () {
+        $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
+        $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
+        $layout = $('body').data("ab.layout");
+debugger;
+        // Updating push menu state -- NOT WORKING
+        if (get(storeName.pushmenu) === storeValue.closed) {
+            if ($pushMenu === undefined) {
+                $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
+            }
+            $pushMenu.collapse();
+        }
 
-    // Reinitialize variables on load
-    // window on load not triggered
-    $(window).on('load', function () {
-        // $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
-        // $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
-        // $layout = $('body').data("ab.layout");
+        var storeLayout = get(storeName.layout);
+        var storePushMenu = get(storeName.pushmenu);
 
-        // // Updating push menu state -- NOT WORKING
-        // if (get(storeName.pushmenu) === storeValue.closed) {
-        //     if ($pushMenu === undefined) {
-        //         $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
-        //     }
-        //     $pushMenu.collapse();
-        // }
-
-        // var storeLayout = get(storeName.layout);
-        // var storePushMenu = get(storeName.pushmenu);
-
-        // // Setting pushmenu
-        // if (storeLayout === storeValue.fixed) {
-        //     $pushMenu.collapse();
-        //     store(storeName.pushmenu, storeValue.closed);
-        // } else if (storePushMenu === storeValue.closed && storeLayout !== storeValue.fixed) {
-        //     $pushMenu.collapse();
-        // }
-        // changeLayout(storeLayout);
+        // Setting pushmenu
+        if (storeLayout === storeValue.fixed) {
+            $pushMenu.collapse();
+            store(storeName.pushmenu, storeValue.closed);
+        } else if (storePushMenu === storeValue.closed && storeLayout !== storeValue.fixed) {
+            $pushMenu.collapse();
+        }
+        changeLayout(storeLayout);
     });
 
 })();
