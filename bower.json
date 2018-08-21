@@ -74,7 +74,8 @@
     "bower-jvectormap": "~1.2.2",
     "dropzone": "~4.2.0",
     "angular-summernote": "^0.8.1",
-    "bootstrap-toggle": "^2.2.2"
+    "bootstrap-toggle": "^2.2.2",
+    "tooltipster": "4.2.6"
   },
   "resolutions": {
     "jquery": ">=3.3.1",
