@@ -236,56 +236,7 @@
         changeSettings('layout-boxed', this.checked);
     });
 
-    /**
-     * Left side user panel event handler
-     */
-    $("#user-panel").on('click', function () {
-        if (this.checked) {
-            store("ab.userpanel", "hidden");
-            if (!$("#sidebar-user-panel").hasClass("hidden")) {
-                $("#sidebar-user-panel").addClass("hidden");
-            }
-        } else {
-            store("ab.userpanel", "visible");
-            if ($("#sidebar-user-panel").hasClass("hidden")) {
-                $("#sidebar-user-panel").removeClass("hidden");
-            }
-        }
-    });
 
-    /**
-     * Left side search box event handler
-     */
-    $("#search-box").on('click', function () {
-        if (this.checked) {
-            store("ab.searchbox", "hidden");
-            if (!$("#sidebar-search-form").hasClass("hidden")) {
-                $("#sidebar-search-form").addClass("hidden");
-            }
-        } else {
-            store("ab.searchbox", "visible");
-            if ($("#sidebar-search-form").hasClass("hidden")) {
-                $("#sidebar-search-form").removeClass("hidden");
-            }
-        }
-    });
-
-    /**
-     * Left side sidebar-footer event handler
-     */
-    $("#bottom-menu").on('click', function () {
-        if (this.checked) {
-            store("ab.sidebarFooter", "hidden");
-            if (!$("#sidebar-footer").hasClass("hidden")) {
-                $("#sidebar-footer").addClass("hidden");
-            }
-        } else {
-            store("ab.sidebarFooter", "visible");
-            if ($("#sidebar-footer").hasClass("hidden")) {
-                $("#sidebar-footer").removeClass("hidden");
-            }
-        }
-    });
 
     /**
      * Add the control sidebar slide option event handler
@@ -302,6 +253,8 @@
             $('.control-sidebar').removeClass('control-sidebar-open');
         }
     });
+
+
 
     /**
      * Fixed footer Switch
@@ -409,7 +362,45 @@
     }
 
     /**
-     * Left side sidebar-footer event handler
+     * Bootom menu Switch
+     */
+    // Initializing switch
+    $('#bottom-menu').bootstrapToggle({
+        on: 'Visible',
+        off: 'Hidden',
+        onstyle: 'success',
+        offstyle: 'danger',
+        size: 'mini',
+        width: 60
+    });
+
+    // Event handler.
+    $('#bottom-menu').change(function () {
+        if ($(this).prop('checked')) {
+            store(storeName.searchbox, storeValue.visible);
+            if ($("#sidebar-footer").hasClass(className.hidden)) {
+                $("#sidebar-footer").removeClass(className.hidden);
+            }
+        };
+        if (!$(this).prop('checked')) {
+            store(storeName.searchbox, storeValue.hidden);
+            if (!$("#sidebar-footer").hasClass(className.hidden)) {
+                $("#sidebar-footer").addClass(className.hidden);
+            }
+        };
+    });
+
+    // Setting value on switch from store
+    if (get(storeName.searchbox) === storeValue.visible) {
+        $('#bottom-menu').bootstrapToggle('on');
+    } else {
+        $('#bottom-menu').bootstrapToggle('off');
+    }
+
+
+
+    /**
+     * Left side bottom menu event handler
      */
     $("#bottom-menu").on('click', function () {
         if (this.checked) {
@@ -424,6 +415,7 @@
             }
         }
     });
+
 
 
     // Reinitialize variables on load

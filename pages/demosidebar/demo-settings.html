@@ -3,7 +3,8 @@
 <link href="/bower_components/bootstrap-toggle/css/bootstrap-toggle.min.css" rel="stylesheet" />
 <script src="/bower_components/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
 <link href="/bower_components/tooltipster/dist/css/tooltipster.bundle.min.css" rel="stylesheet" />
-<link href="/bower_components/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-light.min.css" rel="stylesheet" />
+<link href="/bower_components/tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-light.min.css"
+    rel="stylesheet" />
 <script src="/bower_components/tooltipster/dist/js/tooltipster.bundle.min.js"></script>
 <style>
     .tooltip {
@@ -67,6 +68,7 @@
                             </label>
                         </div>
 
+                        <!-- Fixed Footer-->
                         <fieldset class="m-t-md m-l-n-xs">
                             <input id="layout-fixedfooter" type="checkbox">
                             <i class="fa fa-exclamation-circle text-blue tooltipster" title="Footer fixed to bottom of screen.">
@@ -74,28 +76,34 @@
                             </i>
                         </fieldset>
                     </div>
+
                     <!-- Left sidebar -->
                     <div class="col-xs-6 col-md-4">
+                            <p class="text-bold text-uppercase text-main">Left Sidebar</p>
+                        <!-- User panel -->
                         <fieldset class="m-l-n-xs">
                             <input id="toggle-userpanel" type="checkbox">
                             <i class="fa fa-exclamation-circle text-blue tooltipster" title="Toggles visibillity for the userpanel in the left side menu bar. Only for demo purpose.">
                                 <span class="text-bold text-main" style="cursor: pointer;"> Toogle user panel</span>
                             </i>
                         </fieldset>
+                        <!-- Searchbox -->
                         <fieldset class="m-t-xs m-l-n-xs">
                             <input id="search-box" type="checkbox">
                             <i class="fa fa-exclamation-circle text-blue tooltipster" title="Toggles visibillity for the search form in the left side menu bar. Only for demo purpose.">
                                 <span class="text-bold text-main" style="cursor: pointer;"> Toogle searchbox</span>
                             </i>
                         </fieldset>
-                        <fieldset>
-                            <div class="form-check abc-checkbox abc-checkbox-success">
-                                <input class="form-check-input" id="bottom-menu" type="checkbox">
-                                <label class="form-check-label" for="bottom-menu">Toggle Bottom Menu.</label>
-                            </div>
-                            <p>Toggles visibillity for the bottom menu in the left side menu bar. Only for demo purpose.</p>
+                        <!-- Bottom Menu -->
+                        <fieldset class="m-t-xs m-l-n-xs">
+                            <input id="bottom-menu" type="checkbox">
+                            <i class="fa fa-exclamation-circle text-blue tooltipster" title="Toggles visibillity for the bottom menu in the left side menu bar. Only for demo purpose.">
+                                <span class="text-bold text-main" style="cursor: pointer;"> Toogle bottom menu</span>
+                            </i>
                         </fieldset>
                     </div>
+
+
                     <!-- Control sidebar -->
                     <div class="col-xs-6 col-md-4">
                         <p class="text-bold text-uppercase text-main">Control Sidebar</p>
