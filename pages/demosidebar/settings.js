@@ -313,8 +313,7 @@
         onstyle: 'success',
         offstyle: 'danger',
         size: 'mini',
-        width: 50
-        // height: 10 Not working
+        width: 60
     });
 
     // Event handler Fixed Footer switch
@@ -341,54 +340,89 @@
     */
     // Initializing switch
     $('#toggle-userpanel').bootstrapToggle({
-        on: 'On',
-        off: 'Off',
+        on: 'Visible',
+        off: 'Hidden',
         onstyle: 'success',
         offstyle: 'danger',
         size: 'mini',
-        width: 50
-        // height: 10 Not working
+        width: 60
     });
 
     // Event handler.
     $('#toggle-userpanel').change(function () {
         if ($(this).prop('checked')) {
-            store(storeName.userpanel, storeValue.hidden);
-            if (!$("#sidebar-user-panel").hasClass(className.hidden)) {
-                $("#sidebar-user-panel").addClass(className.hidden);
-            }
-        };
-        if (!$(this).prop('checked')) {
             store(storeName.userpanel, storeValue.visible);
             if ($("#sidebar-user-panel").hasClass(className.hidden)) {
                 $("#sidebar-user-panel").removeClass(className.hidden);
             }
         };
+        if (!$(this).prop('checked')) {
+            store(storeName.userpanel, storeValue.hidden);
+            if (!$("#sidebar-user-panel").hasClass(className.hidden)) {
+                $("#sidebar-user-panel").addClass(className.hidden);
+            }
+        };
     });
 
     // Setting value on switch from store
-    if (get(storeName.userpanel) === storeValue.hidden) {
+    if (get(storeName.userpanel) === storeValue.visible) {
         $('#toggle-userpanel').bootstrapToggle('on');
     } else {
         $('#toggle-userpanel').bootstrapToggle('off');
     }
 
+
+    /**
+    * Searchbox Switch
+    */
+    // Initializing switch
+    $('#search-box').bootstrapToggle({
+        on: 'Visible',
+        off: 'Hidden',
+        onstyle: 'success',
+        offstyle: 'danger',
+        size: 'mini',
+        width: 60
+    });
+
+    // Event handler.
+    $('#search-box').change(function () {
+        if ($(this).prop('checked')) {
+            store(storeName.searchbox, storeValue.visible);
+            if ($("#sidebar-search-form").hasClass(className.hidden)) {
+                $("#sidebar-search-form").removeClass(className.hidden);
+            }
+        };
+        if (!$(this).prop('checked')) {
+            store(storeName.searchbox, storeValue.hidden);
+            if (!$("#sidebar-search-form").hasClass(className.hidden)) {
+                $("#sidebar-search-form").addClass(className.hidden);
+            }
+        };
+    });
+
+    // Setting value on switch from store
+    if (get(storeName.searchbox) === storeValue.visible) {
+        $('#search-box').bootstrapToggle('on');
+    } else {
+        $('#search-box').bootstrapToggle('off');
+    }
     /**
      * Left side search box event handler
      */
-    $("#search-box").on('click', function () {
-        if (this.checked) {
-            store("ab.searchbox", "hidden");
-            if (!$("#sidebar-search-form").hasClass("hidden")) {
-                $("#sidebar-search-form").addClass("hidden");
-            }
-        } else {
-            store("ab.searchbox", "visible");
-            if ($("#sidebar-search-form").hasClass("hidden")) {
-                $("#sidebar-search-form").removeClass("hidden");
-            }
-        }
-    });
+    // $("#search-box").on('click', function () {
+    //     if (this.checked) {
+    //         store("ab.searchbox", "hidden");
+    //         if (!$("#sidebar-search-form").hasClass("hidden")) {
+    //             $("#sidebar-search-form").addClass("hidden");
+    //         }
+    //     } else {
+    //         store("ab.searchbox", "visible");
+    //         if ($("#sidebar-search-form").hasClass("hidden")) {
+    //             $("#sidebar-search-form").removeClass("hidden");
+    //         }
+    //     }
+    // });
 
     /**
      * Left side sidebar-footer event handler
