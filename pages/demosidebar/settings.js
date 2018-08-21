@@ -22,7 +22,9 @@
         pushmenu: 'ab.pushmenu',
         fixedFooter: 'ab.fixedfooter',
         skin: 'ab.skin',
+        controlsidebarcolor: 'ab.controlSidebarColor',
         controlsidebar: 'ab.controlSidebar',
+        controlsidebarslide: 'ab.controlSidebarSlide',
         searchbox: 'ab.searchbox',
         userpanel: 'ab.userpanel',
         sidebarFooter: 'ab.sidebarFooter'
@@ -34,7 +36,11 @@
         visible: 'visible',
         hidden: 'hidden',
         true: 'true',
-        false: 'false'
+        false: 'false',
+        light: 'light',
+        dark: 'dark',
+        on: 'on',
+        off: 'off'
     };
 
     // Getting the plugins
@@ -362,7 +368,7 @@
     }
 
     /**
-     * Bootom menu Switch
+     * Bottom menu Switch
      */
     // Initializing switch
     $('#bottom-menu').bootstrapToggle({
@@ -391,30 +397,47 @@
     });
 
     // Setting value on switch from store
-    if (get(storeName.searchbox) === storeValue.visible) {
+    if (get(storeName.sidebarFooter) === storeValue.visible) {
         $('#bottom-menu').bootstrapToggle('on');
     } else {
         $('#bottom-menu').bootstrapToggle('off');
     }
 
 
-
     /**
-     * Left side bottom menu event handler
+     * Toggle Control Sidebar
      */
-    $("#bottom-menu").on('click', function () {
-        if (this.checked) {
-            store("ab.sidebarFooter", "hidden");
-            if (!$("#sidebar-footer").hasClass("hidden")) {
-                $("#sidebar-footer").addClass("hidden");
-            }
-        } else {
-            store("ab.sidebarFooter", "visible");
-            if ($("#sidebar-footer").hasClass("hidden")) {
-                $("#sidebar-footer").removeClass("hidden");
-            }
-        }
+    // Initializing switch
+    $('#control-sidebar').bootstrapToggle({
+        on: 'Visible',
+        off: 'Hidden',
+        onstyle: 'success',
+        offstyle: 'danger',
+        size: 'mini',
+        width: 60
     });
+
+    // Event handler.
+    $('#control-sidebar').change(function () {
+        if ($controlSidebar === undefined) {
+            $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
+        }
+        if ($(this).prop('checked')) {
+            store(storeName.controlsidebar, storeValue.visible);
+            $controlSidebar.expand();
+        };
+        if (!$(this).prop('checked')) {
+            store(storeName.controlsidebar, storeValue.hidden);
+            $controlSidebar.collapse();
+        };
+    });
+
+    // Setting value on switch from store
+    if (get(storeName.controlsidebar) === storeValue.visible) {
+        $('#control-sidebar').bootstrapToggle('on');
+    } else {
+        $('#control-sidebar').bootstrapToggle('off');
+    }
 
 
 
@@ -427,6 +450,9 @@
 
         // Updating push menu state -- NOT WORKING
         if (get(storeName.pushmenu) === storeValue.closed) {
+            if ($pushMenu === undefined) {
+                $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
+            }
             $pushMenu.collapse();
         }
 

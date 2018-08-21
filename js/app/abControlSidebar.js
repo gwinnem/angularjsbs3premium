@@ -131,16 +131,4 @@ function ($) {
         if (event) event.preventDefault();
         Plugin.call($(this), "toggle");
     });
-    // Added to premium version only
-    // $(window).on('load', function () {
-    //     // Setting control sidebar
-    //     //Plugin.call($(htmlSelectors.button));
-    //     if (localStorage.getItem(DataKey) === null) {
-    //         localStorage.setItem(DataKey, Selector.collapsed);
-    //     }
-
-    //     if (localStorage.getItem(DataKey) === Selector.open) {
-    //         Plugin.call($(this), 'toggle');
-    //     }
-    // });
 }(jQuery);
