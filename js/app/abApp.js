@@ -26,7 +26,6 @@ var abApp = angular.module("aurora", [
     "abIconBox",
     "abHelpers",
     "abToggleSwitch",
-    "abIosToggleSwitch",
     "abStatusLabel",
     "abPriorityLabel",
     "abModalDialogs",
