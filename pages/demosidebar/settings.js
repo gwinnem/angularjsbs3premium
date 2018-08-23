@@ -517,7 +517,6 @@
         $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
         $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
         $layout = $('body').data("ab.layout");
-debugger;
         // Updating push menu state -- NOT WORKING
         if (get(storeName.pushmenu) === storeValue.closed) {
             if ($pushMenu === undefined) {

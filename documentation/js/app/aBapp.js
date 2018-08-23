@@ -48,6 +48,12 @@ aurora.config(
                 pageTitle: 'Introduction',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Welcome' }]
             })
+            .state('abadmindirectives', {
+                url: '/abadmin/directives',
+                templateUrl: 'documentation/pages/abadmindirectives.html',
+                pageTitle: 'Exclusive Directives',
+                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Exclusive Directives' }]
+            })
             .state('roadmap', {
                 url: '/roadmap',
                 templateUrl: 'documentation/pages/roadmap.html',
@@ -115,7 +121,6 @@ aurora.config(
                 templateUrl: 'documentation/pages/iconbox.html',
                 pageTitle: 'Html Component IconBox',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Html' }, { name: 'IconBox' }]
-
             })
             .state('htmltreeview', {
                 url: '/components/html/treeview',
@@ -194,27 +199,8 @@ aurora.config(
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Js' }, { name: 'Tree Widget' }]
 
             })
-            .state('abelastic', {
-                url: '/Directives/abelastic',
-                templateUrl: 'documentation/pages/abelastic.html',
-                pageTitle: 'ab-elastic Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'ab-elastic' }]
 
-            })
-            .state('abfitheight', {
-                url: '/Directives/abfitheight',
-                templateUrl: 'documentation/pages/abfitheight.html',
-                pageTitle: 'ab-fitheight Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'ab-fitheight' }]
-
-            })
-            .state('icheck', {
-                url: '/Directives/icheck',
-                templateUrl: 'documentation/pages/icheck.html',
-                pageTitle: 'Icheck Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'icheck' }]
-
-            })
+            // ABAdmin Directives
             .state('iconbox', {
                 url: '/Directives/iconbox',
                 templateUrl: 'documentation/pages/icon-box.html',
@@ -222,104 +208,15 @@ aurora.config(
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'icon-box' }]
 
             })
-            .state('infobox', {
-                url: '/Directives/infobox',
-                templateUrl: 'documentation/pages/info-box.html',
-                pageTitle: 'Info-box Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'info-box' }]
-
-            })
-            .state('nouislider', {
-                url: '/Directives/noUISlider',
-                templateUrl: 'documentation/pages/nouislider.html',
-                pageTitle: 'ab-slider',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'ab-slider' }]
-
-            })
-            .state('numbersonly', {
-                url: '/Directives/numbersonly',
-                templateUrl: 'documentation/pages/numbersonly.html',
-                pageTitle: 'Numbers-only Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'numbers-only' }]
-
-            })
-            .state('abpagetitle', {
-                url: '/Directives/abpagetitle',
-                templateUrl: 'documentation/pages/abpagetitle.html',
-                pageTitle: 'ABAdmin ab-page-title Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'ab-page-title' }]
-
-            })
-            .state('abpboxtools', {
-                url: '/Directives/abboxtools',
-                templateUrl: 'documentation/pages/abboxtools.html',
-                pageTitle: 'Box-tools Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'box-tools' }]
-
-            })
-            .state('abprioritylabel', {
-                url: '/Directives/abprioritylabel',
-                templateUrl: 'documentation/pages/abprioritylabel.html',
-                pageTitle: 'Priority-label Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'priority-label' }]
-
-            })
-            .state('simplebreadcrumb', {
-                url: '/Directives/simplebreadcrumb',
-                templateUrl: 'documentation/pages/simplebreadcrumbs.html',
-                pageTitle: 'Simple-breadcrumb Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'simple breadcrumb' }]
-
-            })
-            .state('slimscroll', {
-                url: '/Directives/slimscroll',
-                templateUrl: 'documentation/pages/slimscroll.html',
-                pageTitle: 'Slimscroll Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'slimscroll' }]
-
-            })
             .state('smallbox', {
                 url: '/Directives/smallbox',
-                templateUrl: 'documentation/pages/smallbox.html',
+                templateUrl: 'documentation/pages/abSmallbox.html',
                 pageTitle: 'Small-box Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'small-box' }]
 
             })
-            .state('statuslabel', {
-                url: '/Directives/statuslabel',
-                templateUrl: 'documentation/pages/statuslabel.html',
-                pageTitle: 'Status-label Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'status-label' }]
 
-            })
-            .state('todolist', {
-                url: '/Directives/todolist',
-                templateUrl: 'documentation/pages/todolist.html',
-                pageTitle: 'Todo-list Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'todo-list' }]
-
-            })
-            .state('toggleswitch', {
-                url: '/Directives/toggleswitch',
-                templateUrl: 'documentation/pages/toggleswitch.html',
-                pageTitle: 'Toggle-switch Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'toggle-switch' }]
-
-            })
-            .state('whenscrollends', {
-                url: '/Directives/whenscrollends',
-                templateUrl: 'documentation/pages/whenscrollends.html',
-                pageTitle: 'When-scroll-ends Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'when-scroll-ends' }]
-
-            })
-            .state('fullscreen', {
-                url: '/Directives/abfullscreen',
-                templateUrl: 'documentation/pages/abfullscreen.html',
-                pageTitle: 'Full-screen Directive',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'full-screen' }]
-
-            })
+            // ABAdmin Services
             .state('config', {
                 url: '/services/config',
                 templateUrl: 'documentation/pages/config.html',
