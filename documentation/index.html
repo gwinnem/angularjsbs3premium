@@ -38,10 +38,15 @@
     <link href="/js/plugins/footable-bootstrap/css/footable.bootstrap.min.css" rel="stylesheet">
     <link href="/css/aurora.css" rel="stylesheet" />
 
+
+
+
     <!-- Core js files -->
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
 
 
     <!-- Angular files -->
@@ -54,11 +59,16 @@
     <script src="/js/plugins/ocLazyLoad/dist/ocLazyLoad.min.js"></script>
 
 
+
+
     <!-- Plugins -->
     <script src="/js/plugins/moment/min/moment-with-locales.min.js"></script>
     <script src="/js/plugins/ui-notification/angular-ui-notification.js"></script>
     <script src="/js/plugins/iCheck/icheck.min.js"></script>
     <script src="/js/plugins/footable-bootstrap/js/footable.min.js"></script>
+
+
+
 
     <!-- App related files -->
     <script src="/js/app/abLayout.js"></script>
@@ -76,12 +86,14 @@
     <script src="/js/app/common/directives/abSmallbox.js"></script>
     <script src="/js/app/common/directives/abStatusLabel.js"></script>
     <script src="/js/app/common/directives/abWhenScrollEnds.js"></script>
-    <!-- <script src="/js/app/common/services/abModalSvc.js"></script> -->
-
+    <script src="/js/app/common/services/abModalSvc.js"></script>
 
     <script src="/documentation/js/app/common/directives/abPageTitle.js"></script>
     <script src="/documentation/js/app/common/directives/abSimpleBreadCrumb.js"></script>
     <script src="/documentation/js/app/common/services/abConfig.js"></script>
+    <script src="/documentation/js/app/common/services/abDataService.js"></script>
+
+
     <script>
         // Must be first. IE10 mobile viewport fix
         if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
@@ -97,7 +109,7 @@
     <script src="/documentation/js/app/abApp.js"></script>
 </head>
 
-<body ng-app="aurora" class="skin-blue-light sidebar sidebar-mini ontrol-sidebar" ng-controller="MainController">
+<body ng-app="aurora" class="skin-blue-light sidebar-mini" ng-controller="MainController">
     <div class="wrapper">
         <!-- top navigation -->
         <header class="main-header">
@@ -141,200 +153,273 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" ui-sref="abadmindirectives">
-                            <i class="fa fa-lg fa-star-o"></i>
-                            <span> Exclusive Directives</span>
+                        <a ui-sref="roadmap" href="#">
+                            <i class="fa fa-lg fa-th"></i>
+                            <span> Roadmaps</span>
                         </a>
                     </li>
                     <li>
-                        <li>
-                            <a ui-sref="roadmap" href="#">
-                                <i class="fa fa-lg fa-th"></i>
-                                <span> Roadmaps</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a ui-sref="dependencies" href="#">
-                                <i class="fa fa-lg fa-handshake-o"></i>
-                                <span> Dependencies</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a ui-sref="layouts" href="#">
-                                <i class="fa fa-lg fa-files-o"></i>
-                                <span> Page Layouts</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a ui-sref="plugins" href="#">
-                                <i class="fa fa-lg fa-external-link"></i>
-                                <span> Plugins</span>
-                            </a>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-cube"></i>
-                                <span>Components</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class="treeview">
-                                    <a href="#">
-                                        <i class="fa fa-html5"></i> Html
-                                        <span class="pull-right-container">
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li>
-                                            <a ui-sref="mainheader" href="#"> Main Header</a>
-                                        </li>
-                                        <li>
-                                            <a ui-sref="sidebar" href="#"> Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a ui-sref="controlsidebar" href="#"> Control Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a ui-sref="box" href="#"> Box</a>
-                                        </li>
-                                        <li>
-                                            <a ui-sref="htmlinfobox" href="#"> Info Box</a>
-                                        </li>
-                                        <li>
-                                            <a uisref="htmliconbox" href="#"> Icon Box</a>
-                                        </li>
-                                        <li>
-                                            <a ui-sref="htmltreeview" href="#">Treeview</a>
-                                        </li>
-                                        <li>
-                                            <a ui-sref="htmltodolist" href="#">Todolist</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="treeview">
-                                    <a href="#">
-                                        <i class="fa fa-star-o"></i> jQuery
-                                        <span class="pull-right-container">
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li>
-                                            <a ui-sref="jslayout" href="#"> Layout</a>
-                                        </li>
-                                        <li>
-                                            <a ui-sref="jssidebar" href="#"> Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a ui-sref="jspushmenu" href="#"> Pushmenu</a>
-                                        </li>
-                                        <li>
-                                            <a ui-sref="jscontrolsidebar" href="#"> Control Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a ui-sref="jsbox" href="#"> Box Widget</a>
-                                        </li>
-                                        <li>
-                                            <a ui-sref="jsboxrefresh" href="#"> Box Refresh</a>
-                                        </li>
-                                        <li>
-                                            <a ui-sref="jstodolist" href="#"> Todo List</a>
-                                        </li>
-                                        <li>
-                                            <a ui-sref="jstree" href="#"> Tree Widget</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-lg fa-hand-o-right"></i>
-                                <span> Directives</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li>
-                                    <a ui-sref="iconbox" href="#">
-                                        <span> icon-box</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="smallbox" href="#">
-                                        <span> small-box</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-lg fa-hand-o-right"></i>
-                                <span> Services</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li>
-                                    <a ui-sref="config" href="#">
-                                        <span> config</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="abdatasvc" href="#">
-                                        <span> abDataSvc</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="modaldialog" href="#">
-                                        <span> modalDialog</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a ui-sref="browser" href="#">
-                                <i class="fa fa-lg fa-chrome"></i>
-                                <span> Browser Support</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a ui-sref="faq" href="#">
-                                <i class="fa fa-lg fa-question"></i>
-                                <span> FAQ</span>
-                            </a>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-lg fa-bookmark-o"></i>
-                                <span> Implementations</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li>
-                                    <a ui-sref="aspnetmvc6" href="#">
-                                        <span> ASP.NET MVC 6</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="angularjs" href="#">
-                                        <span> AngularJs</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="angularjsphp" href="#">
-                                        <span> AngularJs-Php</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        <a ui-sref="dependencies" href="#">
+                            <i class="fa fa-lg fa-handshake-o"></i>
+                            <span> Dependencies</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a ui-sref="layouts" href="#">
+                            <i class="fa fa-lg fa-files-o"></i>
+                            <span> Page Layouts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a ui-sref="plugins" href="#">
+                            <i class="fa fa-lg fa-external-link"></i>
+                            <span> Plugins</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-cube"></i>
+                            <span>Components</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-html5"></i> Html
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a ui-sref="mainheader" href="#"> Main Header</a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="sidebar" href="#"> Sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="controlsidebar" href="#"> Control Sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="box" href="#"> Box</a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="htmlinfobox" href="#"> Info Box</a>
+                                    </li>
+                                    <li>
+                                        <a uisref="htmliconbox" href="#"> Icon Box</a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="htmltreeview" href="#">Treeview</a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="htmltodolist" href="#">Todolist</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-star-o"></i> jQuery
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a ui-sref="jslayout" href="#"> Layout</a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="jssidebar" href="#"> Sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="jspushmenu" href="#"> Pushmenu</a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="jscontrolsidebar" href="#"> Control Sidebar</a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="jsbox" href="#"> Box Widget</a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="jsboxrefresh" href="#"> Box Refresh</a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="jstodolist" href="#"> Todo List</a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="jstree" href="#"> Tree Widget</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-lg fa-hand-o-right"></i>
+                            <span> Directives</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a ui-sref="abelastic" href="#">
+                                    <span> ab-elastic</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="abfitheight" href="#">
+                                    <span> ab-fitheight</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="fullscreen" href="#">
+                                    <span> full-screen</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="icheck" href="#">
+                                    <span> icheck</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="iconbox" href="#">
+                                    <span> icon-box</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="infobox" href="#">
+                                    <span> info-box</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="nouislider" href="#">
+                                    <span> ab-slider</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="numbersonly" href="#">
+                                    <span> numbers-only</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="abpagetitle" href="#">
+                                    <span> ab-page-title</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="abpboxtools" href="#">
+                                    <span> box-tools</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="abprioritylabel" href="#">
+                                    <span> priority-label</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="simplebreadcrumb" href="#">
+                                    <span> simle-bread-crumbs</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="slimscroll" href="#">
+                                    <span> slimscroll</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="smallbox" href="#">
+                                    <span> small-box</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="statuslabel" href="#">
+                                    <span> status-label</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="todolist" href="#">
+                                    <span> todo-list</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="toggleswitch" href="#">
+                                    <span> toggle-switch</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="whenscrollends" href="#">
+                                    <span> when-scroll-ends</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-lg fa-hand-o-right"></i>
+                            <span> Services</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a ui-sref="config" href="#">
+                                    <span> config</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="abdatasvc" href="#">
+                                    <span> abDataSvc</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="modaldialog" href="#">
+                                    <span> modalDialog</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a ui-sref="browser" href="#">
+                            <i class="fa fa-lg fa-chrome"></i>
+                            <span> Browser Support</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a ui-sref="faq" href="#">
+                            <i class="fa fa-lg fa-question"></i>
+                            <span> FAQ</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-lg fa-bookmark-o"></i>
+                            <span> Implementations</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a ui-sref="aspnetmvc6" href="#">
+                                    <span> ASP.NET MVC 6</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="angularjs" href="#">
+                                    <span> AngularJs</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="angularjsphp" href="#">
+                                    <span> AngularJs-Php</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
                 </ul>
             </section>
