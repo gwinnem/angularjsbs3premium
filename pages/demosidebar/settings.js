@@ -114,6 +114,7 @@
             // $pushMenu.close();
             store(storeName.pushmenu, 'closed');
         }
+        //$controlSidebar.fix();
     }
 
     // Adding layout settings to local storage
@@ -518,12 +519,12 @@
         $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
         $layout = $('body').data("ab.layout");
         // Updating push menu state -- NOT WORKING
-        if (get(storeName.pushmenu) === storeValue.closed) {
-            if ($pushMenu === undefined) {
-                $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
-            }
-            $pushMenu.collapse();
-        }
+        // if (get(storeName.pushmenu) === storeValue.closed) {
+        //     if ($pushMenu === undefined) {
+        //         $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
+        //     }
+        //     $pushMenu.collapse();
+        // }
 
         var storeLayout = get(storeName.layout);
         var storePushMenu = get(storeName.pushmenu);
