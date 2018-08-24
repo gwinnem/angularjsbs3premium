@@ -513,7 +513,7 @@
     });
 
     // Reinitialize variables when document is ready and loaded.
-    $(document).ready(function () {
+    $(document).load(function () {
         $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
         $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
         $layout = $('body').data("ab.layout");
