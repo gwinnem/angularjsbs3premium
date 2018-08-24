@@ -2,7 +2,7 @@
  * =========
  * Switches to fullscreen mode in browser like pushing F11
  */
-function launchFullScreen() {
+function launchFullScreen(element) {
     var elem = document.body;
     if (
         document.fullScreenElement !== undefined && document.fullScreenElement === null

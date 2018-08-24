@@ -76,11 +76,9 @@
             this.fix();
         }.bind(this));
 
-        // Adding fixed footer if main-footer-fixed exists and layout is not fixed.
-        if(!$('body').hasClass(className.layoutFixed)){
-            if ($("body").hasClass(className.fixedFooter)) {
-                $("#main-footer").addClass(className.fixedFooter);
-            }
+        // Adding fixed footer if main-footer-fixed exists
+        if ($("body").hasClass(className.fixedFooter)) {
+            $("#main-footer").addClass(className.fixedFooter);
         }
     };
 
