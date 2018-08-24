@@ -35,8 +35,12 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>abTree.js</td>
+                    <td>Handles sidebar treeview menu.</td>
+                </tr>
+                <tr>
                     <td>abLayout.js</td>
-                    <td>The main layout handler.</td>
+                    <td>The main layout handler. For layout options fixed and layout-boxed.</td>
                 </tr>
                 <tr>
                     <td>abPushMenu.js</td>
@@ -88,7 +92,9 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th style="width: 210px;">Skin Class</th>
+                            <th style="width: 200px;">Skin Class</th>
+                            <th>Preview</th>
+                            <th style="width: 300px;">Skin Class</th>
                             <th>Preview</th>
                             <th style="width: 210px;">Skin Class</th>
                             <th>Preview</th>
@@ -97,23 +103,285 @@
                     <tbody>
                         <tr>
                             <td>
+                                <code>skin-black</code>
+                            </td>
+                            <td>
+                                <!-- Black skin -->
+                                <a href="javascript:" data-skin="skin-black" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;" class="clearfix full-opacity-hover">
+                                    <div style="box-shadow: 0 0 2px rgba(0,0,0,0.1)" class="clearfix">
+                                        <span style="display:block; width: 20%; float: left; height: 15px; background: #fefefe"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 15px; background: #fefefe"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px;" class="bg-black"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-white-light</code>
+                            </td>
+                            <td>
+                                <a href="javascript:" data-skin="skin-black-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div style="box-shadow: 0 0 2px rgba(0,0,0,0.1)" class="clearfix">
+                                        <span style="display:block; width: 20%; float: left; height: 15px; background: #fefefe"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 15px; background: #fefefe"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px; background: #f9fafc"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
                                 <code>skin-blue</code>
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-xs" href="#" data-skin="skin-blue">
-                                    <i class="fa fa-eye"></i>
-                                </a>
+                                <a href="javascript:" data-skin="skin-blue" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;" class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 15px;" class="bg-blue"></span>
+                                        <span class="bg-light-blue" style="display:block; width: 80%; float: left; height: 15px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px;" class="bg-black"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
                             </td>
                             <td>
                                 <code>skin-blue-light</code>
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-xs" href="#" data-skin="skin-blue-light">
-                                    <i class="fa fa-eye"></i>
+                                <a href="javascript:" data-skin="skin-blue-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 15px;"></span>
+                                        <span class="bg-light-blue" style="display:block; width: 80%; float: left; height: 15px;" class="bg-blue "></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px; background: #f9fafc"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-blue-blue</code>
+                            </td>
+                            <td>
+                                <a href="javascript:" data-skin="skin-blue-blue" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 15px;" class="bg-blue-active"></span>
+                                        <span class="bg-light-blue" style="display:block; width: 80%; float: left; height: 15px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px;" class="bg-blue-active"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
                                 </a>
                             </td>
                         </tr>
-                    </tbody>
+                        <tr>
+                            <td>
+                                <code>skin-purple</code>
+                            </td>
+                            <td>
+                                <a href="javascript:" data-skin="skin-purple" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;" class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 15px;" class="bg-purple-active"></span>
+                                        <span class="bg-purple" style="display:block; width: 80%; float: left; height: 15px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px;" class="bg-black"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-purple-light</code>
+                            </td>
+                            <td>
+                                <a href="javascript:" data-skin="skin-purple-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 15px;" class="bg-purple-active"></span>
+                                        <span class="bg-purple" style="display:block; width: 80%; float: left; height: 15px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px; background: #f9fafc"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-purple-purple</code>
+                            </td>
+                            <td>
+                                <a href="javascript:" data-skin="skin-purple-purple" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 15px;" class="bg-purple-active"></span>
+                                        <span class="bg-purple" style="display:block; width: 80%; float: left; height: 15px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px;" class="bg-purple-active"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>skin-green</code>
+                            </td>
+                            <td>
+                                <a href="javascript:" data-skin="skin-green" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;" class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 15px;" class="bg-green-active"></span>
+                                        <span class="bg-green" style="display:block; width: 80%; float: left; height: 15px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px;" class="bg-black"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-green-light</code>
+                            </td>
+                            <td>
+                                <a href="javascript:" data-skin="skin-green-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 15px;" class="bg-green-active"></span>
+                                        <span class="bg-green" style="display:block; width: 80%; float: left; height: 15px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px; background: #f9fafc"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-green-green</code>
+                            </td>
+                            <td>
+                                <a href="javascript:" data-skin="skin-green-green" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 15px;" class="bg-green-active"></span>
+                                        <span class="bg-green" style="display:block; width: 80%; float: left; height: 15px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px;" class="bg-green-active"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>skin-red</code>
+                            </td>
+                            <td>
+                                <a href="javascript:" data-skin="skin-red" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;" class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 15px;" class="bg-red-active"></span>
+                                        <span class="bg-red" style="display:block; width: 80%; float: left; height: 15px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px;" class="bg-black"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-red-light</code>
+                            </td>
+                            <td>
+                                <a href="javascript:" data-skin="skin-red-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 15px;" class="bg-red-active"></span>
+                                        <span class="bg-red" style="display:block; width: 80%; float: left; height: 15px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px; background: #f9fafc"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-red-red</code>
+                            </td>
+                            <td>
+                                <a href="javascript:" data-skin="skin-red-red" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 15px;" class="bg-red-active"></span>
+                                        <span class="bg-red" style="display:block; width: 80%; float: left; height: 15px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px;" class="bg-red-active"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>skin-yellow</code>
+                            </td>
+                            <td>
+                                <a href="javascript:" data-skin="skin-yellow" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;" class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 15px;" class="bg-yellow-active"></span>
+                                        <span class="bg-yellow" style="display:block; width: 80%; float: left; height: 15px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px;" class="bg-black"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-yellow-light</code>
+                            </td>
+                            <td>
+                                <a href="javascript:" data-skin="skin-yellow-light" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 15px;" class="bg-yellow-active"></span>
+                                        <span class="bg-yellow" style="display:block; width: 80%; float: left; height: 15px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px; background: #f9fafc"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
+                                </a>
+                            </td>
+                            <td>
+                                <code>skin-yellow-yellow</code>
+                            </td>
+                            <td>
+                                <a href="javascript:" data-skin="skin-yellow-yellow" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4); height:50px;"
+                                    class="clearfix full-opacity-hover">
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 15px;" class="bg-yellow-active"></span>
+                                        <span class="bg-yellow" style="display:block; width: 80%; float: left; height: 15px;"></span>
+                                    </div>
+                                    <div>
+                                        <span style="display:block; width: 20%; float: left; height: 35px;" class="bg-yellow-active"></span>
+                                        <span style="display:block; width: 80%; float: left; height: 35px; background: #f4f5f7"></span>
+                                    </div>
+                            </td>
+                        </tr>
                 </table>
             </div>
             <!-- /.box-body -->
