@@ -168,6 +168,7 @@
         plugin.call($(this), 'toggle');
     });
 
+    // There should only be one button where the plugin is registrated
     $(window).on('load', function () {
         plugin.call($(htmlSelectors.button));
     });
