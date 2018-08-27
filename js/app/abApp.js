@@ -968,7 +968,7 @@ abApp.config([
                             return $ocLazyLoad.load({
                                 series: true,
                                 files: ["/js/plugins/bootstrap-switch-3.3.4/dist/css/bootstrap3/bootstrap-switch.min.css",
-                                "/js/plugins/bootstrap-switch-3.3.4/dist/js/bootstrap-switch.js"]
+                                    "/js/plugins/bootstrap-switch-3.3.4/dist/js/bootstrap-switch.js"]
                             });
                         }
                     ]
@@ -2320,6 +2320,7 @@ abApp.config([
                     name: "Social Buttons"
                 }]
             })
+
             // Ladda
             .state("ladda", {
                 url: "/miscellaneous/ladda",
@@ -2406,7 +2407,20 @@ abApp.config([
                     ]
                 }
             })
-
+            // Bootstrap Toggle
+            .state("bootstraptoggle", {
+                url: "/miscellaneous/bootstraptoggle",
+                templateUrl: "pages/misc/bootstraptoggle.html",
+                pageTitle: "Bootstrap Toggle Checkboxes",
+                pageBreadCrumbs: [{
+                    name: "Home"
+                }, {
+                    name: "Miscellaneous"
+                }, {
+                    name: "Bootstrap Toggle"
+                }]
+            })
+            // Jquery Tooltipster
             .state("tooltipster", {
                 url: "/miscellaneous/tolltipster",
                 templateUrl: "pages/misc/tooltipster.html",
@@ -2580,6 +2594,32 @@ abApp.config([
 
             // Directives / Components
 
+            // Avatar directive
+            .state("abavatar", {
+                url: "/directives/ab-avatar-generator",
+                templateUrl: "/pages/directives/avatargenerator.html",
+                pageTitle: "ng-letter-avatar directive",
+                pageBreadCrumbs: [{
+                    name: "Home"
+                }, {
+                    name: "Directives"
+                }, {
+                    name: "NG Letter Avatar"
+                }],
+                resolve: {
+                    ctrl: [
+                        "$ocLazyLoad",
+                        function ($ocLazyLoad) {
+                            return $ocLazyLoad.load({
+                                series: true,
+                                files: [
+                                    "bower_components/ng-letter-avatar/dist/ngletteravatar.min.js"
+                                ]
+                            });
+                        }
+                    ]
+                }
+            })
             // PageTitle
             .state("pagetitle", {
                 url: "/directive/pagetitle",

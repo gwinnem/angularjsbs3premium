@@ -75,7 +75,8 @@
     "dropzone": "~4.2.0",
     "angular-summernote": "^0.8.1",
     "bootstrap-toggle": "^2.2.2",
-    "tooltipster": "4.2.6"
+    "tooltipster": "4.2.6",
+    "ng-letter-avatar": "ngletteravatar#^4.0.4"
   },
   "resolutions": {
     "jquery": ">=3.3.1",

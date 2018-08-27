@@ -531,10 +531,10 @@
 
         // Setting pushmenu
         if (storeLayout === storeValue.fixed) {
-            $pushMenu.collapse();
+            //$pushMenu.collapse();
             store(storeName.pushmenu, storeValue.closed);
         } else if (storePushMenu === storeValue.closed && storeLayout !== storeValue.fixed) {
-            $pushMenu.collapse();
+            //pushMenu.collapse();
         }
         changeLayout(storeLayout);
     });

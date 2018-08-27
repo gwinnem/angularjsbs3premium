@@ -1,0 +1,214 @@
+<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-white" id="box1">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Examples</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-remove="1" hide-max-min="1"></box-tools>
+                </div>
+                <div class="box-body" style="background-color: lightgray">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Output</th>
+                                <th>Code</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <ng-letter-avatar data="geirr"></ng-letter-avatar>
+                                </td>
+                                <td>
+                                    <pre class="prettyprint"><code>&lt;ng-letter-avatar data=&quot;geirr&quot;&gt;&lt;/ng-letter-avatar&gt;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ng-letter-avatar data="geirr" shape="round"></ng-letter-avatar>
+                                </td>
+                                <td>
+                                    <pre class="prettyprint"><code>&lt;ng-letter-avatar data=&quot;geirr&quot; shape=&quot;round&quot;&gt;&lt;/ng-letter-avatar&gt;</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ng-letter-avatar data="geirr" avatarborder="true" shape="round"></ng-letter-avatar>
+                                </td>
+                                <td>
+                                    <pre class="prettyprint"><code>&lt;ng-letter-avatar data=&quot;geirr&quot; avatarborder=&quot;true&quot; shape=&quot;round&quot;&gt;&lt;/ng-letter-avatar&gt;</code>
+                                        </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ng-letter-avatar charCount="2" data="geirr" shape="round"></ng-letter-avatar>
+                                </td>
+                                <td>
+                                    <pre class="prettyprint"><code>&lt;ng-letter-avatar charCount=&quot;2&quot; data=&quot;geirr&quot; shape=&quot;round&quot;&gt;&lt;/ng-letter-avatar&gt;</code>
+                                        </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ng-letter-avatar charCount="2" data="Geirr Winnem" shape="round"></ng-letter-avatar>
+                                </td>
+                                <td>
+                                    <pre class="prettyprint"><code>&lt;ng-letter-avatar charCount=&quot;2&quot; data=&quot;Geirr Winnem&quot; shape=&quot;round&quot;&gt;&lt;/ng-letter-avatar&gt;</code>
+                                    </pre>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-white" id="box2">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Options</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-remove="1" hide-max-min="1"></box-tools>
+                </div>
+                <div class="box-body">
+                    <table class="table table-bordered">
+                        <colgroup>
+                            <col class="col-xs-1">
+                            <col class="col-xs-5">
+                            <col class="col-xs-6">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Attribute</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <code>avatarcustomborder</code>
+                                </th>
+                                <td>No default value</td>
+                                <td>Using this attribute set the custom style to avatar borders i.e
+                                    <code> "border:5px solid black"</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <code>avatarcustombgcolor</code>
+                                </th>
+                                <td>No default value</td>
+                                <td>Using this attribute set the custom color for avatar background </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">
+                                    <code>dynamic</code>
+                                </th>
+                                <td>false</td>
+                                <td>Set this attribute to true if dynamically avatar needs to be generated on data change</td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row">
+                                    <code>rotatedeg</code>
+                                </th>
+                                <td>0</td>
+                                <td>Set this attribute required degrees of rotation of the avatar</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <code>alphabetcolors</code>
+                                </th>
+                                <td>Default color set</td>
+                                <td>Using this attribute set the custom colors for the alphabets only i.e
+                                    <code> alphabetcolors="customColors"</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <code>charCount</code>
+                                </th>
+                                <td>1</td>
+                                <td>Specifies the number of letters to displayed. to generate combined letter avatar of firstname
+                                    and lastname which are separated by space then set the value to '2'</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <code>data</code>
+                                </th>
+                                <td></td>
+                                <td>Input data i.e. email, names...etc
+                                    <br> or
+                                    <br> If image already exists for item, set image URL or image data</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <code>height</code>
+                                </th>
+                                <td>50</td>
+                                <td>Set the height for the avatar all values in pixel only, dont append "px"</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <code>width</code>
+                                </th>
+                                <td>50</td>
+                                <td>Set the width for the avatar all values in pixel only, dont append "px"</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <code>fontWeight</code>
+                                </th>
+                                <td>400</td>
+                                <td>Set the font weight for the avatar</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <code>fontsize</code>
+                                </th>
+                                <td>30</td>
+                                <td>Set the font size for the letter all values in pixel only, dont append "px"</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <code>shape</code>
+                                </th>
+                                <td>square</td>
+                                <td>Set the shape for the avatar. set 'round' for rounded avatars</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <code>fontFamily</code>
+                                </th>
+                                <td>HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica, Arial,Lucida Grande, sans-serif</td>
+                                <td>Set the font Family of the avatar.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <code>avatarborder</code>
+                                </th>
+                                <td>false</td>
+                                <td>Set the avatarborder to 'true' for the white border to avatar.</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->
+<!-- Script omly used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
