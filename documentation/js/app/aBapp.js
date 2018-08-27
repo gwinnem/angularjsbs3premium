@@ -12,7 +12,6 @@
         'abInfobox',
         'abSmallBox',
         'abIconBox',
-        'abDataService',
         'abStatusLabel',
         'abPriorityLabel',
         'abModalDialogs',
