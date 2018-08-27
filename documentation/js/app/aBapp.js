@@ -74,266 +74,248 @@ aurora.config(
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Plugins' }]
 
             })
+            // Html components
             .state('mainheader', {
                 url: '/components/html/main-header',
-                templateUrl: 'documentation/pages/mainheader.html',
+                templateUrl: 'documentation/pages/components/html/mainheader.html',
                 pageTitle: 'Html Component Main Header',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Html' }, { name: 'Main Header' }]
 
             })
             .state('sidebar', {
                 url: '/components/html/sidebar',
-                templateUrl: 'documentation/pages/sidebar.html',
+                templateUrl: 'documentation/pages/components/html/sidebar.html',
                 pageTitle: 'Html Component Sidebar(Left side treeview)',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Html' }, { name: 'Sidebar' }]
 
             })
             .state('controlsidebar', {
                 url: '/components/html/controlsidebar',
-                templateUrl: 'documentation/pages/controlsidebar.html',
+                templateUrl: 'documentation/pages/components/html/controlsidebar.html',
                 pageTitle: 'Html Component Control Sidebar(Right side treeview)',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Html' }, { name: 'Control Sidebar' }]
 
             })
-            .state('box', {
+            .state('htmlbox', {
                 url: '/components/html/box',
-                templateUrl: 'documentation/pages/box.html',
+                templateUrl: 'documentation/pages/components/html/box.html',
                 pageTitle: 'Html Component Box',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Html' }, { name: 'Box' }]
 
             })
             .state('htmlinfobox', {
                 url: '/components/html/infobox',
-                templateUrl: 'documentation/pages/infobox.html',
+                templateUrl: 'documentation/pages/components/html/infobox.html',
                 pageTitle: 'Html Component InfoBox',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Html' }, { name: 'InfoBox' }]
 
             })
             .state('htmliconbox', {
                 url: '/components/html/iconbox',
-                templateUrl: 'documentation/pages/iconbox.html',
+                templateUrl: 'documentation/pages/components/html/infobox.html',
                 pageTitle: 'Html Component IconBox',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Html' }, { name: 'IconBox' }]
 
             })
             .state('htmltreeview', {
                 url: '/components/html/treeview',
-                templateUrl: 'documentation/pages/treeview.html',
+                templateUrl: 'documentation/pages/components/html/treeview.html',
                 pageTitle: 'Html Component Treeview',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Html' }, { name: 'Treeview' }]
 
             })
-            .state('htmltodolist', {
-                url: '/components/html/todolist',
-                templateUrl: 'documentation/pages/todolist.html',
-                pageTitle: 'Html Component Todolist',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Html' }, { name: 'Todolist' }]
-
-            })
-            .state('jscomponents', {
-                url: '/components/js',
-                templateUrl: 'documentation/pages/jscomponents.html',
-                pageTitle: 'Js Components',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Js' }]
-
-            })
+            // jQuery Components
             .state('jslayout', {
                 url: '/components/js/layout',
-                templateUrl: 'documentation/pages/jslayout.html',
+                templateUrl: 'documentation/pages/components/jquery/jslayout.html',
                 pageTitle: 'Js Layout',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Js' }, { name: 'Layout' }]
 
             })
             .state('jssidebar', {
                 url: '/components/js/sidebar',
-                templateUrl: 'documentation/pages/jssidebar.html',
+                templateUrl: 'documentation/pages/components/jquery/jssidebar.html',
                 pageTitle: 'Js Sidebar',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Js' }, { name: 'Sidebar' }]
 
             })
             .state('jspushmenu', {
                 url: '/components/js/pushmenu',
-                templateUrl: 'documentation/pages/jspushmenu.html',
+                templateUrl: 'documentation/pages/components/jquery/jspushmenu.html',
                 pageTitle: 'Js PushMenu',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Js' }, { name: 'PushMenu' }]
 
             })
             .state('jscontrolsidebar', {
                 url: '/components/js/controlsidebar',
-                templateUrl: 'documentation/pages/jscontrolsidebar.html',
+                templateUrl: 'documentation/pages/components/jquery/jscontrolsidebar.html',
                 pageTitle: 'Js Control Sidebar',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Js' }, { name: 'Control Sidebar' }]
 
             })
-            .state('jsbox', {
-                url: '/components/js/box',
-                templateUrl: 'documentation/pages/jsbox.html',
-                pageTitle: 'Js Box Widget',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Js' }, { name: 'Box Widget' }]
-
-            })
             .state('jsboxrefresh', {
                 url: '/components/js/boxrefresh',
-                templateUrl: 'documentation/pages/jsboxrefresh.html',
+                templateUrl: 'documentation/pages/components/jquery/jsboxrefresh.html',
                 pageTitle: 'Js Box Refresh',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Js' }, { name: 'Box Refresh' }]
 
             })
             .state('jstodolist', {
                 url: '/components/js/todolist',
-                templateUrl: 'documentation/pages/jstodolist.html',
+                templateUrl: 'documentation/pages/components/jquery/jstodolist.html',
                 pageTitle: 'Js Todolist',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Js' }, { name: 'Todolist' }]
 
             })
             .state('jstree', {
                 url: '/components/js/treewidget',
-                templateUrl: 'documentation/pages/jstree.html',
+                templateUrl: 'documentation/pages/components/jquery/jstree.html',
                 pageTitle: 'Js Tree Widget',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Js' }, { name: 'Tree Widget' }]
 
             })
+            // Directives
             .state('abelastic', {
                 url: '/Directives/abelastic',
-                templateUrl: 'documentation/pages/abelastic.html',
+                templateUrl: 'documentation/pages/directives/abelastic.html',
                 pageTitle: 'ab-elastic Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'ab-elastic' }]
 
             })
             .state('abfitheight', {
                 url: '/Directives/abfitheight',
-                templateUrl: 'documentation/pages/abfitheight.html',
+                templateUrl: 'documentation/pages/directives/abfitheight.html',
                 pageTitle: 'ab-fitheight Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'ab-fitheight' }]
 
             })
             .state('icheck', {
                 url: '/Directives/icheck',
-                templateUrl: 'documentation/pages/icheck.html',
+                templateUrl: 'documentation/pages/directives/abicheck.html',
                 pageTitle: 'Icheck Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'icheck' }]
 
             })
             .state('iconbox', {
                 url: '/Directives/iconbox',
-                templateUrl: 'documentation/pages/icon-box.html',
+                templateUrl: 'documentation/pages/directives/abiconbox.html',
                 pageTitle: 'Icon-box Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'icon-box' }]
 
             })
             .state('infobox', {
                 url: '/Directives/infobox',
-                templateUrl: 'documentation/pages/info-box.html',
+                templateUrl: 'documentation/pages/directives/abinfobox.html',
                 pageTitle: 'Info-box Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'info-box' }]
 
             })
             .state('nouislider', {
                 url: '/Directives/noUISlider',
-                templateUrl: 'documentation/pages/nouislider.html',
+                templateUrl: 'documentation/pages/directives/abnouislider.html',
                 pageTitle: 'ab-slider',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'ab-slider' }]
 
             })
             .state('numbersonly', {
                 url: '/Directives/numbersonly',
-                templateUrl: 'documentation/pages/numbersonly.html',
+                templateUrl: 'documentation/pages/directives/abnumbersonly.html',
                 pageTitle: 'Numbers-only Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'numbers-only' }]
 
             })
             .state('abpagetitle', {
                 url: '/Directives/abpagetitle',
-                templateUrl: 'documentation/pages/abpagetitle.html',
+                templateUrl: 'documentation/pages/directives/abpagetitle.html',
                 pageTitle: 'ABAdmin ab-page-title Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'ab-page-title' }]
 
             })
             .state('abpboxtools', {
                 url: '/Directives/abboxtools',
-                templateUrl: 'documentation/pages/abboxtools.html',
+                templateUrl: 'documentation/pages/directives/abboxtools.html',
                 pageTitle: 'Box-tools Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'box-tools' }]
 
             })
             .state('abprioritylabel', {
                 url: '/Directives/abprioritylabel',
-                templateUrl: 'documentation/pages/abprioritylabel.html',
+                templateUrl: 'documentation/pages/directives/abprioritylabel.html',
                 pageTitle: 'Priority-label Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'priority-label' }]
 
             })
             .state('simplebreadcrumb', {
                 url: '/Directives/simplebreadcrumb',
-                templateUrl: 'documentation/pages/simplebreadcrumbs.html',
+                templateUrl: 'documentation/pages/directives/absimplebreadcrumbs.html',
                 pageTitle: 'Simple-breadcrumb Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'simple breadcrumb' }]
 
             })
             .state('slimscroll', {
                 url: '/Directives/slimscroll',
-                templateUrl: 'documentation/pages/slimscroll.html',
+                templateUrl: 'documentation/pages/directives/slimscroll.html',
                 pageTitle: 'Slimscroll Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'slimscroll' }]
 
             })
             .state('smallbox', {
                 url: '/Directives/smallbox',
-                templateUrl: 'documentation/pages/smallbox.html',
+                templateUrl: 'documentation/pages/directives/absmallbox.html',
                 pageTitle: 'Small-box Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'small-box' }]
 
             })
             .state('statuslabel', {
                 url: '/Directives/statuslabel',
-                templateUrl: 'documentation/pages/statuslabel.html',
+                templateUrl: 'documentation/pages/directives/abstatuslabel.html',
                 pageTitle: 'Status-label Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'status-label' }]
 
             })
             .state('todolist', {
                 url: '/Directives/todolist',
-                templateUrl: 'documentation/pages/todolist.html',
+                templateUrl: 'documentation/pages/directives/abtodolist.html',
                 pageTitle: 'Todo-list Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'todo-list' }]
 
             })
             .state('toggleswitch', {
                 url: '/Directives/toggleswitch',
-                templateUrl: 'documentation/pages/toggleswitch.html',
+                templateUrl: 'documentation/pages/directives/toggleswitch.html',
                 pageTitle: 'Toggle-switch Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'toggle-switch' }]
 
             })
             .state('whenscrollends', {
                 url: '/Directives/whenscrollends',
-                templateUrl: 'documentation/pages/whenscrollends.html',
+                templateUrl: 'documentation/pages/directives/abwhenscrollends.html',
                 pageTitle: 'When-scroll-ends Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'when-scroll-ends' }]
 
             })
             .state('fullscreen', {
                 url: '/Directives/abfullscreen',
-                templateUrl: 'documentation/pages/abfullscreen.html',
+                templateUrl: 'documentation/pages/directives/abfullscreen.html',
                 pageTitle: 'Full-screen Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'full-screen' }]
 
             })
             .state('config', {
                 url: '/services/config',
-                templateUrl: 'documentation/pages/config.html',
+                templateUrl: 'documentation/pages/services/config.html',
                 pageTitle: 'Config Service',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Service' }, { name: 'config' }]
             })
             .state('abdatasvc', {
                 url: '/services/abdatasvc',
-                templateUrl: 'documentation/pages/abDataSvc.html',
+                templateUrl: 'documentation/pages/services/abDataSvc.html',
                 pageTitle: ' abDataSvc Service',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Service' }, { name: 'abDataSvc' }]
             })
             .state('modaldialog', {
                 url: '/services/modaldialog',
-                templateUrl: 'documentation/pages/modaldialogs.html',
+                templateUrl: 'documentation/pages/services/modaldialogs.html',
                 pageTitle: 'modalDialog Service',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Service' }, { name: 'modalDialog' }]
             })
@@ -351,19 +333,19 @@ aurora.config(
             })
             .state('aspnetmvc6', {
                 url: '/implementations',
-                templateUrl: 'documentation/pages/aspnetmvc.html',
+                templateUrl: 'documentation/pages/implementations/aspnetmvc.html',
                 pageTitle: 'Implementation ASP.NET Mvc6',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Implementation' }, { name: 'ASP.NET MVC6' }]
             })
             .state('angularjs', {
                 url: '/implementations',
-                templateUrl: 'documentation/pages/angularjs.html',
+                templateUrl: 'documentation/pages/implementations/angularjs.html',
                 pageTitle: 'Implementation AngularJs',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Implementation' }, { name: 'AngularJs' }]
             })
             .state('angularjsphp', {
                 url: '/implementations',
-                templateUrl: 'documentation/pages/angularjsphp.html',
+                templateUrl: 'documentation/pages/implementations/angularjsphp.html',
                 pageTitle: 'Implementation AngularJs PHP',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Implementation' }, { name: 'AngularJs PHP' }]
             })
@@ -375,7 +357,7 @@ aurora.config(
             });
 
 
-    }); // closes $routerApp.config()
+    });
 
 
 // Starting angular app

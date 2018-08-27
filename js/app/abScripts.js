@@ -1,7 +1,7 @@
 function autoHeight() {
     var docHeight = $(document).height();
     var bodyHeight = $("body").height();
-    if(!$("body").hasClass("fixed-footer")){
+    if (!$("body").hasClass("fixed-footer")) {
         if (docHeight !== undefined && bodyHeight !== undefined) {
             var height = docHeight - bodyHeight;
             if (height > 0) {
@@ -47,18 +47,26 @@ function store(name, val) {
  * List of all the available skins
  */
 var abSkins = [
-    'skin-blue',
+    //Dark skins
     'skin-black',
-    'skin-red',
-    'skin-yellow',
+    'skin-blue',
     'skin-purple',
     'skin-green',
+    'skin-red',
+    'skin-yellow',
+    //Light skins
+    'skin-white-light',
     'skin-blue-light',
-    'skin-black-light',
+    'skin-purple-light',
+    'skin-green-light',
     'skin-red-light',
     'skin-yellow-light',
-    'skin-purple-light',
-    'skin-green-light'
+    // Color skins
+    'skin-blue-blue',
+    'skin-purple-purple',
+    'skin-green-green',
+    'skin-red-red',
+    'skin-yellow-yellow',
 ];
 $().ready(function () {
     // Adding default skin if none is defined in the body.
@@ -66,7 +74,7 @@ $().ready(function () {
         if ($("body").hasClass(abSkins[index])) {
             return;
         }
-        $('body').addClass("skin-black-light");
+        $('body').addClass("skin-green-light");
     });
 
     autoHeight();
@@ -81,3 +89,35 @@ $().ready(function () {
 
     autoHeight();
 });
+/* Fullscreen functionality
+ * =========
+ * Switches to fullscreen mode in browser like pushing F11
+ */
+function launchFullScreen(element) {
+    var elem = document.body;
+    if (
+        document.fullScreenElement !== undefined && document.fullScreenElement === null
+        || document.msFullscreenElement !== undefined && document.msFullscreenElement === null
+        || document.mozFullScreen !== undefined && !document.mozFullScreen
+        || document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen) {
+        if (elem.requestFullScreen) {
+            elem.requestFullScreen();
+        } else if (elem.mozRequestFullScreen) {
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullScreen) {
+            elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+        } else if (elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+        }
+    } else {
+        if (document.cancelFullScreen) {
+            document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    }
+}
