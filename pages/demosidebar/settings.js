@@ -43,10 +43,15 @@
         off: 'off'
     };
 
+    var htmlSelector = {
+        pushMenu: '[data-toggle="push-menu"]',
+        controlSidebar: '[data-toggle="control-sidebar"]'
+    }
+
     // Getting the plugins
-    var $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
-    var $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
-    var $layout = $('body').data("ab.layout");
+    var $pushMenu = $().first(htmlSelector.pushMenu).data(storeName.pushmenu);
+    var $controlSidebar = $(htmlSelector.controlSidebar).first().data(storeName.controlsidebar);
+    var $layout = $('body').data(storeName.layout);
 
     // Making sure demo-settins are hidden until page is loaded
     if ($("#demo-settings").hasClass("hidden")) {
@@ -109,12 +114,22 @@
      * Toggles layout classes
      */
     function changeLayout(cls) {
-        if (cls === className.layoutFixed) {
-            // $pushMenu.expandOnHover();
-            // $pushMenu.close();
-            store(storeName.pushmenu, 'closed');
+        $('body').toggleClass(cls);
+        $layout.fixSidebar();
+        if ($('body').hasClass('fixed') && cls == 'fixed') {
+            if($pushMenu===undefined){
+                alert("ffff");
+            }
+            //$pushMenu.expandOnHover();
+            $layout.activate();
         }
-        //$controlSidebar.fix();
+        $controlSidebar.fix();
+        // if (cls === className.layoutFixed) {
+        //     $pushMenu.expandOnHover();
+        //     $pushMenu.close();
+        //     store(storeName.pushmenu, storeValue.closed);
+        // }
+        // $controlSidebar.fix();
     }
 
     // Adding layout settings to local storage
@@ -155,7 +170,7 @@
     var setupPanel = function () {
         var currentLayout = get(storeName.layout);
         if (currentLayout === '' || currentLayout === null) {
-            store(storeName.layout, "layout-normal");
+            store(storeName.layout, className.layoutNormal);
         }
 
         var abSettings = $("#demo-settings");
@@ -189,23 +204,6 @@
             e.preventDefault();
             changeSkin($(this).data('skin'));
         });
-
-
-        /**
-         * Control  Sidebar skin black & white event handler
-         */
-        // $('#toggle-right-sidebar-skin').on('click', function () {
-        //     var $sidebar = $('.control-sidebar');
-        //     if ($sidebar.hasClass('control-sidebar-dark')) {
-        //         $sidebar.removeClass('control-sidebar-dark');
-        //         $sidebar.addClass('control-sidebar-light');
-        //         store("ab.controlSidebar", "light");
-        //     } else {
-        //         $sidebar.removeClass('control-sidebar-light');
-        //         $sidebar.addClass('control-sidebar-dark');
-        //         store("ab.controlSidebar", "dark");
-        //     }
-        // });
 
         var storeLayout = get('ab.layout');
         // Checking if one the layout options are set in the index file
@@ -513,29 +511,36 @@
         setupPanel();
     });
 
+
+
     // Reinitialize variables when document is ready and loaded.
     $(document).ready(function () {
-        $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
-        $controlSidebar = $('[data-toggle="control-sidebar"]').data('ab.controlsidebar');
-        $layout = $('body').data("ab.layout");
-        // Updating push menu state -- NOT WORKING
-        // if (get(storeName.pushmenu) === storeValue.closed) {
-        //     if ($pushMenu === undefined) {
-        //         $pushMenu = $('[data-toggle="push-menu"]').data('ab.pushmenu');
-        //     }
-        //     $pushMenu.collapse();
-        // }
+        // Activating the needed plugins
+        if ($controlSidebar === undefined) {
+            $(htmlSelector.controlSidebar).controlSidebar();
+            $controlSidebar = $(htmlSelector.controlSidebar).first().data(storeName.controlsidebar);
+        }
+        if ($pushMenu === undefined) {
+            $pushMenu = $(htmlSelector.pushMenu).pushMenu();
+        }
+        if ($layout === undefined) {
+            $("body").layout();
+            $layout = $('body').data(storeName.layout);
+        }
+
 
         var storeLayout = get(storeName.layout);
-        var storePushMenu = get(storeName.pushmenu);
+        // var storeValue = get(storeName.pushmenu);
 
-        // Setting pushmenu
-        if (storeLayout === storeValue.fixed) {
-            //$pushMenu.collapse();
-            store(storeName.pushmenu, storeValue.closed);
-        } else if (storePushMenu === storeValue.closed && storeLayout !== storeValue.fixed) {
-            //pushMenu.collapse();
-        }
+        // // Setting pushmenu
+        // if (storeLayout === storeValue.fixed) {
+        //     $pushMenu.collapse();
+        //     store(storeName.pushmenu, storeValue.closed);
+        // } else {
+        //     if (storeValue) {
+        //         $pushMenu.collapse();
+        //     }
+        // }
         changeLayout(storeLayout);
     });
 

@@ -1,4 +1,4 @@
-/* ControlSidebar()
+/* controlSidebar()
  * ===============
  * Toggles the state of the control sidebar
  *
@@ -6,120 +6,138 @@
  *         or add [data-toggle="control-sidebar"] to the trigger
  *         Pass any option as data-option="value"
  */
-+
-function ($) {
+// the semi-colon before function invocation is a safety net against concatenated
+// scripts and/or other plugins which may not be closed properly.
+; (function ($, window, document, undefined) {
     "use strict";
 
-    var DataKey = "ab.controlsidebar";
+    // Local storage name.
+    var dataKey = "ab.controlSidebar";
 
-    var Default = {
-        slide: true
+    var defaults = {
+        slide: true,                // Slideover or push content when opening.
+        useLocalstorage: true       // Saving state in local storage.
     };
 
-    var Selector = {
+    var htmlSelector = {
         sidebar: ".control-sidebar",
         data: '[data-toggle="control-sidebar"]',
         open: ".control-sidebar-open",
         bg: ".control-sidebar-bg",
         wrapper: ".wrapper",
-        content: ".content-wrapper",
         boxed: ".layout-boxed"
     };
 
-    var ClassName = {
+    var className = {
         open: "control-sidebar-open",
-        fixed: "fixed"
+        fixed: "fixed",
+        openOnLoad: "controlsidebar-open"
     };
 
-    var Event = {
-        collapsed: "controlsidebar.collapsed",
-        expanded: "controlsidebar.expanded",
-        slideopen:"controlsidebar.slide.open",
-        open:"controlsidebar.open",
-        close:"controlsidebar.close"
+    // Events dispatched or listening to by the plugin.
+    var pluginEvent = {
+        // Dispatched events
+        collapsed: "collapsed.controlSidebar",
+        expanded: "expanded.controlSidebar",
+        // Listening events
+        slideopen: "controlSidebar.slide.open",
+        open: "controlSidebar.open",
+        close: "controlSidebar.close"
     };
 
-    // ControlSidebar Class Definition
+    // controlSidebar Class Definition
     // ===============================
-    var ControlSidebar = function (element, options) {
+    var controlSidebar = function (element, options) {
         this.element = element;
         this.options = options;
-        this.hasBindedResize = false;
-
         this.init();
     };
 
-    ControlSidebar.prototype.init = function () {
-        // Add click listener if the element hasn't been
-        // initialized using the data API
-        if (!$(this.element).is(Selector.data)) {
-            $(this).on("click", this.toggle);
-        }
+    controlSidebar.prototype = {
+        init: function () {
+            // Add click listener if the element hasn't been
+            // initialized using the data API
+            if (!$(this.element).is(htmlSelector.data)) {
+                $(this).on('click', this.toggle);
+            }
 
-        this.fix();
-        $(window).resize(function () {
             this.fix();
-        }.bind(this));
-    };
+            $(window).resize(function () {
+                this.fix();
+            }.bind(this));
+        },
+        fix: function () {
+            if ($('body').hasClass(htmlSelector.boxed)) {
+                bg.css({
+                    position: 'absolute',
+                    height: $(hmtlSelector.wrapper).height()
+                });
+            }
+        },
+        collapse: function () {
+            this.fix();
+            if (this.options.useLocalstorage) {
+                store('dataKey', pluginEvent.close);
+            }
+            $("body, " + htmlSelector.sidebar).removeClass(className.open);
+            $(this.element).trigger($.Event(pluginEvent.collapsed));
+        },
+        expand: function () {
+            this.fix();
+            if (this.options.useLocalstorage) {
+                store('dataKey', pluginEvent.open);
+            }
 
-    ControlSidebar.prototype.toggle = function (event) {
-        if (event){
-            event.preventDefault();
+            if (!this.options.slide) {
+                $('body').addClass(className.open);
+            } else {
+                $(htmlSelector.sidebar).addClass(className.open);
+            }
+
+            $(this.element).trigger($.Event(pluginEvent.expanded));
+        },
+        expandslide: function () {
+            this.fix();
+            if (this.options.useLocalstorage) {
+                store('dataKey', pluginEvent.open);
+            }
+            $('body').addClass(className.open);
+            $(this.element).trigger($.Event(pluginEvent.expanded));
+        },
+        toggle: function (event) {
+            if (event) {
+                event.preventDefault();
+            }
+
+            if (!$(htmlSelector.sidebar).is(htmlSelector.open) && !$('body').is(htmlSelector.open)) {
+                this.expand();
+            } else {
+                this.collapse();
+            }
         }
+    }
 
-        this.fix();
 
-        if (!$(Selector.sidebar).is(Selector.open) && !$("body").is(Selector.open)) {
-            this.expand();
-        } else {
-            this.collapse();
-        }
-    };
-
-    ControlSidebar.prototype.expand = function () {
-        if (!this.options.slide) {
-            $("body").addClass(ClassName.open);
-        } else {
-            $(Selector.sidebar).addClass(ClassName.open);
-        }
-
-        $(this.element).trigger($.Event(Event.expanded));
-    };
-
-    ControlSidebar.prototype.collapse = function () {
-        $("body, " + Selector.sidebar).removeClass(ClassName.open);
-        $(this.element).trigger($.Event(Event.collapsed));
-    };
-
-    ControlSidebar.prototype.fix = function () {
-        if ($("body").hasClass(Selector.boxed)) {
-            bg.css({
-                position: "absolute",
-                height: $(Selector.wrapper).height()
-            });
-        }
-    };
-
-    // Plugin Definition
+    // Plugin Constructor
     // =================
     function Plugin(option) {
         return this.each(function () {
             var $this = $(this);
-            var data = $this.data(DataKey);
+            var data = $this.data(dataKey);
 
             if (!data) {
-                var options = $.extend({}, Default, $this.data(), typeof option == "object" && option);
-                $this.data(DataKey, (data = new ControlSidebar($this, options)));
+                var options = $.extend({}, defaults, $this.data(), typeof option == "object" && option);
+                $this.data(dataKey, (data = new controlSidebar($this, options)));
             }
 
-            if (typeof option == "string") data.toggle();
+            if (typeof option == 'string') data.toggle();
         });
     }
 
     var old = $.fn.controlSidebar;
 
     $.fn.controlSidebar = Plugin;
-    $.fn.controlSidebar.Constructor = ControlSidebar;
+    $.fn.controlSidebar.Constructor = controlSidebar;
 
     // No Conflict Mode
     // ================
@@ -130,8 +148,36 @@ function ($) {
 
     // Data API
     // =======================
-    $(document).on("click", Selector.data, function (event) {
-        if (event) event.preventDefault();
-        Plugin.call($(this), "toggle");
+    $(document).on(pluginEvent.slideopen, function (event) {
+        if (event) {
+            event.preventDefault();
+        }
+        Plugin.call($(this), 'expandslide');
     });
-}(jQuery);
+    $(document).on(pluginEvent.open, function (event) {
+        if (event) {
+            event.preventDefault();
+        }
+        Plugin.call($(this), 'expand');
+    });
+    $(document).on(pluginEvent.close, function (event) {
+        if (event) {
+            event.preventDefault();
+        }
+        Plugin.call($(this), 'close');
+    });
+
+    $(document).on('click', htmlSelector.data, function (event) {
+        if (event) {
+            event.preventDefault();
+        }
+        Plugin.call($(this), 'toggle');
+    });
+
+    // Checking if we should open the controlsidebar upon load.
+    $(document).ready(function () {
+        if ($('body').hasClass(className.openOnLoad)) {
+            $('body').addClass(className.open);
+        }
+    });
+}(jQuery, window, document));

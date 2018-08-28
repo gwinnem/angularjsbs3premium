@@ -1,4 +1,4 @@
-﻿/* jQuery PushMenu() plugin.
+﻿/* jQuery pushMenu() plugin.
  * ==========
  * Adds the push menu functionality to the sidebar.
  *
@@ -10,17 +10,17 @@
 +function ($) {
     'use strict';
 
-    var dataKey = 'ab.pushmenu';
+    var dataKey = 'ab.pushMenu';
     var pushMenuOpen = 'open';
     var pushMenuClosed = 'closed';
 
-    var defaultConfig = {
+    var defaults = {
         collapseScreenSize: 767,
         expandOnHover: false,
         expandTransitionDelay: 100
     };
 
-    var htmlSelectors = {
+    var htmlSelector = {
         body: 'body',
         collapsed: '.sidebar-collapse',
         open: '.sidebar-open',
@@ -32,7 +32,7 @@
         layoutFixed: '.fixed'
     };
 
-    var pushMenuClassName = {
+    var className = {
         collapsed: 'sidebar-collapse',
         open: 'sidebar-open',
         mini: 'sidebar-mini',
@@ -47,102 +47,109 @@
         collapsed: 'collapsed.pushMenu'
     };
 
-    // PushMenu Class Definition
+    // pushMenu Class Definition
     // =========================
-    var PushMenu = function (options) {
+    var pushMenu = function (options) {
         this.options = options;
         this.init();
+        this.name = "pushMenu";
     };
 
-    PushMenu.prototype.init = function () {
-        if (this.options.expandOnHover || $(htmlSelectors.body).is(htmlSelectors.mini + htmlSelectors.layoutFixed)) {
-            this.expandOnHover();
-            $(htmlSelectors.body).addClass(pushMenuClassName.expandFeature);
-        }
+    pushMenu.prototype = {
+        init: function () {
+            if (this.options.expandOnHover || $(htmlSelector.body).is(htmlSelector.mini + htmlSelector.layoutFixed)) {
+                this.expandOnHover();
+                $(htmlSelector.body).addClass(className.expandFeature);
+            }
 
-        $(htmlSelectors.contentWrapper).click(function () {
-            // Enable hide menu when clicking on the content-wrapper on small screens
-            if ($(window).width() <= this.options.collapseScreenSize && $(htmlSelectors.body).hasClass(pushMenuClassName.open)) {
+            $(htmlSelector.contentWrapper).click(function () {
+                // Enable hide menu when clicking on the content-wrapper on small screens
+                if ($(window).width() <= this.options.collapseScreenSize && $(htmlSelector.body).hasClass(className.open)) {
+                    this.close();
+                }
+            }.bind(this));
+        },
+        toggle: function () {
+            var windowWidth = $(window).width();
+            var isOpen = !$(htmlSelector.body).hasClass(className.collapsed);
+
+            if (windowWidth <= this.options.collapseScreenSize) {
+                isOpen = $(htmlSelector.body).hasClass(className.open);
+            }
+            // Hiding sidebar bottom menu if it exists
+            if (!isOpen) {
+                $(htmlSelector.sidebarFooter).removeClass(className.hidden);
+                this.open();
+            } else {
+                $(htmlSelector.sidebarFooter).addClass(className.hidden);
                 this.close();
             }
-        }.bind(this));
-    };
+        },
+        open: function () {
+            localStorage.setItem(dataKey, pushMenuOpen);
+            var windowWidth = $(window).width();
 
-    PushMenu.prototype.toggle = function () {
-        var windowWidth = $(window).width();
-        var isOpen = !$(htmlSelectors.body).hasClass(pushMenuClassName.collapsed);
-
-        if (windowWidth <= this.options.collapseScreenSize) {
-            isOpen = $(htmlSelectors.body).hasClass(pushMenuClassName.open);
-        }
-        // Hiding sidebar bottom menu if it exists
-        if (!isOpen) {
-            $(htmlSelectors.sidebarFooter).removeClass(pushMenuClassName.hidden);
-            this.open();
-        } else {
-            $(htmlSelectors.sidebarFooter).addClass(pushMenuClassName.hidden);
-            this.close();
-        }
-    };
-
-    PushMenu.prototype.open = function () {
-        localStorage.setItem(dataKey, pushMenuOpen);
-        var windowWidth = $(window).width();
-
-        if (windowWidth > this.options.collapseScreenSize) {
-            $(htmlSelectors.body).removeClass(pushMenuClassName.collapsed)
-                .trigger($.Event(pushMenuEvent.expanded));
-        }
-        else {
-            $(htmlSelectors.body).addClass(pushMenuClassName.open).trigger($.Event(pushMenuEvent.expanded));
-        }
-    };
-
-    PushMenu.prototype.close = function () {
-        localStorage.setItem(dataKey, pushMenuClosed);
-        var windowWidth = $(window).width();
-        if (windowWidth > this.options.collapseScreenSize) {
-            $(htmlSelectors.body).addClass(pushMenuClassName.collapsed).trigger($.Event(pushMenuEvent.collapsed));
-        } else {
-            $(htmlSelectors.body).removeClass(pushMenuClassName.open + ' ' + pushMenuClassName.collapsed).trigger($.Event(pushMenuEvent.collapsed));
-        }
-    };
-    
-    PushMenu.prototype.expandOnHover = function () {
-        $(htmlSelectors.mainSidebar).hover(function () {
-            if ($(htmlSelectors.body).is(htmlSelectors.mini + htmlSelectors.collapsed) && $(window).width() > this.options.collapseScreenSize) {
-                this.expand();
+            if (windowWidth > this.options.collapseScreenSize) {
+                $(htmlSelector.body).removeClass(className.collapsed)
+                    .trigger($.Event(pushMenuEvent.expanded));
             }
-        }.bind(this), function () {
-            if ($(htmlSelectors.body).is(htmlSelectors.expanded)) {
-                this.collapse();
+            else {
+                $(htmlSelector.body).addClass(className.open).trigger($.Event(pushMenuEvent.expanded));
             }
-        }.bind(this));
-    };
+        },
+        close: function () {
+            localStorage.setItem(dataKey, pushMenuClosed);
+            var windowWidth = $(window).width();
 
-    PushMenu.prototype.expand = function () {
-        setTimeout(function () {
-            $(htmlSelectors.body).removeClass(pushMenuClassName.collapsed).addClass(pushMenuClassName.expanded);
-            this.open();
-        }, this.options.expandTransitionDelay);
-    };
+            if (windowWidth > this.options.collapseScreenSize) {
+                $(htmlSelector.body)
+                    .addClass(className.collapsed)
+                    .trigger($.Event(pushMenuEvent.collapsed));
+            } else {
+                $(htmlSelector.body)
+                    .removeClass(className.open + ' ' + className.collapsed)
+                    .trigger($.Event(pushMenuEvent.collapsed));
+            }
+        },
+        expandOnHover: function () {
+            $(htmlSelector.mainSidebar).hover(function () {
+                if ($(htmlSelector.body)
+                    .is(htmlSelector.mini + htmlSelector.collapsed) && $(window).width() > this.options.collapseScreenSize) {
+                    this.expand();
+                }
+            }.bind(this), function () {
+                if ($(htmlSelector.body).is(htmlSelector.expanded)) {
+                    this.collapse();
+                }
+            }.bind(this));
+        },
+        expand: function () {
+            setTimeout(function () {
+                $(htmlSelector.body)
+                    .removeClass(className.collapsed)
+                    .addClass(className.expanded);
+                this.open();
+            }, this.options.expandTransitionDelay);
+        },
+        collapse: function () {
+            setTimeout(function () {
+                $(htmlSelector.body)
+                    .removeClass(className.expanded)
+                    .addClass(className.collapsed);
+            }, this.options.expandTransitionDelay);
+        }
+    }
 
-    PushMenu.prototype.collapse = function () {
-        setTimeout(function () {
-            $(htmlSelectors.body).removeClass(pushMenuClassName.expanded).addClass(pushMenuClassName.collapsed);
-        }, this.options.expandTransitionDelay);
-    };
-
-    // PushMenu Plugin Definition
+    // plugin constructor
     // ==========================
-    function plugin(option) {
+    function Plugin(option) {
         return this.each(function () {
             var $this = $(this);
             var data = $this.data(dataKey);
 
             if (!data) {
-                var options = $.extend({}, defaultConfig, $this.data(), typeof option === 'object' && option);
-                $this.data(dataKey, data = new PushMenu(options));
+                var options = $.extend({}, defaults, $this.data(), typeof option === 'object' && option);
+                $this.data(dataKey, data = new pushMenu(options));
             }
 
             if (option === 'toggle') data.toggle();
@@ -151,8 +158,8 @@
 
     var old = $.fn.pushMenu;
 
-    $.fn.pushMenu = plugin;
-    $.fn.pushMenu.Constructor = PushMenu;
+    $.fn.pushMenu = Plugin;
+    $.fn.pushMenu.Constructor = pushMenu;
 
     // No Conflict Mode
     // ================
@@ -163,13 +170,13 @@
 
     // Data API
     // ========
-    $(document).on('click', htmlSelectors.button, function (e) {
+    $(document).on('click', htmlSelector.button, function (e) {
         e.preventDefault();
-        plugin.call($(this), 'toggle');
+        Plugin.call($(this), 'toggle');
     });
 
     // There should only be one button where the plugin is registrated
     $(window).on('load', function () {
-        plugin.call($(htmlSelectors.button));
+        Plugin.call($(htmlSelector.button));
     });
 }(jQuery);
