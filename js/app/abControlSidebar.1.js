@@ -32,11 +32,8 @@ function ($) {
     };
 
     var Event = {
-        collapsed: "controlsidebar.collapsed",
-        expanded: "controlsidebar.expanded",
-        slideopen:"controlsidebar.slide.open",
-        open:"controlsidebar.open",
-        close:"controlsidebar.close"
+        collapsed: "collapsed.controlsidebar",
+        expanded: "expanded.controlsidebar"
     };
 
     // ControlSidebar Class Definition
