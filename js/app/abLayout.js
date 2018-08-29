@@ -1,6 +1,6 @@
 /* Layout()
  * ========
- * Implements AdminLTE layout.
+ * Implements ABAdmin layout.
  * Fixes the layout height in case min-height fails.
  *
  * @usage activated automatically upon window load.
@@ -117,7 +117,13 @@
                     if ($controlSidebar.height() > postSetHeight)
                         $(htmlSelector.contentWrapper).css('min-height', $controlSidebar.height());
                 }
+
+                if($('body').hasClass(className.layoutBoxed) && $('body').hasClass(className.fixedFooter)){
+                    // Calculate width of content wrapper and adjust footer when it is fixed
+                    debugger;
+                }
             }
+
         },
         fixSidebar: function () {
             // Removing slimscroll if layout is not layout-fixed
