@@ -5050,6 +5050,33 @@ table.issue-tracker tbody tr td {
   color: #999;
   font-size: 12px;
 }
+.control-sidebar-messages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.control-sidebar-messages li {
+  margin-bottom: 20px;
+}
+.control-sidebar-messages li a {
+  color: black;
+}
+.control-sidebar-messages li a h4 {
+  font-size: 14px;
+  margin-left: 50px;
+}
+.control-sidebar-messages li a small {
+  font-size: 10px;
+}
+.control-sidebar-messages li a p {
+  font-size: 12px;
+  margin-left: 50px;
+  margin-top: -10px;
+}
+.control-sidebar-messages li a img {
+  height: 48px;
+  width: 48px;
+}
 /*
  * Component: Info Box
  * -------------------
