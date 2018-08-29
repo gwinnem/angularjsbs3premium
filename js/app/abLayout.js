@@ -45,108 +45,108 @@
         this.bindedResize = false;
         this.activate();
     };
+    Layout.prototype = {
+        activate: function () {
+            this.fix();
+            this.fixSidebar();
 
-    Layout.prototype.activate = function () {
-        this.fix();
-        this.fixSidebar();
+            $('body').removeClass(className.holdTransition);
 
-        $('body').removeClass(className.holdTransition);
+            if (this.options.resetHeight) {
+                $('body, html, ' + htmlSelector.wrapper).css({
+                    'height': 'auto',
+                    'min-height': '100%'
+                });
+            }
 
-        if (this.options.resetHeight) {
-            $('body, html, ' + htmlSelector.wrapper).css({
-                'height': 'auto',
-                'min-height': '100%'
-            });
-        }
-
-        if (!this.bindedResize) {
-            $(window).resize(function () {
-                this.fix();
-                this.fixSidebar();
-
-                $(htmlSelector.logo + ', ' + htmlSelector.sidebar).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+            if (!this.bindedResize) {
+                $(window).resize(function () {
                     this.fix();
                     this.fixSidebar();
+
+                    $(htmlSelector.logo + ', ' + htmlSelector.sidebar).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
+                        this.fix();
+                        this.fixSidebar();
+                    }.bind(this));
                 }.bind(this));
+
+                this.bindedResize = true;
+            }
+
+            // Event listeners
+            $(htmlSelector.sidebarMenu).on('expanded.tree', function () {
+                this.fix();
+                this.fixSidebar();
             }.bind(this));
 
-            this.bindedResize = true;
-        }
+            $(htmlSelector.sidebarMenu).on('collapsed.tree', function () {
+                this.fix();
+                this.fixSidebar();
+            }.bind(this));
+        },
+        fix: function () {
+            // Remove overflow from .wrapper if layout-boxed exists
+            $(htmlSelector.layoutBoxed + ' > ' + htmlSelector.wrapper).css('overflow', 'hidden');
 
-        // Event listeners
-        $(htmlSelector.sidebarMenu).on('expanded.tree', function () {
-            this.fix();
-            this.fixSidebar();
-        }.bind(this));
+            // Get window height and the wrapper height
+            var footerHeight = $(htmlSelector.mainFooter).outerHeight() || 0;
+            var headerHeight = $(htmlSelector.mainHeader).outerHeight() || 0;
+            var neg = headerHeight + footerHeight;
+            var windowHeight = $(window).height();
+            var sidebarHeight = $(htmlSelector.sidebar).height() || 0;
 
-        $(htmlSelector.sidebarMenu).on('collapsed.tree', function () {
-            this.fix();
-            this.fixSidebar();
-        }.bind(this));
-    };
-
-    Layout.prototype.fix = function () {
-        // Remove overflow from .wrapper if layout-boxed exists
-        $(htmlSelector.layoutBoxed + ' > ' + htmlSelector.wrapper).css('overflow', 'hidden');
-
-        // Get window height and the wrapper height
-        var footerHeight = $(htmlSelector.mainFooter).outerHeight() || 0;
-        var headerHeight = $(htmlSelector.mainHeader).outerHeight() || 0;
-        var neg = headerHeight + footerHeight;
-        var windowHeight = $(window).height();
-        var sidebarHeight = $(htmlSelector.sidebar).height() || 0;
-
-        // Set the min-height of the content and sidebar based on
-        // the height of the document.
-        if ($('body').hasClass(className.fixed)) {
-            $(htmlSelector.contentWrapper).css('min-height', windowHeight - footerHeight);
-        } else {
-            var postSetHeight;
-
-            if (windowHeight >= sidebarHeight) {
-                $(htmlSelector.contentWrapper).css('min-height', windowHeight - neg);
-                postSetHeight = windowHeight - neg;
+            // Set the min-height of the content and sidebar based on
+            // the height of the document.
+            if ($('body').hasClass(className.fixed)) {
+                $(htmlSelector.contentWrapper).css('min-height', windowHeight - footerHeight);
             } else {
-                $(htmlSelector.contentWrapper).css('min-height', sidebarHeight);
-                postSetHeight = sidebarHeight;
-            }
+                var postSetHeight;
 
-            // Fix for the control sidebar height
-            var $controlSidebar = $(htmlSelector.controlSidebar);
-            if (typeof $controlSidebar !== 'undefined') {
-                if ($controlSidebar.height() > postSetHeight)
-                    $(htmlSelector.contentWrapper).css('min-height', $controlSidebar.height());
-            }
-        }
-    };
+                if (windowHeight >= sidebarHeight) {
+                    $(htmlSelector.contentWrapper).css('min-height', windowHeight - neg);
+                    postSetHeight = windowHeight - neg;
+                } else {
+                    $(htmlSelector.contentWrapper).css('min-height', sidebarHeight);
+                    postSetHeight = sidebarHeight;
+                }
 
-    Layout.prototype.fixSidebar = function () {
-        // Removing slimscroll if layout is not layout-fixed
-        if (!$("body").hasClass(className.layoutFixed)) {
-            if (typeof $.fn.slimScroll !== "undefined") {
+                // Fix for the control sidebar height
+                var $controlSidebar = $(htmlSelector.controlSidebar);
+                if (typeof $controlSidebar !== 'undefined') {
+                    if ($controlSidebar.height() > postSetHeight)
+                        $(htmlSelector.contentWrapper).css('min-height', $controlSidebar.height());
+                }
+            }
+        },
+        fixSidebar: function () {
+            // Removing slimscroll if layout is not layout-fixed
+            if (!$("body").hasClass(className.layoutFixed)) {
+                if (typeof $.fn.slimScroll !== "undefined") {
+                    $(htmlSelector.sidebar).slimScroll({
+                        destroy: true
+                    }).height("auto");
+                }
+                return;
+            } else {
+                // Add slimscroll for layout-fixed
                 $(htmlSelector.sidebar).slimScroll({
-                    destroy: true
-                }).height("auto");
+                    height: ($(window).height() - $(htmlSelector.mainHeader).height()) + "px",
+                    size: '0px',
+                    position: 'left',
+                    //color: '#ffcc00',
+                    alwaysVisible: false,
+                    //distance: '10px',
+                    railVisible: false,
+                    //railColor: '#222',
+                    //railOpacity: 0.3,
+                    //wheelStep: 5,
+                    //allowPageScroll: true,
+                    //disableFadeOut: false
+                });
             }
-            return;
-        } else {
-            // Add slimscroll for layout-fixed
-            $(htmlSelector.sidebar).slimScroll({
-                height: ($(window).height() - $(htmlSelector.mainHeader).height()) + "px",
-                size: '0px',
-                position: 'left',
-                //color: '#ffcc00',
-                alwaysVisible: false,
-                //distance: '10px',
-                railVisible: false,
-                //railColor: '#222',
-                //railOpacity: 0.3,
-                //wheelStep: 5,
-                //allowPageScroll: true,
-                //disableFadeOut: false
-            });
         }
-    };
+    }
+
 
     // Plugin Definition
     // =================
