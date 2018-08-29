@@ -54,8 +54,8 @@
     var $layout = $('body').data(storeName.layout);
 
     // Making sure demo-settins are hidden until page is loaded
-    if ($("#demo-settings").hasClass("hidden")) {
-        $("#demo-settings").removeClass("hidden");
+    if ($("#demo-settings").hasClass(className.hidden)) {
+        $("#demo-settings").removeClass(className.hidden);
     }
     /**
      * List of all the available skins
@@ -117,21 +117,27 @@
         $('body').toggleClass(cls);
         switch (cls) {
             case className.layoutNormal: {
-                $('body').removeClass(className.layoutFixed).removeClass(className.layoutBoxed).addClass(className.layoutNormal);
+                $('body')
+                .removeClass(className.layoutFixed)
+                .removeClass(className.layoutBoxed).addClass(className.layoutNormal);
                 break;
             }
             case className.layoutFixed: {
-                $('body').removeClass(className.layoutNormal).removeClass(className.layoutBoxed).addClass(className.layoutFixed);
+                $('body').removeClass(className.layoutNormal)
+                    .removeClass(className.layoutBoxed)
+                    .addClass(className.layoutFixed);
                 break;
             }
             case className.layoutBoxed: {
-                $('body').removeClass(className.layoutFixed).removeClass(className.layoutNormal).addClass(className.layoutBoxed);
+                $('body').removeClass(className.layoutFixed)
+                .removeClass(className.layoutNormal)
+                .addClass(className.layoutBoxed);
                 break;
             }
         }
 
         $layout.fixSidebar();
-        if ($('body').hasClass('fixed') && cls == 'fixed') {
+        if ($('body').hasClass(className.fixed) && cls == className.fixed) {
             //$pushMenu.expandOnHover();
             $layout.activate();
         }
@@ -141,28 +147,28 @@
     // Adding layout settings to local storage
     function changeSettings(layout, value) {
         switch (layout) {
-            case "layout-normal":
+            case className.layoutNormal:
                 {
                     if (value) {
-                        store("ab.layout", "layout-normal");
+                        store(storeName.layout, className.layoutNormal);
                     }
                     break;
                 }
-            case "fixed":
+            case className.layoutFixed:
                 {
                     if (value) {
-                        store("ab.layout", "fixed");
+                        store(storeName.layout, className.layoutFixed);
                     } else {
-                        store("ab.layout", "layout-normal");
+                        store(storeName.layout, className.layoutNormal);
                     }
                     break;
                 }
-            case "layout-boxed":
+            case className.layoutBoxed:
                 {
                     if (value) {
-                        store("ab.layout", "layout-boxed");
+                        store(storeName.layout, className.layoutBoxed);
                     } else {
-                        store("ab.layout", "layout-normal");
+                        store(storeName.layout, layoutNormal);
                     }
                     break;
                 }
@@ -211,7 +217,7 @@
             changeSkin($(this).data('skin'));
         });
 
-        var storeLayout = get('ab.layout');
+        var storeLayout = get(storeName.layout);
         // Checking if one the layout options are set in the index file
         if (storeLayout === 'layout-normal') {
             $("#layout-normal").attr('checked', 'checked');
