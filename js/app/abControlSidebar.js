@@ -30,7 +30,7 @@
 
     var className = {
         open: "control-sidebar-open",
-        slideOpen:"control-sidebar-slide-open",
+        slideOpen: "control-sidebar-slide-open",
         fixed: "fixed",
         openOnLoad: "controlsidebar-open"
     };
@@ -100,12 +100,6 @@
         expandslide: function () {
             this.options.slide = false;
             this.expand();
-            // this.fix();
-            // if (this.options.useLocalstorage) {
-            //     store(dataKey, pluginEvent.open);
-            // }
-            // $('body').addClass(className.open);
-            // $(this.element).trigger($.Event(pluginEvent.expanded));
         },
         toggle: function (event) {
             if (event) {
@@ -181,10 +175,18 @@
         Plugin.call($(this), 'toggle');
     });
 
+
     // Checking if we should open the controlsidebar upon load.
     $(document).ready(function () {
         if ($('body').hasClass(className.openOnLoad)) {
             $('body').addClass(className.open);
         }
+
+        // Adding click event on wrapper to auto close controlsidebar
+        $(htmlSelector.wrapper).on('click', function (event) {
+            if ($('body').hasClass(className.open)) {
+                Plugin.call($(this), 'toggle');
+            }
+        });
     });
 }(jQuery, window, document));
