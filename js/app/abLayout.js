@@ -18,21 +18,26 @@
     };
 
     var htmlSelector = {
-        wrapper: '.wrapper',
-        contentWrapper: '.content-wrapper',
-        layoutBoxed: '.layout-boxed',
-        mainFooter: '.main-footer',
-        mainHeader: '.main-header',
-        sidebar: '.sidebar',
-        controlSidebar: '.control-sidebar',
-        fixed: '.fixed',
-        sidebarMenu: '.sidebar-menu',
-        logo: '.main-header .logo'
+        wrapper: ".wrapper",
+        contentWrapper: ".content-wrapper",
+        layoutNormal: ".layout-normal",
+        layoutFixed: ".fixed",
+        layoutBoxed: ".layout-boxed",
+        mainFooter: ".main-footer",
+        mainHeader: ".main-header",
+        sidebar: ".sidebar",
+        controlSidebar: ".control-sidebar",
+        sidebarMenu: ".sidebar-menu",
+        logo: ".main-header .logo"
     };
 
     var className = {
         fixed: 'fixed',
-        holdTransition: 'hold-transition'
+        holdTransition: 'hold-transition',
+        layoutNormal: "layout-normal",
+        layoutFixed: "fixed",
+        layoutBoxed: "layout-boxed",
+        fixedFooter: "main-footer-fixed"
     };
 
     var Layout = function (options) {
@@ -116,22 +121,30 @@
     };
 
     Layout.prototype.fixSidebar = function () {
-        // Make sure the body tag has the .fixed class
-        if (!$('body').hasClass(className.fixed)) {
-            if (typeof $.fn.slimScroll !== 'undefined') {
-                $(htmlSelector.sidebar).slimScroll({ destroy: true }).height('auto');
+        // Removing slimscroll if layout is not layout-fixed
+        if (!$("body").hasClass(className.layoutFixed)) {
+            if (typeof $.fn.slimScroll !== "undefined") {
+                $(htmlSelector.sidebar).slimScroll({
+                    destroy: true
+                }).height("auto");
             }
             return;
-        }
-
-        // Enable slimscroll for fixed layout
-        if (this.options.slimscroll) {
-            if (typeof $.fn.slimScroll !== 'undefined') {
-                // Add slimscroll
-                $(htmlSelector.sidebar).slimScroll({
-                    height: ($(window).height() - $(htmlSelector.mainHeader).height()) + 'px'
-                });
-            }
+        } else {
+            // Add slimscroll for layout-fixed
+            $(htmlSelector.sidebar).slimScroll({
+                height: ($(window).height() - $(htmlSelector.mainHeader).height()) + "px",
+                size: '0px',
+                position: 'left',
+                //color: '#ffcc00',
+                alwaysVisible: false,
+                //distance: '10px',
+                railVisible: false,
+                //railColor: '#222',
+                //railOpacity: 0.3,
+                //wheelStep: 5,
+                //allowPageScroll: true,
+                //disableFadeOut: false
+            });
         }
     };
 
@@ -172,5 +185,6 @@
     // ===============
     $(window).on('load', function () {
         Plugin.call($('body'));
+        Plugin.call($(this), 'activate');
     });
 }(jQuery);

@@ -115,21 +115,27 @@
      */
     function changeLayout(cls) {
         $('body').toggleClass(cls);
+        switch (cls) {
+            case className.layoutNormal: {
+                $('body').removeClass(className.layoutFixed).removeClass(className.layoutBoxed).addClass(className.layoutNormal);
+                break;
+            }
+            case className.layoutFixed: {
+                $('body').removeClass(className.layoutNormal).removeClass(className.layoutBoxed).addClass(className.layoutFixed);
+                break;
+            }
+            case className.layoutBoxed: {
+                $('body').removeClass(className.layoutFixed).removeClass(className.layoutNormal).addClass(className.layoutBoxed);
+                break;
+            }
+        }
+
         $layout.fixSidebar();
         if ($('body').hasClass('fixed') && cls == 'fixed') {
-            if($pushMenu===undefined){
-                alert("ffff");
-            }
             //$pushMenu.expandOnHover();
             $layout.activate();
         }
         $controlSidebar.fix();
-        // if (cls === className.layoutFixed) {
-        //     $pushMenu.expandOnHover();
-        //     $pushMenu.close();
-        //     store(storeName.pushmenu, storeValue.closed);
-        // }
-        // $controlSidebar.fix();
     }
 
     // Adding layout settings to local storage
