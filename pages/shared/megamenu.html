@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    <title>Responsive Megamenu with animation (pure css) - Bootsnipp.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+
+        .navbar-default {
+            background-color: #fff;
+            border-left: none;
+            border-right: none;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -ms-border-radius: 0;
+            -o-border-radius: 0;
+            border-radius: 0
+        }
+
+        .navbar-nav {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        .navbar-brand {
+            padding-top: 2px;
+            padding-bottom: 2px;
+            height: 60px
+        }
+
+        .navbar-toggle {
+            padding: 12px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -ms-border-radius: 0;
+            -o-border-radius: 0;
+            border-radius: 0
+        }
+
+        .dropdown-menu {
+            padding: 0;
+            border-color: #e7e7e7;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -ms-border-radius: 0;
+            -o-border-radius: 0;
+            border-radius: 0;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            -ms-box-shadow: none;
+            -o-box-shadow: none;
+            box-shadow: none
+        }
+
+        .dropdown-menu>li>a {
+            padding: 5px 15px
+        }
+
+        .open.dropdown-menu.mega {
+            display: block
+        }
+
+        .dropdown-menu.mega>.sub-menu {
+            display: table-cell;
+            border-left: 1px solid #e7e7e7;
+            list-style-type: none;
+            padding: 0;
+            min-width: 180px
+        }
+
+        .dropdown-menu.mega>.sub-menu:first-child {
+            border-left: none;
+            padding-left: 0
+        }
+
+        .dropdown-menu.mega>.sub-menu>li>a {
+            display: block;
+            padding: 5px 15px;
+            text-decoration: none
+        }
+
+        .dropdown-header {
+            padding: 5px 15px;
+            color: #777;
+            font-weight: bold;
+            border-bottom: 1px dashed #e7e7e7
+        }
+
+        .navbar-nav>li>a,
+        .navbar-nav>.open>a,
+        .navbar-nav>.active>a,
+        .dropdown-menu>li>a,
+        .dropdown-menu.mega>.sub-menu>li>a {
+            color: #888 !important;
+            position: relative
+        }
+
+        .navbar-nav>li>a::before,
+        .navbar-nav>.open>a::before,
+        .navbar-nav>.active>a::before,
+        .dropdown-menu>li>a::before,
+        .dropdown-menu.mega>.sub-menu>li>a::before {
+            content: '';
+            position: absolute;
+            background: #3498db !important;
+            -webkit-transition: all 300ms ease 0s;
+            -moz-transition: all 300ms ease 0s;
+            -o-transition: all 300ms ease 0s;
+            transition: all 300ms ease 0s;
+            -webkit-transform: scale(0);
+            -moz-transform: scale(0);
+            -ms-transform: scale(0);
+            -o-transform: scale(0);
+            transform: scale(0)
+        }
+
+        .navbar-nav>li>a::before,
+        .navbar-nav>.open>a::before,
+        .navbar-nav>.active>a::before {
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 100%
+        }
+
+        .dropdown-menu>li>a::before,
+        .dropdown-menu.mega>.sub-menu>li>a::before {
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%
+        }
+
+        .navbar-nav>li>a:hover::before,
+        .navbar-nav>li>a:focus::before,
+        .navbar-nav>.open>a::before,
+        .navbar-nav>.open>a:hover::before,
+        .navbar-nav>.open>a:focus::before,
+        .navbar-nav>.active>a::before,
+        .navbar-nav>.active>a:hover::before,
+        .navbar-nav>.active>a:focus::before,
+        .dropdown-menu>li>a:hover::before,
+        .dropdown-menu>li>a:focus::before,
+        .dropdown-menu>.active>a::before,
+        .dropdown-menu>.active>a:hover::before,
+        .dropdown-menu>.active>a:focus::before,
+        .dropdown-menu.mega>.sub-menu>li>a:hover::before,
+        .dropdown-menu.mega>.sub-menu>li>a:focus::before,
+        .dropdown-menu.mega>.sub-menu>.active>a::before,
+        .dropdown-menu.mega>.sub-menu>.active>a:hover::before,
+        .dropdown-menu.mega>.sub-menu>.active>a:focus::before,
+        .dropdown-menu.mega>.sub-menu>li>a:hover::before,
+        .dropdown-menu.mega>.sub-menu>li>a:focus::before {
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            transform: scale(1)
+        }
+
+        .navbar-nav>li>a:hover,
+        .navbar-nav>li>a:focus,
+        .navbar-nav>.open>a,
+        .navbar-nav>.open>a:hover,
+        .navbar-nav>.open>a:focus,
+        .navbar-nav>.active>a,
+        .navbar-nav>.active>a:hover,
+        .navbar-nav>.active>a:focus,
+        .dropdown-menu>li>a:hover,
+        .dropdown-menu>li>a:focus,
+        .dropdown-menu>.active>a,
+        .dropdown-menu.mega>.sub-menu>li>a:hover,
+        .dropdown-menu.mega>.sub-menu>.active>a,
+        .dropdown-menu.mega>.sub-menu>li>a:focus {
+            background-color: #f9f9f9 !important;
+            color: #3498db !important;
+        }
+
+        @media (min-width:768px) {
+            .navbar-nav>li>a {
+                padding-top: 20px;
+                padding-bottom: 20px
+            }
+            .dropdown .dropdown-menu {
+                -webkit-transform-origin: top;
+                -moz-transform-origin: top;
+                -ms-transform-origin: top;
+                -o-transform-origin: top;
+                transform-origin: top;
+                -webkit-animation-fill-mode: forwards;
+                -moz-animation-fill-mode: forwards;
+                -ms-animation-fill-mode: forwards;
+                -o-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+                -webkit-transform: scale(1, 0);
+                -moz-transform: scale(1, 0);
+                -ms-transform: scale(1, 0);
+                -o-transform: scale(1, 0);
+                transform: scale(1, 0);
+                -webkit-transition: all 200ms ease 0s;
+                -moz-transition: all 200ms ease 0s;
+                -o-transition: all 200ms ease 0s;
+                transition: all 200ms ease 0s;
+                display: block
+            }
+            .dropdown:hover .dropdown-menu,
+            .dropdown.open .dropdown-menu {
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1)
+            }
+        }
+
+        @media (max-width: 767px) {
+            .navbar-nav>li>a::before,
+            .navbar-nav>.open>a::before,
+            .navbar-nav>.active>a::before {
+                left: 0;
+                height: 100%;
+                width: 2px;
+                top: 0
+            }
+            .dropdown-menu.mega>.sub-menu {
+                display: block
+            }
+            .dropdown-menu.mega>.sub-menu>li>a {
+                padding-left: 25px
+            }
+        }
+
+        /*Below css is not required for navbar desiginig*/
+        body {
+            margin-top: 80px
+        }
+
+        a {
+            cursor: pointer
+        }
+
+        .head {
+            margin: 0px;
+            padding: 5px 12px;
+            color: #555;
+            border: 1px solid #ddd;
+            border-bottom-style: dashed
+        }
+
+        .information {
+            padding: 5px 12px;
+            border: 1px solid #ddd;
+            border-top: none
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Navbar fixed to top-->
+    <nav class="navbar navbar-default navbar-fixed-top wow fadeInDown">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="navbar-brand" src="http://via.placeholder.com/150x60/3498db/ffffff?text=Brand">
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a>Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a>Action</a></li>
+                            <li><a>Another action</a></li>
+                            <li><a>Something else here</a></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a>Separated link</a></li>
+                            <li><a>One more separated link</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">mega
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu mega">
+                            <ul class="sub-menu">
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                            </ul>
+                            <ul class="sub-menu">
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                            </ul>
+                            <ul class="sub-menu">
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                            </ul>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">mega
+                            another<span class="caret"></span></a>
+                        <ul class="dropdown-menu mega">
+                            <ul class="sub-menu">
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                            </ul>
+                            <ul class="sub-menu">
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar default -->
+    <nav class="navbar navbar-default wow fadeInDown">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="navbar-brand" src="http://via.placeholder.com/150x60/3498db/ffffff?text=Brand">
+            </div>
+            <div id="navbar1" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a>Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a>Action</a></li>
+                            <li><a>Another action</a></li>
+                            <li><a>Something else here</a></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a>Separated link</a></li>
+                            <li><a>One more separated link</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">mega
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu mega">
+                            <ul class="sub-menu">
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                            </ul>
+                            <ul class="sub-menu">
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                            </ul>
+                            <ul class="sub-menu">
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                            </ul>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">mega
+                            another<span class="caret"></span></a>
+                        <ul class="dropdown-menu mega">
+                            <ul class="sub-menu">
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                            </ul>
+                            <ul class="sub-menu">
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                                <li><a href="">sub-menu</a></li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="margin-top:60px;margin-bottom:900px">
+        <h1 class="head">Responsive Megamenu in bootstrap with animation effect <b>Pure css</b></h1>
+        <div class="information">
+            <ul>
+                <li>Pure responsive Megamenu</li>
+                <li>Megamenu also adjust in small device like other menus.</li>
+                <li>Pure CSS base solution</li>
+                <li>You can simply use other content inside megamenu instead of just simple navigation menus</li>
+                <li>in all kind of navbar it is supported (default, navbar-fixed, navbaar-right, navbar-fixed-bottom)</li>
+                <li>Feel free to contact me if you have query related to this snippet or related to bootstrap</li>
+            </ul>
+        </div>
+        <h3 class="head">E-mail me for any query</h3>
+        <div class="information">
+            <a href="mailto:vijaysasavadiya.vs@gmail.com">vijaysasavadiya.vs@gmail.com</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+    </script>
+</body>
+
+</html>
