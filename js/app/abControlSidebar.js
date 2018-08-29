@@ -30,6 +30,7 @@
 
     var className = {
         open: "control-sidebar-open",
+        slideOpen:"control-sidebar-slide-open",
         fixed: "fixed",
         openOnLoad: "controlsidebar-open"
     };
@@ -37,8 +38,8 @@
     // Events dispatched or listening to by the plugin.
     var pluginEvent = {
         // Dispatched events
-        collapsed: "collapsed.controlSidebar",
-        expanded: "expanded.controlSidebar",
+        collapsed: "controlSidebar.collapsed",
+        expanded: "controlSidebar.expanded",
         // Listening events
         slideopen: "controlSidebar.slide.open",
         open: "controlSidebar.open",
@@ -97,20 +98,26 @@
             $(this.element).trigger($.Event(pluginEvent.expanded));
         },
         expandslide: function () {
-            this.fix();
-            if (this.options.useLocalstorage) {
-                store('dataKey', pluginEvent.open);
-            }
-            $('body').addClass(className.open);
-            $(this.element).trigger($.Event(pluginEvent.expanded));
+            this.options.slide = false;
+            this.expand();
+            // this.fix();
+            // if (this.options.useLocalstorage) {
+            //     store(dataKey, pluginEvent.open);
+            // }
+            // $('body').addClass(className.open);
+            // $(this.element).trigger($.Event(pluginEvent.expanded));
         },
         toggle: function (event) {
             if (event) {
                 event.preventDefault();
             }
-
             if (!$(htmlSelector.sidebar).is(htmlSelector.open) && !$('body').is(htmlSelector.open)) {
-                this.expand();
+                if ($('body').hasClass(className.slideOpen)) {
+                    this.expandslide();
+                } else {
+                    this.expand();
+                }
+
             } else {
                 this.collapse();
             }
