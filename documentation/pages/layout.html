@@ -80,6 +80,10 @@
                     <code>.controlsidebar-open</code> to have the control sidebar open upon loading.
                 </li>
                 <li>
+                    <b>Control Sidebar Slide Open:</b> use the class
+                    <code>.controlsidebar-slide-open</code> Control sidebar push content instead of sliding over content..
+                </li>
+                <li>
                     <b>Fixed Footer</b> use the class
                     <code>.main-footer-fixed</code> to make the footer stick at the bottom of the screen.
                 </li>
@@ -394,3 +398,54 @@
     </section>
 </section>
 <!-- / Page content -->
+
+<script>
+    /**
+     * List of all the available skins
+     */
+    var mySkins = [
+        //Dark skins
+        'skin-black',
+        'skin-blue',
+        'skin-purple',
+        'skin-green',
+        'skin-red',
+        'skin-yellow',
+        //Light skins
+        'skin-white-light',
+        'skin-blue-light',
+        'skin-purple-light',
+        'skin-green-light',
+        'skin-red-light',
+        'skin-yellow-light',
+        // Color skins
+        'skin-blue-blue',
+        'skin-purple-purple',
+        'skin-green-green',
+        'skin-red-red',
+        'skin-yellow-yellow',
+    ];
+
+    /**
+     * Replaces the old skin with the new skin.
+     */
+    function changeSkin(cls) {
+        $.each(mySkins, function (i) {
+            $('body').removeClass(mySkins[i]);
+        });
+
+        $('body').addClass(cls);
+        store(storeName.skin, cls);
+    };
+
+    $(document).ready(function () {
+        /**
+         * Change skin event handler.
+         */
+        $('[data-skin]').on('click', function (e) {
+            e.preventDefault();
+            changeSkin($(this).data('skin'));
+        });
+    });
+
+</script>

@@ -43,31 +43,8 @@ function store(name, val) {
         window.alert('Please use a modern browser to properly view this template!');
     }
 };
-/**
- * List of all the available skins
- */
-var abSkins = [
-    //Dark skins
-    'skin-black',
-    'skin-blue',
-    'skin-purple',
-    'skin-green',
-    'skin-red',
-    'skin-yellow',
-    //Light skins
-    'skin-white-light',
-    'skin-blue-light',
-    'skin-purple-light',
-    'skin-green-light',
-    'skin-red-light',
-    'skin-yellow-light',
-    // Color skins
-    'skin-blue-blue',
-    'skin-purple-purple',
-    'skin-green-green',
-    'skin-red-red',
-    'skin-yellow-yellow',
-];
+
+
 $().ready(function () {
     // Adding default skin if none is defined in the body.
     $.each(abSkins, function (index) {
