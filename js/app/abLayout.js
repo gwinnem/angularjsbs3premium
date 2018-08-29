@@ -37,7 +37,8 @@
         layoutNormal: "layout-normal",
         layoutFixed: "fixed",
         layoutBoxed: "layout-boxed",
-        fixedFooter: "main-footer-fixed"
+        fixedFooter: "main-footer-fixed",
+        setFixedFooter: "set-main-footer-fixed"
     };
 
     var Layout = function (options) {
@@ -45,7 +46,7 @@
         this.bindedResize = false;
         this.activate();
     };
-        
+
     Layout.prototype = {
         activate: function () {
             this.fix();
@@ -118,9 +119,11 @@
                         $(htmlSelector.contentWrapper).css('min-height', $controlSidebar.height());
                 }
 
-                if($('body').hasClass(className.layoutBoxed) && $('body').hasClass(className.fixedFooter)){
-                    // Calculate width of content wrapper and adjust footer when it is fixed
-                    debugger;
+                // if($('body').hasClass(className.layoutBoxed) && $('body').hasClass(className.setFixedFooter)){
+                //     $('footer').addClass(className.fixedFooter);
+                // }
+                if ($('body').hasClass(className.setFixedFooter)) {
+                    $('footer').addClass(className.fixedFooter);
                 }
             }
 
