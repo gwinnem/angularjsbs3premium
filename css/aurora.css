@@ -706,10 +706,13 @@ a:focus {
 /*
  * Component: Control sidebar. By default, this is the right sidebar.
  */
+/*
+ * Component: Control sidebar. By default, this is the right sidebar.
+ */
 .control-sidebar-bg {
   position: fixed;
-  bottom: 0;
   z-index: 1000;
+  bottom: 0;
 }
 .control-sidebar-bg,
 .control-sidebar {
@@ -725,7 +728,7 @@ a:focus {
   padding-top: 50px;
   z-index: 1010;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .control-sidebar {
     padding-top: 100px;
   }
