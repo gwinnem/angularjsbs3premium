@@ -45,6 +45,7 @@
         this.bindedResize = false;
         this.activate();
     };
+        
     Layout.prototype = {
         activate: function () {
             this.fix();
