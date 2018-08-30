@@ -90,6 +90,10 @@ module.exports = function (grunt) { // jshint ignore:line
     //Development server
     grunt.loadNpmTasks('grunt-contrib-connect');
 
+    // Browsersync
+    //https://browsersync.io/docs/grunt
+    grunt.loadNpmTasks('grunt-browser-sync');
+    
     // The default task (running 'grunt' in console) is 'watch'
     grunt.registerTask('default', ['connect', 'watch']);
 };
