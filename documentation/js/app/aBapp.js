@@ -315,12 +315,6 @@ aurora.config(
                 pageTitle: ' abDataSvc Service',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Service' }, { name: 'abDataSvc' }]
             })
-            .state('modaldialog', {
-                url: '/services/modaldialog',
-                templateUrl: 'documentation/pages/services/modaldialogs.html',
-                pageTitle: 'modalDialog Service',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Service' }, { name: 'modalDialog' }]
-            })
             .state('browser', {
                 url: '/browser',
                 templateUrl: 'documentation/pages/browser.html',
