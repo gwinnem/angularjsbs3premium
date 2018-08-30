@@ -1,17 +1,34 @@
-﻿
-<!-- Page content -->
+﻿<!-- Main content -->
 <section class="content animated fadeInRight">
-    <!-- box -->
-    <div id="abpagetitle" class="box box-white">
-        <div class="box-header with-border">
-            <h3 class="box-title">ABAdmin ab-page-title Directive</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-info" id="box1">
+                <div class="box-header with-border">
+                    <h3 class="box-title">PageTitle</h3>
+                </div>
+                <div class="box-body">
+                    <div class="callout callout-info">
+                        <p>
+                            The pagetitle directive is getting its details from that ui-router state. By adding the attribute
+                            <code>pageTitle: "PageTitle Directive"</code> to the ui-router state. The directive also needs
+                            to be added to the main app. Just add it as
+                            <code>abPageTitle</code>
+                        </p>
+                        <pre class="prettyprint">
+    &lt;h1 ab-page-title&gt;pageTitle&lt;/h1&gt;
+    And add two opening and closing brakets around the pageTitle so it is bound in angular.
+    </pre>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
         </div>
-        <!-- box-body -->
-        <div class="box-body">
-            <h1>body</h1>
-        </div>
-        <!-- / box-body -->
+        <!-- / col -->
     </div>
-    <!-- / box -->
+    <!-- / row -->
 </section>
-<!-- / Page content -->
+<!-- /.content -->
+<!-- Script only used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>

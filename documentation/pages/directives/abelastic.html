@@ -8,7 +8,16 @@
         </div>
         <!-- box-body -->
         <div class="box-body">
-            <h1>body</h1>
+            <p>This directives is meant to be used on textareas only. And when used, the textarea will grow automatically depending on the lines in it.</p>
+            <div class="row">
+                <div class="col-md-5">
+                    <h3>Type text in the textarea and see how it grows automatically</h3>
+                    <textarea ab-elastic style="overflow: hidden; width: 100%; resize: none;" placeholder="Description"></textarea>
+                </div>
+                <div class="col-md-7">
+                    <pre class="prettyprint"><code>&lt;textarea ab-elastic style=&quot;overflow: hidden; width: 100%; resize: none;&quot; placeholder=&quot;Description&quot;&gt;&lt;/textarea&gt;</code></pre>
+                </div>
+            </div>
         </div>
         <!-- / box-body -->
     </div>

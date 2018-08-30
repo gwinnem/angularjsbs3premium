@@ -8,7 +8,28 @@
         </div>
         <!-- box-body -->
         <div class="box-body">
-            <h1>body</h1>
+            <p>
+                Usage: Add this to any html element to fit the height of that element to the page height.
+            </p>
+            <pre class="prettyprint"><code>/**
+* @author Geirr Winnem
+* @version 1.0.0
+* @summary Helper directive to set height to window height.
+*/
+(function () {
+    &quot;use strict&quot;;
+    angular.module('ab.ui.common.fitheight', [])
+        .directive('fitHeight', function () {
+            return {
+                restrict: &quot;A&quot;,
+                link: function ($scope, element) {
+                    element.css(&quot;height&quot;, $(window).height() + &quot;px&quot;);
+                    element.css(&quot;min-height&quot;, $(window).height() + &quot;px&quot;);
+                }
+            }
+        });
+
+}());</code></pre>
         </div>
         <!-- / box-body -->
     </div>

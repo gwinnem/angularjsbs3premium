@@ -1,17 +1,237 @@
-﻿
-<!-- Page content -->
+﻿<!-- Main content -->
 <section class="content animated fadeInRight">
-    <!-- box -->
-    <div id="toggleswitch" class="box box-white">
-        <div class="box-header with-border">
-            <h3 class="box-title">ABAdmin toggle-switch Directive</h3>
+        <div class="col-md-7">
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>Default Switch</h4>
+                    <toggle-switch ng-model="switchStatus" switch-id="1" broad-cast="true"></toggle-switch>
+                    <br />
+                    <span>Value: {{switchStatus}}</span>
+                </div>
+                <div class="col-md-6">
+                    <h4>Html Markup</h4>
+                    <pre class="prettyprint">
+    &lt;toggle-switch
+        ng-model=&quot;switchStatus&quot;&gt;
+    &lt;/toggle-switch&gt;
+                                </pre>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>Knob with text</h4>
+                    <toggle-switch ng-model="switchStatus1" knob-label="KNOB"></toggle-switch>
+                    <br />
+                    <span>Value: {{switchStatus1}}</span>
+                </div>
+                <div class="col-md-6">
+                    <h4>Html Markup</h4>
+                    <pre class="prettyprint">
+    &lt;toggle-switch
+        ng-model=&quot;switchStatus1&quot;
+        knob-label=&quot;KNOB&quot;&gt;
+    &lt;/toggle-switch&gt;
+                                </pre>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>Switch text</h4>
+                    <toggle-switch ng-model="switchstatus2" on-label="JA" off-label="NEI"></toggle-switch>
+                    <br />
+                    <span>Value: {{switchstatus2}}</span>
+                </div>
+                <div class="col-md-6">
+                    <h4>Html Markup</h4>
+                    <pre class="prettyprint">
+    &lt;toggle-switch
+        ng-model=&quot;switchStatus1&quot;
+        on-label=&quot;JA&quot;
+        off-label=&quot;NEI&quot;&gt;
+    &lt;/toggle-switch&gt;
+                                </pre>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>Colors</h4>
+                    <toggle-switch ng-model="switchStatus3" class="switch-primary"></toggle-switch>
+                    <br />
+                    <toggle-switch ng-model="switchStatus3" class="switch-info"></toggle-switch>
+                    <br />
+                    <toggle-switch ng-model="switchStatus3" class="switch-success"></toggle-switch>
+                    <br />
+                    <toggle-switch ng-model="switchStatus3" class="switch-warning"></toggle-switch>
+                    <br />
+                    <toggle-switch ng-model="switchStatus3" class="switch-danger"></toggle-switch>
+                    <br />
+                    <toggle-switch ng-model="switchStatus3" class="switch-default"></toggle-switch>
+                    <br />
+                    <span>Value: {{switchStatus3}}</span>
+                </div>
+                <div class="col-md-6">
+                    <h4>Html Markup</h4>
+                    <pre class="prettyprint">
+    &lt;toggle-switch 
+        ng-model=&quot;switchStatus3&quot; 
+        class=&quot;switch-primary&quot;&gt;
+    &lt;/toggle-switch&gt;
+    &lt;toggle-switch 
+        ng-model=&quot;switchStatus3&quot; 
+        class=&quot;switch-info&quot;&gt;
+    &lt;/toggle-switch&gt;
+    &lt;toggle-switch 
+        ng-model=&quot;switchStatus3&quot; 
+        class=&quot;switch-success&quot;&gt;
+    &lt;/toggle-switch&gt; 
+    &lt;toggle-switch 
+        ng-model=&quot;switchStatus3&quot; 
+        class=&quot;switch-warning&quot;&gt;
+    &lt;/toggle-switch&gt; 
+    &lt;toggle-switch 
+        ng-model=&quot;switchStatus3&quot; 
+        class=&quot;switch-danger&quot;&gt;
+    &lt;/toggle-switch&gt; 
+    &lt;toggle-switch 
+        ng-model=&quot;switchStatus3&quot; 
+        class=&quot;switch-default&quot;&gt;
+    &lt;/toggle-switch&gt;
+                                </pre>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>Sizes</h4>
+                    <toggle-switch ng-model="switchStatus4" class="switch-large switch-danger"></toggle-switch>
+                    <br />
+                    <toggle-switch ng-model="switchStatus4" class="switch-warning"></toggle-switch>
+                    <br />
+                    <toggle-switch ng-model="switchStatus4" class="switch-small switch-success"></toggle-switch>
+                    <br />
+                    <toggle-switch ng-model="switchStatus4" class="switch-mini switch-info"></toggle-switch>
+                    <br />
+                    <span>Value: {{switchStatus4}}</span>
+                </div>
+                <div class="col-md-6">
+                    <h4>Html Markup</h4>
+                    <pre class="prettyprint">
+    &lt;toggle-switch 
+        ng-model=&quot;switchStatus&quot; 
+        class=&quot;switch-large switch-danger&quot;&gt; 
+    &lt;/toggle-switch&gt; 
+    &lt;toggle-switch 
+        ng-model=&quot;switchStatus&quot;
+        class=&quot;switch-warning&quot;&gt; 
+    &lt;/toggle-switch&gt; 
+    &lt;toggle-switch
+        ng-model=&quot;switchStatus&quot; 
+        class=&quot;switch-small switch-success&quot;&gt; 
+    &lt;/toggle-switch&gt; 
+    &lt;toggle-switch 
+        ng-model=&quot;switchStatus&quot; 
+        class=&quot;switch-mini switch-info&quot;&gt; 
+    &lt;/toggle-switch&gt;
+                                </pre>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>Icon Switch</h4>
+                    <toggle-switch ng-model="htmlSwitchStatus" html="true" class="switch-primary" knob-label="<i class='fa fa-stop'></i>" on-label="<i class='fa fa-thumbs-up'></i>"
+                        off-label="<i class='fa fa-thumbs-down'></i>">
+                    </toggle-switch>
+                    <br />
+                    <span>Value: {{htmlSwitchStatus}}</span>
+                </div>
+                <div class="col-md-6">
+                    <h4>Html Markup</h4>
+                    <pre class="prettyprint">
+    &lt;toggle-switch 
+        ng-model=&quot;htmlSwitchStatus&quot; 
+        html=&quot;true&quot; 
+        class=&quot;switch-primary&quot; 
+        knob-label='&lt;i class=&quot;fa fa-stop&quot;&gt;&lt;/i&gt;' 
+        on-label='&lt;i class=&quot;fa fa-thumbs-up&quot;&gt;&lt;/i&gt;' 
+        off-label='&lt;i class=&quot;fa fa-thumbs-down&quot;&gt;&lt;/i&gt;'&gt; 
+    &lt;/toggle-switch&gt;
+                                </pre>
+                </div>
+            </div>
         </div>
-        <!-- box-body -->
-        <div class="box-body">
-            <h1>body</h1>
+        <div class="col-md-5">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th style="width: 150px;">Attribute</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <code>on-label</code>
+                        </td>
+                        <td>Text value for the left side of the switch. Default value is On</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>off-label</code>
+                        </td>
+                        <td>Text value for the right side of the switch. Default value is Off</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>knob-label</code>
+                        </td>
+                        <td>Text value for the middle part of the switch.</td>
+                    </tr>
+                </tbody>
+                <tr>
+                    <td>
+                        <code>tabindex</code>
+                    </td>
+                    <td>Tab index for the switch. Default value is 0</td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <code>html</code>
+                    </td>
+                    <td>Boolean value indicating that the on-label, off-label or the knob-label contains pure html markup.</td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <code>is-disabled</code>
+                    </td>
+                    <td>Boolean value disabling The switch</td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <code>broadcast</code>
+                    </td>
+                    <td>Boolean value. If true a change event will trigger a root broadcast with the event name:
+                        <code>ab-toggle-switch</code> containg the value of the switch and the
+                        <code>switch-id</code> value</td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>switch-id</code>
+                    </td>
+                    <td>Unique id for the switch. Default is 0.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>on-change</code>
+                    </td>
+                    <td>Callback function triggered on a switch change.</td>
+                </tr>
+    
+            </table>
         </div>
-        <!-- / box-body -->
-    </div>
-    <!-- / box -->
-</section>
-<!-- / Page content -->
+    
+    </section>
+    <!-- /.content -->
+    <!-- Script only used for coloring and formatting code samples in page -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>

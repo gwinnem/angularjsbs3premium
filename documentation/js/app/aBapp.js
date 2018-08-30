@@ -14,11 +14,13 @@
         'abIconBox',
         'abStatusLabel',
         'abPriorityLabel',
-        'abModalDialogs',
         'abIcheck',
         'abNumbersOnly',
         'abTextAreaAutoresize',
-        'abFitHeight'
+        'abFitHeight',
+        "abStatusLabel",
+        "abPriorityLabel",
+        "abToggleSwitch"
     ]);
 
 aurora.config(
@@ -326,7 +328,7 @@ aurora.config(
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Browser Support' }]
             })
             .state('faq', {
-                url: '/welcome',
+                url: '/faq',
                 templateUrl: 'documentation/pages/faq.html',
                 pageTitle: 'Frequently Asked Questions',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Faq' }]

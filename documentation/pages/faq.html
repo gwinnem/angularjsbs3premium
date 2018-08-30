@@ -1,23 +1,96 @@
 ﻿<!-- Page content -->
 <section class="content animated fadeInRight">
-    <!-- box -->
-    <div id="starter" class="box box-white">
-        <div class="box-header with-border">
-            <h3 class="box-title">FAQ.</h3>
-            <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="fullscreen" data-toggle="tooltip" title="Toggle Full screen"><i class="fa fa-arrows-alt"></i></button>
+    <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        The Faq will be updated with all the question that the buyers are asking.
+    </div>
+
+    <br />
+
+    <div class="panel-group" id="accordion">
+        <div class="faqHeader">General questions</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">What
+                        is included in this template ?</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <ol>
+                        <li>130+ pages.</li>
+                        <li>20+ angular directives.</li>
+                        <li>200+ styled bootstrap components.</li>
+                        <li>17 Skins.</li>
+                        <li>40+ hand picked jQuery plugins.</li>
+                        <li>Seed template.</li>
+                    </ol>
+                </div>
             </div>
         </div>
-        <!-- box-body -->
-        <div class="box-body">
-            <h1>ADD FAQ HERE</h1>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Control
+                        sidebar.</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul>
+                        <li>The control sidebar can not be used together with the boxed layout. This will be fixed in later
+                            versions.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <!-- / box-body -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Known issues.</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ol>
+                        <li>Control sidebar tabs. The active tab is not displayed sometimes. This issue will be fixed in the next update.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- / box -->
 </section>
 <!-- / Page content -->
-<script>
-    // Activating ab box
-    $("#starter").boxWidget();
-</script>
+<style>
+    .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+
+    .panel-heading [data-toggle="collapse"]:after {
+        font-family: 'Glyphicons Halflings';
+        content: "\e072";
+        /* "play" icon */
+        float: right;
+        color: #F58723;
+        font-size: 18px;
+        line-height: 22px;
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+    .panel-heading [data-toggle="collapse"].collapsed:after {
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #454444;
+    }
+</style>
