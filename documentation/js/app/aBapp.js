@@ -331,24 +331,6 @@ aurora.config(
                 pageTitle: 'Frequently Asked Questions',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Faq' }]
             })
-            .state('aspnetmvc6', {
-                url: '/implementations',
-                templateUrl: 'documentation/pages/implementations/aspnetmvc.html',
-                pageTitle: 'Implementation ASP.NET Mvc6',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Implementation' }, { name: 'ASP.NET MVC6' }]
-            })
-            .state('angularjs', {
-                url: '/implementations',
-                templateUrl: 'documentation/pages/implementations/angularjs.html',
-                pageTitle: 'Implementation AngularJs',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Implementation' }, { name: 'AngularJs' }]
-            })
-            .state('angularjsphp', {
-                url: '/implementations',
-                templateUrl: 'documentation/pages/implementations/angularjsphp.html',
-                pageTitle: 'Implementation AngularJs PHP',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Implementation' }, { name: 'AngularJs PHP' }]
-            })
             .state('starter', {
                 url: '/starter',
                 templateUrl: 'documentation/pages/starter.html',
