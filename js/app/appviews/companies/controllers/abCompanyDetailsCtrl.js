@@ -143,15 +143,15 @@
 
                             modalDialogs.openDialog(modalDefaults, modalOptions)
                                 .then(function (result) {
-                                    // if (result) {
-                                    //     abProjectsSvc.getProject($scope.project.id)
-                                    //         .then(function (result) {
-                                    //             $scope.project = result;
-                                    //         })
-                                    //         .catch(function (error) {
-                                    //             $notification.error(error, "Project add contacts failed", config.notificationDelay);
-                                    //         });
-                                    // }
+                                    if (result) {
+                                        abProjectsSvc.getProject($scope.project.id)
+                                            .then(function (result) {
+                                                $scope.project = result;
+                                            })
+                                            .catch(function (error) {
+                                                $notification.error(error, "Project add contacts failed", config.notificationDelay);
+                                            });
+                                    }
                                 }).catch(function (error) {
                                     $notification.error(error, "Add Contacts failed", config.notificationDelay);
                                 });
