@@ -2420,19 +2420,6 @@ abApp.config([
                     name: "Bootstrap Toggle"
                 }]
             })
-            // Jquery Tooltipster
-            .state("tooltipster", {
-                url: "/miscellaneous/tolltipster",
-                templateUrl: "pages/misc/tooltipster.html",
-                pageTitle: "jQuery Tooltipster Plugin",
-                pageBreadCrumbs: [{
-                    name: "Home"
-                }, {
-                    name: "Miscellaneous"
-                }, {
-                    name: "Tooltipster"
-                }]
-            })
 
             // AngularJs Timeline
             .state("timeline", {
