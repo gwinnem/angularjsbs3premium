@@ -118,8 +118,8 @@
         switch (cls) {
             case className.layoutNormal: {
                 $('body')
-                .removeClass(className.layoutFixed)
-                .removeClass(className.layoutBoxed).addClass(className.layoutNormal);
+                    .removeClass(className.layoutFixed)
+                    .removeClass(className.layoutBoxed).addClass(className.layoutNormal);
                 break;
             }
             case className.layoutFixed: {
@@ -130,8 +130,8 @@
             }
             case className.layoutBoxed: {
                 $('body').removeClass(className.layoutFixed)
-                .removeClass(className.layoutNormal)
-                .addClass(className.layoutBoxed);
+                    .removeClass(className.layoutNormal)
+                    .addClass(className.layoutBoxed);
                 break;
             }
         }
@@ -141,7 +141,9 @@
             //$pushMenu.expandOnHover();
             $layout.activate();
         }
-        $controlSidebar.fix();
+        if ($controlSidebar !== undefined) {
+            $controlSidebar.fix();
+        }
     }
 
     // Adding layout settings to local storage
@@ -418,11 +420,15 @@
             }
             if ($(this).prop('checked')) {
                 store(storeName.controlsidebar, storeValue.visible);
-                $controlSidebar.expand();
+                if ($controlSidebar !== undefined) {
+                    $controlSidebar.expand();
+                }
             };
             if (!$(this).prop('checked')) {
                 store(storeName.controlsidebar, storeValue.hidden);
-                $controlSidebar.collapse();
+                if ($controlSidebar !== undefined) {
+                    $controlSidebar.collapse();
+                }
             };
         });
 
@@ -529,8 +535,10 @@
     $(document).ready(function () {
         // Activating the needed plugins
         if ($controlSidebar === undefined) {
-            $(htmlSelector.controlSidebar).controlSidebar();
             $controlSidebar = $(htmlSelector.controlSidebar).first().data(storeName.controlsidebar);
+            if ($controlSidebar != undefined) {
+                $(htmlSelector.controlSidebar).controlSidebar();
+            }
         }
         if ($pushMenu === undefined) {
             $pushMenu = $(htmlSelector.pushMenu).pushMenu();

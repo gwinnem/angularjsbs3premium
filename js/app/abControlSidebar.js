@@ -181,12 +181,5 @@
         if ($('body').hasClass(className.openOnLoad)) {
             $('body').addClass(className.open);
         }
-
-        // Adding click event on wrapper to auto close controlsidebar
-        // $(htmlSelector.wrapper).on('click', function (event) {
-        //     if ($('body').hasClass(className.open)) {
-        //         Plugin.call($(this), 'toggle');
-        //     }
-        // });
     });
 }(jQuery, window, document));

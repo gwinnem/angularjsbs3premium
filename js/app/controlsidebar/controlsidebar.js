@@ -70,6 +70,33 @@ $('#toggle-navbar-tasks').change(function () {
     }
 });
 
+/**
+ * Navbar Left side menu Switch
+ */
+$('#toggle-navbar-leftmenu').bootstrapToggle({
+    on: 'Visible',
+    off: 'Hidden',
+    onstyle: 'success',
+    offstyle: 'danger',
+    size: 'mini',
+    width: 60
+});
+$('#toggle-navbar-leftmenu').bootstrapToggle('on');
+// Event handler
+$('#toggle-navbar-leftmenu').change(function () {
+    if ($(this).prop('checked')) {
+        if ($('#topnav-left').hasClass('hidden')) {
+            $('#topnav-left').removeClass('hidden'); 
+        }
+        if ($('#topnav-left-search').hasClass('hidden')) {
+            $('#topnav-left-search').removeClass('hidden');   
+        }
+    } else {
+        $('#topnav-left').addClass('hidden');
+        $('#topnav-left-search').addClass('hidden');
+    }
+});
+
 
 $(document).ready(function () {
     $('.tooltip').tooltipster({
