@@ -486,10 +486,13 @@ abApp.config([
                     ctrl: [
                         "$ocLazyLoad",
                         function ($ocLazyLoad) {
-                            return $ocLazyLoad.load(["/js/plugins/Chart.js/Chart.bundle.min.js",
-                                "/js/app/charts/chartjs/services/abBarChartSvc.js",
-                                "/js/app/charts/chartjs/controllers/abBarChartCtrl.js"
-                            ]);
+                            return $ocLazyLoad.load({
+                                series: true,
+                                files: ["/js/plugins/Chart.js/Chart.bundle.min.js",
+                                    "/js/app/charts/chartjs/services/abBarChartSvc.js",
+                                    "/js/app/charts/chartjs/controllers/abBarChartCtrl.js"
+                                ]
+                            });
                         }
                     ]
                 }
@@ -513,11 +516,14 @@ abApp.config([
                     ctrl: [
                         "$ocLazyLoad",
                         function ($ocLazyLoad) {
-                            return $ocLazyLoad.load(["/js/plugins/Chart.js/Chart.bundle.min.js",
-                                "/js/plugins/Chart.js/samples/utils.js",
-                                "/js/app/charts/chartjs/services/abBarChartSvc.js",
-                                "/js/app/charts/chartjs/controllers/abLineChartCtrl.js"
-                            ]);
+                            return $ocLazyLoad.load({
+                                series: true,
+                                files: ["/js/plugins/Chart.js/Chart.bundle.min.js",
+                                    "/js/plugins/Chart.js/samples/utils.js",
+                                    "/js/app/charts/chartjs/services/abBarChartSvc.js",
+                                    "/js/app/charts/chartjs/controllers/abLineChartCtrl.js"
+                                ]
+                            });
                         }
                     ]
                 }
@@ -571,10 +577,13 @@ abApp.config([
                     ctrl: [
                         "$ocLazyLoad",
                         function ($ocLazyLoad) {
-                            return $ocLazyLoad.load(["/js/plugins/Chart.js/Chart.bundle.min.js",
-                                "/js/app/charts/chartjs/abChartJsCommon.js",
-                                "/js/app/charts/chartjs/controllers/abOtherChartCtrl.js"
-                            ]);
+                            return $ocLazyLoad.load({
+                                series: true,
+                                files: ["/js/plugins/Chart.js/Chart.bundle.min.js",
+                                    "/js/app/charts/chartjs/abChartJsCommon.js",
+                                    "/js/app/charts/chartjs/controllers/abOtherChartCtrl.js"
+                                ]
+                            });
                         }
                     ]
                 }
@@ -675,10 +684,13 @@ abApp.config([
                     ctrl: [
                         "$ocLazyLoad",
                         function ($ocLazyLoad) {
-                            return $ocLazyLoad.load(["/js/plugins/flot/jquery.flot.min.js",
-                                "/js/app/charts/flot/services/abFlotSvc.js",
-                                "/js/app/charts/flot/controllers/abFlotBarChartsCtrl.js"
-                            ]);
+                            return $ocLazyLoad.load({
+                                series: true,
+                                files: ["/js/plugins/flot/jquery.flot.min.js",
+                                    "/js/app/charts/flot/services/abFlotSvc.js",
+                                    "/js/app/charts/flot/controllers/abFlotBarChartsCtrl.js"
+                                ]
+                            });
                         }
                     ]
                 }
@@ -701,12 +713,15 @@ abApp.config([
                     ctrl: [
                         "$ocLazyLoad",
                         function ($ocLazyLoad) {
-                            return $ocLazyLoad.load(["/js/plugins/flot/jquery.flot.min.js",
-                                "/js/plugins/flot/jquery.flot.resize.min.js",
-                                "/js/plugins/flot/jquery.flot.time.min.js",
-                                "/js/app/charts/flot/services/abFlotSvc.js",
-                                "/js/app/charts/flot/controllers/abFlotAxesCtrl.js"
-                            ]);
+                            return $ocLazyLoad.load({
+                                series: true,
+                                files: ["/js/plugins/flot/jquery.flot.min.js",
+                                    "/js/plugins/flot/jquery.flot.resize.min.js",
+                                    "/js/plugins/flot/jquery.flot.time.min.js",
+                                    "/js/app/charts/flot/services/abFlotSvc.js",
+                                    "/js/app/charts/flot/controllers/abFlotAxesCtrl.js"
+                                ]
+                            });
                         }
                     ]
                 }
