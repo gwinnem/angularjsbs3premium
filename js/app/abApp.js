@@ -598,8 +598,9 @@ abApp.config([
                     ctrl: [
                         "$ocLazyLoad",
                         function ($ocLazyLoad) {
-                            return $ocLazyLoad.load(["/js/plugins/Chart.js/Chart.bundle.min.js",
-                                "/js/plugins/Chart.js/plugins/chartjs-chart-financial/src/chart-financial.min.js",
+                            return $ocLazyLoad.load(["/bower_components/chart.js/dist/chart.bundle.min.js",
+                            "/js/plugins/chartjs-chart-financial-master/docs/Chart.Financial.js",
+                                //"/js/plugins/Chart.js/plugins/chartjs-chart-financial/src/chart-financial.min.js",
                                 "/js/app/charts/chartjs/controllers/abFinancialChartCtrl.js"
                             ]);
                         }

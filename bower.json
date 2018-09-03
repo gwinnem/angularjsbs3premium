@@ -76,7 +76,8 @@
     "angular-summernote": "^0.8.1",
     "bootstrap-toggle": "^2.2.2",
     "tooltipster": "4.2.6",
-    "ng-letter-avatar": "ngletteravatar#^4.0.4"
+    "ng-letter-avatar": "ngletteravatar#^4.0.4",
+    "chart.js": "chartjs#^2.7.2"
   },
   "resolutions": {
     "jquery": ">=3.3.1",
