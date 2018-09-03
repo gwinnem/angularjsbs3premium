@@ -488,7 +488,7 @@ abApp.config([
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 series: true,
-                                files: ["/js/plugins/Chart.js/Chart.bundle.min.js",
+                                files: ["/bower_components/chart.js/dist/Chart.bundle.min.js",
                                     "/js/app/charts/chartjs/services/abBarChartSvc.js",
                                     "/js/app/charts/chartjs/controllers/abBarChartCtrl.js"
                                 ]
@@ -518,8 +518,7 @@ abApp.config([
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 series: true,
-                                files: ["/js/plugins/Chart.js/Chart.bundle.min.js",
-                                    "/js/plugins/Chart.js/samples/utils.js",
+                                files: ["/bower_components/chart.js/dist/Chart.bundle.min.js",
                                     "/js/app/charts/chartjs/services/abBarChartSvc.js",
                                     "/js/app/charts/chartjs/controllers/abLineChartCtrl.js"
                                 ]
@@ -549,8 +548,8 @@ abApp.config([
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 series: true,
-                                files: ["/js/plugins/Chart.js/Chart.bundle.min.js",
-                                    "/js/plugins/Chart.js/samples/utils.js",
+                                files: ["/bower_components/chart.js/dist/Chart.bundle.min.js",
+                                    "/bower_components/chart.js/samples/utils.js",
                                     "/js/app/charts/chartjs/controllers/abAreaChartCtrl.js"
                                 ]
                             });
@@ -579,7 +578,7 @@ abApp.config([
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 series: true,
-                                files: ["/js/plugins/Chart.js/Chart.bundle.min.js",
+                                files: ["/bower_components/chart.js/dist/Chart.bundle.min.js",
                                     "/js/app/charts/chartjs/abChartJsCommon.js",
                                     "/js/app/charts/chartjs/controllers/abOtherChartCtrl.js"
                                 ]
@@ -609,9 +608,7 @@ abApp.config([
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 series: true,
-                                files: [
-                                    //"/bower_components/chart.js/dist/chart.js",
-                                    "/js/plugins/chartjs-chart-financial-master/docs/Chart.js",
+                                files: ["/bower_components/chart.js/dist/Chart.bundle.min.js",
                                     "/js/plugins/chartjs-chart-financial-master/docs/Chart.Financial.js",
                                     "/js/plugins/chartjs-chart-financial-master/docs/utils.js",
                                     "/js/app/charts/chartjs/controllers/abFinancialChartCtrl.js"]
