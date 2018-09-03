@@ -2,7 +2,6 @@
  * Small box widget directive
  * @author Geirr Winnem
  * @version 1.0.0
- * @license MIT
  * @summary Directive for displaying small boxes.
  */
 
