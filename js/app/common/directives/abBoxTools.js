@@ -1,7 +1,8 @@
 ﻿/**
+ * Boxtools widget.
  * @author Geirr Winnem
  * @version 1.0.0
- * @summary Box tools directive.
+ * @summary Showing tools for the box component..
  */
 (function () {
     "use strict";

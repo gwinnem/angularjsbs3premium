@@ -598,11 +598,15 @@ abApp.config([
                     ctrl: [
                         "$ocLazyLoad",
                         function ($ocLazyLoad) {
-                            return $ocLazyLoad.load(["/bower_components/chart.js/dist/chart.bundle.min.js",
-                            "/js/plugins/chartjs-chart-financial-master/docs/Chart.Financial.js",
-                                //"/js/plugins/Chart.js/plugins/chartjs-chart-financial/src/chart-financial.min.js",
-                                "/js/app/charts/chartjs/controllers/abFinancialChartCtrl.js"
-                            ]);
+                            return $ocLazyLoad.load({
+                                series: true,
+                                files: [
+                                    //"/bower_components/chart.js/dist/chart.js",
+                                    "/js/plugins/chartjs-chart-financial-master/docs/Chart.js",
+                                    "/js/plugins/chartjs-chart-financial-master/docs/Chart.Financial.js",
+                                    "/js/plugins/chartjs-chart-financial-master/docs/utils.js",
+                                    "/js/app/charts/chartjs/controllers/abFinancialChartCtrl.js"]
+                            });
                         }
                     ]
                 }

@@ -1,6 +1,5 @@
 ﻿/**
  * @author Geirr Winnem
- * @version 1.0.0
  * @summary Directive for displaying icon boxes.
  */
 

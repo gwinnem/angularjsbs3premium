@@ -1,7 +1,6 @@
 ﻿/**
 * iCheck directive
 * @author Geirr Winnem
-* @version 1.0.0
 * @summary 
 */
 (function () {
