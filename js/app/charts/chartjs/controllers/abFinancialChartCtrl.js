@@ -37,7 +37,7 @@
                 }
 
                 var ctx = document.getElementById("canvas-financial").getContext("2d");
-                var financial = new Chart(ctx, {
+                new Chart(ctx, {
                     type: 'financial',
                     data: {
                         datasets: [{

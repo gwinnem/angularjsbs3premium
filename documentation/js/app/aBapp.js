@@ -116,7 +116,7 @@ aurora.config(
                 url: '/components/html/iconbox',
                 templateUrl: 'documentation/pages/components/html/infobox.html',
                 pageTitle: 'Html Component IconBox',
-                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Html' }, { name: 'IconBox' }]
+                pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Html' }, { name: 'InfoBox' }]
 
             })
             .state('htmltreeview', {

@@ -5538,6 +5538,39 @@ table.issue-tracker tbody tr td {
   color: #000;
   background: #eeeeee;
 }
+.ab-mini-stat {
+  -ms-flex-direction: column;
+  background-clip: border-box;
+  background-color: #fff !important;
+  border-radius: .25rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+  word-wrap: break-word;
+}
+.ab-mini-stat .ab-mini-stat-icon {
+  background: rgba(89, 206, 181, 0.6);
+  padding: 0 20px;
+}
+.ab-mini-stat .ab-mini-stat-icon i {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), #59ceb5);
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  font-size: 32px;
+  line-height: 64px;
+  position: relative;
+  text-align: center;
+  top: 22px;
+  width: 64px;
+}
+.p-4 {
+  padding: 1.5rem !important;
+}
 canvas {
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -7008,7 +7041,7 @@ tags-input .autocomplete .suggestion-item em {
 .margin {
   margin: 10px !important;
 }
-.margin-bottom-none {
+.m-b-0 {
   margin-bottom: 0 !important;
 }
 .m-xxs {
