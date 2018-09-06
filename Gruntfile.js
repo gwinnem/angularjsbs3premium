@@ -7,11 +7,11 @@ module.exports = function (grunt) { // jshint ignore:line
         watch: {
             less: {
                 // Compiles less files upon saving
-                files: ['assets/less/*.less', 
-                'assets/less/skins/*.less',
-                'assets/less/appviews/*.less', 
-                'assets/less/pages/*.less', 
-                'assets/less/plugins/*.less'],
+                files: ['assets/less/*.less',
+                    'assets/less/skins/*.less',
+                    'assets/less/appviews/*.less',
+                    'assets/less/pages/*.less',
+                    'assets/less/plugins/*.less'],
                 tasks: ['less:development', 'notify:less']
             },
             // skins: {
@@ -25,7 +25,7 @@ module.exports = function (grunt) { // jshint ignore:line
         connect: {
             server: {
                 options: {
-                    port: 8010,
+                    port: 4040,
                     index: 'index.html',
                     hostname: 'localhost',
                     open: true,

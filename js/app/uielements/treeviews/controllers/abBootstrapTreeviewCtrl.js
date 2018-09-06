@@ -5,9 +5,7 @@
  */
 (function () {
     "use strict";
-    angular.module("BootstrapTreeviewModule", [
-            []
-        ])
+    angular.module("BootstrapTreeviewModule", [])
         .controller("BootstrapTreeviewController", ["$scope", "$notification", "config",
             function ($scope, $notification, config) {
                 $.fn.extend({

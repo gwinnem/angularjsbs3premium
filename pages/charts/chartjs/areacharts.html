@@ -1,157 +1,84 @@
-﻿<div class="row">
-    <div class="col-md-6">
-        <div class="box box-default">
-            <div class="box-body">
-                <div id="container-fill-false" style="width: 100%;">
-                    <canvas id="chart-0"></canvas>
-                </div>
-            </div>
-            <!-- /.box-body -->
-        </div>
-        <!-- /.box -->
-    </div>
-    <!-- /.col -->
-    <div class="col-md-6">
-        <div class="box box-default">
-            <div class="box-body">
-                <div id="container-fill-true" style="width: 100%;">
-                    <canvas id="chart-1"></canvas>
-                </div>
-            </div>
-            <!-- /.box-body -->
-        </div>
-        <!-- /.box -->
-    </div>
-    <!-- /.col -->
-</div>
-<!-- /.row -->
-<div class="row">
-    <div class="col-md-6">
-        <div class="box box-default">
-            <div class="box-body">
-                <div id="container-fill-start" style="width: 100%;">
-                    <canvas id="chart-2"></canvas>
-                </div>
-            </div>
-            <!-- /.box-body -->
-        </div>
-        <!-- /.box -->
-    </div>
-    <!-- /.col -->
-    <div class="col-md-6">
-        <div class="box box-default">
-            <div class="box-body">
-                <div id="container-fill-end" style="width: 100%;">
-                    <canvas id="chart-3"></canvas>
-                </div>
-            </div>
-            <!-- /.box-body -->
-        </div>
-        <!-- /.box -->
-    </div>
-    <!-- /.col -->
-</div>
-<!-- /.row -->
-<div class="row">
-    <div class="col-md-offset-5">
-        <button class="btn btn-primary" onclick="toggleSmooth(this)">Smooth</button>
-        <button class="btn btn-primary" onclick="randomize(this)">Randomize</button>
-    </div>
-</div>
-<!-- /.row -->
+﻿<script src="/bower_components/chart.js/dist/Chart.bundle.js"></script>
+<script src="/bower_components/chart.js/samples/utils.js"></script>
 
-
+<div style="width: 75%">
+    <canvas id="canvas"></canvas>
+</div>
+<button id="randomizeData">Randomize Data</button>
 <script>
-    var presets = window.chartColors;
-    var utils = Samples.utils;
-    var inputs = {
-        min: -100,
-        max: 100,
-        count: 8,
-        decimals: 2,
-        continuity: 1
+    var chartData = {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            type: 'line',
+            label: 'Dataset 1',
+            borderColor: window.chartColors.blue,
+            borderWidth: 2,
+            fill: false,
+            data: [
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor()
+            ]
+        }, {
+            type: 'bar',
+            label: 'Dataset 2',
+            backgroundColor: window.chartColors.red,
+            data: [
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor()
+            ],
+            borderColor: 'white',
+            borderWidth: 2
+        }, {
+            type: 'bar',
+            label: 'Dataset 3',
+            backgroundColor: window.chartColors.green,
+            data: [
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor(),
+                randomScalingFactor()
+            ]
+        }]
+
     };
-
-    function generateData(config) {
-        return utils.numbers(Chart.helpers.merge(inputs, config || {}));
-    }
-
-    function generateLabels(config) {
-        var labels= utils.months(Chart.helpers.merge({
-            count: inputs.count
-            //section: 3
-        }, config || {}));
-        return labels;
-    }
-
-    var options = {
-        maintainAspectRatio: true,
-        spanGaps: false,
-        elements: {
-            line: {
-                tension: 0.000001
-            }
-        },
-        plugins: {
-            filler: {
-                propagate: false
-            }
-        },
-        scales: {
-            xAxes: [{
-                ticks: {
-                    autoSkip: false,
-                    maxRotation: 0
-                }
-            }]
-        }
-    };
-
-    [false, "origin", "start", "end"].forEach(function (boundary, index) {
-
-        // reset the random seed to generate the same data for all charts
-        utils.srand(8);
-
-        new Chart("chart-" + index, {
-            type: "line",
-            data: {
-                labels: generateLabels(),
-                datasets: [{
-                    backgroundColor: utils.transparentize(presets.red),
-                    borderColor: presets.red,
-                    data: generateData(),
-                    label: "Dataset",
-                    fill: boundary
-                }]
-            },
-            options: Chart.helpers.merge(options, {
+    window.onload = function () {
+        var ctx = document.getElementById('canvas').getContext('2d');
+        window.myMixedChart = new Chart(ctx, {
+            type: 'bar',
+            data: chartData,
+            options: {
+                responsive: true,
                 title: {
-                    text: "fill: " + boundary,
-                    display: true
+                    display: true,
+                    text: 'Chart.js Combo Bar Line Chart'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: true
                 }
-            })
+            }
         });
-    });
+    };
 
-
-    function toggleSmooth(btn) {
-        var value = btn.classList.toggle("btn-on");
-        Chart.helpers.each(Chart.instances, function (chart) {
-            chart.options.elements.line.tension = value ? 0.4 : 0.000001;
-            chart.update();
-        });
-    }
-
-    function randomize() {
-        var seed = utils.rand();
-        Chart.helpers.each(Chart.instances, function (chart) {
-            utils.srand(seed);
-
-            chart.data.datasets.forEach(function (dataset) {
-                dataset.data = generateData();
+    document.getElementById('randomizeData').addEventListener('click', function () {
+        chartData.datasets.forEach(function (dataset) {
+            dataset.data = dataset.data.map(function () {
+                return randomScalingFactor();
             });
-
-            chart.update();
         });
-    }
+        window.myMixedChart.update();
+    });
 </script>
