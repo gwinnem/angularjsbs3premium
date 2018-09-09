@@ -56,8 +56,8 @@
     </script>
 </head>
 
-<body ng-app="aurora" class="sidebar-mini layout-normal skin-green-light control-sidebar-slide-open"
-    ng-cloak ng-controller="mainController">
+<body ng-app="aurora" class="sidebar-mini layout-normal skin-green-light control-sidebar-slide-open" ng-cloak
+    ng-controller="mainController">
     <!-- Loading section used for preloading of page -->
     <div class="loading">
         <div class="loading-bar"></div>
@@ -94,7 +94,7 @@
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
                 <!-- Sidebar user panel -->
-                <div id="sidebar-user-panel" class="user-panel">
+                <div id="sidebar-user-panel" class="user-panel visible-md">
                     <div class="pull-left image">
                         <img src="/assets/img/user2-160x160.jpg" class="img-circle profile-user-img img-responsive" alt="Profile Image">
                     </div>
@@ -106,7 +106,7 @@
                     </div>
                 </div>
                 <!-- search form -->
-                <form id="sidebar-search-form" action="#" method="get" class="sidebar-form">
+                <form id="sidebar-search-form" action="#" method="get" class="sidebar-form visible-md">
                     <div class="input-group">
                         <input type="text" name="q" class="form-control" placeholder="Search...">
                         <span class="input-group-btn">
@@ -175,7 +175,8 @@
                             <!-- Chart.js-->
                             <li class="treeview">
                                 <a href="#">
-                                    <img src="/js/plugins/Chart.js/logo32x32.png" alt="Chart.js" height="24" width="24" style="vertical-align: text-bottom" />
+                                    <img src="/js/plugins/Chart.js/logo32x32.png" alt="Chart.js" height="24" width="24"
+                                        style="vertical-align: text-bottom" />
                                     <span>Chart.js</span>
                                     <span class="pull-right-container">
                                         <i class="fa fa-angle-left pull-right"></i>
@@ -218,7 +219,8 @@
                             <!-- Flot -->
                             <li class="treeview">
                                 <a href="#">
-                                    <img src="/js/plugins/flot/flot32x32.png" alt="Chart.js" height="24" width="24" style="vertical-align: text-bottom" />
+                                    <img src="/js/plugins/flot/flot32x32.png" alt="Chart.js" height="24" width="24"
+                                        style="vertical-align: text-bottom" />
                                     <span>Flot</span>
                                     <span class="pull-right-container">
                                         <i class="fa fa-angle-left pull-right"></i>
@@ -668,368 +670,368 @@
                                 </ul>
                             </li>
                             <li>
-                                <li>
-                                    <a ui-sref="badgesandlabels" href="#">
-                                        Badges / Labels
-                                        <span class="label label-primary pull-right">12</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="bootstrapmodals" href="#"> Modals</a>
-                                </li>
-                                <!-- Treeviews -->
-                                <li class="treeview">
-                                    <a href="#">
-                                        Treeviews
-                                        <span class="pull-right-container">
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li>
-                                            <a ui-sref="bootstraptreeview" href="#">
-                                                Bootstrap Tree
-                                                <span class="label label-primary pull-right">3</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a ui-sref="jstree" href="#">
-                                                JsTree
-                                                <span class="label label-primary pull-right">7</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <!-- Nested lists -->
-                                <li>
-                                    <a ui-sref="jquerynested" href="#"> jQuery Nested List</a>
-                                </li>
+                            <li>
+                                <a ui-sref="badgesandlabels" href="#">
+                                    Badges / Labels
+                                    <span class="label label-primary pull-right">12</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="bootstrapmodals" href="#"> Modals</a>
+                            </li>
+                            <!-- Treeviews -->
+                            <li class="treeview">
+                                <a href="#">
+                                    Treeviews
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a ui-sref="bootstraptreeview" href="#">
+                                            Bootstrap Tree
+                                            <span class="label label-primary pull-right">3</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="jstree" href="#">
+                                            JsTree
+                                            <span class="label label-primary pull-right">7</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Nested lists -->
+                            <li>
+                                <a ui-sref="jquerynested" href="#"> jQuery Nested List</a>
+                            </li>
                         </ul>
-                        </li>
+                    </li>
 
-                        <!-- Tables -->
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-lg fa-table"></i>
-                                <span>Tables</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li>
-                                    <a ui-sref="statichtml" href="#">
-                                        Static Html
-                                        <span class="label label-primary pull-right">5</span>
-                                    </a>
-                                </li>
-                                <li class="treeview">
-                                    <a href="#">
-                                        AngularJs
-                                        <span class="pull-right-container">
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li>
-                                            <a ui-sref="ngrepeat" href="#">
-                                                ngRepeat
-                                                <span class="label label-primary pull-right">4</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a ui-sref="footable" href="#">
-                                        Foo Table
-                                        <span class="label label-primary pull-right">4</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="jqgrid" href="#">
-                                        jqGrid
-                                        <span class="label label-primary pull-right">2</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                    <!-- Tables -->
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-lg fa-table"></i>
+                            <span>Tables</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a ui-sref="statichtml" href="#">
+                                    Static Html
+                                    <span class="label label-primary pull-right">5</span>
+                                </a>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    AngularJs
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a ui-sref="ngrepeat" href="#">
+                                            ngRepeat
+                                            <span class="label label-primary pull-right">4</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a ui-sref="footable" href="#">
+                                    Foo Table
+                                    <span class="label label-primary pull-right">4</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="jqgrid" href="#">
+                                    jqGrid
+                                    <span class="label label-primary pull-right">2</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
-                        <!-- Pages -->
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-lg fa-windows"></i>
-                                <span>Pages</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li>
-                                    <a ui-sref="invoice" href="#"> Invoice</a>
-                                </li>
-                                <li>
-                                    <a ui-sref="profile" href="#"> Profile</a>
-                                </li>
-                                <li class="treeview">
-                                    <a href="#">
-                                        <span>Pricing Tables</span>
-                                        <span class="pull-right-container">
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li>
-                                            <a ui-sref="pricing-v1" href="#">
-                                                Version 1
-                                                <span class="label label-primary pull-right">8</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a ui-sref="pricing-v2" href="#">
-                                                Version 2
-                                                <span class="label label-primary pull-right">4</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="/pages/pages/login-1.html" target="_blank">
-                                        <i class="fa fa-lg fa-hand-o-right"></i> Login v1
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/pages/pages/login-2.html" target="_blank">
-                                        <i class="fa fa-lg fa-hand-o-right"></i> Login v2
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/pages/pages/register-1.html" target="_blank">
-                                        <i class="fa fa-lg fa-hand-o-right"></i> Register v1
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/pages/pages/register-2.html" target="_blank">
-                                        <i class="fa fa-lg fa-hand-o-right"></i> Register v2
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/pages/pages/forgotpassword-1.html" target="_blank">
-                                        <i class="fa fa-lg fa-hand-o-right"></i> Forgot Password v1
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/pages/pages/lockscreen-1.html" target="_blank">
-                                        <i class="fa fa-lg fa-hand-o-right"></i> Lock Screen v1
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/pages/pages/lockscreen-2.html" target="_blank">
-                                        <i class="fa fa-lg fa-hand-o-right"></i> Lock Screen v2
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/pages/pages/logout-1.html" target="_blank">
-                                        <i class="fa fa-lg fa-hand-o-right"></i> Logout v1
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/pages/pages/404-1.html" target="_blank">
-                                        <i class="fa fa-lg fa-hand-o-right"></i> Error 404 v1
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/pages/pages/500-1.html" target="_blank">
-                                        <i class="fa fa-lg fa-hand-o-right"></i> Error 500 v1
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="blankpage" href="#"> Blank Page</a>
-                                </li>
-                            </ul>
-                        </li>
+                    <!-- Pages -->
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-lg fa-windows"></i>
+                            <span>Pages</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a ui-sref="invoice" href="#"> Invoice</a>
+                            </li>
+                            <li>
+                                <a ui-sref="profile" href="#"> Profile</a>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    <span>Pricing Tables</span>
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a ui-sref="pricing-v1" href="#">
+                                            Version 1
+                                            <span class="label label-primary pull-right">8</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a ui-sref="pricing-v2" href="#">
+                                            Version 2
+                                            <span class="label label-primary pull-right">4</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/pages/pages/login-1.html" target="_blank">
+                                    <i class="fa fa-lg fa-hand-o-right"></i> Login v1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pages/pages/login-2.html" target="_blank">
+                                    <i class="fa fa-lg fa-hand-o-right"></i> Login v2
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pages/pages/register-1.html" target="_blank">
+                                    <i class="fa fa-lg fa-hand-o-right"></i> Register v1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pages/pages/register-2.html" target="_blank">
+                                    <i class="fa fa-lg fa-hand-o-right"></i> Register v2
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pages/pages/forgotpassword-1.html" target="_blank">
+                                    <i class="fa fa-lg fa-hand-o-right"></i> Forgot Password v1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pages/pages/lockscreen-1.html" target="_blank">
+                                    <i class="fa fa-lg fa-hand-o-right"></i> Lock Screen v1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pages/pages/lockscreen-2.html" target="_blank">
+                                    <i class="fa fa-lg fa-hand-o-right"></i> Lock Screen v2
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pages/pages/logout-1.html" target="_blank">
+                                    <i class="fa fa-lg fa-hand-o-right"></i> Logout v1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pages/pages/404-1.html" target="_blank">
+                                    <i class="fa fa-lg fa-hand-o-right"></i> Error 404 v1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pages/pages/500-1.html" target="_blank">
+                                    <i class="fa fa-lg fa-hand-o-right"></i> Error 500 v1
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="blankpage" href="#"> Blank Page</a>
+                            </li>
+                        </ul>
+                    </li>
 
 
-                        <!-- Miscellaneous -->
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-lg fa-globe"></i>
-                                <span>Miscellaneous</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li>
-                                    <a ui-sref="staticfilemanager" href="#">
-                                        Static Filemanager
-                                        <span class="label label-success pull-right">NEW</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="socialbuttons" href="#">
-                                        Social Buttons
-                                        <span class="label label-primary pull-right">26</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="ladda" href="#">
-                                        Ladda buttons.
-                                        <span class="label label-primary pull-right">18</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="sweetalert" href="#">
-                                        SweetAlerts
-                                        <span class="label label-primary pull-right">12</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="toastr" href="#"> Toastr Notifications</a>
-                                </li>
-                                <li>
-                                    <a ui-sref="bootstraptoggle" href="#"> Bootstrap Toggle</a>
-                                </li>
-                                <li>
-                                    <a ui-sref="timeline" href="#"> Timeline</a>
-                                </li>
-                                <li>
-                                    <a ui-sref="todos" href="#"> TODO's</a>
-                                </li>
-                                <li>
-                                    <a ui-sref="tasks" href="#"> Task Board</a>
-                                </li>
-                                <li>
-                                    <a ui-sref="issuetracker" href="#"> Issue Tracker</a>
-                                </li>
-                                <li>
-                                    <a ui-sref="forum-main" href="#"> Forum View</a>
-                                </li>
-                            </ul>
-                        </li>
+                    <!-- Miscellaneous -->
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-lg fa-globe"></i>
+                            <span>Miscellaneous</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a ui-sref="staticfilemanager" href="#">
+                                    Static Filemanager
+                                    <span class="label label-success pull-right">NEW</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="socialbuttons" href="#">
+                                    Social Buttons
+                                    <span class="label label-primary pull-right">26</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="ladda" href="#">
+                                    Ladda buttons.
+                                    <span class="label label-primary pull-right">18</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="sweetalert" href="#">
+                                    SweetAlerts
+                                    <span class="label label-primary pull-right">12</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="toastr" href="#"> Toastr Notifications</a>
+                            </li>
+                            <li>
+                                <a ui-sref="bootstraptoggle" href="#"> Bootstrap Toggle</a>
+                            </li>
+                            <li>
+                                <a ui-sref="timeline" href="#"> Timeline</a>
+                            </li>
+                            <li>
+                                <a ui-sref="todos" href="#"> TODO's</a>
+                            </li>
+                            <li>
+                                <a ui-sref="tasks" href="#"> Task Board</a>
+                            </li>
+                            <li>
+                                <a ui-sref="issuetracker" href="#"> Issue Tracker</a>
+                            </li>
+                            <li>
+                                <a ui-sref="forum-main" href="#"> Forum View</a>
+                            </li>
+                        </ul>
+                    </li>
 
-                        <!-- Angular Directives & Components -->
-                        <li class="treeview">
-                            <a href="#">
-                                <img alt="directives" src="/assets/img/angular-js-icon.jpg" style="height: 20px; width: 20px;" />
-                                <span>Angular Directives</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li>
-                                    <a ui-sref="pagetitle" href="#">&nbsp;Page title</a>
-                                </li>
-                                <li>
-                                    <a ui-sref="infobox" href="#">
-                                        &nbsp;Infobox
-                                        <span class="label label-primary pull-right">5</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="smallbox" href="#">
-                                        &nbsp;Smallbox
-                                        <span class="label label-primary pull-right">3</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="iconbox" href="#">
-                                        &nbsp;Iconbox
-                                        <span class="label label-primary pull-right">2</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="toggleswitch" href="#">&nbsp;Toogle switch</a>
-                                </li>
-                                <li>
-                                    <a ui-sref="abavatar" href="#">&nbsp;ng avatar</a>
-                                </li>
-                            </ul>
-                        </li>
+                    <!-- Angular Directives & Components -->
+                    <li class="treeview">
+                        <a href="#">
+                            <img alt="directives" src="/assets/img/angular-js-icon.jpg" style="height: 20px; width: 20px;" />
+                            <span>Angular Directives</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a ui-sref="pagetitle" href="#">&nbsp;Page title</a>
+                            </li>
+                            <li>
+                                <a ui-sref="infobox" href="#">
+                                    &nbsp;Infobox
+                                    <span class="label label-primary pull-right">5</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="smallbox" href="#">
+                                    &nbsp;Smallbox
+                                    <span class="label label-primary pull-right">3</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="iconbox" href="#">
+                                    &nbsp;Iconbox
+                                    <span class="label label-primary pull-right">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="toggleswitch" href="#">&nbsp;Toogle switch</a>
+                            </li>
+                            <li>
+                                <a ui-sref="abavatar" href="#">&nbsp;ng avatar</a>
+                            </li>
+                        </ul>
+                    </li>
 
-                        <!-- Maps -->
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-map-o"></i>&nbsp;
-                                <span>Maps</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li>
-                                    <a ui-sref="jqvectormap" href="#">&nbsp;Jq Vectormap</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- Helpers -->
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-lg fa-cube"></i>
-                                <span>Helpers</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li>
-                                    <a ui-sref="animationhelpers" href="#">
-                                        Animations
-                                        <span class="label label-primary pull-right">62</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a ui-sref="csshelpers" href="#">
-                                        Css
-                                        <span class="label label-primary pull-right">8</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- Multi level menu -->
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-lg fa-share"></i>
-                                <span>Multilevel Menu</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li>
-                                    <a href="#"> Level One</a>
-                                </li>
-                                <li class="treeview">
-                                    <a href="#">
-                                        Level One
-                                        <span class="pull-right-container">
-                                            <i class="fa fa-angle-left pull-right"></i>
-                                        </span>
-                                    </a>
-                                    <ul class="treeview-menu">
-                                        <li>
-                                            <a href="#"> Level Two</a>
-                                        </li>
-                                        <li class="treeview">
-                                            <a href="#">
-                                                Level Two
-                                                <span class="pull-right-container">
-                                                    <i class="fa fa-angle-left pull-right"></i>
-                                                </span>
-                                            </a>
-                                            <ul class="treeview-menu">
-                                                <li>
-                                                    <a href="#"> Level Three</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"> Level Three</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+                    <!-- Maps -->
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-map-o"></i>&nbsp;
+                            <span>Maps</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a ui-sref="jqvectormap" href="#">&nbsp;Jq Vectormap</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Helpers -->
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-lg fa-cube"></i>
+                            <span>Helpers</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a ui-sref="animationhelpers" href="#">
+                                    Animations
+                                    <span class="label label-primary pull-right">62</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="csshelpers" href="#">
+                                    Css
+                                    <span class="label label-primary pull-right">8</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Multi level menu -->
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-lg fa-share"></i>
+                            <span>Multilevel Menu</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#"> Level One</a>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    Level One
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="#"> Level Two</a>
+                                    </li>
+                                    <li class="treeview">
+                                        <a href="#">
+                                            Level Two
+                                            <span class="pull-right-container">
+                                                <i class="fa fa-angle-left pull-right"></i>
+                                            </span>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="#"> Level Three</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> Level Three</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
                 <!-- /sidebar footer buttons -->
                 <div id="sidebar-footer" class="sidebar-footer hidden-sm">
@@ -1055,7 +1057,7 @@
         <div class="content-wrapper">
             <!-- Add possibility to change color & or image background here -->
             <!-- content header -->
-            <section class="content-header">
+            <section class="content-header visible-md">
                 <!-- PageTitle directive -->
                 <h3 ab-page-title class="animated fadeInLeft">{{pageTitle}}</h3>
                 <!-- simple bread crumb directive-->
@@ -1076,15 +1078,15 @@
         <!-- / content Wrapper. -->
 
         <!-- Footer component -->
-        <div ng-include src="'pages/shared/footer.html'"></div>
+        <div class="visible-md" ng-include src="'pages/shared/footer.html'"></div>
 
         <!-- Control Sidebar component -->
-        <div ng-include src="'pages/shared/control-sidebar.html'"></div>
+        <div class="visible-md" ng-include src="'pages/shared/control-sidebar.html'"></div>
 
 
 
         <!-- Scroll To Top Component -->
-        <div ng-include src="'pages/shared/scrolltotop.html'"></div>
+        <div class="visible-md" ng-include src="'pages/shared/scrolltotop.html'"></div>
     </div>
     <!-- / wrapper -->
     <!-- Core js files -->
@@ -1180,7 +1182,7 @@
     <script src="/bower_components/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
 
     <!-- Settings for demonstration only -->
-    <div ng-include src="'pages/demosidebar/demo-settings.html'"></div>
+    <div class="visible-md" ng-include src="'pages/demosidebar/demo-settings.html'"></div>
 </body>
 
 </html>
