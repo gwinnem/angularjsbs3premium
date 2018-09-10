@@ -23,7 +23,7 @@
                         at: "12.02.2018 10:00",
                         by: "Geirr Winnem"
                     },
-                    status: 1,
+                    status: 2,
                     assigned: [{
                             id: 1,
                             at: "12.02.2018 10:00",
@@ -99,7 +99,7 @@
                         at: "12.02.2018 10:00",
                         by: "Geirr Winnem"
                     },
-                    status: 1,
+                    status: 2,
                     assigned: [{
                             id: 1,
                             at: "12.02.2018 10:00",
@@ -137,7 +137,7 @@
                         at: "12.02.2018 10:00",
                         by: "Geirr Winnem"
                     },
-                    status: 1,
+                    status: 0,
                     assigned: [{
                             id: 1,
                             at: "12.02.2018 10:00",
@@ -175,7 +175,7 @@
                         at: "12.02.2018 10:00",
                         by: "Geirr Winnem"
                     },
-                    status: 1,
+                    status: 2,
                     assigned: [{
                             id: 1,
                             at: "12.02.2018 10:00",
@@ -251,7 +251,7 @@
                         at: "12.02.2018 10:00",
                         by: "Geirr Winnem"
                     },
-                    status: 1,
+                    status: 2,
                     assigned: [{
                             id: 1,
                             at: "12.02.2018 10:00",
@@ -327,7 +327,7 @@
                         at: "12.02.2018 10:00",
                         by: "Geirr Winnem"
                     },
-                    status: 1,
+                    status: 0,
                     assigned: [{
                             id: 1,
                             at: "12.02.2018 10:00",
@@ -403,7 +403,7 @@
                         at: "12.02.2018 10:00",
                         by: "Geirr Winnem"
                     },
-                    status: 1,
+                    status: 3,
                     assigned: [{
                             id: 1,
                             at: "12.02.2018 10:00",

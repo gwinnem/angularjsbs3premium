@@ -17,14 +17,14 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="table-responsive">
+                                <div style="overflow-x:auto;">
                                 <table class="table table-hover issue-tracker">
                                     <thead>
                                         <tr>
-                                            <th style="width:100px;">Priority</th>
-                                            <th style="width:100px;">Status:</th>
-                                            <th style="width:70%;"></th>
-                                            <th></th>
+                                            <th>Priority</th>
+                                            <th>status</th>
+                                            <th>Issue</th>
+                                            <th>Created</th>
                                             <th>Tags</th>
                                         </tr>
                                     </thead>
@@ -34,7 +34,7 @@
                                                 <priority-label status="2"></priority-label>
                                             </td>
                                             <td>
-                                                <status-label status="1"></status-label>
+                                                <status-label status={{issue.status}}></status-label>
                                             </td>
                                             <td class="issue-info">
                                                 <a href="javascript: void(0)">ISSUE: {{issue.id | issueFormat}}</a>
