@@ -15,44 +15,9 @@ Highly customizable and easy to use. Fits many screen resolutions from small mob
 
 **Coming soon
 
-  
-  
-
-### Contribution
-
-Contribution are always **welcome and recommended**! Here is how:
-
-  
-
-- Fork the repository ([here is the guide](https://help.github.com/articles/fork-a-repo/)).
-
-- Clone to your machine.
-
-- Make your changes
-
-- Create a pull request
-
-  
-
-#### Contribution Requirements:
-
-  
-
-- When you contribute, you agree to give a non-exclusive license to CreativeGeirr to use that contribution in any context as we (CreativeGeirr) see appropriate.
-
-- If you use content provided by another party, it must be appropriately licensed using an [open source](http://opensource.org/licenses) license.
-
-- Contributions are only accepted through Github pull requests.
-
-- Finally, contributed code must work in all supported browsers.
-
-  
 
 ### License
 
-The template is an open source project by [Geirr Winnem](mailto:gwinnem@gmail.com?subject=angularjsbs3free) that is licensed under [MIT](http://opensource.org/licenses/MIT).
-
-reserves the right to change the license of future releases.
 
   
 
