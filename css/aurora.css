@@ -4612,9 +4612,6 @@ table.issue-tracker tbody tr td {
   vertical-align: middle;
   height: 25px;
 }
-.issue-info {
-  width: 30%;
-}
 .issue-info a {
   font-weight: 600;
   color: #676a6c;
@@ -4622,7 +4619,6 @@ table.issue-tracker tbody tr td {
 }
 .issue-info small {
   font-size: 12px;
-  display: block;
 }
 /*
  * Forum component
