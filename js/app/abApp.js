@@ -541,21 +541,21 @@ abApp.config([
                 }, {
                     name: "Areacharts"
                 }],
-                // controller: "ChartJsAreaChartsController",
-                // resolve: {
-                //     ctrl: [
-                //         "$ocLazyLoad",
-                //         function ($ocLazyLoad) {
-                //             return $ocLazyLoad.load({
-                //                 series: true,
-                //                 files: ["/bower_components/chart.js/dist/Chart.bundle.min.js",
-                //                     "/bower_components/chart.js/samples/utils.js",
-                //                     "/js/app/charts/chartjs/controllers/abAreaChartCtrl.js"
-                //                 ]
-                //             });
-                //         }
-                //     ]
-                // }
+                controller: "ChartJsAreaChartsController",
+                resolve: {
+                    ctrl: [
+                        "$ocLazyLoad",
+                        function ($ocLazyLoad) {
+                            return $ocLazyLoad.load({
+                                series: true,
+                                files: ["/bower_components/chart.js/dist/Chart.bundle.min.js",
+                                    "/bower_components/chart.js/samples/utils.js",
+                                    "/js/app/charts/chartjs/controllers/abAreaChartCtrl.js"
+                                ]
+                            });
+                        }
+                    ]
+                }
             })
             // Chart.js Other charts
             .state("chartjsothercharts", {
@@ -600,26 +600,7 @@ abApp.config([
                     name: "ChartJs"
                 }, {
                     name: "Financialharts"
-                }],
-                // controller: "ChartJsFinancialChartsController",
-                // resolve: {
-                //     ctrl: [
-                //         "$ocLazyLoad",
-                //         function ($ocLazyLoad) {
-                //             return $ocLazyLoad.load({
-                //                 series: true,
-                //                 files: [
-                //                     "/bower_components/chart.js/dist/Chart.bundle.min.js",
-                //                     "/bower_components/chart.js/samples/utils.js",
-                //                     "/js/plugins/chartjs-chart-financial-master/docs/Chart.Financial.js",
-                //                     "/js/plugins/chartjs-chart-financial-master/docs/utils.js",
-                //                     "/js/plugins/chartjs-chart-financial-master/docs/index.js"
-                //                     //</script> "/js/app/charts/chartjs/controllers/abFinancialChartCtrl.js"
-                //                 ]
-                //             });
-                //         }
-                //     ]
-                // }
+                }]
             })
 
             // Flot
