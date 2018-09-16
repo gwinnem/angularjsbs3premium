@@ -609,17 +609,17 @@ abApp.config([
                 //             return $ocLazyLoad.load({
                 //                 series: true,
                 //                 files: [
-                //                     //"/bower_components/chart.js/dist/Chart.bundle.min.js",
-                //                     // "/js/plugins/chartjs-chart-financial-master/docs/moment.js",
-                //                     // "/js/plugins/chartjs-chart-financial-master/docs/Chart.js",
-                //                     // "/js/plugins/chartjs-chart-financial-master/docs/Chart.Financial.js",
-                //                     // "/js/plugins/chartjs-chart-financial-master/docs/utils.js",
-                //                     //"/js/app/charts/chartjs/controllers/abFinancialChartCtrl.js"
+                //                     "/bower_components/chart.js/dist/Chart.bundle.min.js",
+                //                     "/bower_components/chart.js/samples/utils.js",
+                //                     "/js/plugins/chartjs-chart-financial-master/docs/Chart.Financial.js",
+                //                     "/js/plugins/chartjs-chart-financial-master/docs/utils.js",
+                //                     "/js/plugins/chartjs-chart-financial-master/docs/index.js"
+                //                     //</script> "/js/app/charts/chartjs/controllers/abFinancialChartCtrl.js"
                 //                 ]
                 //             });
                 //         }
                 //     ]
-                //}
+                // }
             })
 
             // Flot
