@@ -62,7 +62,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="project in projects | orderBy:sortType:sortReverse | filter:projectFilter track by $index">
+                                <tr ng-repeat="project in projects | orderBy:sortType:sortReverse | filter:projectFilter">
                                     <td>
                                         <status-label status="{{project.status}}"></status-label>
                                     </td>
