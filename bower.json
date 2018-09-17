@@ -73,7 +73,8 @@
     "tooltipster": "4.2.6",
     "ng-letter-avatar": "ngletteravatar#^4.0.4",
     "chart.js": "chartjs#^2.7.2",
-    "bootstrap-treeview": "^1.2.0"
+    "bootstrap-treeview": "^1.2.0",
+    "angular-bootstrap-calendar": "^1.0.0"
   },
   "resolutions": {
     "jquery": ">=3.3.1",

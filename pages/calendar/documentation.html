@@ -1,0 +1,291 @@
+<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- Default box -->
+            <div class="box box-info" id="box1">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Documentation</h3>
+                </div>
+                <div class="box-body">
+                    <p>There is a single directive exposed to create the calendar.</p>
+                    <pre><code>&lt;mwl-calendar
+    view=&quot;calendarView&quot;
+    view-date=&quot;viewDate&quot;
+    events=&quot;events&quot;
+    view-title=&quot;calendarTitle&quot;
+    on-event-click=&quot;eventClicked(calendarEvent)&quot;
+    on-event-times-changed=&quot;calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt =
+    calendarNewEventEnd&quot;
+    cell-is-open=&quot;true&quot;&gt;
+&lt;/mwl-calendar&gt;
+                    </code></pre>
+                    <p>An explanation of the properties is as follows:</p>
+                    <h4 class="text-bold">view (required attribute)</h4>
+                    <p>
+                        This variable is a string that can be either <code>year</code>, <code>month</code>, <code>week</code>
+                        or <code>day</code>. Changing it will change the view of the
+                        calendar.
+                        For the calendar to display this variable needs to be set like so:
+                    </p>
+                    <pre><code>$scope.calendarView = 'month';</code></pre>
+                    <h4 class="text-bold">view-date (required attribute)</h4>
+                    <p>This variable holds the current date the calendar is centralised on. Each view will decide on
+                        its current year / month
+                        / week / day depending on the value of this variable.</p>
+                    <h4 class="text-bold">events (required attribute)</h4>
+                    <p>An array of events to display on the calendar. For example:</p>
+                    <pre><code>$scope.events = [
+    {
+        title: 'My event title', // The title of the event
+        startsAt: new Date(2013,5,1,1), // A javascript date object for when the event starts
+        endsAt: new Date(2014,8,26,15), // Optional - a javascript date object for when the event ends
+        color: { // can also be calendarConfig.colorTypes.warning for shortcuts to the deprecated event types
+        primary: '#e3bc08', // the primary event color (should be darker than secondary)
+        secondary: '#fdf1ba' // the secondary event color (should be lighter than primary)
+    },
+        actions: [{ // an array of actions that will be displayed next to the event title
+        label: '<i class=\'glyphicon glyphicon-pencil\'></i>', // the label of the action
+        cssClass: 'edit-action', // a CSS class that will be added to the action element so you can implement custom styling
+        onClick: function(args) { // the action that occurs when it is clicked. The first argument will be an object containing
+        the parent event
+        console.log('Edit event', args.calendarEvent);
+    }
+    }],
+        draggable: true, //Allow an event to be dragged and dropped
+        resizable: true, //Allow an event to be resizable
+        incrementsBadgeTotal: true, //If set to false then will not count towards the badge total amount on the month and year
+        view
+        recursOn: 'year', // If set the event will recur on the given period. Valid values are year or month
+        cssClass: 'a-css-class-name', //A CSS class (or more, just separate with spaces) that will be added to the event when
+        it is displayed on each view. Useful for marking an event as selected / active etc
+        allDay: false // set to true to display the event as an all day event on the day view
+    }];</code></pre>
+                    <p class="text-bold">title, color and startsAt are required for all events.</p>
+                    <h4 class="text-bold">view-title</h4>
+                    <p>
+                        This variable will be assigned to the calendar title. If you want to change the formatting you
+                        can use the calendarConfig or just override the appropriate method in the calendarTitle
+                        factory.
+                    </p>
+                    <h4 class="text-bold">on-event-click</h4>
+                    <p>
+                        This expression is called when an event is clicked on the calendar. <code>calendarEvent</code>
+                        can be used in the expression and contains the calendar event that was clicked on.
+                    </p>
+                    <h4 class="text-bold">on-event-times-changed</h4>
+                    <p>
+                        This expression is called when an event is dragged and dropped or resized into a different date
+                        / time on the calendar. The available values that are passed to the expression are:
+                        <code>calendarEvent</code>, <code>calendarNewEventStart</code>, <code>calendarNewEventEnd</code>
+                        and <code>calendarDraggedFromDate</code> (month view only). The directive won't change the
+                        event object and leaves that up to you to implement. Please note drag and drop is only
+                        available by including the <a href="http://interactjs.io/" target="_blank">interactjs</a>
+                        library.
+                    </p>
+                    <h4 class="text-bold">on-timespan-click</h4>
+                    <p>
+                        This expression is called when a month, day or hour on the calendar is clicked on the year,
+                        month and day views respectively. calendarDate can be used in the expression and contains the
+                        start of the month, day or hour that was clicked on. If on the month or year view <code>calendarCell</code>
+                        will contain cell data for the clicked day or month which you can then modify.
+                    </p>
+                    <h4 class="text-bold">on-date-range-select</h4>
+                    <p>
+                        This expression is called when a range of hours selected on the day view respectively.
+                        <code>calendarRangeStartDate</code> can be used in the expression and contains the start of the
+                        range, <code>calendarRangeEndDate</code> can be used in the expression and contains the end of
+                        the range.
+                    </p>
+                    <h4 class="text-bold">cell-is-open</h4>
+                    <p>
+                        A 2 way bound variable that when set to true will open the year or month view cell that
+                        corresponds to the date passed to the date object passed to <code>view-date</code>.
+                    </p>
+                    <h4 class="text-bold">day-view-start</h4>
+                    <p>
+                        An interpolated string in the form of hh:mm to start the day view at, e.g. setting it to 06:00
+                        will start the day view at 6am. Any minutes must be divisible by the <code>day-view-split</code>
+                        value.
+                    </p>
+                    <h4 class="text-bold">day-view-end</h4>
+                    <p>
+                        An interpolated string in the form of hh:mm to end the day view at, e.g. setting it to 22:59
+                        will end the day view at 11pm.
+                    </p>
+                    <h4 class="text-bold">ay-view-split</h4>
+                    <p>
+                        The number of chunks to split the day view hours up into. Can be either 10, 15 or 30.
+                        Default: 30
+                    </p>
+                    <h4 class="text-bold">day-view-event-chunk-size</h4>
+                    <p>
+                        The number of pixels to "snap" event drag and resizes to.
+                        Default: 30
+                    </p>
+                    <h4 class="text-bold">day-view-segment-size</h4>
+                    <p>
+                        The size of each hour segment in the day view in pixels. A custom css class is also required to
+                        set the height with the same value. See the example for details.
+                        Default: 30
+                    </p>
+                    <h4 class="text-bold">day-view-event-width</h4>
+                    <p>The width of day view events. Default: 150</p>
+                    <h4 class="text-bold">on-view-change-click</h4>
+                    <p>
+                        An optional expression that is evaluated when the view is changed by clicking on a date. Return
+                        <code>false</code>> from the expression function to disable the view change. <code>calendarDate</code>
+                        can be used in the expression and contains the date that was selected. <code>calendarNextView</code>
+                        is the view that the calendar will be changed to.
+                    </p>
+                    <h4 class="text-bold">cell-modifier</h4>
+                    <p>
+                        An optional expression that is evaluated on each cell generated for the year, month and day
+                        views. <code>calendarCell</code> can be used in the expression and is an object containing the
+                        current cell data which you can modify (see the <code>calendarHelper</code> service source code
+                        or just <code>console.log</code> it to see what data is available).
+                        If you add the <code>cssClass</code> property it will be applied to the cell.
+                    </p>
+                    <h4 class="text-bold">cell-auto-open-disabled</h4>
+                    <p>
+                        If set it <code>true</code> it will disable the auto opening and closing of the slidebox on the
+                        month and year views.
+                    </p>
+                    <h4 class="text-bold">custom-template-urls</h4>
+                    <p>
+                        An object where the key is the template name to override and the value is a path to a custom
+                        template for that calendar instance. If not set it will fallback to the value of
+                        <code>calendarConfig.templates.</code>
+                    </p>
+                    <p>
+                        For example, to change the month view template on just one instance of the month view:
+                    </p>
+                    <pre><code>// in your controller
+    $templateCache.put('my-custom-template.html', 'Custom month view template here');
+
+    // in your template
+    &lt;mwl-calendar custom-template-urls=&quot;{calendarMonthView: 'my-custom-template.html'}&quot;&gt;&lt;/mwl-calendar&gt;
+                </code></pre>
+                    <h4 class="text-bold">template-scope</h4>
+                    <p>
+                        An object containing a set of variables that will be available in a custom template as <code>templateScope</code>
+                    </p>
+                    <h4 class="text-bold">draggable-auto-scroll</h4>
+                    <p>
+                        Passed to the autoScroll option of <a href="http://interactjs.io/docs/#autoscroll" target="_blank">interactjs</a>
+                        Unlike interact this defaults to <code>true</code> if not set.
+                    </p>
+                    <h4 class="text-bold">Configuring the calendar default config</h4>
+                    <p>
+                        You can easily customise the date formats and i18n strings used throughout the calendar by
+                        using the <code>calendarConfig</code> value. Please note that these example formats are those
+                        used by <a href="https://momentjs.com/" target="_blank">moment.js</a> and these won't work if
+                        using angular as the date formatter.
+                    </p>
+                    <p>
+                        Example usage:
+                    </p>
+                    <pre><code>angular.module('myModule')
+    .config(['calendarConfig', function(calendarConfig) {
+
+    // View all available config
+    console.log(calendarConfig);
+
+    // Change the month view template globally to a custom template
+    calendarConfig.templates.calendarMonthView = 'path/to/custom/template.html';
+
+    // Use either moment or angular to format dates on the calendar. Default angular. Setting this will override any date
+    formats you have already set.
+    calendarConfig.dateFormatter = 'moment';
+
+    // This will configure times on the day view to display in 24 hour format rather than the default of 12 hour
+    calendarConfig.allDateFormats.moment.date.hour = 'HH:mm';
+
+    // This will configure the day view title to be shorter
+    calendarConfig.allDateFormats.moment.title.day = 'ddd D MMM';
+
+    // This will set the week number hover label on the month view
+    calendarConfig.i18nStrings.weekNumber = 'Week {week}';
+
+    // This will display all events on a month view even if they're not in the current month. Default false.
+    calendarConfig.displayAllMonthEvents = true;
+
+    // Make the week view more like the day view, ***with the caveat that event end times are ignored***.
+    calendarConfig.showTimesOnWeekView = true;
+
+}]);</code></pre>
+                    <h4 class="text-bold">The mwl-date-modifier directive</h4>
+                    <p>
+                        There is also a helper directive that you can use for the next, today and previous buttons. Use
+                        it like so:
+                    </p>
+                    <pre><code>&lt;button
+    class=&quot;btn btn-primary&quot;
+    mwl-date-modifier
+    date=&quot;viewDate&quot;
+    decrement=&quot;calendarView&quot;&gt;
+    Previous
+&lt;/button&gt;
+
+&lt;button
+    class=&quot;btn btn-default&quot;
+    mwl-date-modifier
+    date=&quot;viewDate&quot;
+    set-to-today&gt;
+    Today
+&lt;/button&gt;
+
+ &lt;button
+    class=&quot;btn btn-primary&quot;
+    mwl-date-modifier
+    date=&quot;viewDate&quot;
+    increment=&quot;calendarView&quot;&gt;
+    Next
+&lt;/button&gt;</code></pre>
+                    <h4 class="text-bold">Internationalization and localization</h4>
+                    <p>
+                        You can either use angular's date filter or <a href="https://momentjs.com/" target="_blank">moment.js</a>
+                        to format dates. The default is to use angular. You can change the formatter to be moment like
+                        so:
+                    </p>
+                    <pre><code>angular.module('myModule')
+    .config(['calendarConfig', function(calendarConfig) {
+
+    calendarConfig.dateFormatter = 'moment'; // use moment to format dates
+
+}]);</code></pre>
+                    <p>
+                        Then you just need to include the appropriate locale files for your app.
+
+                        If you want to dynamically change the locale for angular and not include all of the available
+                        angular locale files try this library.
+
+                        Otherwise if using moment you can call moment.locale('YOUR_LOCALE_STRING') to change the locale
+                        and the calendar will auto update.
+
+                        To set Monday as the first day of the week, configure it in moment like so (even if using
+                        angular for formatting dates):
+
+                        <pre><code>moment.locale('en_gb', {
+    week : {
+        dow : 1 // Monday is the first day of the week
+    }
+});</code></pre>
+                    </p>
+                    <p>
+                        For a full list of all available formats and their defaults see
+                        <a href="https://github.com/mattlewis92/angular-bootstrap-calendar/blob/master/src/services/calendarConfig.js"
+                            target="_blank"> calendarConfig.js</a>
+                    </p>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->
+<!-- Script only used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>

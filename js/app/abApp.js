@@ -2480,6 +2480,24 @@ abApp.config([
         }
       })
 
+      // AngularJs Bootstrap Calendar
+      .state("calendardocumentation", {
+        url: "/angularjs_bootstrap_calendar/documentation",
+        templateUrl: "pages/calendar/documentation.html",
+        pageTitle: "AngularJs Bootstrap Calendar Documentation",
+        pageBreadCrumbs: [
+          {
+            name: "Home"
+          },
+          {
+            name: "AngularJs Bootstrap Calendar"
+          },
+          {
+            name: "Documentation"
+          }
+        ]
+      })
+
       // Tables
       // Static html
       .state("statichtml", {
