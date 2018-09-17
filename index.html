@@ -721,8 +721,16 @@
                         <ul class="treeview-menu">
                             <li>
                                 <a ui-sref="calendardocumentation" href="#">
-                                    Documentation
-                                    <span class="label label-primary pull-right">5</span>
+                                    <i class="fa fa-lg fa-book"></i>
+                                    <span> Documentation</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://mattlewis92.github.io/angular-bootstrap-calendar/#!?example=kitchen-sink"
+                                    target="_blank">
+                                    <i class="fa fa-lg fa-cube"></i>
+                                    <span> Examples</span>
+                                    <span class="label label-primary pull-right">20</span>
                                 </a>
                             </li>
                         </ul>
@@ -1068,11 +1076,11 @@
         <div class="content-wrapper">
             <!-- Add possibility to change color & or image background here -->
             <!-- content header -->
-            <section class="content-header visible-md">
+            <section class="content-header">
                 <!-- PageTitle directive -->
                 <h3 ab-page-title class="animated fadeInLeft">{{pageTitle}}</h3>
                 <!-- simple bread crumb directive-->
-                <ol class="breadcrumb" ab-simple-breadcrumbs>
+                <ol class="breadcrumb hidden-sm hidden-xs" ab-simple-breadcrumbs>
                     <li ng-repeat="item in pageBreadCrumbs" ng-class="{ active: $last }">
                         <i ng-if="$first" class="fa fa-dashboard"></i>
                         <a href="javascript:">{{ item.name }}</a>
@@ -1178,7 +1186,6 @@
     <!-- Needed for rickshaw charts -->
     <script src="/js/plugins/rickshaw/vendor/d3.min.js"></script>
     <script src="/js/plugins/rickshaw/vendor/d3.layout.min.js"></script>
-
 
     <!-- ABAdmin jQuery plugins -->
     <script src="/js/app/abLayout.js"></script>
