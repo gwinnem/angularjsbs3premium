@@ -1,5 +1,4 @@
-﻿
-<!-- Page content -->
+﻿<!-- Page content -->
 <section class="content animated fadeInRight">
     <!-- box -->
     <div id="numbersonly" class="box box-white">
@@ -8,10 +7,22 @@
         </div>
         <!-- box-body -->
         <div class="box-body">
-            <h1>body</h1>
+            <p>This directive is meant to be used on input only. And when used, the input will will only
+                accept numeric values.</p>
+            <div class="row">
+                <div class="col-md-5">
+                    <h4>Try typing in both numeric and text values.</h4>
+                    <input numbers-only ng-model="value" type="text" placeHolder="Numeric values only">
+                </div>
+                <div class="col-md-7">
+                    <pre class="prettyprint"><code>&lt;input numbers-only ng-model=&quot;value&quot; type=&quot;text&quot; placeHolder=&quot;Numeric values only&quot;&gt;</code></pre>
+                </div>
+            </div>
         </div>
         <!-- / box-body -->
     </div>
     <!-- / box -->
 </section>
 <!-- / Page content -->
+<!-- Script only used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
