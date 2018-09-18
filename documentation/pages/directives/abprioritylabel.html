@@ -1,17 +1,45 @@
-﻿
-<!-- Page content -->
+﻿<!-- Main content -->
 <section class="content animated fadeInRight">
-    <!-- box -->
-    <div id="abprioritylabel" class="box box-white">
-        <div class="box-header with-border">
-            <h3 class="box-title">ABAdmin ab-priority-label Directive</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-info" id="box1">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Priority label</h3>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <ol>
+                                <li>
+                                    <priority-label status=0></priority-label>
+                                </li>
+                                <li>
+                                    <priority-label status=1>
+                                    </priority-label>
+                                </li>
+                                <li>
+                                    <priority-label status=2>
+                                    </priority-label>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="col-md-7">
+                            <pre class="prettyprint"><code>&lt;priority-label status=0&gt;&lt;/priority-label&gt;
+&lt;priority-label status=1&gt;&lt;/priority-label&gt;
+&lt;priority-label status=2&gt;&lt;/priority-label&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
         </div>
-        <!-- box-body -->
-        <div class="box-body">
-            <h1>body</h1>
-        </div>
-        <!-- / box-body -->
+        <!-- /.box -->
     </div>
-    <!-- / box -->
+    <!-- / col -->
+    </div>
+    <!-- / row -->
 </section>
-<!-- / Page content -->
+<!-- /.content -->
+<!-- Script only used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
