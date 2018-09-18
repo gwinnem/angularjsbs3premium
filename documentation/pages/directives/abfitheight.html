@@ -1,5 +1,4 @@
-﻿
-<!-- Page content -->
+﻿<!-- Page content -->
 <section class="content animated fadeInRight">
     <!-- box -->
     <div id="abfitheight" class="box box-white">
@@ -8,28 +7,29 @@
         </div>
         <!-- box-body -->
         <div class="box-body">
-            <p>
-                Usage: Add this to any html element to fit the height of that element to the page height.
-            </p>
-            <pre class="prettyprint"><code>/**
-* @author Geirr Winnem
-* @version 1.0.0
-* @summary Helper directive to set height to window height.
-*/
-(function () {
-    &quot;use strict&quot;;
-    angular.module('ab.ui.common.fitheight', [])
-        .directive('fitHeight', function () {
-            return {
-                restrict: &quot;A&quot;,
-                link: function ($scope, element) {
-                    element.css(&quot;height&quot;, $(window).height() + &quot;px&quot;);
-                    element.css(&quot;min-height&quot;, $(window).height() + &quot;px&quot;);
-                }
-            }
-        });
-
-}());</code></pre>
+            <div class="row">
+                <div class="col-md-5">
+                    <p>
+                        Usage: Add the directive to any html element to fit the height of that element to the page
+                        height.
+                    </p>
+                </div>
+                <div class="col-md-7">
+                    <h4>Usage:</h4>
+                    <pre class="prettyprint"><code>&lt;!-- box --&gt;
+&lt;div id=&quot;abfitheight&quot; class=&quot;box box-white&quot; fit-height&gt;
+    &lt;div class=&quot;box-header with-border&quot;&gt;
+        &lt;h3 class=&quot;box-title&quot;&gt;ABAdmin ab-fitheight Directive&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;!-- box-body --&gt;
+    &lt;div class=&quot;box-body&quot;&gt;
+    &lt;/div&gt;
+    &lt;!-- / box-body --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- / box --&gt;</code></pre>
+                </div>
+            </div>
         </div>
         <!-- / box-body -->
     </div>
