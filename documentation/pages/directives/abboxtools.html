@@ -1,17 +1,58 @@
-﻿
-<!-- Page content -->
+﻿<!-- Main content -->
 <section class="content animated fadeInRight">
-    <!-- box -->
-    <div id="abboxtools" class="box box-white">
-        <div class="box-header with-border">
-            <h3 class="box-title">ABAdmin boxtools Directive</h3>
+    <div class="row">
+        <div class="col-md-5">
+            <!-- Default box -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title"></h3>
+                    <box-tools start-collapsed="0" hide-refresh="0" hide-max-min="0" hide-full-screen="0" hide-remove="0"
+                        animation-speed="10000"></box-tools>
+                </div>
+                <div class="box-body">
+                    <h1>Body</h1>
+                    {{animationSpeed}}
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    Footer
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
         </div>
-        <!-- box-body -->
-        <div class="box-body">
-            <h1>body</h1>
+        <!-- / col -->
+        <!-- col -->
+        <div class="col-md-7">
+            <!-- Default box -->
+            <div class="box box-success" id="box2">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Options</h3>
+                    <box-tools start-collapsed="0" hide-refresh="0" hide-max-min="0" hide-full-screen="0" hide-remove="0"
+                        animation-speed="10000"></box-tools>
+                </div>
+                <div class="box-body">
+                    <h1>Blank box 2</h1>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    Footer
+                </div>
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
         </div>
-        <!-- / box-body -->
+        <!-- / col -->
     </div>
-    <!-- / box -->
+    <!-- / row -->
 </section>
-<!-- / Page content -->
+<!-- /.content -->
+<!-- Script only used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
+
+<script>
+    // Bootstrap tooltip needs to be activated manually
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

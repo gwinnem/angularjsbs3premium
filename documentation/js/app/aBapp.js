@@ -20,7 +20,8 @@
         'abFitHeight',
         "abStatusLabel",
         "abPriorityLabel",
-        "abToggleSwitch"
+        "abToggleSwitch",
+        "abBoxTools"
     ]);
 
 aurora.config(
@@ -176,7 +177,7 @@ aurora.config(
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Components' }, { name: 'Js' }, { name: 'Tree Widget' }]
 
             })
-            
+
             // Directives
             .state('abpboxtools', {
                 url: '/Directives/abboxtools',

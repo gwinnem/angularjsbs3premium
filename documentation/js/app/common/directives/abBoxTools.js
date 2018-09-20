@@ -21,6 +21,12 @@
                     animationSpeed: "@animationSpeed"
                 },
                 link: function ($scope, element) {
+
+                    // Setting up defaults
+                    if (!angular.isDefined($scope.animationSpeed)) {
+                        $scope.animationSpeed = 500;
+                    }
+
                     var events = {
                         collapsed: "collapsed.boxwidget",
                         expanded: "expanded.boxwidget",
@@ -165,7 +171,6 @@
                     };
 
                     var startIcon = icons.minimize;
-
                     if (angular.isDefined($scope.startCollapsed) &&
                         $scope.startCollapsed === "1" ||
                         $scope.startCollapsed === "true" ||
@@ -173,16 +178,8 @@
                         startIcon = icons.maximize;
                         $scope.toggleMinMax();
                         $scope.hideMaxMin = "0";
+                    }
 
-                    }
-                    $scope.as = 0;
-                    // Setting up defaults 
-                    // TODO Not working
-                    if (!angular.isDefined($scope.animationSpeed) && $scope.as == 0) {
-                        $scope.animationSpeed = 500;
-                    } else {
-                        $scope.as = $scope.animationSpeed;
-                    }
                     var template = function () {
                         var toolstart = "<div class='box-tools pull-right'>";
                         var toolend = "</div>";
@@ -216,11 +213,12 @@
                         if (!angular.isDefined($scope.hideRemove) || $scope.hideRemove === "0" || $scope.hideRemove === "false") {
                             retVal += toolremove;
                         }
-
                         retVal += toolend;
                         return retVal;
                     };
                     element.replaceWith($compile(template())($scope));
+
+
                 }
 
             };
