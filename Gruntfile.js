@@ -13,13 +13,7 @@ module.exports = function (grunt) { // jshint ignore:line
                     'assets/less/pages/*.less',
                     'assets/less/plugins/*.less'],
                 tasks: ['less:development', 'notify:less']
-            },
-            // skins: {
-            //     // Compile any skin less files upon saving
-            //     files: ['assets/less/skins/*.less'],
-            //     //tasks: ['less:skins', 'less:minifiedSkins', 'notify:less']
-            //     tasks: ['less:skins', 'notify:less']
-            // },
+            }
         },
         // Dev server
         connect: {
@@ -49,7 +43,6 @@ module.exports = function (grunt) { // jshint ignore:line
             }
         },
         // 'less'-task configuration
-        // This task will compile all less files upon saving to create both AdminLTE.css and AdminLTE.min.css
         less: {
             // Development not compressed
             development: {
@@ -67,72 +60,33 @@ module.exports = function (grunt) { // jshint ignore:line
     // Watch File Changes
     grunt.loadNpmTasks('grunt-contrib-watch');
     // Compress JS Files
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+    //grunt.loadNpmTasks('grunt-contrib-uglify');
     // Include Files Within HTML
-    grunt.loadNpmTasks('grunt-includes');
+    //grunt.loadNpmTasks('grunt-includes');
     // Optimize images
-    grunt.loadNpmTasks('grunt-image');
+    //grunt.loadNpmTasks('grunt-image');
     // Validate JS code
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-jscs');
+    //grunt.loadNpmTasks('grunt-contrib-jshint');
+    //grunt.loadNpmTasks('grunt-jscs');
     // Delete not needed files
     grunt.loadNpmTasks('grunt-contrib-clean');
     // Lint CSS
-    grunt.loadNpmTasks('grunt-contrib-csslint');
+    //grunt.loadNpmTasks('grunt-contrib-csslint');
     // Lint Bootstrap
-    grunt.loadNpmTasks('grunt-bootlint');
+    //grunt.loadNpmTasks('grunt-bootlint');
     // Concatenate JS files
-    grunt.loadNpmTasks('grunt-contrib-concat');
+    //grunt.loadNpmTasks('grunt-contrib-concat');
     // Notify
     grunt.loadNpmTasks('grunt-notify');
     // Replace
-    grunt.loadNpmTasks('grunt-text-replace');
+    //grunt.loadNpmTasks('grunt-text-replace');
     //Development server
     grunt.loadNpmTasks('grunt-contrib-connect');
 
     // Browsersync
     //https://browsersync.io/docs/grunt
-    grunt.loadNpmTasks('grunt-browser-sync');
+    //    grunt.loadNpmTasks('grunt-browser-sync');
 
     // The default task (running 'grunt' in console) is 'watch'
     grunt.registerTask('default', ['connect', 'watch']);
 };
-
-// This shows a full config file!
-// module.exports = function (grunt) {
-//     grunt.initConfig({
-//         watch: {
-//             files: 'app/scss/**/*.scss',
-//             tasks: ['sass']
-//         },
-//         sass: {
-//             dev: {
-//                 files: {
-//                     'app/css/main.css': 'app/scss/main.scss'
-//                 }
-//             }
-//         },
-//         browserSync: {
-//             dev: {
-//                 bsFiles: {
-//                     src : [
-//                         'app/css/*.css',
-//                         'app/*.html'
-//                     ]
-//                 },
-//                 options: {
-//                     watchTask: true,
-//                     server: './app'
-//                 }
-//             }
-//         }
-//     });
-
-//     // load npm tasks
-//     grunt.loadNpmTasks('grunt-contrib-sass');
-//     grunt.loadNpmTasks('grunt-contrib-watch');
-//     grunt.loadNpmTasks('grunt-browser-sync');
-
-//     // define default task
-//     grunt.registerTask('default', ['browserSync', 'watch']);
-// };
