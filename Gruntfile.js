@@ -69,7 +69,7 @@ module.exports = function (grunt) { // jshint ignore:line
     //grunt.loadNpmTasks('grunt-contrib-jshint');
     //grunt.loadNpmTasks('grunt-jscs');
     // Delete not needed files
-    grunt.loadNpmTasks('grunt-contrib-clean');
+    //grunt.loadNpmTasks('grunt-contrib-clean');
     // Lint CSS
     //grunt.loadNpmTasks('grunt-contrib-csslint');
     // Lint Bootstrap
