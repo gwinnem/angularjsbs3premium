@@ -12,8 +12,9 @@
                     restrict: "EA",
                     replace: true,
                     template:
-                        "<a href='#' data-toggle='tooltip' data-placement='right' title='Fullscreen' ng-click='launchFullScreen();'><i class='fa fa-lg fa-arrows-alt'></i></a>",
+                        "<a href='javascript:' data-toggle='tooltip' data-placement='right' title='Fullscreen' ng-click='launchFullScreen();'><i class='fa fa-lg fa-arrows-alt'></i></a>",
                     link: function($scope) {
+                        debugger;
                         var $body = $('body');
                         $scope.launchFullScreen = function() {
                             if (!$body.hasClass("full-screen")) {

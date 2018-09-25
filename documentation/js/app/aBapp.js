@@ -21,7 +21,8 @@
         "abStatusLabel",
         "abPriorityLabel",
         "abToggleSwitch",
-        "abBoxTools"
+        "abBoxTools",
+        "ab.common.ui.fullscreen"
     ]);
 
 aurora.config(
