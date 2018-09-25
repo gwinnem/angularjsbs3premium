@@ -20,7 +20,7 @@ var abApp = angular.module("aurora", [
   "ab.common.ui.pageTitle",
   "ab.common.ui.nouislider",
   "ab.common.ui.fullscreen",
-  "abSlimScroll",
+  "ab.common.ui.slimscroll",
   "abWhenScrollEnds",
   "abInfobox",
   "abSmallBox",

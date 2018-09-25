@@ -8,7 +8,7 @@
 (function () {
     "use strict";
 
-    angular.module('abSlimScroll', []).directive('slimScroll', slimScroll);
+    angular.module('ab.common.ui.slimscroll', []).directive('slimScroll', slimScroll);
 
     slimScroll.$inject = ['$document', '$window', '$compile'];
 

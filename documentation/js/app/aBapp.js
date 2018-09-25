@@ -232,7 +232,7 @@ aurora.config(
             .state('nouislider', {
                 url: '/Directives/noUISlider',
                 templateUrl: 'documentation/pages/directives/abnouislider.html',
-                pageTitle: 'ab-slider',
+                pageTitle: 'ab-slider Directive',
                 pageBreadCrumbs: [{ name: 'Home' }, { name: 'Directives' }, { name: 'ab-slider' }]
 
             })
