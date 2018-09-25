@@ -9,10 +9,13 @@
                     <box-tools start-collapsed="0" hide-refresh="0" hide-max-min="0" hide-full-screen="0" hide-remove="0"></box-tools>
                 </div>
                 <div class="box-body">
-                    <h1>Body</h1>
+                    <p>The box tools directive is responsible for the toolbar in the box. Each button has the title
+                        filled out to get a tooltip.</p>
+                    <h4>Markup:</h4>
                     <pre class="prettyprint"><code>&lt;box-tools 
     start-collapsed=&quot;0&quot; 
-    hide-refresh=&quot;0&quot; 
+    hide-refresh=&quot;0&quot;
+    refresh-callback=&quot;refreshFunction()&quot;
     hide-max-min=&quot;0&quot; 
     hide-full-screen=&quot;0&quot; 
     hide-remove=&quot;0&quot;&gt;
@@ -33,13 +36,46 @@
                         animation-speed="10000"></box-tools>
                 </div>
                 <div class="box-body">
-                    <h1>Blank box 2</h1>
+                    <table class="table table-hover table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>start-collapsed</td>
+                                <td>Controls if the box is collapsed when it is loaded.</td>
+                            </tr>
+                            <tr>
+                                <td>hide-refresh</td>
+                                <td>Hides or shows the refresh button.</td>
+                            </tr>
+                            <tr>
+                                <td>refresh-callback</td>
+                                <td>The function which is called when the refresh button is clicked. The responsive
+                                    from the callback is added to the box body.</td>
+                            </tr>
+                            <tr>
+                                <td>hide-max-min</td>
+                                <td>Hides or shows the max min button.</td>
+                            </tr>
+                            <tr>
+                                <td>hide-full-screen</td>
+                                <td>Hides or shows the full screen button.</td>
+                            </tr>
+                            <tr>
+                                <td>hide-remove</td>
+                                <td>Hides or shows the remove button.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="callout callout-info">
+                        <p>The parameters are optional and the Default value is false.</p>
+                    </div>
                 </div>
                 <!-- /.box-body -->
-                <div class="box-footer">
-                    Footer
-                </div>
-                <!-- /.box-footer -->
             </div>
             <!-- /.box -->
         </div>

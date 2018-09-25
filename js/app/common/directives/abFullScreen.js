@@ -1,11 +1,11 @@
 ﻿/**
  * @author Geirr Winnem
  * @version 1.0.0
- * @summary Fullscreen
+ * @summary Fullscreen button directive.
  */
 (function () {
     "use strict";
-    angular.module('abFullScreen', [])
+    angular.module('ab.common.ui.fullscreen', [])
         .directive('fullScreen',
             function() {
                 return {
