@@ -21,6 +21,7 @@ var abApp = angular.module("aurora", [
   "ab.common.ui.nouislider",
   "ab.common.ui.fullscreen",
   "ab.common.ui.slimscroll",
+  "ab.common.ui.boxtools",
   "abWhenScrollEnds",
   "abInfobox",
   "abSmallBox",
@@ -34,8 +35,7 @@ var abApp = angular.module("aurora", [
   "abNumbersOnly",
   "abTextAreaAutoresize",
   "abFitHeight",
-  "abTodoList",
-  "abBoxTools"
+  "abTodoList"
 ]);
 
 abApp.config([
