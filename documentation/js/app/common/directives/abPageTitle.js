@@ -11,7 +11,7 @@
 (function () {
     "use strict";
 
-    angular.module("abPageTitle", ["ui.router"])
+    angular.module("ab.common.ui.pagetitle", ["ui.router"])
         .directive("abPageTitle", function ($rootScope, $timeout) {
             return {
                 restrict: "EA",

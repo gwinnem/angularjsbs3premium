@@ -6,7 +6,7 @@
 (function () {
     "use strict";
 
-    angular.module("abIconBox", [])
+    angular.module("ab.common.ui.iconbox", [])
         .directive("iconBox", function ($compile) {
             return {
                 restrict: "E",

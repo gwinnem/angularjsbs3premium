@@ -2,12 +2,10 @@
  * @author Geirr Winnem
  * @version 1.0.0
  * @summary Displaying a label with priority
- * Bootstrap tooltip is an optin component so in order to activate it you need to do so in the page manually.
- * $(function () { $('[data-toggle="tooltip"]').tooltip() })
  */
 (function () {
     "use strict";
-    angular.module("abPriorityLabel", [])
+    angular.module("ab.common.ui.prioritylabel", [])
         .directive("priorityLabel", function ($compile) {
             return {
                 restrict: "E",

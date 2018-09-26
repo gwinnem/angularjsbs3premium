@@ -6,7 +6,7 @@
 (function () {
     "use strict";
 
-    angular.module("abInfobox", [])
+    angular.module("ab.common.ui.infobox", [])
         .directive("infoBox", function ($compile) {
             return {
                 restrict: "E",

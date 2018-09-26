@@ -5,7 +5,7 @@
  */
 (function () {
     "use strict";
-    angular.module("abNumbersOnly", [])
+    angular.module("ab.common.ui.numbersonly", [])
         .directive("numbersOnly", function () {
             return {
                 require: "ngModel",

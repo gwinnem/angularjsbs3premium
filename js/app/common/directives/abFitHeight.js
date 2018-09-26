@@ -5,7 +5,7 @@
  */
 (function () {
     "use strict";
-    angular.module('abFitHeight', [])
+    angular.module('ab.common.ui.fitheight', [])
         .directive('fitHeight', function () {
             return {
                 restrict: "A",

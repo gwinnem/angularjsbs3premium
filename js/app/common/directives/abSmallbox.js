@@ -8,7 +8,7 @@
 (function () {
     "use strict";
 
-    angular.module("abSmallBox", [])
+    angular.module("ab.common.ui.smallbox", [])
         .directive("smallBox", function ($compile) {
             return {
                 restrict: "E",

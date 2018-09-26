@@ -5,7 +5,7 @@
  */
 (function () {
     "use strict";
-    angular.module("abStatusLabel", [])
+    angular.module("ab.common.ui.statuslabel", [])
         .directive("statusLabel", function ($compile) {
             return {
                 restrict: "E",

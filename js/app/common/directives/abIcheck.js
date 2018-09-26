@@ -5,7 +5,7 @@
 */
 (function () {
     "use strict";
-    angular.module("abIcheck", [])
+    angular.module("ab.common.ui.icheck", [])
         .directive("icheck", function ($timeout) {
             return {
                 require: "ngModel",

@@ -5,7 +5,7 @@
  */
 (function () {
     "use strict";
-    angular.module("abTextAreaAutoresize", [])
+    angular.module("ab.common.ui.elastic", [])
         .directive("abElastic", function ($timeout) {
             return {
                 restrict: "A",
