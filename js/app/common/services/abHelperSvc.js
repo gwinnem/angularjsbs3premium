@@ -6,7 +6,7 @@
 
 (function () {
     "use strict";
-    angular.module("abHelpers", [])
+    angular.module("ab.common.svc.helpers", [])
         .factory("abHelpersSvc", ["$q", function ($q) {
 
             function s4() {

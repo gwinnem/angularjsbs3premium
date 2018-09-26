@@ -8,57 +8,58 @@
 (function () {
     "use strict";
 
-    angular.module("ab.common.consolelog", []).factory("log", function () {
-        var error = [
-            'background: red',
-            'color: white',
-            'font-weight: bold',
-            'display: block'
-        ].join(';');
+    angular.module("ab.common.consolelog", [])
+        .factory("log", function () {
+            var error = [
+                'background: red',
+                'color: white',
+                'font-weight: bold',
+                'display: block'
+            ].join(';');
 
-        var warning = [
-            'background: yellow',
-            'color: black',
-            'font-weight: bold',
-            'display: block'
-        ].join(';');
+            var warning = [
+                'background: yellow',
+                'color: black',
+                'font-weight: bold',
+                'display: block'
+            ].join(';');
 
-        var success = [
-            'background: green',
-            'color: white',
-            'font-weight: bold',
-            'display: block'
-        ].join(';');
+            var success = [
+                'background: green',
+                'color: white',
+                'font-weight: bold',
+                'display: block'
+            ].join(';');
 
-        var info = [
-            'background: blue',
-            'color: white',
-            'font-weight: bold',
-            'display: block'
-        ].join(';');
+            var info = [
+                'background: blue',
+                'color: white',
+                'font-weight: bold',
+                'display: block'
+            ].join(';');
 
 
-        var logError = function (message) {
-            console.log("%c%s", error, message);
-        };
+            var logError = function (message) {
+                console.log("%c%s", error, message);
+            };
 
-        var logWarning = function (message) {
-            console.log("%c%s", warning, message);
-        };
+            var logWarning = function (message) {
+                console.log("%c%s", warning, message);
+            };
 
-        var logSuccess = function (message) {
-            console.log("%c%s", success, message);
-        };
+            var logSuccess = function (message) {
+                console.log("%c%s", success, message);
+            };
 
-        var logInfo = function (message) {
-            console.log("%c%s", info, message);
-        };
+            var logInfo = function (message) {
+                console.log("%c%s", info, message);
+            };
 
-        return {
-            error: logError,
-            warning: logWarning,
-            success: logSuccess,
-            info: logInfo
-        };
-    });
+            return {
+                error: logError,
+                warning: logWarning,
+                success: logSuccess,
+                info: logInfo
+            };
+        });
 })();

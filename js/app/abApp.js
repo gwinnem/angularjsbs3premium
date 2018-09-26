@@ -29,7 +29,7 @@ var abApp = angular.module("aurora", [
   "abWhenScrollEnds",
   "ab.common.ui.infobox",
   "ab.common.ui.smallbox",
-  "abHelpers",
+  "ab.common.svc.helpers",
   "abToggleSwitch",
   "ab.common.ui.statuslabel",
   "ab.common.ui.prioritylabel",
