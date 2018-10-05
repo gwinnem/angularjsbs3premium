@@ -1,14 +1,17 @@
 ﻿/**
  * Boxtools widget.
  * @author Geirr Winnem
- * @version 1.0.0
+ * @version 1.1.0
  * @summary Showing tools for the box component..
+ * Changelog:
+ * 05/10/2018
+ * *** Fixed double compile error
  */
-(function() {
+(function () {
   "use strict";
   angular
     .module("ab.common.ui.boxtools", [])
-    .directive("boxTools", function($compile, $rootScope, $timeout) {
+    .directive("boxTools", function ($compile, $rootScope) {
       return {
         restrict: "EA",
         replace: true,
@@ -21,7 +24,10 @@
           hideRemove: "@hideRemove",
           animationSpeed: "@animationSpeed"
         },
-        link: function($scope, element) {
+        link: function ($scope, element) {
+
+          var defaultAnimSpeed = 500;
+
           var events = {
             collapsed: "collapsed.boxwidget",
             expanded: "expanded.boxwidget",
@@ -76,18 +82,17 @@
           };
 
           // element is the box-tools
-          $scope.element = element;
-          var box = $($scope.element).closest(selectors.box);
+          var box = $(element).closest(selectors.box);
           var boxId = $(box).attr("id");
 
           var isMinimized = false;
           var isFullScreen = false;
 
-          $scope.refresh = function() {
+          $scope.refresh = function () {
             $scope.refreshCallback();
           };
 
-          var expandBox = function() {
+          var expandBox = function () {
             // Swapping icons
             $(box)
               .find("." + css.faplus)
@@ -95,12 +100,12 @@
               .removeClass(css.faplus);
             $(box)
               .children(selectors.boxbody + ", " + selectors.boxfooter)
-              .slideDown($scope.animationSpeed, function() {
+              .slideDown($scope.animationSpeed, function () {
                 $rootScope.$broadcast(events.expanded);
               });
           };
 
-          var collapseBox = function() {
+          var collapseBox = function () {
             // Swapping icons
             $(box)
               .find("." + css.faminus)
@@ -108,14 +113,16 @@
               .addClass(css.faplus);
             $(box)
               .children(selectors.boxbody + ", " + selectors.boxfooter)
-              .slideUp($scope.animationSpeed, function() {
+              .slideUp($scope.animationSpeed, function () {
                 $rootScope.$broadcast(events.collapsed, {
                   id: boxId
                 });
               });
           };
 
-          $scope.toggleMinMax = function() {
+          $scope.toggleMinMax = function () {
+            // Making sure it is a number and not a string.
+            $scope.animationSpeed = parseInt($scope.animationSpeed);
             if (isMinimized) {
               isMinimized = false;
               expandBox();
@@ -125,7 +132,7 @@
             }
           };
 
-          var setFullScreen = function() {
+          var setFullScreen = function () {
             expandBox();
             isMinimized = false;
             $(selectors.sidebar).addClass(css.hide);
@@ -139,7 +146,7 @@
               .removeClass(css.fanormal);
           };
 
-          var removeFullScreen = function() {
+          var removeFullScreen = function () {
             $(selectors.sidebar).removeClass(css.hide);
             $(selectors.header).removeClass(css.hide);
             $(selectors.contentheader).removeClass(css.hide);
@@ -152,7 +159,7 @@
               .addClass(css.fanormal);
           };
 
-          $scope.toggleFullScreen = function() {
+          $scope.toggleFullScreen = function () {
             if (isFullScreen) {
               removeFullScreen();
               isFullScreen = false;
@@ -168,13 +175,13 @@
             }
           };
 
-          $scope.removeMe = function() {
+          $scope.removeMe = function () {
             if (isFullScreen) {
               removeFullScreen();
             }
             $(box)
               .children(selectors.boxbody + ", " + selectors.boxfooter)
-              .slideUp($scope.animationSpeed, function() {
+              .slideUp($scope.animationSpeed, function () {
                 $(box).remove();
                 $rootScope.$broadcast(events.removed, {
                   id: boxId
@@ -183,6 +190,14 @@
           };
 
           var startIcon = icons.minimize;
+
+          if (angular.isDefined($scope.animationSpeed)) {
+            if ($scope.animationSpeed === 0) {
+              $scope.animationSpeed = defaultAnimSpeed;
+            }
+          } else {
+            $scope.animationSpeed = defaultAnimSpeed;
+          }
 
           if (
             (angular.isDefined($scope.startCollapsed) &&
@@ -194,15 +209,9 @@
             $scope.toggleMinMax();
             $scope.hideMaxMin = "0";
           }
-          $scope.as = 0;
-          // Setting up defaults
-          // TODO Not working
-          if (!angular.isDefined($scope.animationSpeed) && $scope.as == 0) {
-            $scope.animationSpeed = 500;
-          } else {
-            $scope.as = $scope.animationSpeed;
-          }
-          var template = function() {
+
+
+          var getTemplate = function () {
             var toolstart = "<div class='box-tools pull-right'>";
             var toolend = "</div>";
             var toolrefresh =
@@ -255,7 +264,11 @@
             retVal += toolend;
             return retVal;
           };
-          element.replaceWith($compile(template())($scope));
+
+
+
+          element.html(getTemplate());
+          $compile(element.contents())($scope);
         }
       };
     });
