@@ -1,16 +1,139 @@
-﻿<!-- Page content -->
+﻿<!-- Main content -->
 <section class="content animated fadeInRight">
-    <!-- box -->
-    <div id="jsbox" class="box box-white">
-        <div class="box-header with-border">
-            <h3 class="box-title">Info Box</h3>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="callout callout-info">
+                <p>Info boxes are used to display statistical snippets. There are two types of info boxes.</p>
+                <p>
+                    The only thing you need to change to alternate between these style is change the placement of the bg-* class. For the first
+                    style apply any bg-* class to <code>.info-box-icon</code>. For the other style, apply
+                    the bg-* class to the <code>.info-box</code> div.
+                </p>
+            </div>
+            <!-- Default box -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Normal infobox.</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-max-min="0" hide-full-screen="1" hide-remove="1" animation-speed="500"></box-tools>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Examples:</h3>
+                            <div class="info-box ">
+                                <!-- Apply any bg-* class to to the icon to color it -->
+                                <span class="info-box-icon bg-aqua ">
+                                    <i class="fa fa-envelope-o"></i>
+                                </span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Unread Emails</span>
+                                    <span class="info-box-bold">56</span>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="info-box">
+                                <!-- Apply any bg-* class to to the icon to color it -->
+                                <span class="info-box-icon bg-green ">
+                                    <i class="fa fa-thumbs-o-up"></i>
+                                </span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Likes</span>
+                                    <span class="info-box-bold">41,410</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Html Markup:</h3>
+                            <pre class="prettyprint">&lt;div class=&quot;info-box &quot;&gt;
+    &lt;!-- Apply any bg-* class to to the icon to color it --&gt;
+    &lt;span class=&quot;info-box-icon bg-aqua &quot;&gt;
+        &lt;i class=&quot;fa fa-envelope-o&quot;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;div class=&quot;info-box-content&quot;&gt;
+        &lt;span class=&quot;info-box-text&quot;&gt;Unread Emails&lt;/span&gt;
+        &lt;span class=&quot;info-box-bold&quot;&gt;56&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
         </div>
-        <!-- box-body -->
-        <div class="box-body">
-            <h2>Box</h2>
-        </div>
-        <!-- / box-body -->
+        <!-- / col -->
     </div>
-    <!-- / box -->
+    <!-- / row -->
+    <!-- row -->
+    <div class="row">
+        <!-- col -->
+        <div class="col-md-8">
+            <!-- Default box -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">InfoBox with background color.</h3>
+                    <box-tools start-collapsed="0" hide-refresh="1" hide-max-min="0" hide-full-screen="1" hide-remove="1" animation-speed="500"></box-tools>
+                </div>
+                <div class="box-body">
+                    <!-- row -->
+                    <div class="row">
+                        <!-- col -->
+                        <div class="col-md-6">
+                            <h3>Examples:</h3>
+                            <div class="info-box bg-green">
+                                <span class="info-box-icon bg-aqua">
+                                    <i class="fa fa-envelope-o"></i>
+                                </span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Unread Emails</span>
+                                    <span class="info-box-bold">56</span>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="info-box bg-green">
+                                <span class="info-box-icon bg-red">
+                                    <i class="fa fa-envelope-o"></i>
+                                </span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Unread Emails</span>
+                                    <span class="info-box-bold">56</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / col -->
+                        <!-- col -->
+                        <div class="col-md-6">
+                            <h3>Html Markup:</h3>
+                            <pre class="prettyprint">&lt;div class=&quot;info-box bg-green&quot;&gt;
+    &lt;span class=&quot;info-box-icon bg-aqua&quot;&gt;
+        &lt;i class=&quot;fa fa-envelope-o&quot;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;div class=&quot;info-box-content&quot;&gt;
+        &lt;span class=&quot;info-box-text&quot;&gt;Unread Emails&lt;/span&gt;
+        &lt;span class=&quot;info-box-bold&quot;&gt;56&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                        </div>
+                        <!-- / col -->
+
+                    </div>
+                    <!-- / row -->
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+    </div>
+    <!-- / row -->
 </section>
-<!-- / Page content -->
+<!-- /.content -->
+<!-- Script only used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
+
+<script>
+    // Bootstrap tooltip needs to be activated manually
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

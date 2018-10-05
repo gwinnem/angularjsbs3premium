@@ -11,7 +11,7 @@
                 restrict: "E",
                 scope: { status: "@" },
                 link: function ($scope, element) {
-                    var renderTemplate = function (status) {
+                    var template = function (status) {
                         switch (status) {
                             case 0:
                             case "0":
@@ -37,8 +37,7 @@
                     }
                     $scope.$watch("status", function (value) {
                         if (value !== "") {
-                            element.html(renderTemplate());
-                            $compile(element.contents())($scope);
+                            element.replaceWith($compile(template(value))($scope));
                         }
                     });
                 }

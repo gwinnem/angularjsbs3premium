@@ -395,15 +395,20 @@
             </section>
         </div>
         <!-- / Content Wrapper. -->
-        <!-- Footer. Hidden on small devices -->
-        <footer class="main-footer hidden-xs">
+        <!-- Footer. Hidden on small devices and when printing -->
+        <footer id="main-footer" class="main-footer hidden-xs no-print">
             <div class="pull-right">
-                <b>Version</b> 1.1.0
+                <strong>
+                    made with <i class="fa fa-heart text-red"></i> in Austria.
+                </strong>
             </div>
-            <strong>Copyright &copy; 2017-2018
-                <a href="#">Geirr Winnem</a>.</strong> All rights reserved.
+            <strong>
+                Copyright &copy; 2018
+                <a href="javascript:">Geirr Winnem - Winnem Consulting</a>.
+            </strong> All rights reserved.
         </footer>
         <!-- / Footer -->
+        
         <!-- Scroll To Top Component -->
         <div ng-include src="'../pages/shared/scrolltotop.html'"></div>
     </div>

@@ -1,16 +1,45 @@
-﻿<!-- Page content -->
+﻿<!-- Main content -->
 <section class="content animated fadeInRight">
-    <!-- box -->
-    <div id="jsbox" class="box box-white">
-        <div class="box-header with-border">
-            <h3 class="box-title">Icon Box</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Box title</h3>
+                    <box-tools start-collapsed="0" hide-refresh="0" hide-max-min="0" hide-full-screen="0" hide-remove="0" animation-speed="500"></box-tools>
+                </div>
+                <div class="box-body">
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
         </div>
-        <!-- box-body -->
-        <div class="box-body">
-            <h2>Box</h2>
+        <!-- / col -->
+        <!-- col -->
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Box title</h3>
+                        <box-tools start-collapsed="0" hide-refresh="0" hide-max-min="0" hide-full-screen="0" hide-remove="0" animation-speed="500"></box-tools>
+                    </div>
+                    <div class="box-body">
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
         </div>
-        <!-- / box-body -->
+        <!-- / col -->
     </div>
-    <!-- / box -->
+    <!-- / row -->
 </section>
-<!-- / Page content -->
+<!-- /.content -->
+<!-- Script only used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
+
+<script>
+    // Bootstrap tooltip needs to be activated manually
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
