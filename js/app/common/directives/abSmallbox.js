@@ -54,7 +54,8 @@
                         return template;
                     }
 
-                    element.replaceWith($compile(renderTemplate())($scope));
+                    element.html(renderTemplate());
+                    $compile(element.contents())($scope);
                 }
             }
         });

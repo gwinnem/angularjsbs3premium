@@ -11,7 +11,7 @@
             return {
                 restrict: "E",
                 link: function ($scope, element, attr) {
-                    var template = function () {
+                    var renderTemplate = function () {
                         var boxbg = attr.boxbg;
                         if (boxbg === undefined) {
                             boxbg = "";
@@ -72,7 +72,8 @@
                             '</div></div>';
                         return infobox;
                     }
-                    element.replaceWith($compile(template())($scope));
+                    element.html(renderTemplate());
+                    $compile(element.contents())($scope);
                 }
             }
         });
