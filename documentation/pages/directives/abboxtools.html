@@ -6,20 +6,20 @@
             <div class="box box-info">
                 <div class="box-header with-border">
                     <h3 class="box-title"></h3>
-                    <box-tools start-collapsed="0" hide-refresh="0" hide-max-min="0" hide-full-screen="0" hide-remove="0"></box-tools>
+                    <box-tools start-collapsed="0" hide-refresh="0" hide-max-min="0" hide-full-screen="0" hide-remove="0" animation-speed="500"></box-tools>
                 </div>
                 <div class="box-body">
-                    <p>The box tools directive is responsible for the toolbar in the box. Each button has the title
-                        filled out to get a tooltip.</p>
+                    <p>The box tools directive is responsible for the toolbar in the box. Each button has the title filled
+                        out to get a tooltip.</p>
                     <h4>Markup:</h4>
                     <pre class="prettyprint"><code>&lt;box-tools 
-    start-collapsed=&quot;0&quot; 
+    start-collapsed=&quot;0&quot;
     hide-refresh=&quot;0&quot;
-    refresh-callback=&quot;refreshFunction()&quot;
-    hide-max-min=&quot;0&quot; 
-    hide-full-screen=&quot;0&quot; 
-    hide-remove=&quot;0&quot;&gt;
-&lt;/box-tools&gt;</code></pre>
+    hide-max-min=&quot;0&quot;
+    hide-full-screen=&quot;0&quot;
+    hide-remove=&quot;0&quot;
+    animation-speed=&quot;500&quot;
+&gt;&lt;/box-tools&gt;</code></pre>
                 </div>
                 <!-- /.box-body -->
             </div>
@@ -32,8 +32,7 @@
             <div class="box box-success" id="box2">
                 <div class="box-header with-border">
                     <h3 class="box-title">Options</h3>
-                    <box-tools start-collapsed="0" hide-refresh="0" hide-max-min="0" hide-full-screen="0" hide-remove="0"
-                        animation-speed="10000"></box-tools>
+                    <box-tools start-collapsed="0" hide-refresh="0" hide-max-min="0" hide-full-screen="0" hide-remove="0" animation-speed="10000"></box-tools>
                 </div>
                 <div class="box-body">
                     <table class="table table-hover table-condensed">
@@ -54,8 +53,8 @@
                             </tr>
                             <tr>
                                 <td>refresh-callback</td>
-                                <td>The function which is called when the refresh button is clicked. The responsive
-                                    from the callback is added to the box body.</td>
+                                <td>The function which is called when the refresh button is clicked. The responsive from
+                                    the callback is added to the box body.</td>
                             </tr>
                             <tr>
                                 <td>hide-max-min</td>
@@ -69,10 +68,14 @@
                                 <td>hide-remove</td>
                                 <td>Hides or shows the remove button.</td>
                             </tr>
+                            <tr>
+                                <td>animation-speed</td>
+                                <td>Defining the speed used in the expand collapse box animation.. Default value is 500 millisecond.</td>
+                            </tr>
                         </tbody>
                     </table>
                     <div class="callout callout-info">
-                        <p>The parameters are optional and the Default value is false.</p>
+                        <p>All parameters are optional and the boolean values are set to false by default.</p>
                     </div>
                 </div>
                 <!-- /.box-body -->
