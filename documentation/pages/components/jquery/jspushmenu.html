@@ -1,16 +1,101 @@
-﻿<!-- Page content -->
+﻿<!-- Main content -->
 <section class="content animated fadeInRight">
-    <!-- box -->
-    <div id="pushmenu" class="box box-white">
-        <div class="box-header with-border">
-            <h3 class="box-title">ABAdmin PushMenu</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <span>The PushMenu plugin controls the toggle button of the main sidebar.</span>
+                </div>
+                <div class="box-body">
+                    <h3>Usage</h3>
+                    <p>This plugin can be activated as a jquery plugin or using the data api.</p>
+                    <br>
+                    <h3>Data API</h3>
+                    <p>Add <code>data-toggle="push-menu"</code> to a button to activate the plugin.</p>
+                    <br>
+                    <h3>Html Markup</h3>
+                    <pre class="prettyprint">&lt;button class=&quot;btn btn-primary&quot; data-toggle=&quot;push-menu&quot;&gt;Toggle Sidebar&lt;/button&gt;</pre>
+                    <br>
+                    <h3>JQery</h3>
+                    <pre class="prettyprint">$(&apos;.sidebar-toggle-btn&apos;).pushMenu(options);</pre>
+                    <br>
+                    <h3>Options</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>collapseScreenSize</td>
+                                <td>Number</td>
+                                <td>767</td>
+                                <td>Screen width in pixels for small screens.</td>
+                            </tr>
+                            <tr>
+                                <td>expandOnHover</td>
+                                <td>Boolean</td>
+                                <td>false</td>
+                                <td>Whether to activate the expand on hover effect.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <h3>Events</h3>
+                    <br>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th> Event Type</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>expanded.pushMenu</td>
+                                <td>Fired when the sidebar expands.</td>
+                            </tr>
+                            <tr>
+                                <td>collapsed.pushMenu</td>
+                                <td>>Fired when the sidebar collapses.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <pre class="prettyprint">Example: $(document).on(&apos;expanded.pushMenu&apos;, handleExpandedEvent);</pre>
+                    <br>
+                    <h3>Methods</h3>
+                    <br>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>toggle</td>
+                                <td>Toggles the state of the menu between expanded and collapsed.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <pre class="prettyprint">Example: $(&apos;[data-toggle=&quot;push-menu&quot;]&apos;).pushMenu(&apos;toggle&apos;);</pre>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
         </div>
-        <!-- box-body -->
-        <div class="box-body">
-            <h2>Box</h2>
-        </div>
-        <!-- / box-body -->
+        <!-- / col -->
     </div>
-    <!-- / box -->
+    <!-- / row -->
 </section>
-<!-- / Page content -->
+<!-- /.content -->
+<!-- Script only used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>

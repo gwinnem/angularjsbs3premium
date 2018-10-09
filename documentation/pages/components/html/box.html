@@ -1,53 +1,328 @@
 ﻿<!-- Page content -->
 <section class="content animated fadeInRight">
-    <div class="callout callout-info">
-        <p>The box component is the most used compnent in the template. And is being used to displaying everything from charts
-            to page content.</p>
-    </div>
     <div class="row">
-        <div class="col-md-6">
-            <h3>Result:</h3>
-            <!-- box -->
-            <div id="box" class="box box-info">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Box Title</h3>
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-white">
+                <div class="box-header">
+                    <span>The box component is the most used component in the template. And is being used to displaying everything
+                        from charts to page content.</span>
                 </div>
-                <!-- box-body -->
-                <div class="box-body">
-                    <h4>The body of the box</h4>
-                </div>
-                <!-- / box-body -->
-                <!-- box footer -->
-                <div class="box-footer">
-                    <h4>The footer of the box</h4>
-                </div>
-                <!-- / box footer -->
-            </div>
-            <!-- / box -->
-        </div>
-        <div class="col-md-6">
-            <h3>Html Markup:</h3>
-            <pre class="prettyprint">&lt;!-- box --&gt;
-    &lt;div id=&quot;box&quot; class=&quot;box box-info&quot;&gt;
-        &lt;div class=&quot;box-header with-border&quot;&gt;
-            &lt;h3 class=&quot;box-title&quot;&gt;Box Title&lt;/h3&gt;
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Default Box</h3>
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Default Box Example</h3>
+                                <div class="box-tools pull-right">
+                                    <!-- Buttons, labels, and many other things can be placed here! -->
+                                    <!-- Here is a label for example -->
+                                    <span class="label label-primary">Label</span>
+                                </div>
+                                <!-- /.box-tools -->
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                The body of the box
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                The footer of the box
+                            </div>
+                            <!-- box-footer -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Html Markup:</h3>
+                        <pre class="prettyprint">&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;box-header with-border&quot;&gt;
+        &lt;h3 class=&quot;box-title&quot;&gt;Default Box Example&lt;/h3&gt;
+        &lt;div class=&quot;box-tools pull-right&quot;&gt;
+        &lt;!-- Buttons, labels, and many other things can be placed here! --&gt;
+        &lt;!-- Here is a label for example --&gt;
+        &lt;span class=&quot;label label-primary&quot;&gt;Label&lt;/span&gt;
         &lt;/div&gt;
-        &lt;!-- box-body --&gt;
-        &lt;div class=&quot;box-body&quot;&gt;
-            &lt;h4&gt;The body of the box&lt;/h4&gt;
-        &lt;/div&gt;
-        &lt;!-- / box-body --&gt;
-        &lt;!-- box footer --&gt;
-        &lt;div class=&quot;box-footer&quot;&gt;
-            &lt;h4&gt;The footer of the box&lt;/h4&gt;
-        &lt;/div&gt;
-        &lt;!-- / box footer --&gt;
+        &lt;!-- /.box-tools --&gt;
     &lt;/div&gt;
-&lt;!-- / box --&gt;</pre>
+    &lt;!-- /.box-header --&gt;
+    &lt;div class=&quot;box-body&quot;&gt;
+        The body of the box
+    &lt;/div&gt;
+    &lt;!-- /.box-body --&gt;
+    &lt;div class=&quot;box-footer&quot;&gt;
+        The footer of the box
+    &lt;/div&gt;
+    &lt;!-- box-footer --&gt;
+&lt;/div&gt;
+&lt;!-- /.box --&gt;</pre>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box -->
         </div>
+        <!-- / col -->
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-white">
+                <div class="box-header">
+                    <span>You can change the style of the box by adding any of the contextual classes.</span>
+                </div>
+                <div class="box-body">
+                    <h3>Box variants</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="box box-white">
+                                        <div class="box-header with-border">
+                                            <h3 class="box-title">White Box Example</h3>
+                                        </div><!-- /.box-header -->
+                                        <div class="box-body">
+                                            The body of the box
+                                        </div><!-- /.box-body -->
+                                    </div><!-- /.box -->
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <div class="box-header with-border">
+                                            <h3 class="box-title">Default Box Example</h3>
+                                        </div><!-- /.box-header -->
+                                        <div class="box-body">
+                                            The body of the box
+                                        </div><!-- /.box-body -->
+                                    </div><!-- /.box -->
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box box-primary">
+                                        <div class="box-header with-border">
+                                            <h3 class="box-title">Primary Box Example</h3>
+                                        </div><!-- /.box-header -->
+                                        <div class="box-body">
+                                            The body of the box
+                                        </div><!-- /.box-body -->
+                                    </div><!-- /.box -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="box box-info">
+                                        <div class="box-header with-border">
+                                            <h3 class="box-title">Info Box Example</h3>
+                                        </div><!-- /.box-header -->
+                                        <div class="box-body">
+                                            The body of the box
+                                        </div><!-- /.box-body -->
+                                    </div><!-- /.box -->
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box box-warning">
+                                        <div class="box-header with-border">
+                                            <h3 class="box-title">Warning Box Example</h3>
+                                        </div><!-- /.box-header -->
+                                        <div class="box-body">
+                                            The body of the box
+                                        </div><!-- /.box-body -->
+                                    </div><!-- /.box -->
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="box box-success">
+                                        <div class="box-header with-border">
+                                            <h3 class="box-title">Success Box Example</h3>
+                                        </div><!-- /.box-header -->
+                                        <div class="box-body">
+                                            The body of the box
+                                        </div><!-- /.box-body -->
+                                    </div><!-- /.box -->
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="box box-danger">
+                                            <div class="box-header with-border">
+                                                <h3 class="box-title">Danger Box Example</h3>
+                                            </div><!-- /.box-header -->
+                                            <div class="box-body">
+                                                The body of the box
+                                            </div><!-- /.box-body -->
+                                        </div><!-- /.box -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Html Markup:</h3>
+                            <pre class="prettyprint">&lt;div class=&quot;box box-white&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;box box-default&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;box box-primary&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;box box-info&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;box box-warning&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;box box-success&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;box box-danger&quot;&gt;...&lt;/div&gt;</pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-white">
+                <div class="box-header with-border">
+                    <span>Solid Boxes are alternative ways to display boxes. They can be created by simply adding the box-solid
+                        class to the box component. You may also use contextual classes with you solid boxes.</span>
+                </div>
+                <div class="box-body">
+                    <h3 class="box-title">Solid Boxes</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="col-md-4">
+                                <div class="box box-solid box-default">
+                                    <div class="box-header">
+                                        <h3 class="box-title">Default Solid Box</h3>
+                                    </div><!-- /.box-header -->
+                                    <div class="box-body">
+                                        The body of the box
+                                    </div><!-- /.box-body -->
+                                </div><!-- /.box -->
+                            </div>
+                            <div class="col-md-4">
+                                <div class="box box-solid box-primary">
+                                    <div class="box-header">
+                                        <h3 class="box-title">Primary Solid Box</h3>
+                                    </div><!-- /.box-header -->
+                                    <div class="box-body">
+                                        The body of the box
+                                    </div><!-- /.box-body -->
+                                </div><!-- /.box -->
+                            </div>
+                            <div class="col-md-4">
+                                <div class="box box-solid box-info">
+                                    <div class="box-header">
+                                        <h3 class="box-title">Info Solid Box</h3>
+                                    </div><!-- /.box-header -->
+                                    <div class="box-body">
+                                        The body of the box
+                                    </div><!-- /.box-body -->
+                                </div><!-- /.box -->
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-md-4">
+                                <div class="box box-solid box-warning">
+                                    <div class="box-header">
+                                        <h3 class="box-title">Warning Solid Box</h3>
+                                    </div><!-- /.box-header -->
+                                    <div class="box-body">
+                                        The body of the box
+                                    </div><!-- /.box-body -->
+                                </div><!-- /.box -->
+                            </div>
+                            <div class="col-md-4">
+                                <div class="box box-solid box-success">
+                                    <div class="box-header">
+                                        <h3 class="box-title">Success Solid Box</h3>
+                                    </div><!-- /.box-header -->
+                                    <div class="box-body">
+                                        The body of the box
+                                    </div><!-- /.box-body -->
+                                </div><!-- /.box -->
+                            </div>
+                            <div class="col-md-4">
+                                <div class="box box-solid box-danger">
+                                    <div class="box-header">
+                                        <h3 class="box-title">Danger Solid Box</h3>
+                                    </div><!-- /.box-header -->
+                                    <div class="box-body">
+                                        The body of the box
+                                    </div><!-- /.box-body -->
+                                </div><!-- /.box -->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Html Markup:</h3>
+                            <pre class="prettyprint">&lt;div class=&quot;box box-solid box-default&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box box-solid box-primary&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box box-solid box-info&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box box-solid box-warning&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box box-solid box-success&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box box-solid box-danger&quot;&gt;&lt;/div&gt;</pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <div class="col-md-12">
+            <!-- Default box -->
+            <div class="box box-white">
+                <div class="box-header with-border">
+                    <span>Boxes can contain tools to deploy a specific event or provide simple info.</span>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div id="box" cclass="box box-default box-solid" data-widget="box-widget">
+                                <div class="box-header">
+                                    <h3 class="box-title">Box Tools</h3>
+                                    <div class="box-tools">
+                                        <!-- This will cause the box to expand / collapse when clicked -->
+                                        <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                        <!-- This will expand the box to fullscreen -->
+                                        <button type="button" class="btn btn-box-tool" data-widget="fullscreen" data-toggle="tooltip" title="Toggle Full screen">
+                                            <i class="fa fa-arrows-alt"></i>
+                                        </button>
+                                                                                <!-- This will cause the box to be removed when clicked -->
+                                                                                <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                                                                                        <i class="fa fa-times"></i>
+                                                                                    </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <pre class="prettyprint">&lt;div class=&quot;box box-default&quot; data-widget=&quot;box-widget&quot;&gt;
+    &lt;div class=&quot;box-header&quot;&gt;
+        &lt;h3 class=&quot;box-title&quot;&gt;Box Tools&lt;/h3&gt;
+        &lt;div class=&quot;box-tools&quot;&gt;
+            &lt;!-- This will cause the box to be removed when clicked --&gt;
+            &lt;button class=&quot;btn btn-box-tool&quot; data-widget=&quot;remove&quot; data-toggle=&quot;tooltip&quot; title=&quot;Remove&quot;&gt;
+                &lt;i class=&quot;fa fa-times&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+            &lt;!-- This will cause the box to expand / collapse when clicked --&gt;
+            &lt;button class=&quot;btn btn-box-tool&quot; data-widget=&quot;collapse&quot; data-toggle=&quot;tooltip&quot; title=&quot;Collapse&quot;&gt;
+                &lt;i class=&quot;fa fa-minus&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+            &lt;!-- This will expand the box to fullscreen --&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn-box-tool&quot; data-widget=&quot;fullscreen&quot; data-toggle=&quot;tooltip&quot; title=&quot;Toggle Full screen&quot;&gt;
+                &lt;i class=&quot;fa fa-arrows-alt&quot;&gt;&lt;/i&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
     </div>
+    <!-- / row-->
 </section>
 <!-- / Page content -->
 
 <!-- Script only used for coloring and formatting code samples in page -->
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>
+<script>
+    // Bootstrap tooltip needs to be activated manually
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        $("#box").boxWidget();
+    });
+</script>

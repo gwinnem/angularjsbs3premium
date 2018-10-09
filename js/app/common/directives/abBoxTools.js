@@ -39,7 +39,7 @@
           var icons = {
             minimize: "fa fa-minus",
             maximize: "fa fa-plus",
-            remove: "fa fa-times",
+            remove: "fa fa-lg fa-trash-o",
             normalscreen: "fa fa-arrows-alt",
             fullscreen: "fa fa-compress",
             refresh: "fa fa-refresh"

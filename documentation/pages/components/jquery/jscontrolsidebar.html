@@ -1,16 +1,94 @@
-﻿<!-- Page content -->
+﻿<!-- Main content -->
 <section class="content animated fadeInRight">
-    <!-- box -->
-    <div id="controlsidebar" class="box box-white">
-        <div class="box-header with-border">
-            <h3 class="box-title">ABAdmin Control Sidebar</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <span>The control sidebar component is part of ABAdmin's layout as the right sidebar.</span>
+                </div>
+                <div class="box-body">
+                    <h3>Usage</h3>
+                    <br>
+                    <p>This plugin can be activated using the data-api or jQuery. To activate the plugin, you must first
+                        add the HTML markup to your layout, then create the toggle button as shown below.</p>
+                    <br>
+                    <h3>Html Markup</h3>
+                    <br>
+                    <pre class="prettyprint">&lt;!-- Control Sidebar --&gt;
+&lt;aside class=&quot;control-sidebar control-sidebar-dark&quot;&gt;
+    &lt;!-- Content of control sidebar goes here --&gt;
+&lt;/aside&gt;
+&lt;!-- /.control-sidebar --&gt;
+&lt;!-- Add the sidebar&apos;s background. This div must be placed
+    immediately after the control sidebar --&gt;
+&lt;div class=&quot;control-sidebar-bg&quot;&gt;&lt;/div&gt;</pre>
+                    <br>
+                    <h3>Data API</h3>
+                    <br>
+                    <p>Add <code>data-toggle="control-sidebar"</code> to any button or a element to activate the plugin.
+                        All options can be passed using the data api. Example: <code>data-slide="false"</code></p>
+                    <br>
+                    <h3>JQuery</h3>
+                    <br>
+                    <p>Just like all other ABAdmin's plugins, you can also activate the toggle button using jQuery by running
+                        the following example.</p>
+                    <br>
+                    <pre class="prettyprint">$(&quot;#my-toggle-button&quot;).controlSidebar(options);</pre>
+                    <br>
+                    <h3>Options</h3>
+                    <br>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Slide</td>
+                                <td>Boolean</td>
+                                <td>true</td>
+                                <td>Whether the sidebar should slide over the content or push the content to make space for
+                                    itself.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <h3>Events</h3>
+                    <br>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>expanded.controlsidebar</td>
+                                <td>Triggered after the control sidebar is expanded.</td>
+                            </tr>
+                            <tr>
+                                <td>collapsed.controlsidebar</td>
+                                <td>Triggered after the control sidebar is collapsed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <pre class="prettyprint">Example: $(&apos;#toggle-button&apos;).on(&apos;expanded.controlsidebar&apos;, handleExpandedEvent);</pre>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- / col -->
         </div>
-        <!-- box-body -->
-        <div class="box-body">
-            <h2>Box</h2>
-        </div>
-        <!-- / box-body -->
-    </div>
-    <!-- / box -->
+        <!-- / row -->
 </section>
-<!-- / Page content -->
+<!-- /.content -->
+<!-- Script only used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>

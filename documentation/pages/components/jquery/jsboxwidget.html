@@ -1,0 +1,194 @@
+﻿<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <p>The box widget plugin provides the functionality for collapsing, expanding and removing a box.</p>
+                </div>
+                <div class="box-body">
+                    <h3>Usage</h3>
+                    <br>
+                    <p>This plugin can be activated using the data-api or jQuery.</p>
+                    <br>
+                    <h3>Data API</h3>
+                    <br>
+                    <p>This plugin provides two data-api attributes. Any element using one of the following attributes must
+                        be placed within the .box-tools div, which is usually in the box header. For more information about
+                        the box HTML structure, visit the box component documentation</p>
+                    <code>data-widget="collapse"</code>
+                    <p>This attribute, when attached to a button, allows the box to be collapsed/expanded when clicked.</p>
+                </div>
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Collapsible Box Example</h3>
+                        <div class="box-tools pull-right">
+                            <!-- Collapse Button -->
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        The body of the box
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="box-footer">
+                        The footer of the box
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+                <h3>Html Markup</h3>
+                <pre class="prettyprint">&lt;div class=&quot;box&quot;&gt;
+&lt;div class=&quot;box-header with-border&quot;&gt;
+    &lt;h3 class=&quot;box-title&quot;&gt;Collapsible Box Example&lt;/h3&gt;
+    &lt;div class=&quot;box-tools pull-right&quot;&gt;
+    &lt;!-- Collapse Button --&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-box-tool&quot; data-widget=&quot;collapse&quot;&gt;
+        &lt;i class=&quot;fa fa-minus&quot;&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;!-- /.box-tools --&gt;
+&lt;/div&gt;
+&lt;!-- /.box-header --&gt;
+&lt;div class=&quot;box-body&quot;&gt;
+    The body of the box
+&lt;/div&gt;
+&lt;!-- /.box-body --&gt;
+&lt;div class=&quot;box-footer&quot;&gt;
+    The footer of the box
+&lt;/div&gt;</pre>
+                <br>
+                <code>data-widget="remove"</code>
+                <p>This attribute, when attached to a button, allows the box to be removed when clicked.</p>
+                <br>
+                <h3>jQuery</h3>
+                <br>
+                <pre class="prettyprint">$('#my-box').boxWidget({
+    animationSpeed: 500,
+    collapseTrigger: '#my-collapse-button-trigger',
+    removeTrigger: '#my-remove-button-trigger',
+    collapseIcon: 'fa-minus',
+    expandIcon: 'fa-plus',
+    removeIcon: 'fa-times'
+})</pre>
+                <br>
+                <h3>Options</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>animationSpeed</td>
+                            <td>Number</td>
+                            <td>500</td>
+                            <td>Slide animation speed in milliseconds.</td>
+                        </tr>
+                        <tr>
+                            <td>collapseTrigger</td>
+                            <td>String</td>
+                            <td>[data-widget="collapse"]</td>
+                            <td>jQuery selector to the element responsible for collapsing the box.</td>
+                        </tr>
+                        <tr>
+                            <td>removeTrigger</td>
+                            <td>String</td>
+                            <td>[data-widget="remove"]</td>
+                            <td>Query selector to the element responsible for removing the box.</td>
+                        </tr>
+                        <tr>
+                            <td>collapseIcon</td>
+                            <td>String</td>
+                            <td>fa-minus</td>
+                            <td>The CSS class for the collapse icon.</td>
+                        </tr>
+                        <tr>
+                            <td>expandIcon</td>
+                            <td>String</td>
+                            <td>fa-plus</td>
+                            <td>The CSS class for the expand icon.</td>
+                        </tr>
+                        <tr>
+                            <td>removeIcon</td>
+                            <td>String</td>
+                            <td>fa-times</td>
+                            <td>The CSS class for the remove icon</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <h3>Events</h3>
+                <br>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>expanded.boxwidge</td>
+                            <td>Triggered after the box is expanded.</td>
+                        </tr>
+                        <tr>
+                            <td>collapsed.boxwidget</td>
+                            <td>Triggered after the box is collapsed.</td>
+                        </tr>
+                        <tr>
+                            <td>removed.boxwidget</td>
+                            <td>Triggered after the box is removed.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <pre class="prettyprint">Example: $('#my-box').on('expanded.boxwidget', handleExpandedEvent);</pre>
+                <br>
+                <h3>Methods</h3>
+                <br>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>toggle</td>
+                            <td>Toggles the state of the box between expanded and collapsed.</td>
+                        </tr>
+                        <tr>
+                            <td>expand</td>
+                            <td>Expands the box.</td>
+                        </tr>
+                        <tr>
+                            <td>collapse</td>
+                            <td>Collapses the box.</td>
+                        </tr>
+                        <tr>
+                            <td>remove</td>
+                            <td>Removes the box.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <pre class="prettyprint">Example: $('#my-box-widget').boxWidget('toggle');</pre>
+            </div>
+            <!-- / col -->
+        </div>
+        <!-- / row -->
+</section>
+<!-- /.content -->
+<!-- Script only used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>

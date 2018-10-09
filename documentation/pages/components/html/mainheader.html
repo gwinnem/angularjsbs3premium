@@ -1,20 +1,21 @@
 ﻿<!-- Page content -->
 <section class="content animated fadeInRight">
-    <!-- box -->
-    <div id="mainheader" class="box box-white">
-        <div class="box-header with-border">
-            <h3 class="box-title">Main Header</h3>
-        </div>
-        <!-- box-body -->
-        <div class="box-body">
-            <div class="well">
-                <span>
-                    The main header contains the logo and navbar. Construction of the navbar differs slightly from Bootstrap because it has components
-                    that Bootstrap doesn't provide.
-                </span>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- box -->
+            <div id="mainheader" class="box box-white">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Main Header Component</h3>
+                </div>
+                <!-- box-body -->
+                <div class="box-body">
+                    <div class="callout callout-info">
+                        <p>
+                            The main header contains the logo and navbar. Construction of the navbar differs slightly from Bootstrap because it has components
+                            that Bootstrap doesn't provide.
+                        </p>
+                    </div>
+                    <h3>Result:</h3>
                     <header class="main-header">
                         <!-- Logo -->
                         <a ui-sref="home" class="logo">
@@ -45,10 +46,57 @@
                         </nav>
                     </header>
                 </div>
+                <!-- / box-body -->
             </div>
+            <!-- / box -->
         </div>
-        <!-- / box-body -->
+
+        <!-- col -->
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-white">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Html Markup</h3>
+                </div>
+                <div class="box-body">
+                    <pre class="prettyprint">&lt;header class=&quot;main-header&quot;&gt;
+    &lt;!-- Logo --&gt;
+    &lt;a ui-sref=&quot;home&quot; class=&quot;logo&quot;&gt;
+        &lt;!-- mini logo for sidebar mini 50x50 pixels --&gt;
+        &lt;span class=&quot;logo-mini&quot;&gt;
+            &lt;b&gt;A&lt;/b&gt;B&lt;/span&gt;
+        &lt;!-- logo for regular state and mobile devices --&gt;
+        &lt;span class=&quot;logo-lg&quot;&gt;
+            &lt;b&gt;AB&lt;/b&gt; Admin&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;!-- Header Navbar: style can be found in header.less --&gt;
+    &lt;nav class=&quot;navbar navbar-static-top&quot;&gt;
+        &lt;!-- Sidebar toggle button--&gt;
+        &lt;a href=&quot;javascript:&quot; class=&quot;sidebar-toggle&quot; data-toggle=&quot;push-menu&quot; role=&quot;button&quot;&gt;
+            &lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;
+        &lt;/a&gt;
+
+        &lt;div class=&quot;navbar-custom-menu&quot;&gt;
+            &lt;ul class=&quot;nav navbar-nav animated fadeInRight&quot;&gt;
+                &lt;!-- Fullscreen Button --&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;javascript:&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;bottom&quot; title=&quot;Fullscreen&quot; onClick=&quot;launchFullScreen(this);&quot;&gt;
+                        &lt;i class=&quot;fa fa-lg fa-arrows-alt&quot;&gt;&lt;/i&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;</pre>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
     </div>
-    <!-- / box -->
 </section>
 <!-- / Page content -->
+
+<!-- Script only used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>

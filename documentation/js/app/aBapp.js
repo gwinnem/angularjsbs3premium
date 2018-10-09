@@ -96,7 +96,7 @@ aurora.config(function (
         .state("controlsidebar", {
             url: "/components/html/controlsidebar",
             templateUrl: "documentation/pages/components/html/controlsidebar.html",
-            pageTitle: "Html Component Control Sidebar(Right side treeview)",
+            pageTitle: "Html Component Control Sidebar",
             pageBreadCrumbs: [
                 { name: "Home" },
                 { name: "Components" },
@@ -128,7 +128,7 @@ aurora.config(function (
         })
         .state("htmliconbox", {
             url: "/components/html/iconbox",
-            templateUrl: "documentation/pages/components/html/infobox.html",
+            templateUrl: "documentation/pages/components/html/iconbox.html",
             pageTitle: "Html Component IconBox",
             pageBreadCrumbs: [
                 { name: "Home" },
@@ -137,22 +137,12 @@ aurora.config(function (
                 { name: "InfoBox" }
             ]
         })
-        .state("htmltreeview", {
-            url: "/components/html/treeview",
-            templateUrl: "documentation/pages/components/html/treeview.html",
-            pageTitle: "Html Component Treeview",
-            pageBreadCrumbs: [
-                { name: "Home" },
-                { name: "Components" },
-                { name: "Html" },
-                { name: "Treeview" }
-            ]
-        })
+
         // jQuery Components
         .state("jslayout", {
             url: "/components/js/layout",
             templateUrl: "documentation/pages/components/jquery/jslayout.html",
-            pageTitle: "Js Layout",
+            pageTitle: "Javascript Layout Plugin",
             pageBreadCrumbs: [
                 { name: "Home" },
                 { name: "Components" },
@@ -163,7 +153,7 @@ aurora.config(function (
         .state("jssidebar", {
             url: "/components/js/sidebar",
             templateUrl: "documentation/pages/components/jquery/jssidebar.html",
-            pageTitle: "Js Sidebar",
+            pageTitle: "Javascript Sidebar Plugin",
             pageBreadCrumbs: [
                 { name: "Home" },
                 { name: "Components" },
@@ -174,7 +164,7 @@ aurora.config(function (
         .state("jspushmenu", {
             url: "/components/js/pushmenu",
             templateUrl: "documentation/pages/components/jquery/jspushmenu.html",
-            pageTitle: "Js PushMenu",
+            pageTitle: "JQuery Push Menu Plugin",
             pageBreadCrumbs: [
                 { name: "Home" },
                 { name: "Components" },
@@ -186,7 +176,7 @@ aurora.config(function (
             url: "/components/js/controlsidebar",
             templateUrl:
                 "documentation/pages/components/jquery/jscontrolsidebar.html",
-            pageTitle: "Js Control Sidebar",
+            pageTitle: "JQuery Control Sidebar Plugin",
             pageBreadCrumbs: [
                 { name: "Home" },
                 { name: "Components" },
@@ -205,15 +195,15 @@ aurora.config(function (
                 { name: "Box Refresh" }
             ]
         })
-        .state("jstodolist", {
-            url: "/components/js/todolist",
-            templateUrl: "documentation/pages/components/jquery/jstodolist.html",
-            pageTitle: "Js Todolist",
+        .state("jsboxwidget", {
+            url: "/components/js/boxwidget",
+            templateUrl: "documentation/pages/components/jquery/jsboxwidget.html",
+            pageTitle: "JQuery Box Widget Plugin",
             pageBreadCrumbs: [
                 { name: "Home" },
                 { name: "Components" },
                 { name: "Js" },
-                { name: "Todolist" }
+                { name: "BoxWidget" }
             ]
         })
         .state("jstree", {
