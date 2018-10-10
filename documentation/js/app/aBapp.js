@@ -137,6 +137,17 @@ aurora.config(function (
                 { name: "InfoBox" }
             ]
         })
+        .state("htmlscrolltotop", {
+            url: "/components/html/scrolltotop",
+            templateUrl: "documentation/pages/components/html/scrolltotop.html",
+            pageTitle: "Html Component Scroll to Top",
+            pageBreadCrumbs: [
+                { name: "Home" },
+                { name: "Components" },
+                { name: "Html" },
+                { name: "ScrollToTop" }
+            ]
+        })
 
         // jQuery Components
         .state("jslayout", {
@@ -184,17 +195,6 @@ aurora.config(function (
                 { name: "Control Sidebar" }
             ]
         })
-        .state("jsboxrefresh", {
-            url: "/components/js/boxrefresh",
-            templateUrl: "documentation/pages/components/jquery/jsboxrefresh.html",
-            pageTitle: "Js Box Refresh",
-            pageBreadCrumbs: [
-                { name: "Home" },
-                { name: "Components" },
-                { name: "Js" },
-                { name: "Box Refresh" }
-            ]
-        })
         .state("jsboxwidget", {
             url: "/components/js/boxwidget",
             templateUrl: "documentation/pages/components/jquery/jsboxwidget.html",
@@ -204,17 +204,6 @@ aurora.config(function (
                 { name: "Components" },
                 { name: "Js" },
                 { name: "BoxWidget" }
-            ]
-        })
-        .state("jstree", {
-            url: "/components/js/treewidget",
-            templateUrl: "documentation/pages/components/jquery/jstree.html",
-            pageTitle: "Js Tree Widget",
-            pageBreadCrumbs: [
-                { name: "Home" },
-                { name: "Components" },
-                { name: "Js" },
-                { name: "Tree Widget" }
             ]
         })
 

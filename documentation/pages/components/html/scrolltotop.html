@@ -1,0 +1,51 @@
+<!-- Main content -->
+<section class="content animated fadeInRight">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Default box -->
+            <div class="box box-white">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Usage</h3>
+                </div>
+                <div class="box-body">
+                    <p>Include the scroll to top markup or htlp file just before the wrapper end tag.</p>
+                    <br>
+                    <h3>AngularJs Html Markup</h3>
+                    <pre class="prettyprint">&lt;!-- Scroll To Top Component --&gt;
+&lt;div class=&quot;hidden-xs&quot; ng-include src=&quot;'pages/shared/scrolltotop.html'&quot;&gt;&lt;/div&gt;</pre>
+                    <br>
+                    <h3>Html file content</h3>
+                    <pre class="prettyprint">&lt;!-- Scroll To Top Component --&gt;
+&lt;div id=&quot;scroll-to-top&quot;&gt;
+    &lt;a href=&quot;javascript:&quot; id=&quot;return-to-top&quot;&gt;
+        &lt;i class=&quot;fa fa-chevron-up&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    $(window).scroll(function () {
+        if ($(this).scrollTop() &gt;= 100) {
+            $('#return-to-top').fadeIn(400);
+        } else {
+            $('#return-to-top').fadeOut(400);
+        }
+    });
+    $('#return-to-top').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 600);
+    });
+&lt;/script&gt;</pre>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- / col -->
+        <!-- col -->
+    </div>
+    <!-- / row -->
+</section>
+<!-- /.content -->
+<!-- Script only used for coloring and formatting code samples in page -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=sunburst"></script>

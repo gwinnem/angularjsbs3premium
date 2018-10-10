@@ -21,7 +21,9 @@
                             forcePlaceholderSize: true,
                             revert: 200,
                             zIndex: 999999
-                        }).disableSelection();
+                        }).disableSelection().on("sortchange", function (event, ui) {
+                            debugger;
+                        });
                         $('[data-toggle="tooltip"]').tooltip();
                     });
                 }

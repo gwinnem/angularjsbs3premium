@@ -1,67 +1,73 @@
 ﻿<!-- Page content -->
 <section class="content animated fadeInRight">
-    <!-- box -->
-    <div id="layout" class="box box-white">
-        <div class="box-header with-border">
-            <span>The layout plugin manages the layout in case of css failure to reset the height or width of the content.</span>
+    <div class="row">
+        <div class="col-md-6">
+            <!-- box -->
+            <div id="layout" class="box box-white">
+                <div class="box-header with-border">
+                    <span>The layout plugin manages the layout in case of css failure to reset the height or width of
+                        the content.</span>
+                </div>
+                <!-- box-body -->
+                <div class="box-body">
+                    <h3>Usage</h3>
+                    <p>This plugin is activated automatically upon window load.</p>
+                    <br>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>slimscroll</td>
+                                <td>Boolean</td>
+                                <td>true</td>
+                                <td>Whether to activate slimScroll for the sidebar.</td>
+                            </tr>
+                            <tr>
+                                <td>resetHeight</td>
+                                <td>Boolean</td>
+                                <td>true</td>
+                                <td> Whether to reset height of the body to auto. You'd set this false if your main
+                                    content div is
+                                    scrollable rather than the body.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <br>
+                    <h3>Methods</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>fix</td>
+                                <td>Fix the content part of the page.</td>
+                            </tr>
+                            <tr>
+                                <td>fixSidebar</td>
+                                <td>Fix the sidebar part of the page.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <pre class="prettyprint">Example: $('body').layout('fix');</pre>
+                </div>
+                <!-- / box-body -->
+            </div>
+            <!-- / box -->
         </div>
-        <!-- box-body -->
-        <div class="box-body">
-            <h3>Usage</h3>
-            <p>This plugin is activated automatically upon window load.</p>
-            <br>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Default</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>slimscroll</td>
-                        <td>Boolean</td>
-                        <td>true</td>
-                        <td>Whether to activate slimScroll for the sidebar.</td>
-                    </tr>
-                    <tr>
-                        <td>resetHeight</td>
-                        <td>Boolean</td>
-                        <td>true</td>
-                        <td> Whether to reset height of the body to auto. You'd set this false if your main content div is
-                            scrollable rather than the body.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br>
-            <br>
-            <h3>Methods</h3>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>fix</td>
-                        <td>Fix the content part of the page.</td>
-                    </tr>
-                    <tr>
-                        <td>fixSidebar</td>
-                        <td>Fix the sidebar part of the page.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <br>
-            <pre class="prettypri">Example: $('body').layout('fix')</pre>
-        </div>
-        <!-- / box-body -->
     </div>
-    <!-- / box -->
 </section>
 <!-- / Page content -->
 <!-- Script only used for coloring and formatting code samples in page -->
