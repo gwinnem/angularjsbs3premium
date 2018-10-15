@@ -175,3 +175,16 @@
         font-weight: 400;
     }
 }
+
+    /* Rotating button effect */
+    .btn-rotate i {
+        transition: all 370ms cubic-bezier(.34,1.61,.7,1);
+        position: relative;
+        display: inline-block
+    }
+    
+    .btn-rotate:focus i,.btn-rotate:hover i {
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+        -webkit-transform: rotate(53deg);
+        transform: rotate(53deg)
+    }

@@ -36,7 +36,8 @@
                             </div>
                         </li>
                     </ul>
-                    <a class="btn btn-default m-t-sm pull-right" data-toggle="tooltip" data-placement="left" title="Add Todo" ng-click="addJsTodo()">
+                    <a class="btn btn-default m-t-sm pull-right" data-toggle="tooltip" data-placement="left" title="Add Todo"
+                        ng-click="addJsTodo()">
                         <i class="fa fa-plus"></i>
                     </a>
                 </div>
@@ -73,8 +74,6 @@
         forcePlaceholderSize: true,
         revert: 200,
         zIndex: 999999
-    }).disableSelection().on("deactivate", function(event, ui){
-        debugger;
     });
 
     // Bootstrap tooltip needs to be activated manually
