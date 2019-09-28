@@ -278,16 +278,6 @@ aurora.config(function (
                 { name: "info-box" }
             ]
         })
-        .state("nouislider", {
-            url: "/Directives/noUISlider",
-            templateUrl: "documentation/pages/directives/abnouislider.html",
-            pageTitle: "ab-slider Directive",
-            pageBreadCrumbs: [
-                { name: "Home" },
-                { name: "Directives" },
-                { name: "ab-slider" }
-            ]
-        })
         .state("numbersonly", {
             url: "/Directives/numbersonly",
             templateUrl: "documentation/pages/directives/abnumbersonly.html",

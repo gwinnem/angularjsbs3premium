@@ -1,7 +1,7 @@
 ﻿/**
  * @author Geirr Winnem
  * @version 0.2.0
- * @summary Module for adding a custom scrollbar to elements.
+ * @summary Module for adding a custom scrollbar to elements. Inspired by jQuery slimscroll
  */
 
 

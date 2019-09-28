@@ -9,7 +9,7 @@
                 </div>
                 <div class="box-body">
                     <p>There is a single directive exposed to create the calendar.</p>
-                    <pre><code>&lt;mwl-calendar
+                    <pre class="prettyprint"><code>&lt;mwl-calendar
     view=&quot;calendarView&quot;
     view-date=&quot;viewDate&quot;
     events=&quot;events&quot;
@@ -35,7 +35,7 @@
                         / week / day depending on the value of this variable.</p>
                     <h4 class="text-bold">events (required attribute)</h4>
                     <p>An array of events to display on the calendar. For example:</p>
-                    <pre><code>$scope.events = [
+                    <pre class="prettyprint"><code>$scope.events = [
     {
         title: 'My event title', // The title of the event
         startsAt: new Date(2013,5,1,1), // A javascript date object for when the event starts
@@ -160,7 +160,7 @@
                     <p>
                         For example, to change the month view template on just one instance of the month view:
                     </p>
-                    <pre><code>// in your controller
+                    <pre class="prettyprint"><code>// in your controller
     $templateCache.put('my-custom-template.html', 'Custom month view template here');
 
     // in your template
@@ -185,7 +185,7 @@
                     <p>
                         Example usage:
                     </p>
-                    <pre><code>angular.module('myModule')
+                    <pre class="prettyprint"><code>angular.module('myModule')
     .config(['calendarConfig', function(calendarConfig) {
 
     // View all available config
@@ -219,7 +219,7 @@
                         There is also a helper directive that you can use for the next, today and previous buttons. Use
                         it like so:
                     </p>
-                    <pre><code>&lt;button
+                    <pre class="prettyprint"><code>&lt;button
     class=&quot;btn btn-primary&quot;
     mwl-date-modifier
     date=&quot;viewDate&quot;
@@ -248,7 +248,7 @@
                         to format dates. The default is to use angular. You can change the formatter to be moment like
                         so:
                     </p>
-                    <pre><code>angular.module('myModule')
+                    <pre class="prettyprint"><code>angular.module('myModule')
     .config(['calendarConfig', function(calendarConfig) {
 
     calendarConfig.dateFormatter = 'moment'; // use moment to format dates
@@ -266,7 +266,7 @@
                         To set Monday as the first day of the week, configure it in moment like so (even if using
                         angular for formatting dates):
 
-                        <pre><code>moment.locale('en_gb', {
+                        <pre class="prettyprint"><code>moment.locale('en_gb', {
     week : {
         dow : 1 // Monday is the first day of the week
     }
